@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Luxury Raffles RD</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#05070a;
+  --card:#0d1118;
+  --card2:#111722;
+  --gold:#f3c84b;
+  --gold2:#ffe89a;
+  --cyan:#62d4ff;
+  --text:#f8fafc;
+  --muted:#9aa5b1;
+  --line:rgba(255,255,255,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Montserrat,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 50% -100px,rgba(255,203,59,.16),transparent 300px),
+    linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px),
+    #05070a;
+  background-size:auto,30px 30px,30px 30px,auto;
+}
+button,input{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+img{display:block}
+.page{
+  width:min(100%,920px);
+  margin:auto;
+  min-height:100vh;
+}
+
+/* HEADER */
+.header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 18px;
+  background:rgba(5,7,10,.92);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.icon-btn{
+  width:46px;height:46px;
+  border-radius:14px;
+  border:1px solid rgba(243,200,75,.35);
+  background:#0b0f15;
+  color:var(--gold);
+  font-size:24px;
+  display:grid;
+  place-items:center;
+}
+.brand{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  text-align:center;
+  line-height:1;
+  min-width:150px;
+  padding:8px 18px;
+  border-radius:18px;
+  border:1px solid rgba(243,200,75,.25);
+  background:
+    radial-gradient(circle at 50% 20%,rgba(62,190,255,.22),transparent 50%),
+    #111722;
+}
+.brand small{
+  display:block;
+  font-size:8px;
+  letter-spacing:2px;
+}
+.brand strong{
+  display:block;
+  margin-top:2px;
+  font-size:22px;
+  font-style:italic;
+  text-shadow:-1px 0 #43cfff,1px 0 #ff4054;
+}
+.brand span{
+  display:inline-block;
+  margin-top:2px;
+  background:#c71f33;
+  border-radius:999px;
+  padding:2px 9px;
+  font-size:8px;
+  font-weight:900;
+}
+.header-right{
+  width:46px;height:46px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.08);
+  background:#0b0f15;
+  display:grid;
+  place-items:center;
+}
+
+/* HERO */
+.hero-wrap{padding:18px}
+.hero{
+  border-radius:26px;
+  padding:28px 22px;
+  border:1px solid rgba(243,200,75,.2);
+  background:
+    radial-gradient(circle at 85% 15%,rgba(243,200,75,.18),transparent 35%),
+    linear-gradient(145deg,#0f151e,#080b10);
+}
+.hero-badge{
+  display:inline-flex;
+  padding:7px 11px;
+  border-radius:999px;
+  color:var(--gold);
+  background:rgba(243,200,75,.08);
+  border:1px solid rgba(243,200,75,.20);
+  font-size:10px;
+  font-weight:800;
+}
+.hero h1{
+  margin:18px 0 8px;
+  font-size:36px;
+  line-height:1.03;
+}
+.hero h1 em{
+  color:var(--cyan);
+  font-style:normal;
+}
+.hero p{
+  color:#bcc5ce;
+  font-size:12px;
+  line-height:1.6;
+  max-width:580px;
+}
+.hero-actions{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+  flex-wrap:wrap;
+}
+.primary,.secondary{
+  height:46px;
+  border-radius:14px;
+  font-weight:900;
+  padding:0 18px;
+}
+.primary{
+  border:0;
+  min-width:210px;
+  background:linear-gradient(90deg,#fff0a6,#e6b722);
+}
+.secondary{
+  background:#111722;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.1);
+}
+
+/* QUICK */
+.quick{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  padding:0 18px 24px;
+}
+.quick-card{
+  border-radius:19px;
+  padding:16px;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(180deg,#101620,#0b1017);
+}
+.quick-head{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.quick-icon{
+  width:45px;height:45px;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  color:var(--gold);
+  border:1px solid rgba(243,200,75,.24);
+  background:rgba(243,200,75,.06);
+}
+.quick-card h3{
+  margin:0 0 4px;
+  font-size:14px;
+}
+.quick-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:10px;
+}
+.quick-btn{
+  margin-top:13px;
+  width:100%;
+  height:37px;
+  border-radius:11px;
+  border:1px solid rgba(255,255,255,.08);
+  background:#141b25;
+  color:var(--cyan);
+  font-size:10px;
+  font-weight:900;
+}
+.steps{
+  display:none;
+  margin-top:12px;
+  color:#cbd2d9;
+  font-size:11px;
+  line-height:1.65;
+}
+.steps.show{display:block}
+.steps ol{margin:0;padding-left:18px}
+
+/* CATALOGO */
+.catalog{padding:0 18px 28px}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:16px;
+  margin-bottom:14px;
+}
+.section-head h2{
+  margin:0;
+  font-size:25px;
+}
+.section-head h2 span{color:var(--gold)}
+.section-head p{
+  margin:5px 0 0;
+  color:var(--muted);
+  font-size:10px;
+}
+.filters{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.filters::-webkit-scrollbar{display:none}
+.filter{
+  flex:0 0 auto;
+  padding:9px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.1);
+  color:#d6dce2;
+  background:#0c1118;
+  font-size:9px;
+  font-weight:900;
+}
+.filter.active{
+  color:#111;
+  background:linear-gradient(90deg,#ffe998,#e3b728);
+}
+
+/* NUEVO MODELO DE CATALOGO COMO LA IMAGEN */
+.raffles{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+}
+
+.raffle-card{
+  overflow:hidden;
+  border-radius:26px;
+  border:1px solid rgba(243,200,75,.18);
+  background:#0c0f14;
+  box-shadow:0 14px 40px rgba(0,0,0,.26);
+}
+
+.raffle-cover{
+  position:relative;
+  width:100%;
+  aspect-ratio:16/8.8;
+  min-height:270px;
+  overflow:hidden;
+  background:#111;
+}
+.raffle-cover img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  cursor:zoom-in;
+  transition:transform .25s ease, filter .25s ease;
+}
+.raffle-cover:hover img{
+  transform:scale(1.015);
+  filter:brightness(1.04);
+}
+
+/* VISOR DE IMAGEN EN GRANDE */
+.image-viewer{
+  position:fixed;
+  inset:0;
+  z-index:500;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:rgba(0,0,0,.94);
+  backdrop-filter:blur(8px);
+}
+.image-viewer.show{
+  display:flex;
+}
+.image-viewer img{
+  display:block;
+  max-width:min(96vw,1100px);
+  max-height:88vh;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border-radius:16px;
+  box-shadow:0 20px 70px rgba(0,0,0,.65);
+  animation:imageZoomIn .22s ease;
+}
+.image-viewer-close{
+  position:fixed;
+  top:18px;
+  right:18px;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(15,18,22,.88);
+  color:#fff;
+  font-size:27px;
+  line-height:1;
+  display:grid;
+  place-items:center;
+  z-index:501;
+}
+.image-viewer-close:hover{
+  color:var(--gold);
+  border-color:rgba(243,200,75,.65);
+}
+.image-viewer-caption{
+  position:fixed;
+  left:50%;
+  bottom:18px;
+  transform:translateX(-50%);
+  max-width:90vw;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(10,12,15,.82);
+  color:#e9edf1;
+  border:1px solid rgba(255,255,255,.12);
+  font-size:11px;
+  text-align:center;
+}
+@keyframes imageZoomIn{
+  from{opacity:0;transform:scale(.94)}
+  to{opacity:1;transform:scale(1)}
+}
+.raffle-cover::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.08));
+  pointer-events:none;
+}
+.cover-text{
+  position:absolute;
+  left:28px;
+  top:25px;
+  z-index:2;
+  max-width:48%;
+  text-shadow:0 4px 8px #000;
+}
+.cover-text .big{
+  font-size:45px;
+  line-height:.92;
+  font-weight:900;
+}
+.cover-text .hot{
+  margin-top:14px;
+  color:#ffbe23;
+  font-size:31px;
+  font-weight:900;
+}
+
+.raffle-content{
+  padding:18px 22px 22px;
+}
+
+/* premio destacado */
+.prize-panel{
+  border:1px solid rgba(243,200,75,.45);
+  background:linear-gradient(180deg,rgba(243,200,75,.08),rgba(243,200,75,.025));
+  border-radius:19px;
+  padding:16px 12px;
+  text-align:center;
+  margin-bottom:12px;
+}
+.prize-panel span{
+  display:block;
+  color:#d8dde2;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.8px;
+}
+.prize-panel strong{
+  display:block;
+  margin-top:8px;
+  color:var(--gold);
+  font-size:29px;
+}
+
+/* números */
+.numbers{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin-bottom:28px;
+}
+.num{
+  min-height:52px;
+  padding:4px;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  border-radius:13px;
+  border:1px solid rgba(243,200,75,.34);
+  background:#101217;
+  color:#f4f6f8;
+  font-size:13px;
+  font-weight:900;
+}
+.num.out{
+  color:#8c9298;
+  font-size:10px;
+  text-decoration:line-through;
+}
+
+/* descripción */
+.raffle-title{
+  margin:0 0 10px;
+  font-size:20px;
+  color:var(--cyan);
+  font-weight:900;
+  text-transform:uppercase;
+}
+.raffle-description{
+  margin:0;
+  color:#f4f4f5;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.55;
+}
+.raffle-sub{
+  margin:12px 0 0;
+  color:#b9c0c7;
+  font-size:13px;
+  line-height:1.55;
+}
+.more{
+  display:inline-block;
+  margin-top:13px;
+  color:var(--cyan);
+  font-size:13px;
+  font-weight:800;
+  text-decoration:underline;
+}
+
+.meta{
+  margin-top:17px;
+  color:#d7b93e;
+  font-size:12px;
+}
+.progress-row{
+  margin-top:18px;
+}
+.progress-row .top{
+  display:flex;
+  justify-content:space-between;
+  color:#aab2bb;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+.progress{
+  height:7px;
+  margin-top:8px;
+  border-radius:99px;
+  background:#22262b;
+  overflow:hidden;
+}
+.progress i{
+  display:block;
+  height:100%;
+  border-radius:99px;
+  background:linear-gradient(90deg,#d9ab16,#fff0a2);
+}
+
+.price-block{
+  margin-top:18px;
+}
+.price-block strong{
+  display:block;
+  color:var(--cyan);
+  font-size:21px;
+}
+.price-block small{
+  display:block;
+  margin-top:4px;
+  color:#8c959f;
+  font-size:12px;
+}
+.play{
+  width:100%;
+  height:60px;
+  margin-top:24px;
+  border-radius:18px;
+  border:1px solid rgba(243,200,75,.58);
+  color:var(--gold);
+  background:#11130f;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+/* GANADORES */
+.winners{padding:0 18px 30px}
+.winner-box{
+  overflow:hidden;
+  border-radius:24px;
+  display:grid;
+  grid-template-columns:260px 1fr;
+  border:1px solid rgba(243,200,75,.17);
+  background:linear-gradient(145deg,#0e131b,#080b10);
+}
+.winner-intro{
+  padding:26px;
+  background:
+    radial-gradient(circle at 20% 0%,rgba(243,200,75,.18),transparent 55%),
+    #0d1117;
+}
+.winner-intro .mini{
+  color:var(--gold);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1.8px;
+}
+.winner-intro h3{
+  margin:12px 0 8px;
+  font-size:25px;
+}
+.winner-intro p{
+  margin:0;
+  color:#aeb7c0;
+  font-size:11px;
+  line-height:1.55;
+}
+.winner-list{
+  padding:12px 16px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2px 16px;
+}
+.winner{
+  display:grid;
+  grid-template-columns:48px 1fr;
+  gap:10px;
+  align-items:center;
+  padding:9px 0;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.winner img{
+  width:48px;height:48px;
+  object-fit:cover;
+  border-radius:13px;
+}
+.winner strong{font-size:10px}
+.winner b{
+  display:block;
+  color:var(--gold);
+  font-size:9px;
+}
+.winner small{
+  display:block;
+  color:#76818c;
+  font-size:8px;
+}
+
+.footer{
+  padding:0 18px 30px;
+  text-align:center;
+  color:#69737c;
+  font-size:9px;
+}
+.chat{
+  position:fixed;
+  right:max(18px,calc((100vw - 900px)/2 + 18px));
+  bottom:18px;
+  z-index:45;
+  width:58px;height:58px;
+  border-radius:50%;
+  border:1px solid #ffe268;
+  color:#151515;
+  background:radial-gradient(circle at 35% 30%,#fff6a7,#d6a617);
+  font-size:22px;
+}
+
+/* DRAWER */
+.drawer{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  pointer-events:none;
+}
+.drawer.open{pointer-events:auto}
+.drawer-backdrop{
+  position:absolute;inset:0;
+  background:rgba(0,0,0,.68);
+  opacity:0;
+  transition:.25s;
+}
+.drawer.open .drawer-backdrop{opacity:1}
+.drawer-panel{
+  position:absolute;
+  left:0;top:0;bottom:0;
+  width:min(320px,84vw);
+  transform:translateX(-100%);
+  transition:.28s;
+  background:#090d13;
+  padding:95px 22px 30px;
+  border-right:1px solid rgba(243,200,75,.18);
+}
+.drawer.open .drawer-panel{transform:none}
+.drawer-panel a{
+  display:flex;
+  align-items:center;
+  min-height:52px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  font-size:13px;
+  font-weight:700;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  display:none;
+  place-items:center;
+  padding:18px;
+  background:rgba(0,0,0,.74);
+}
+.modal.show{display:grid}
+.modal-box{
+  width:min(100%,430px);
+  padding:20px;
+  border-radius:22px;
+  background:#0c1118;
+  border:1px solid rgba(255,255,255,.12);
+}
+.modal-box h3{
+  margin:0 0 8px;
+  color:var(--gold);
+}
+.modal-box p{
+  color:#aeb7c0;
+  font-size:11px;
+}
+.modal-box input{
+  width:100%;
+  height:46px;
+  border-radius:13px;
+  border:1px solid #2d3742;
+  background:#090d13;
+  color:#fff;
+  padding:0 13px;
+}
+.modal-actions{
+  display:flex;
+  gap:10px;
+  margin-top:12px;
+}
+.modal-actions button{
+  flex:1;
+  height:42px;
+  border-radius:12px;
+  font-size:10px;
+  font-weight:900;
+}
+.cancel{
+  color:#fff;
+  background:#111722;
+  border:1px solid #303b47;
+}
+.confirm{
+  color:#171717;
+  background:linear-gradient(90deg,#fff0a4,#dfb01d);
+  border:0;
+}
+.result{
+  min-height:18px;
+  margin-top:12px;
+  color:var(--cyan);
+  font-size:10px;
+}
+
+/* MÓVIL */
+@media(max-width:650px){
+  .header{height:66px}
+  .hero-wrap{padding:14px}
+  .hero{
+    padding:23px 18px;
+    border-radius:22px;
+  }
+  .hero h1{font-size:29px}
+  .hero-actions{flex-direction:column}
+  .primary,.secondary{width:100%}
+  .quick{
+    grid-template-columns:1fr;
+    padding:0 14px 20px;
+  }
+  .catalog{padding:0 14px 24px}
+  .section-head{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .raffle-card{border-radius:20px}
+  .raffle-cover{
+    min-height:0;
+    aspect-ratio:1.34/1;
+  }
+  .cover-text{
+    left:20px;
+    top:24px;
+  }
+  .cover-text .big{font-size:36px}
+  .cover-text .hot{font-size:26px}
+  .raffle-content{padding:15px 18px 20px}
+  .prize-panel{
+    border-radius:16px;
+    padding:13px 10px;
+  }
+  .prize-panel span{font-size:9px}
+  .prize-panel strong{font-size:25px}
+  .numbers{
+    gap:8px;
+    margin-bottom:24px;
+  }
+  .num{
+    min-height:45px;
+    font-size:12px;
+    border-radius:11px;
+  }
+  .num.out{font-size:8px}
+  .raffle-title{font-size:17px}
+  .raffle-description{font-size:12px}
+  .raffle-sub{font-size:11px}
+  .meta{font-size:10px}
+  .price-block strong{font-size:18px}
+  .play{
+    height:56px;
+    border-radius:16px;
+  }
+
+  .winners{padding:0 14px 28px}
+  .winner-box{grid-template-columns:1fr}
+  .winner-list{grid-template-columns:1fr}
+  .chat{right:14px}
+}
+
+@media(max-width:420px){
+  .cover-text .big{font-size:31px}
+  .cover-text .hot{font-size:22px}
+  .numbers{gap:7px}
+  .num{
+    min-height:42px;
+    font-size:11px;
+  }
+  .num.out{font-size:7px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<header class="header">
+  <button class="icon-btn" id="menuBtn">☰</button>
+
+  <div class="brand">
+    <small>RIFAS</small>
+    <strong>LUXURY</strong>
+    <span>RD</span>
+  </div>
+
+  <div class="header-right">★</div>
+</header>
+
+<section class="hero-wrap" id="inicio">
+  <div class="hero">
+    <div class="hero-badge">✦ EXPERIENCIA EXCLUSIVA</div>
+    <h1>Premios que se sienten <em>extraordinarios.</em></h1>
+    <p>Participa desde tu celular, consulta tus boletos y descubre rifas seleccionadas.</p>
+
+    <div class="hero-actions">
+      <button class="primary" id="participarBtn">QUIERO PARTICIPAR</button>
+      <button class="secondary" id="heroVerifyBtn">VERIFICAR BOLETO</button>
+    </div>
+  </div>
+</section>
+
+<section class="quick">
+
+  <article class="quick-card">
+    <div class="quick-head">
+      <div class="quick-icon">▣</div>
+      <div>
+        <h3>¿Cómo jugar?</h3>
+        <p>Consulta los pasos para participar.</p>
+      </div>
+    </div>
+
+    <button class="quick-btn" id="stepsBtn">VER PASOS</button>
+
+    <div class="steps" id="stepsPanel">
+      <ol>
+        <li>Selecciona una rifa.</li>
+        <li>Elige tus boletos.</li>
+        <li>Completa tus datos.</li>
+        <li>Confirma la participación.</li>
+        <li>Consulta tu boleto.</li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="quick-card">
+    <div class="quick-head">
+      <div class="quick-icon">⌕</div>
+      <div>
+        <h3>Verificador</h3>
+        <p>Consulta por teléfono o boleto.</p>
+      </div>
+    </div>
+
+    <button class="quick-btn" id="verifyBtn">VERIFICAR AHORA</button>
+  </article>
+
+</section>
+
+<section class="catalog" id="catalogo">
+
+  <div class="section-head">
+    <div>
+      <h2>Catálogo de <span>rifas</span></h2>
+      <p>Selecciona tu premio favorito.</p>
+    </div>
+
+    <div class="filters">
+      <button class="filter active" data-filter="todos">TODOS</button>
+      <button class="filter" data-filter="dinero">DINERO</button>
+      <button class="filter" data-filter="telefono">TELÉFONO</button>
+      <button class="filter" data-filter="vehiculos">VEHÍCULOS</button>
+    </div>
+  </div>
+
+  <div class="raffles">
+
+    <!-- IPHONE -->
+    <article class="raffle-card" data-category="telefono dinero">
+
+      <div class="raffle-cover">
+        <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=1200&q=85" alt="iPhone">
+
+        <div class="cover-text">
+          <div class="big">5<br>iPhone 17<br>Pro Max<br>X</div>
+          <div class="hot">$15 pesos 🔥</div>
+        </div>
+      </div>
+
+      <div class="raffle-content">
+
+        <div class="prize-panel">
+          <span>SI TE SALE UNO DE ESTOS NÚMEROS TE GANAS</span>
+          <strong>RD$ 5,000</strong>
+        </div>
+
+        <div class="numbers">
+          <div class="num">85720</div>
+          <div class="num out">YA SALIÓ</div>
+          <div class="num">06823</div>
+          <div class="num out">YA SALIÓ</div>
+
+          <div class="num out">YA SALIÓ</div>
+          <div class="num out">YA SALIÓ</div>
+          <div class="num out">YA SALIÓ</div>
+          <div class="num out">YA SALIÓ</div>
+
+          <div class="num">67184</div>
+          <div class="num out">YA SALIÓ</div>
+          <div class="num">10774</div>
+          <div class="num out">YA SALIÓ</div>
+        </div>
+
+        <h3 class="raffle-title">5 IPHONE 17 PRO MAX</h3>
+
+        <p class="raffle-description">
+          Por tan solo $15 pesos participas por 5 iPhone 17 Pro Max 📱🔥
+        </p>
+
+        <p class="raffle-sub">
+          ¡Cualquiera de esos 5 puede ser tuyo! 😍
+        </p>
+
+        <a href="#" class="more">Ver más</a>
+
+        <div class="meta">
+          ▣ Sorteo: 7 sept de 2026, 10:00 p. m.
+        </div>
+
+        <div class="progress-row">
+          <div class="top">
+            <span>PROGRESO: 66%</span>
+          </div>
+          <div class="progress">
+            <i style="width:66%"></i>
+          </div>
+        </div>
+
+        <div class="price-block">
+          <strong>RD$ 15.00</strong>
+          <small>Min 7 boletos</small>
+        </div>
+
+        <button class="play" data-raffle="5 iPhone 17 Pro Max">
+          JUGAR
+        </button>
+
+      </div>
+    </article>
+
+    <!-- CARRO -->
+    <article class="raffle-card" data-category="vehiculos">
+
+      <div class="raffle-cover">
+        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1200&q=85" alt="Automóvil blanco">
+      </div>
+
+      <div class="raffle-content">
+
+        <h3 class="raffle-title">DAIHATSU MIRA</h3>
+
+        <p class="raffle-description">
+          ¡Móntate en un Daihatsu Mira con solo RD$10!
+        </p>
+
+        <p class="raffle-sub">
+          Participa por este vehículo compacto y económico.
+        </p>
+
+        <a href="#" class="more">Ver más</a>
+
+        <div class="meta">
+          ▣ Sorteo: 12 sept de 2026, 9:45 p. m.
+        </div>
+
+        <div class="progress-row">
+          <div class="top">
+            <span>PROGRESO: 74%</span>
+          </div>
+          <div class="progress">
+            <i style="width:74%"></i>
+          </div>
+        </div>
+
+        <div class="price-block">
+          <strong>RD$ 10.00</strong>
+          <small>Min 10 boletos</small>
+        </div>
+
+        <button class="play" data-raffle="Daihatsu Mira">
+          JUGAR
+        </button>
+
+      </div>
+    </article>
+
+    <!-- MOTOR -->
+    <article class="raffle-card" data-category="vehiculos dinero">
+
+      <div class="raffle-cover">
+        <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=85" alt="Motocicleta">
+      </div>
+
+      <div class="raffle-content">
+
+        <div class="prize-panel">
+          <span>SI TE SALE UNO DE ESTOS NÚMEROS TE GANAS</span>
+          <strong>RD$ 5,000</strong>
+        </div>
+
+        <div class="numbers">
+          <div class="num">10100</div>
+          <div class="num">11111</div>
+          <div class="num out">YA SALIÓ</div>
+          <div class="num out">YA SALIÓ</div>
+
+          <div class="num">15555</div>
+          <div class="num out">YA SALIÓ</div>
+          <div class="num out">YA SALIÓ</div>
+          <div class="num out">YA SALIÓ</div>
+
+          <div class="num out">YA SALIÓ</div>
+          <div class="num out">YA SALIÓ</div>
+          <div class="num out">YA SALIÓ</div>
+          <div class="num out">YA SALIÓ</div>
+        </div>
+
+        <h3 class="raffle-title">GACELA BETE 250 2026</h3>
+
+        <p class="raffle-description">
+          ¡Gánate esta Gacela Bete 250 modelo 2026 por solamente RD$5 pesos!
+        </p>
+
+        <p class="raffle-sub">
+          Puedes participar comprando desde 10 boletos.
+        </p>
+
+        <a href="#" class="more">Ver más</a>
+
+        <div class="meta">
+          ▣ Sorteo: 4 sept de 2026, 10:00 p. m.
+        </div>
+
+        <div class="progress-row">
+          <div class="top">
+            <span>PROGRESO: 49%</span>
+          </div>
+          <div class="progress">
+            <i style="width:49%"></i>
+          </div>
+        </div>
+
+        <div class="price-block">
+          <strong>RD$ 5.00</strong>
+          <small>Min 10 boletos</small>
+        </div>
+
+        <button class="play" data-raffle="Gacela Bete 250 2026">
+          JUGAR
+        </button>
+
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="winners" id="ganadores">
+  <div class="winner-box">
+
+    <div class="winner-intro">
+      <div class="mini">SALÓN DE GANADORES</div>
+      <h3>🏆 Ganadores recientes</h3>
+      <p>Conoce a los afortunados de sorteos anteriores.</p>
+    </div>
+
+    <div class="winner-list">
+
+      <div class="winner">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=70" alt="">
+        <div>
+          <strong>Yendry Victoriano</strong>
+          <b>YFZ</b>
+          <small>10 abr 2026 · 12:10 am</small>
+        </div>
+      </div>
+
+      <div class="winner">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=160&q=70" alt="">
+        <div>
+          <strong>Marino Paredes</strong>
+          <b>Gacela KTR</b>
+          <small>9 abr 2026 · 11:50 pm</small>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  © 2026 Luxury Raffles RD · Todos los derechos reservados
+</footer>
+
+</div>
+
+<button class="chat">◔</button>
+
+<div class="image-viewer" id="imageViewer" aria-hidden="true">
+  <button class="image-viewer-close" id="imageViewerClose" aria-label="Cerrar imagen">×</button>
+  <img id="imageViewerImg" src="" alt="">
+  <div class="image-viewer-caption" id="imageViewerCaption"></div>
+</div>
+
+<div class="drawer" id="drawer">
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+  <nav class="drawer-panel">
+    <a href="#inicio">Inicio</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#" id="drawerVerify">Verificar boletos</a>
+    <a href="#ganadores">Ganadores</a>
+  </nav>
+</div>
+
+<div class="modal" id="verifyModal">
+  <div class="modal-box">
+    <h3>Verificar boleto</h3>
+    <p>Introduce un teléfono o número de boleto.</p>
+
+    <input id="ticketInput" placeholder="Ej.: 8095550000 o RL-00125">
+
+    <div class="modal-actions">
+      <button class="cancel" data-close="verifyModal">CERRAR</button>
+      <button class="confirm" id="doVerify">VERIFICAR</button>
+    </div>
+
+    <div class="result" id="verifyResult"></div>
+  </div>
+</div>
+
+<div class="modal" id="playModal">
+  <div class="modal-box">
+    <h3 id="playTitle">Participar</h3>
+    <p>Selecciona la cantidad de boletos.</p>
+
+    <input id="qtyInput" type="number" min="1" value="10">
+
+    <div class="modal-actions">
+      <button class="cancel" data-close="playModal">CANCELAR</button>
+      <button class="confirm" id="simulateBuy">CONTINUAR</button>
+    </div>
+
+    <div class="result" id="playResult"></div>
+  </div>
+</div>
+
+<script>
+const $=(s,c=document)=>c.querySelector(s);
+const $$=(s,c=document)=>[...c.querySelectorAll(s)];
+
+const drawer=$("#drawer");
+
+$("#menuBtn").addEventListener("click",()=>{
+  drawer.classList.add("open");
+});
+
+$("#drawerBackdrop").addEventListener("click",()=>{
+  drawer.classList.remove("open");
+});
+
+$$(".drawer-panel a").forEach(a=>{
+  a.addEventListener("click",()=>{
+    drawer.classList.remove("open");
+  });
+});
+
+$("#stepsBtn").addEventListener("click",()=>{
+  const panel=$("#stepsPanel");
+  panel.classList.toggle("show");
+  $("#stepsBtn").textContent=
+    panel.classList.contains("show")
+    ? "OCULTAR PASOS"
+    : "VER PASOS";
+});
+
+function openModal(id){
+  $("#"+id).classList.add("show");
+}
+
+function closeModal(id){
+  $("#"+id).classList.remove("show");
+}
+
+$$("[data-close]").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    closeModal(btn.dataset.close);
+  });
+});
+
+$$(".modal").forEach(modal=>{
+  modal.addEventListener("click",e=>{
+    if(e.target===modal){
+      modal.classList.remove("show");
+    }
+  });
+});
+
+$("#verifyBtn").addEventListener("click",()=>{
+  openModal("verifyModal");
+});
+
+$("#heroVerifyBtn").addEventListener("click",()=>{
+  openModal("verifyModal");
+});
+
+$("#drawerVerify").addEventListener("click",e=>{
+  e.preventDefault();
+  openModal("verifyModal");
+});
+
+$("#doVerify").addEventListener("click",()=>{
+  const value=$("#ticketInput").value.trim();
+  const result=$("#verifyResult");
+
+  if(!value){
+    result.style.color="#ff7676";
+    result.textContent="Escribe un teléfono o número de boleto.";
+    return;
+  }
+
+  result.style.color="#62d4ff";
+  result.textContent='Consulta demo recibida para "'+value+'".';
+});
+
+$("#participarBtn").addEventListener("click",()=>{
+  $("#catalogo").scrollIntoView({behavior:"smooth"});
+});
+
+$$(".filter").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+
+    $$(".filter").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const filter=btn.dataset.filter;
+
+    $$(".raffle-card").forEach(card=>{
+      const categories=card.dataset.category.split(" ");
+
+      card.style.display=
+        filter==="todos" || categories.includes(filter)
+        ? ""
+        : "none";
+    });
+
+  });
+});
+
+let currentRaffle="";
+
+$$(".play").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    currentRaffle=btn.dataset.raffle;
+
+    $("#playTitle").textContent=
+      "Participar en "+currentRaffle;
+
+    $("#playResult").textContent="";
+    openModal("playModal");
+  });
+});
+
+$("#simulateBuy").addEventListener("click",()=>{
+
+  const qty=Math.max(
+    1,
+    parseInt($("#qtyInput").value || "1",10)
+  );
+
+  $("#playResult").style.color="#62d4ff";
+
+  $("#playResult").textContent=
+    "Seleccionaste "+
+    qty+
+    " boleto(s) para "+
+    currentRaffle+
+    ".";
+});
+
+/* ABRIR IMÁGENES DEL CATÁLOGO EN GRANDE */
+const imageViewer=$("#imageViewer");
+const imageViewerImg=$("#imageViewerImg");
+const imageViewerCaption=$("#imageViewerCaption");
+
+$$(".raffle-cover img").forEach(img=>{
+  img.addEventListener("click",()=>{
+    imageViewerImg.src=img.src;
+    imageViewerImg.alt=img.alt || "Imagen de la rifa";
+    imageViewerCaption.textContent=img.alt || "Imagen de la rifa";
+    imageViewer.classList.add("show");
+    imageViewer.setAttribute("aria-hidden","false");
+    document.body.style.overflow="hidden";
+  });
+});
+
+function closeImageViewer(){
+  imageViewer.classList.remove("show");
+  imageViewer.setAttribute("aria-hidden","true");
+  document.body.style.overflow="";
+  setTimeout(()=>{
+    imageViewerImg.src="";
+  },180);
+}
+
+$("#imageViewerClose").addEventListener("click",closeImageViewer);
+
+imageViewer.addEventListener("click",e=>{
+  if(e.target===imageViewer){
+    closeImageViewer();
+  }
+});
+
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape" && imageViewer.classList.contains("show")){
+    closeImageViewer();
+  }
+});
+
+$(".chat").addEventListener("click",()=>{
+  alert("Botón de chat demo.");
+});
+</script>
+
+</body>
+</html>
