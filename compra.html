@@ -1,0 +1,755 @@
+<!DOCTYPE html>  <html lang="es">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Participar - Luxury Raffles RD</title>  
+<link rel="preconnect" href="https://fonts.googleapis.com">  
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">  
+<style>  
+:root{  
+  --bg:#060b13;  
+  --panel:#0d131e;  
+  --panel2:#111925;  
+  --gold:#f3c84b;  
+  --gold2:#fff0a0;  
+  --cyan:#32cdf4;  
+  --green:#28c86b;  
+  --text:#f5f7fa;  
+  --muted:#a3adb8;  
+  --line:rgba(255,255,255,.09);  
+}  
+*{box-sizing:border-box}  
+html{scroll-behavior:smooth}  
+body{  
+  margin:0;  
+  min-height:100vh;  
+  font-family:Montserrat,Arial,sans-serif;  
+  color:var(--text);  
+  background:  
+    radial-gradient(circle at 50% -70px,rgba(243,200,75,.12),transparent 330px),  
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),  
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px),  
+    #050a12;  
+  background-size:auto,30px 30px,30px 30px,auto;  
+}  
+button,input{font:inherit}  
+button{cursor:pointer}  
+.shell{  
+  width:min(100%,820px);  
+  margin:auto;  
+  min-height:100vh;  
+  background:rgba(7,12,21,.94);  
+  border-left:1px solid rgba(243,200,75,.15);  
+  border-right:1px solid rgba(243,200,75,.15);  
+}  
+.topbar{  
+  position:sticky;  
+  top:0;  
+  z-index:50;  
+  min-height:86px;  
+  display:grid;  
+  grid-template-columns:60px 1fr 60px;  
+  align-items:center;  
+  gap:10px;  
+  padding:12px 18px;  
+  background:rgba(7,12,21,.97);  
+  backdrop-filter:blur(18px);  
+  border-bottom:1px solid rgba(243,200,75,.13);  
+}  
+.topbar button{  
+  width:54px;height:54px;  
+  border-radius:16px;  
+  border:1px solid rgba(243,200,75,.27);  
+  background:#0f1621;  
+  color:var(--gold);  
+  font-size:31px;  
+  display:grid;  
+  place-items:center;  
+}  
+.topbar h1{  
+  margin:0;  
+  text-align:center;  
+  font-size:23px;  
+  line-height:1.1;  
+  color:#f6f7fb;  
+}  
+.topbar h1 span{color:var(--gold)}  
+.subtitle{  
+  margin:18px 28px 10px;  
+  color:#bec5cc;  
+  font-size:17px;  
+}  
+.demo-note{  
+  margin:0 28px 12px;  
+  padding:10px 13px;  
+  border-radius:13px;  
+  border:1px solid rgba(255,183,77,.2);  
+  background:rgba(255,183,77,.055);  
+  color:#d4bc91;  
+  font-size:9px;  
+  line-height:1.5;  
+}  
+.content{padding:18px 28px 36px}  
+.card{  
+  border:1px solid rgba(243,200,75,.25);  
+  border-radius:24px;  
+  padding:20px;  
+  background:  
+    radial-gradient(circle at 16% 0%,rgba(50,205,244,.06),transparent 36%),  
+    linear-gradient(180deg,#101720,#0b1018);  
+  box-shadow:0 18px 42px rgba(0,0,0,.27);  
+}  
+.card-title{  
+  display:flex;  
+  align-items:center;  
+  gap:15px;  
+  margin-bottom:17px;  
+}  
+.ticket-icon{  
+  width:62px;height:62px;  
+  flex:0 0 auto;  
+  border-radius:18px;  
+  display:grid;  
+  place-items:center;  
+  color:#159bc1;  
+  font-size:30px;  
+  background:linear-gradient(145deg,#fffad6,#f3bd21);  
+  box-shadow:0 0 28px rgba(243,200,75,.2);  
+}  
+.card-title small{  
+  display:block;  
+  color:var(--cyan);  
+  font-size:10px;  
+  font-weight:900;  
+  letter-spacing:2px;  
+}  
+.card-title h2{  
+  margin:6px 0 0;  
+  font-size:18px;  
+  letter-spacing:1.9px;  
+}  
+.tabs{  
+  display:grid;  
+  grid-template-columns:1fr 1fr;  
+  gap:0;  
+  padding:7px;  
+  border-radius:17px;  
+  background:#171d28;  
+  border:1px solid rgba(255,255,255,.08);  
+  margin-bottom:17px;  
+}  
+.tab{  
+  height:52px;  
+  border:0;  
+  border-radius:13px;  
+  background:transparent;  
+  color:#c7cdd4;  
+  font-size:12px;  
+  font-weight:900;  
+  letter-spacing:1px;  
+}  
+.tab.active{  
+  color:#181818;  
+  background:linear-gradient(90deg,#fff8ce,#f2bd21);  
+  box-shadow:0 7px 20px rgba(243,200,75,.16);  
+}  
+.packages{display:grid;gap:13px}  
+.package{  
+  position:relative;  
+  display:grid;  
+  grid-template-columns:32% 1fr;  
+  min-height:96px;  
+  overflow:hidden;  
+  border:2px solid rgba(243,200,75,.5);  
+  border-radius:19px;  
+  background:#0b1118;  
+  padding:0;  
+  color:#fff;  
+  text-align:left;  
+}  
+.package.selected{  
+  box-shadow:0 0 0 3px rgba(243,200,75,.13),0 0 30px rgba(40,200,107,.2);  
+}  
+.package-left{  
+  position:relative;  
+  display:grid;  
+  place-items:center;  
+  text-align:center;  
+  background:linear-gradient(180deg,#42db7c,#099c46);  
+  border-right:7px solid #071009;  
+}  
+.package.premium .package-left{  
+  color:#111;  
+  background:linear-gradient(180deg,#ffe06c,#d9a600);  
+}  
+.badge{  
+  position:absolute;  
+  top:6px;left:7px;  
+  padding:3px 7px;  
+  border-radius:999px;  
+  background:#fff5aa;  
+  color:#111;  
+  font-size:8px;  
+  font-weight:900;  
+}  
+.package-left strong{font-size:32px;line-height:1;margin-top:13px}  
+.package-left span{display:block;font-size:9px;font-weight:900;letter-spacing:1.5px;margin-top:4px}  
+.package-right{  
+  display:flex;  
+  align-items:center;  
+  justify-content:space-between;  
+  gap:10px;  
+  padding:13px 18px;  
+  background:linear-gradient(180deg,#3fdc7a,#079a43);  
+}  
+.package.premium .package-right{  
+  color:#111;  
+  background:linear-gradient(180deg,#ffe574,#d6a300);  
+}  
+.package-right strong{font-size:19px}  
+.package-right span{display:block;margin-top:6px;font-size:10px;font-weight:900;letter-spacing:.8px}  
+.radio{  
+  width:23px;height:23px;  
+  border-radius:50%;  
+  border:3px solid rgba(255,255,255,.9);  
+  display:grid;  
+  place-items:center;  
+  flex:0 0 auto;  
+}  
+.package.premium .radio{border-color:#111}  
+.package.selected .radio::after{  
+  content:"";  
+  width:10px;height:10px;  
+  border-radius:50%;  
+  background:#fff;  
+}  
+.package.premium.selected .radio::after{background:#111}  
+.free-mode{display:none}  
+.free-mode.show{display:block}  
+.qty{  
+  display:grid;  
+  grid-template-columns:60px 1fr 60px;  
+  gap:10px;  
+}  
+.qty button{  
+  height:56px;  
+  border-radius:14px;  
+  border:1px solid rgba(243,200,75,.3);  
+  background:#111824;  
+  color:var(--gold);  
+  font-size:26px;  
+}  
+.qty input{  
+  width:100%;height:56px;  
+  border-radius:14px;  
+  border:1px solid #303a47;  
+  background:#070b11;  
+  color:#fff;  
+  text-align:center;  
+  font-weight:900;  
+  outline:none;  
+}  
+.total-card{  
+  margin-top:19px;  
+  padding:18px;  
+  text-align:center;  
+  border-radius:19px;  
+  background:#090e17;  
+  border:1px solid rgba(255,255,255,.07);  
+}  
+.total-card span{display:block;color:#a8b0b8;font-size:10px;letter-spacing:3px}  
+.total-card strong{display:block;margin-top:8px;color:var(--gold);font-size:31px}  
+.info{  
+  display:flex;  
+  gap:13px;  
+  margin:20px 0;  
+  padding:18px;  
+  border-radius:19px;  
+  border:1px solid rgba(243,200,75,.19);  
+  background:rgba(243,200,75,.045);  
+  color:#c9d0d6;  
+  font-size:12px;  
+  line-height:1.65;  
+}  
+.info b{color:var(--cyan)}  
+.info-icon{  
+  width:30px;height:30px;  
+  flex:0 0 auto;  
+  border-radius:50%;  
+  display:grid;  
+  place-items:center;  
+  border:1px solid rgba(243,200,75,.35);  
+  color:var(--gold);  
+  font-weight:900;  
+}  
+.form{display:grid;gap:15px}  
+.field label{display:block;margin-bottom:7px;font-size:13px;font-weight:900}  
+.field input{  
+  width:100%;height:58px;  
+  border-radius:15px;  
+  border:1px solid #303946;  
+  background:#070a11;  
+  color:#fff;  
+  padding:0 16px;  
+  font-size:14px;  
+  outline:none;  
+}  
+.field input:focus{border-color:rgba(50,205,244,.55)}  
+.phone{display:grid;grid-template-columns:96px 1fr}  
+.prefix{  
+  height:58px;  
+  display:flex;  
+  align-items:center;  
+  justify-content:center;  
+  gap:6px;  
+  border-radius:15px 0 0 15px;  
+  border:1px solid #303946;  
+  border-right:0;  
+  background:#0d1628;  
+}  
+.phone input{border-radius:0 15px 15px 0}  
+.email-note{  
+  display:flex;  
+  gap:10px;  
+  padding:14px 15px;  
+  border-radius:15px;  
+  border:1px solid rgba(50,205,244,.2);  
+  background:rgba(50,205,244,.055);  
+  color:#b9c4ce;  
+  font-size:10px;  
+  line-height:1.5;  
+}  
+.section-title{margin:24px 0 10px;font-size:13px;font-weight:900}  
+.choose{text-align:center;color:#aab4bd;font-size:13px;font-weight:700;margin-bottom:12px}  
+.banks{  
+  display:grid;  
+  grid-template-columns:repeat(4,1fr);  
+  gap:10px;  
+  padding:14px;  
+  border-radius:19px;  
+  background:linear-gradient(90deg,rgba(0,155,255,.18),rgba(243,200,75,.13));  
+  border:1px solid rgba(255,255,255,.08);  
+}  
+.bank{  
+  min-height:84px;  
+  border-radius:15px;  
+  border:2px solid transparent;  
+  background:#111722;  
+  color:#fff;  
+  padding:7px;  
+  display:grid;  
+  place-items:center;  
+  gap:4px;  
+}  
+.bank.selected{border-color:var(--gold);box-shadow:0 0 22px rgba(243,200,75,.16)}  
+.bank-logo{  
+  width:55px;height:47px;  
+  display:grid;  
+  place-items:center;  
+  border-radius:9px;  
+  background:#fff;  
+  color:#17669f;  
+  font-size:20px;  
+  font-weight:900;  
+}  
+.bank small{color:#bdc5cc;font-size:7px;text-align:center}  
+.bank-details{  
+  display:none;  
+  margin-top:12px;  
+  padding:14px;  
+  border-radius:14px;  
+  border:1px solid rgba(243,200,75,.18);  
+  background:#0b1018;  
+  color:#b9c2cb;  
+  font-size:10px;  
+  line-height:1.7;  
+}  
+.bank-details.show{display:block}  
+.bank-details strong{color:var(--gold)}  
+.upload{  
+  position:relative;  
+  min-height:195px;  
+  margin-top:10px;  
+  border-radius:19px;  
+  border:2px dashed #303946;  
+  background:#090c13;  
+  display:grid;  
+  place-items:center;  
+  text-align:center;  
+  padding:18px;  
+  overflow:hidden;  
+}  
+.upload input{position:absolute;inset:0;opacity:0;cursor:pointer}  
+.upload .up{font-size:45px;color:#d5dbe0}  
+.upload span{display:block;margin-top:8px;color:#bec6cd;font-size:13px}  
+.upload small{display:block;margin-top:7px;color:#7d8790;font-size:10px}  
+.file-name{margin-top:8px;color:var(--cyan);font-size:9px;word-break:break-word}  
+.preview{display:none;max-width:100%;max-height:185px;margin:auto;border-radius:13px;object-fit:contain}  
+.security{  
+  display:flex;  
+  align-items:center;  
+  justify-content:space-between;  
+  gap:12px;  
+  max-width:610px;  
+  min-height:84px;  
+  margin:auto;  
+  padding:13px 16px;  
+  border-radius:10px;  
+  background:#fff;  
+  color:#111;  
+}  
+.security-left{display:flex;align-items:center;gap:11px}  
+.check{  
+  width:47px;height:47px;  
+  border-radius:50%;  
+  display:grid;  
+  place-items:center;  
+  background:#27ab5e;  
+  color:#fff;  
+  font-size:27px;  
+}  
+.security small{text-align:right;font-size:9px;color:#60676e}  
+.consent{  
+  display:grid;  
+  grid-template-columns:72px 1fr;  
+  gap:14px;  
+  align-items:start;  
+  margin-top:21px;  
+  padding:18px;  
+  border-radius:19px;  
+  border:1px solid rgba(50,205,244,.17);  
+  background:linear-gradient(180deg,#101820,#0b1016);  
+}  
+.switch{  
+  width:64px;height:35px;  
+  padding:3px;  
+  border-radius:999px;  
+  border:1px solid #28323c;  
+  background:#05080d;  
+  cursor:pointer;  
+}  
+.knob{width:27px;height:27px;border-radius:50%;background:#dce2e7;transition:.24s}  
+.switch.on{background:#1b8f58}  
+.switch.on .knob{transform:translateX(29px);background:#fff}  
+.consent-text{color:#bdc5cc;font-size:11px;line-height:1.58}  
+.consent-text b{color:#fff}  
+.consent-text strong{color:var(--gold)}  
+.footer-pay{  
+  margin-top:24px;  
+  padding-top:23px;  
+  border-top:1px solid rgba(255,255,255,.07);  
+  text-align:center;  
+}  
+.footer-pay small{color:#929ca5;font-size:10px;letter-spacing:2px}  
+.final-total{display:block;margin-top:7px;color:#00c7f4;font-size:35px;font-weight:900}  
+.confirm{  
+  width:100%;height:66px;  
+  margin-top:18px;  
+  border-radius:19px;  
+  border:1px solid #fff1a6;  
+  background:linear-gradient(180deg,#fff6b8,#efb900);  
+  color:#111;  
+  font-size:15px;  
+  font-weight:900;  
+  letter-spacing:2.3px;  
+  box-shadow:0 0 30px rgba(243,200,75,.26);  
+}  
+.confirm:disabled{opacity:.44;cursor:not-allowed}  
+.note{margin-top:12px;color:#8f99a2;font-size:10px}  
+.result{  
+  display:none;  
+  margin-top:14px;  
+  padding:13px;  
+  border-radius:13px;  
+  border:1px solid rgba(50,205,244,.23);  
+  background:rgba(50,205,244,.055);  
+  color:var(--cyan);  
+  font-size:10px;  
+  line-height:1.5;  
+}  
+.result.show{display:block}  
+@media(max-width:650px){  
+  .topbar{min-height:72px;grid-template-columns:48px 1fr 48px;padding:10px 14px}  
+  .topbar button{width:46px;height:46px;font-size:27px}  
+  .topbar h1{font-size:17px}  
+  .subtitle{margin:16px 16px 8px;font-size:13px}  
+  .demo-note{margin:0 16px 10px}  
+  .content{padding:12px 16px 28px}  
+  .card{padding:14px;border-radius:20px}  
+  .card-title h2{font-size:15px}  
+  .package{grid-template-columns:34% 1fr;min-height:86px}  
+  .package-left strong{font-size:28px}  
+  .package-right{padding:10px 12px}  
+  .package-right strong{font-size:15px}  
+  .banks{gap:7px;padding:10px}  
+  .bank{min-height:73px;padding:5px}  
+  .bank-logo{width:45px;height:40px;font-size:16px}  
+  .consent{grid-template-columns:60px 1fr;gap:10px;padding:14px}  
+  .switch{width:56px}  
+  .switch.on .knob{transform:translateX(21px)}  
+  .final-total{font-size:30px}  
+}  
+</style>  
+</head>  
+<body>  
+<div class="shell">  
+  <header class="topbar">  
+    <button id="backBtn" aria-label="Volver">‹</button>  
+    <h1 id="raffleTitle">Rifa</h1>  
+    <button id="closeBtn" aria-label="Cerrar">×</button>  
+  </header>    <div class="subtitle">Completa tu participación</div>  
+  <div class="demo-note">Prototipo visual: esta página no procesa pagos reales, no muestra cuentas bancarias reales y no asigna boletos reales.</div>    <main class="content">  
+    <section class="card">  
+      <div class="card-title">  
+        <div class="ticket-icon">🎟</div>  
+        <div>  
+          <small>TU PARTICIPACIÓN</small>  
+          <h2>CÓMO QUIERES PARTICIPAR</h2>  
+        </div>  
+      </div>  <div class="tabs">  
+    <button class="tab active" data-mode="packages">PAQUETES</button>  
+    <button class="tab" data-mode="free">CANTIDAD LIBRE</button>  
+  </div>  
+
+  <div id="packageMode"><div class="packages" id="packageList"></div></div>  
+
+  <div class="free-mode" id="freeMode">  
+    <div class="qty">  
+      <button id="minusBtn" type="button">−</button>  
+      <input id="freeQty" type="number" min="1" value="1" inputmode="numeric">  
+      <button id="plusBtn" type="button">+</button>  
+    </div>  
+  </div>  
+
+  <div class="total-card">  
+    <span>TOTAL A PAGAR</span>  
+    <strong id="packageTotal">RD$ 0.00</strong>  
+  </div>  
+</section>  
+
+<div class="info">  
+  <div class="info-icon">i</div>  
+  <div>Los números de boletos se <b>asignarían automáticamente al azar</b> después de validar la participación. En esta versión solo se muestra el diseño.</div>  
+</div>  
+
+<section class="form">  
+  <div class="field">  
+    <label>Nombre *</label>  
+    <input id="buyerName" autocomplete="name" placeholder="Ej.: Juan o Juan Carlos">  
+  </div>  
+
+  <div class="field">  
+    <label>Cédula / identificación *</label>  
+    <input id="buyerId" inputmode="numeric" placeholder="000-0000000-0">  
+  </div>  
+
+  <div class="field">  
+    <label>Teléfono (WhatsApp) *</label>  
+    <div class="phone">  
+      <div class="prefix">🇩🇴 +1</div>  
+      <input id="buyerPhone" inputmode="tel" autocomplete="tel" placeholder="809 000 0000">  
+    </div>  
+  </div>  
+
+  <div class="field">  
+    <label>Correo electrónico <span style="font-weight:400;color:#8f99a3">(opcional)</span></label>  
+    <input id="buyerEmail" type="email" autocomplete="email" placeholder="correo@ejemplo.com">  
+  </div>  
+
+  <div class="email-note">ⓘ Las notificaciones que aparecen en esta demostración son únicamente de ejemplo.</div>  
+</section>  
+
+<div class="section-title">Banco a transferir *</div>  
+<div class="choose">Elige una opción.</div>  
+
+<div class="banks" id="banks">  
+  <button class="bank" data-bank="banco-a" type="button"><div class="bank-logo">P</div><small>Banco A · demo</small></button>  
+  <button class="bank" data-bank="banco-b" type="button"><div class="bank-logo">R</div><small>Banco B · demo</small></button>  
+  <button class="bank" data-bank="otro" type="button"><div class="bank-logo">💰</div><small>Otro · demo</small></button>  
+  <button class="bank" data-bank="digital" type="button"><div class="bank-logo">Q</div><small>Digital · demo</small></button>  
+</div>  
+
+<div class="bank-details" id="bankDetails">  
+  <strong>Datos de demostración</strong><br>  
+  Cuenta: DEMO-000000<br>  
+  Titular: RIFAS LUXURY RD · DEMO<br>  
+  No realices transferencias usando estos datos.  
+</div>  
+
+<div class="section-title">Comprobante de pago *</div>  
+<label class="upload">  
+  <input id="receiptFile" type="file" accept=".jpg,.jpeg,.png,.pdf,image/jpeg,image/png,application/pdf">  
+  <div id="uploadPrompt">  
+    <div class="up">⇧</div>  
+    <span>Haz clic para seleccionar tu comprobante</span>  
+    <small>JPG, PNG o PDF · máximo 10 MB</small>  
+    <div class="file-name" id="fileName"></div>  
+  </div>  
+  <img class="preview" id="receiptPreview" alt="Vista previa">  
+</label>  
+
+<div class="section-title">Verificación de seguridad *</div>  
+<div class="security">  
+  <div class="security-left">  
+    <div class="check">✓</div>  
+    <div><strong>Verificación demo completada</strong><div style="font-size:9px;color:#6c737a;margin-top:3px">Interfaz de demostración</div></div>  
+  </div>  
+  <small>SEGURIDAD<br>DEMO</small>  
+</div>  
+
+<div class="consent">  
+  <div class="switch" id="consentSwitch" role="switch" aria-checked="false" tabindex="0"><div class="knob"></div></div>  
+  <div class="consent-text">Confirmo que mis datos (<b>nombre, identificación, teléfono y correo</b>) son correctos. Entiendo que esta es una <strong>demostración visual</strong> y que no se procesa un pago real.</div>  
+</div>  
+
+<div class="footer-pay">  
+  <small>TOTAL A PAGAR</small>  
+  <strong class="final-total" id="finalTotal">RD$ 0.00</strong>  
+  <button class="confirm" id="confirmBtn" disabled>CONFIRMAR ✓</button>  
+  <div class="note">ⓘ Demo: no se enviará dinero ni se asignarán boletos reales.</div>  
+  <div class="result" id="result"></div>  
+</div>
+
+  </main>  
+</div>  <script>  
+const $=(s,c=document)=>c.querySelector(s);  
+const $$=(s,c=document)=>[...c.querySelectorAll(s)];  
+const params=new URLSearchParams(location.search);  
+const raffle=params.get("rifa")||"Rifa";  
+const basePrice=Math.max(.01,Number(params.get("precio")||15));  
+  
+$("#raffleTitle").textContent=raffle;  
+  
+let selectedQty=2;  
+let selectedBank="";  
+let consent=false;  
+let receipt=false;  
+  
+function money(n){  
+  return "RD$ "+Number(n||0).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});  
+}  
+function updateTotal(){  
+  if($("#freeMode").classList.contains("show")){  
+    selectedQty=Math.max(1,parseInt($("#freeQty").value||"1",10));  
+  }  
+  const total=selectedQty*basePrice;  
+  $("#packageTotal").textContent=money(total);  
+  $("#finalTotal").textContent=money(total);  
+}  
+function buildPackages(){  
+  const quantities=[2,5,15,30,100];  
+  $("#packageList").innerHTML="";  
+  quantities.forEach((qty,index)=>{  
+    const btn=document.createElement("button");  
+    btn.type="button";  
+    btn.className="package"+(qty===100?" premium":"");  
+    btn.dataset.qty=qty;  
+    btn.innerHTML=`  
+      <div class="package-left">  
+        <div class="badge">★ PREMIADO</div>  
+        <div><strong>${qty}</strong><span>BOLETOS</span></div>  
+      </div>  
+      <div class="package-right">  
+        <div><strong>${money(qty*basePrice)}</strong><span>SELECCIONAR</span></div>  
+        <div class="radio"></div>  
+      </div>`;  
+    btn.addEventListener("click",()=>{  
+      selectedQty=qty;  
+      $$(".package").forEach(x=>x.classList.remove("selected"));  
+      btn.classList.add("selected");  
+      updateTotal();  
+    });  
+    $("#packageList").appendChild(btn);  
+    if(index===0) btn.click();  
+  });  
+}  
+buildPackages();  
+  
+$$(".tab").forEach(tab=>tab.addEventListener("click",()=>{  
+  $$(".tab").forEach(t=>t.classList.remove("active"));  
+  tab.classList.add("active");  
+  const mode=tab.dataset.mode;  
+  if(mode==="packages"){  
+    $("#packageMode").style.display="";  
+    $("#freeMode").classList.remove("show");  
+    $(".package")?.click();  
+  }else{  
+    $("#packageMode").style.display="none";  
+    $("#freeMode").classList.add("show");  
+    updateTotal();  
+  }  
+}));  
+  
+$("#minusBtn").addEventListener("click",()=>{  
+  $("#freeQty").value=Math.max(1,Number($("#freeQty").value||1)-1);  
+  updateTotal();  
+});  
+$("#plusBtn").addEventListener("click",()=>{  
+  $("#freeQty").value=Math.max(1,Number($("#freeQty").value||1)+1);  
+  updateTotal();  
+});  
+$("#freeQty").addEventListener("input",updateTotal);  
+  
+$$(".bank").forEach(btn=>btn.addEventListener("click",()=>{  
+  selectedBank=btn.dataset.bank;  
+  $$(".bank").forEach(b=>b.classList.remove("selected"));  
+  btn.classList.add("selected");  
+  $("#bankDetails").classList.add("show");  
+  validate();  
+}));  
+  
+$("#receiptFile").addEventListener("change",e=>{  
+  const file=e.target.files?.[0];  
+  receipt=!!file;  
+  if(!file){validate();return;}  
+  if(file.size>10*1024*1024){  
+    alert("El archivo supera los 10 MB.");  
+    e.target.value="";  
+    receipt=false;  
+    validate();  
+    return;  
+  }  
+  $("#fileName").textContent=file.name;  
+  if(file.type.startsWith("image/")){  
+    const reader=new FileReader();  
+    reader.onload=()=>{  
+      $("#receiptPreview").src=reader.result;  
+      $("#receiptPreview").style.display="block";  
+      $("#uploadPrompt").style.display="none";  
+    };  
+    reader.readAsDataURL(file);  
+  }  
+  validate();  
+});  
+  
+function toggleConsent(){  
+  consent=!consent;  
+  $("#consentSwitch").classList.toggle("on",consent);  
+  $("#consentSwitch").setAttribute("aria-checked",consent?"true":"false");  
+  validate();  
+}  
+$("#consentSwitch").addEventListener("click",toggleConsent);  
+$("#consentSwitch").addEventListener("keydown",e=>{  
+  if(e.key==="Enter"||e.key===" "){e.preventDefault();toggleConsent();}  
+});  
+  
+function validate(){  
+  const ok=$("#buyerName").value.trim() && $("#buyerId").value.trim() && $("#buyerPhone").value.trim() && selectedBank && receipt && consent;  
+  $("#confirmBtn").disabled=!ok;  
+}  
+["buyerName","buyerId","buyerPhone","buyerEmail"].forEach(id=>$("#"+id).addEventListener("input",validate));  
+  
+$("#confirmBtn").addEventListener("click",()=>{  
+  if($("#confirmBtn").disabled)return;  
+  $("#result").textContent="Demostración completada. No se procesó ningún pago ni se asignaron boletos reales.";  
+  $("#result").classList.add("show");  
+  $("#result").scrollIntoView({behavior:"smooth",block:"center"});  
+});  
+  
+function goBack(){history.length>1?history.back():location.href="index.html";}  
+$("#backBtn").addEventListener("click",goBack);  
+$("#closeBtn").addEventListener("click",goBack);  
+updateTotal();  
+</script>  </body>  
+</html>  
