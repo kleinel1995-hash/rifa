@@ -9,909 +9,980 @@
 *{box-sizing:border-box}
 
 :root{
---bg:#050816;
---card:#0b1020;
---card2:#10172b;
---line:#202d4d;
---blue:#42e8ff;
---purple:#8b5cf6;
---pink:#d946ef;
---gold:#ffd84d;
---text:#fff;
---muted:#8994ae;
---green:#22d47a;
---red:#ff4d67;
+ --bg:#050816;
+ --card:#0b1020;
+ --card2:#10172b;
+ --line:#202d4d;
+ --blue:#42e8ff;
+ --purple:#8b5cf6;
+ --pink:#d946ef;
+ --gold:#ffd84d;
+ --text:#fff;
+ --muted:#8994ae;
+ --green:#22d47a;
+ --red:#ff4d67;
 }
 
 html{scroll-behavior:smooth}
 
 body{
-margin:0;
-color:var(--text);
-font-family:Arial,Helvetica,sans-serif;
-background:
-radial-gradient(circle at 10% 0%,#17255a 0,transparent 32%),
-radial-gradient(circle at 90% 10%,#35145b 0,transparent 28%),
-linear-gradient(180deg,#040714,#02040b);
-min-height:100vh;
+ margin:0;
+ color:var(--text);
+ font-family:Arial,Helvetica,sans-serif;
+ background:
+ radial-gradient(circle at 10% 0%,#17255a 0,transparent 32%),
+ radial-gradient(circle at 90% 10%,#35145b 0,transparent 28%),
+ linear-gradient(180deg,#040714,#02040b);
+ min-height:100vh;
 }
 
 button,input,select{font-family:inherit}
 button{-webkit-tap-highlight-color:transparent}
 
 header{
-height:72px;
-position:sticky;
-top:0;
-z-index:50;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 15px;
-background:#050816ee;
-backdrop-filter:blur(20px);
-border-bottom:1px solid #263352;
+ height:72px;
+ position:sticky;
+ top:0;
+ z-index:50;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ padding:0 15px;
+ background:#050816ee;
+ backdrop-filter:blur(20px);
+ border-bottom:1px solid #263352;
 }
 
 .logo{
-padding:10px 16px;
-border:1px solid #34446e;
-border-radius:30px;
-background:#0b1124;
-font-size:16px;
-font-weight:900;
-letter-spacing:.8px;
-box-shadow:0 0 25px #426aff15;
+ padding:10px 16px;
+ border:1px solid #34446e;
+ border-radius:30px;
+ background:#0b1124;
+ font-size:16px;
+ font-weight:900;
+ letter-spacing:.8px;
+ box-shadow:0 0 25px #426aff15;
 }
 
 .logo span{
-display:inline-block;
-margin-left:5px;
-padding:5px 8px;
-border-radius:8px;
-color:#071020;
-background:linear-gradient(135deg,var(--blue),#9b7bff);
+ display:inline-block;
+ margin-left:5px;
+ padding:5px 8px;
+ border-radius:8px;
+ color:#071020;
+ background:linear-gradient(135deg,var(--blue),#9b7bff);
 }
 
 .menuBtn{
-width:48px;
-height:48px;
-border-radius:15px;
-border:1px solid #34446e;
-color:var(--blue);
-background:#0a1123;
-font-size:25px;
-cursor:pointer;
+ width:48px;
+ height:48px;
+ border-radius:15px;
+ border:1px solid #34446e;
+ color:var(--blue);
+ background:#0a1123;
+ font-size:25px;
+ cursor:pointer;
 }
 
 .menu{
-position:fixed;
-top:72px;
-right:12px;
-z-index:100;
-width:220px;
-display:none;
-padding:10px;
-border:1px solid #304064;
-border-radius:18px;
-background:#080e1cee;
-backdrop-filter:blur(20px);
-box-shadow:0 20px 50px #000b;
+ position:fixed;
+ top:72px;
+ right:12px;
+ z-index:100;
+ width:220px;
+ display:none;
+ padding:10px;
+ border:1px solid #304064;
+ border-radius:18px;
+ background:#080e1cee;
+ backdrop-filter:blur(20px);
+ box-shadow:0 20px 50px #000b;
 }
 
 .menu.active{display:block}
 
 .menu button{
-width:100%;
-padding:14px;
-margin:3px 0;
-border:0;
-border-radius:12px;
-text-align:left;
-background:transparent;
-color:white;
-font-weight:800;
+ width:100%;
+ padding:14px;
+ margin:3px 0;
+ border:0;
+ border-radius:12px;
+ text-align:left;
+ background:transparent;
+ color:white;
+ font-weight:800;
 }
 
 .menu button:hover{
-background:#17233d;
-color:var(--blue);
+ background:#17233d;
+ color:var(--blue);
 }
 
 main{
-width:100%;
-max-width:760px;
-margin:auto;
-padding:20px 15px 70px;
+ width:100%;
+ max-width:760px;
+ margin:auto;
+ padding:20px 15px 70px;
 }
 
 .hero{
-position:relative;
-overflow:hidden;
-padding:30px 22px;
-border:1px solid #29385f;
-border-radius:30px;
-background:
-linear-gradient(135deg,#0c1630,#080d1e 60%,#160d27);
-box-shadow:0 25px 70px #0008,inset 0 1px #ffffff08;
+ position:relative;
+ overflow:hidden;
+ padding:30px 22px;
+ border:1px solid #29385f;
+ border-radius:30px;
+ background:linear-gradient(135deg,#0c1630,#080d1e 60%,#160d27);
+ box-shadow:0 25px 70px #0008,inset 0 1px #ffffff08;
 }
 
 .hero:before{
-content:"";
-position:absolute;
-width:250px;
-height:250px;
-right:-110px;
-top:-120px;
-border-radius:50%;
-background:#42e8ff22;
-filter:blur(12px);
+ content:"";
+ position:absolute;
+ width:250px;
+ height:250px;
+ right:-110px;
+ top:-120px;
+ border-radius:50%;
+ background:#42e8ff22;
+ filter:blur(12px);
 }
 
 .hero:after{
-content:"";
-position:absolute;
-width:200px;
-height:200px;
-left:-130px;
-bottom:-130px;
-border-radius:50%;
-background:#a855f722;
-filter:blur(15px);
+ content:"";
+ position:absolute;
+ width:200px;
+ height:200px;
+ left:-130px;
+ bottom:-130px;
+ border-radius:50%;
+ background:#a855f722;
+ filter:blur(15px);
 }
 
 .eyebrow{
-position:relative;
-z-index:2;
-display:inline-flex;
-align-items:center;
-gap:7px;
-padding:8px 12px;
-border:1px solid #355477;
-border-radius:30px;
-color:var(--blue);
-background:#071325;
-font-size:11px;
-font-weight:900;
-letter-spacing:1.5px;
+ position:relative;
+ z-index:2;
+ display:inline-flex;
+ align-items:center;
+ gap:7px;
+ padding:8px 12px;
+ border:1px solid #355477;
+ border-radius:30px;
+ color:var(--blue);
+ background:#071325;
+ font-size:11px;
+ font-weight:900;
+ letter-spacing:1.5px;
 }
 
 .hero h1{
-position:relative;
-z-index:2;
-margin:18px 0 12px;
-font-size:41px;
-line-height:1.02;
+ position:relative;
+ z-index:2;
+ margin:18px 0 12px;
+ font-size:41px;
+ line-height:1.02;
 }
 
 .gradient{
-background:linear-gradient(90deg,var(--blue),#8f78ff,#e45cff);
--webkit-background-clip:text;
-color:transparent;
+ background:linear-gradient(90deg,var(--blue),#8f78ff,#e45cff);
+ -webkit-background-clip:text;
+ color:transparent;
 }
 
 .hero p{
-position:relative;
-z-index:2;
-color:var(--muted);
-line-height:1.55;
+ position:relative;
+ z-index:2;
+ color:var(--muted);
+ line-height:1.55;
 }
 
 .btn{
-border:0;
-border-radius:15px;
-padding:15px 18px;
-font-weight:900;
-cursor:pointer;
-transition:.2s;
+ border:0;
+ border-radius:15px;
+ padding:15px 18px;
+ font-weight:900;
+ cursor:pointer;
+ transition:.2s;
 }
 
 .primary{
-color:#03101b;
-background:linear-gradient(100deg,var(--blue),#7597ff);
-box-shadow:0 8px 25px #42e8ff25,0 0 25px #8b5cf625;
+ color:#03101b;
+ background:linear-gradient(100deg,var(--blue),#7597ff);
+ box-shadow:0 8px 25px #42e8ff25,0 0 25px #8b5cf625;
 }
 
 .hero .btn{
-position:relative;
-z-index:3;
-width:100%;
-margin-top:14px;
+ position:relative;
+ z-index:3;
+ width:100%;
+ margin-top:14px;
 }
 
 .verifyBtn{
-color:#fff;
-background:linear-gradient(100deg,#8b5cf6,#d946ef);
-box-shadow:0 8px 25px #8b5cf625;
+ color:#fff;
+ background:linear-gradient(100deg,#8b5cf6,#d946ef);
+ box-shadow:0 8px 25px #8b5cf625;
+}
+
+.btn:disabled{
+ opacity:.55;
+ cursor:not-allowed;
+ box-shadow:none;
 }
 
 .card{
-margin-top:22px;
-overflow:hidden;
-border:1px solid #273654;
-border-radius:30px;
-background:linear-gradient(180deg,#0c1325,#070b16);
-box-shadow:0 25px 60px #0009;
+ margin-top:22px;
+ overflow:hidden;
+ border:1px solid #273654;
+ border-radius:30px;
+ background:linear-gradient(180deg,#0c1325,#070b16);
+ box-shadow:0 25px 60px #0009;
 }
 
 .photo{
-height:330px;
-position:relative;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:120px;
-background:radial-gradient(circle at 50% 40%,#334d83,#111a31 40%,#070b16 75%);
+ height:330px;
+ position:relative;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:120px;
+ background:radial-gradient(circle at 50% 40%,#334d83,#111a31 40%,#070b16 75%);
 }
 
 .photo img{
-position:absolute;
-inset:0;
-width:100%;
-height:100%;
-object-fit:cover;
+ position:absolute;
+ inset:0;
+ width:100%;
+ height:100%;
+ object-fit:cover;
 }
 
 .photo:before{
-content:"";
-position:absolute;
-inset:18px;
-z-index:2;
-border-radius:24px;
-border:1px solid #62eaff33;
-box-shadow:inset 0 0 40px #42e8ff09,0 0 40px #42e8ff0a;
-pointer-events:none;
+ content:"";
+ position:absolute;
+ inset:18px;
+ z-index:2;
+ border-radius:24px;
+ border:1px solid #62eaff33;
+ box-shadow:inset 0 0 40px #42e8ff09,0 0 40px #42e8ff0a;
+ pointer-events:none;
 }
 
 .shade{
-position:absolute;
-inset:35% 0 0;
-z-index:3;
-background:linear-gradient(transparent,#060a14);
+ position:absolute;
+ inset:35% 0 0;
+ z-index:3;
+ background:linear-gradient(transparent,#060a14);
 }
 
 .photoText{
-position:absolute;
-z-index:4;
-left:22px;
-right:22px;
-bottom:21px;
+ position:absolute;
+ z-index:4;
+ left:22px;
+ right:22px;
+ bottom:21px;
 }
 
 .tag{
-display:inline-block;
-padding:8px 11px;
-border-radius:9px;
-background:linear-gradient(90deg,var(--blue),#8c7aff);
-color:#06101b;
-font-size:11px;
-font-weight:900;
+ display:inline-block;
+ padding:8px 11px;
+ border-radius:9px;
+ background:linear-gradient(90deg,var(--blue),#8c7aff);
+ color:#06101b;
+ font-size:11px;
+ font-weight:900;
+}
+
+.soldOutTag{
+ display:inline-block;
+ margin-left:6px;
+ padding:8px 11px;
+ border-radius:9px;
+ background:linear-gradient(90deg,#ff4d67,#ff8b4d);
+ color:#fff;
+ font-size:11px;
+ font-weight:900;
+ box-shadow:0 0 20px #ff4d6740;
 }
 
 .photoText h2{
-margin:11px 0 4px;
-font-size:29px;
+ margin:11px 0 4px;
+ font-size:29px;
 }
 
 .photoText span:last-child{
-color:#c2c9d9;
+ color:#c2c9d9;
 }
 
 .body{padding:23px}
 
 .category{
-color:#a78bfa;
-font-size:12px;
-font-weight:900;
-letter-spacing:1px;
+ color:#a78bfa;
+ font-size:12px;
+ font-weight:900;
+ letter-spacing:1px;
 }
 
 .body h2{
-margin:11px 0 5px;
-font-size:24px;
+ margin:11px 0 5px;
+ font-size:24px;
 }
 
 .muted{
-color:var(--muted);
-line-height:1.5;
+ color:var(--muted);
+ line-height:1.5;
 }
 
 .price{
-margin-top:17px;
-color:var(--blue);
-font-size:32px;
-font-weight:900;
+ margin-top:17px;
+ color:var(--blue);
+ font-size:32px;
+ font-weight:900;
 }
 
 .progress{
-height:9px;
-margin-top:9px;
-overflow:hidden;
-border-radius:20px;
-background:#182039;
+ height:9px;
+ margin-top:9px;
+ overflow:hidden;
+ border-radius:20px;
+ background:#182039;
 }
 
 .progress i{
-display:block;
-height:100%;
-border-radius:20px;
-background:linear-gradient(90deg,#536cff,var(--purple),var(--blue));
+ display:block;
+ height:100%;
+ border-radius:20px;
+ background:linear-gradient(90deg,#536cff,var(--purple),var(--blue));
+}
+
+.soldOutBox{
+ margin-top:18px;
+ padding:15px;
+ text-align:center;
+ border:1px solid #743143;
+ border-radius:16px;
+ background:linear-gradient(145deg,#24101a,#110b12);
+ color:#ff8093;
+ font-weight:900;
+ letter-spacing:1px;
 }
 
 .checkout{
-display:none;
-overflow:hidden;
-border:1px solid #29385b;
-border-radius:30px;
-background:#070b16;
-box-shadow:0 25px 80px #000b;
+ display:none;
+ overflow:hidden;
+ border:1px solid #29385b;
+ border-radius:30px;
+ background:#070b16;
+ box-shadow:0 25px 80px #000b;
 }
 
 .checkout.active{display:block}
 .catalog.hidden{display:none}
 
 .checkoutHead{
-position:sticky;
-top:0;
-z-index:10;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:13px 15px;
-border-bottom:1px solid #202d49;
-background:#070b16ee;
-backdrop-filter:blur(18px);
+ position:sticky;
+ top:0;
+ z-index:10;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ padding:13px 15px;
+ border-bottom:1px solid #202d49;
+ background:#070b16ee;
+ backdrop-filter:blur(18px);
 }
 
 .checkoutHead h2{
-margin:0;
-font-size:18px;
-background:linear-gradient(90deg,var(--blue),#c2b5ff);
--webkit-background-clip:text;
-color:transparent;
-text-align:center;
+ margin:0;
+ font-size:18px;
+ background:linear-gradient(90deg,var(--blue),#c2b5ff);
+ -webkit-background-clip:text;
+ color:transparent;
+ text-align:center;
 }
 
 .back,.close{
-width:44px;
-height:44px;
-border-radius:14px;
-border:1px solid #304064;
-background:#0d1426;
-color:var(--blue);
-font-size:25px;
-cursor:pointer;
+ width:44px;
+ height:44px;
+ border-radius:14px;
+ border:1px solid #304064;
+ background:#0d1426;
+ color:var(--blue);
+ font-size:25px;
+ cursor:pointer;
 }
 
 .section{padding:22px}
 
 .participation{
-padding:18px;
-border:1px solid #304365;
-border-radius:22px;
-background:linear-gradient(145deg,#0e172c,#090e1c);
+ padding:18px;
+ border:1px solid #304365;
+ border-radius:22px;
+ background:linear-gradient(145deg,#0e172c,#090e1c);
 }
 
 .participationTop{
-display:flex;
-align-items:center;
-gap:14px;
+ display:flex;
+ align-items:center;
+ gap:14px;
 }
 
 .ticketIcon{
-width:66px;
-height:66px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:18px;
-background:linear-gradient(135deg,#c9fbff,#716dff);
-color:#081021;
-font-size:32px;
+ width:66px;
+ height:66px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ border-radius:18px;
+ background:linear-gradient(135deg,#c9fbff,#716dff);
+ color:#081021;
+ font-size:32px;
 }
 
 .participationTop b{
-color:var(--blue);
-font-size:11px;
-letter-spacing:2px;
+ color:var(--blue);
+ font-size:11px;
+ letter-spacing:2px;
 }
 
 .participationTop h3{
-margin:6px 0 0;
-font-size:18px;
+ margin:6px 0 0;
+ font-size:18px;
 }
 
 .switch{
-display:flex;
-gap:4px;
-margin-top:19px;
-padding:4px;
-border:1px solid #273652;
-border-radius:16px;
-background:#080d19;
+ display:flex;
+ gap:4px;
+ margin-top:19px;
+ padding:4px;
+ border:1px solid #273652;
+ border-radius:16px;
+ background:#080d19;
 }
 
 .switch button{
-flex:1;
-padding:14px 7px;
-border:0;
-border-radius:12px;
-color:#7e899f;
-background:transparent;
-font-weight:900;
-cursor:pointer;
+ flex:1;
+ padding:14px 7px;
+ border:0;
+ border-radius:12px;
+ color:#7e899f;
+ background:transparent;
+ font-weight:900;
+ cursor:pointer;
 }
 
 .switch button.on{
-color:#06101b;
-background:linear-gradient(90deg,var(--blue),#8790ff);
+ color:#06101b;
+ background:linear-gradient(90deg,var(--blue),#8790ff);
 }
 
 .packages{
-display:grid;
-gap:11px;
-margin-top:16px;
+ display:grid;
+ gap:11px;
+ margin-top:16px;
 }
 
 .pack{
-display:flex;
-align-items:center;
-overflow:hidden;
-border:1px solid #2b3a58;
-border-radius:19px;
-background:#0c1221;
-cursor:pointer;
+ display:flex;
+ align-items:center;
+ overflow:hidden;
+ border:1px solid #2b3a58;
+ border-radius:19px;
+ background:#0c1221;
+ cursor:pointer;
 }
 
 .pack.selected{outline:2px solid var(--blue)}
-.pack.disabled{opacity:.35;cursor:not-allowed}
+.pack.disabled{
+ opacity:.35;
+ cursor:not-allowed;
+}
 
 .pack .count{
-width:38%;
-padding:17px 8px;
-text-align:center;
-color:var(--blue);
-background:#111a30;
-font-size:25px;
-font-weight:900;
+ width:38%;
+ padding:17px 8px;
+ text-align:center;
+ color:var(--blue);
+ background:#111a30;
+ font-size:25px;
+ font-weight:900;
 }
 
 .pack .amount{
-flex:1;
-padding:15px;
-text-align:center;
-font-size:18px;
-font-weight:900;
+ flex:1;
+ padding:15px;
+ text-align:center;
+ font-size:18px;
+ font-weight:900;
 }
 
 .pack small{
-display:block;
-margin-top:5px;
-color:#7e899d;
-font-size:10px;
+ display:block;
+ margin-top:5px;
+ color:#7e899d;
+ font-size:10px;
 }
 
 .pack.gold{
-border-color:#5e5328;
-background:linear-gradient(90deg,#171508,#0b101c);
+ border-color:#5e5328;
+ background:linear-gradient(90deg,#171508,#0b101c);
 }
 
 .pack.gold .count{
-color:var(--gold);
-background:#211d0b;
+ color:var(--gold);
+ background:#211d0b;
 }
 
 .freeBox{
-display:none;
-margin-top:16px;
-padding:20px;
-text-align:center;
-border:1px solid #275d70;
-border-radius:21px;
-background:radial-gradient(circle at top,#123348,#080e1a 65%);
+ display:none;
+ margin-top:16px;
+ padding:20px;
+ text-align:center;
+ border:1px solid #275d70;
+ border-radius:21px;
+ background:radial-gradient(circle at top,#123348,#080e1a 65%);
 }
 
 .freeBox.active{display:block}
 .freeHint{color:#aeb8cb}
 
 .quantity{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:11px;
-margin-top:18px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ gap:11px;
+ margin-top:18px;
 }
 
 .qtyBtn{
-width:73px;
-height:68px;
-border-radius:18px;
-border:1px solid #34758c;
-background:#0b1321;
-color:var(--blue);
-font-size:38px;
-font-weight:900;
-cursor:pointer;
+ width:73px;
+ height:68px;
+ border-radius:18px;
+ border:1px solid #34758c;
+ background:#0b1321;
+ color:var(--blue);
+ font-size:38px;
+ font-weight:900;
+ cursor:pointer;
 }
 
 .qtyBtn:disabled{
-opacity:.25;
-cursor:not-allowed;
+ opacity:.25;
+ cursor:not-allowed;
 }
 
 .qtyNumber{
-width:105px;
-height:68px;
-display:flex;
-align-items:center;
-justify-content:center;
-border:2px solid var(--blue);
-border-radius:18px;
-background:#060b14;
-font-size:36px;
-font-weight:900;
+ width:105px;
+ height:68px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ border:2px solid var(--blue);
+ border-radius:18px;
+ background:#060b14;
+ font-size:36px;
+ font-weight:900;
 }
 
 .freeTotal{
-margin-top:18px;
-padding:18px;
-border:1px solid #253450;
-border-radius:17px;
-background:#060a12;
+ margin-top:18px;
+ padding:18px;
+ border:1px solid #253450;
+ border-radius:17px;
+ background:#060a12;
 }
 
 .freeTotal small,.total small{
-color:#7e899e;
-letter-spacing:3px;
+ color:#7e899e;
+ letter-spacing:3px;
 }
 
 .freeTotal strong{
-display:block;
-margin-top:7px;
-color:var(--blue);
-font-size:32px;
+ display:block;
+ margin-top:7px;
+ color:var(--blue);
+ font-size:32px;
 }
 
 .limitText{
-color:#7f899e;
-font-size:13px;
+ color:#7f899e;
+ font-size:13px;
 }
 
 .info{
-margin-top:18px;
-padding:16px;
-border:1px solid #4d4828;
-border-radius:17px;
-background:#111319;
-color:#aeb7c8;
-line-height:1.5;
+ margin-top:18px;
+ padding:16px;
+ border:1px solid #4d4828;
+ border-radius:17px;
+ background:#111319;
+ color:#aeb7c8;
+ line-height:1.5;
 }
 
 .info b{color:var(--gold)}
 
 label{
-display:block;
-margin:18px 0 8px;
-font-weight:800;
+ display:block;
+ margin:18px 0 8px;
+ font-weight:800;
 }
 
 input,select{
-width:100%;
-padding:15px;
-border:1px solid #2c3954;
-border-radius:13px;
-outline:none;
-background:#080d18;
-color:white;
-font-size:16px;
+ width:100%;
+ padding:15px;
+ border:1px solid #2c3954;
+ border-radius:13px;
+ outline:none;
+ background:#080d18;
+ color:white;
+ font-size:16px;
 }
 
 select{
-cursor:pointer;
-appearance:auto;
+ cursor:pointer;
+ appearance:auto;
 }
 
 .bankgrid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:8px;
-padding:10px;
-border:1px solid #293650;
-border-radius:19px;
-background:#090e19;
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:8px;
+ padding:10px;
+ border:1px solid #293650;
+ border-radius:19px;
+ background:#090e19;
 }
 
 .bank{
-position:relative;
-height:65px;
-border:1px solid #293650;
-border-radius:14px;
-background:#111827;
-color:white;
-font-size:24px;
-cursor:pointer;
+ position:relative;
+ height:65px;
+ border:1px solid #293650;
+ border-radius:14px;
+ background:#111827;
+ color:white;
+ font-size:24px;
+ cursor:pointer;
 }
 
 .bank.selected{
-border:2px solid var(--blue);
-box-shadow:0 0 18px #42e8ff1c;
+ border:2px solid var(--blue);
+ box-shadow:0 0 18px #42e8ff1c;
 }
 
 .check{
-position:absolute;
-top:-7px;
-right:-5px;
-width:23px;
-height:23px;
-display:none;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:var(--blue);
-color:#06101b;
-font-size:14px;
-font-weight:900;
+ position:absolute;
+ top:-7px;
+ right:-5px;
+ width:23px;
+ height:23px;
+ display:none;
+ align-items:center;
+ justify-content:center;
+ border-radius:50%;
+ background:var(--blue);
+ color:#06101b;
+ font-size:14px;
+ font-weight:900;
 }
 
 .bank.selected .check{display:flex}
 
 .account{
-display:none;
-margin-top:15px;
-padding:18px;
-border:1px solid #35476a;
-border-radius:20px;
-background:#080d18;
+ display:none;
+ margin-top:15px;
+ padding:18px;
+ border:1px solid #35476a;
+ border-radius:20px;
+ background:#080d18;
 }
 
 .account.active{display:block}
 
 .bankTitle{
-display:flex;
-align-items:center;
-gap:12px;
+ display:flex;
+ align-items:center;
+ gap:12px;
 }
 
 .bankLogo{
-width:56px;
-height:56px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:14px;
-background:#eef3fa;
-color:#152343;
-font-size:25px;
-font-weight:900;
+ width:56px;
+ height:56px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ border-radius:14px;
+ background:#eef3fa;
+ color:#152343;
+ font-size:25px;
+ font-weight:900;
 }
 
 .account hr{
-margin:16px 0;
-border:0;
-border-top:1px solid #202b41;
+ margin:16px 0;
+ border:0;
+ border-top:1px solid #202b41;
 }
 
 .accountLabel{
-color:#7f899b;
-font-size:11px;
-font-weight:900;
-letter-spacing:1px;
+ color:#7f899b;
+ font-size:11px;
+ font-weight:900;
+ letter-spacing:1px;
 }
 
 .accountNumber{
-margin:8px 0;
-color:#fff;
-font-size:26px;
-font-weight:900;
-word-break:break-all;
+ margin:8px 0;
+ color:#fff;
+ font-size:26px;
+ font-weight:900;
+ word-break:break-all;
 }
 
 .copy{
-float:right;
-margin-top:-47px;
-padding:11px 14px;
-border:1px solid #2e4a69;
-border-radius:12px;
-background:#0c1728;
-color:var(--blue);
-font-weight:900;
-cursor:pointer;
+ float:right;
+ margin-top:-47px;
+ padding:11px 14px;
+ border:1px solid #2e4a69;
+ border-radius:12px;
+ background:#0c1728;
+ color:var(--blue);
+ font-weight:900;
+ cursor:pointer;
 }
 
 .holder{
-margin-top:7px;
-font-size:20px;
-font-weight:900;
+ margin-top:7px;
+ font-size:20px;
+ font-weight:900;
 }
 
 .transferNote{
-color:#a9b2c2;
-line-height:1.5;
+ color:#a9b2c2;
+ line-height:1.5;
 }
 
 .transferNote b{color:var(--gold)}
 
 .upload{
-display:block;
-padding:30px 15px;
-text-align:center;
-border:2px dashed #344664;
-border-radius:19px;
-color:#9aa5b8;
-cursor:pointer;
-background:#080d18;
+ display:block;
+ padding:30px 15px;
+ text-align:center;
+ border:2px dashed #344664;
+ border-radius:19px;
+ color:#9aa5b8;
+ cursor:pointer;
+ background:#080d18;
 }
 
 #fileName{
-margin-top:10px;
-color:var(--green);
-font-weight:bold;
+ margin-top:10px;
+ color:var(--green);
+ font-weight:bold;
 }
 
 .cloudflare{
-padding:17px;
-border-radius:6px;
-background:#fff;
-color:#222;
-font-weight:bold;
+ padding:17px;
+ border-radius:6px;
+ background:#fff;
+ color:#222;
+ font-weight:bold;
 }
 
 .consent{
-display:flex;
-align-items:flex-start;
-gap:10px;
-padding:16px;
-border:1px solid #293650;
-border-radius:17px;
-color:#aeb7c7;
-line-height:1.5;
+ display:flex;
+ align-items:flex-start;
+ gap:10px;
+ padding:16px;
+ border:1px solid #293650;
+ border-radius:17px;
+ color:#aeb7c7;
+ line-height:1.5;
 }
 
 .consent input{
-width:20px;
-margin-top:4px;
+ width:20px;
+ margin-top:4px;
 }
 
 .total{
-margin-top:25px;
-padding-top:24px;
-text-align:center;
-border-top:1px solid #202d45;
+ margin-top:25px;
+ padding-top:24px;
+ text-align:center;
+ border-top:1px solid #202d45;
 }
 
 .total strong{
-display:block;
-margin:8px 0 18px;
-color:var(--blue);
-font-size:38px;
+ display:block;
+ margin:8px 0 18px;
+ color:var(--blue);
+ font-size:38px;
 }
 
 .total .btn{width:100%}
 
 .notice{
-display:none;
-margin-top:14px;
-padding:14px;
-border:1px solid #238052;
-border-radius:13px;
-background:#092318;
-color:#6ff0aa;
+ display:none;
+ margin-top:14px;
+ padding:14px;
+ border:1px solid #238052;
+ border-radius:13px;
+ background:#092318;
+ color:#6ff0aa;
 }
 
 .noRaffle{
-padding:30px;
-text-align:center;
-border:1px dashed #334361;
-border-radius:20px;
-color:var(--muted);
+ padding:30px;
+ text-align:center;
+ border:1px dashed #334361;
+ border-radius:20px;
+ color:var(--muted);
 }
 
 .verifyResult{margin-top:18px}
 
 .numberGrid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(70px,1fr));
-gap:8px;
-margin-top:10px;
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(70px,1fr));
+ gap:8px;
+ margin-top:10px;
 }
 
 .numberItem{
-padding:12px 5px;
-text-align:center;
-border:1px solid #34758c;
-border-radius:12px;
-background:#071321;
-color:var(--gold);
-font-size:18px;
-font-weight:900;
-box-shadow:0 0 15px #42e8ff10;
+ padding:12px 5px;
+ text-align:center;
+ border:1px solid #34758c;
+ border-radius:12px;
+ background:#071321;
+ color:var(--gold);
+ font-size:18px;
+ font-weight:900;
+ box-shadow:0 0 15px #42e8ff10;
 }
 
 .acceptedCard{
-margin-top:14px;
-padding:18px;
-border:1px solid #275d70;
-border-radius:20px;
-background:linear-gradient(145deg,#0e172c,#090e1c);
+ margin-top:14px;
+ padding:18px;
+ border:1px solid #275d70;
+ border-radius:20px;
+ background:linear-gradient(145deg,#0e172c,#090e1c);
 }
 
 .acceptedTitle{
-color:var(--green);
-font-weight:900;
-font-size:13px;
-letter-spacing:1px;
+ color:var(--green);
+ font-weight:900;
+ font-size:13px;
+ letter-spacing:1px;
 }
 
 .pendingCard{
-margin-top:14px;
-padding:18px;
-border:1px solid #5e5328;
-border-radius:20px;
-background:linear-gradient(145deg,#171508,#0b101c);
+ margin-top:14px;
+ padding:18px;
+ border:1px solid #5e5328;
+ border-radius:20px;
+ background:linear-gradient(145deg,#171508,#0b101c);
 }
 
 .pendingTitle{
-color:var(--gold);
-font-weight:900;
-font-size:13px;
-letter-spacing:1px;
+ color:var(--gold);
+ font-weight:900;
+ font-size:13px;
+ letter-spacing:1px;
 }
 
 .verifyEmpty{
-margin-top:16px;
-padding:18px;
-border:1px solid #4d4828;
-border-radius:17px;
-background:#111319;
-color:#aeb8c7;
-line-height:1.5;
+ margin-top:16px;
+ padding:18px;
+ border:1px solid #4d4828;
+ border-radius:17px;
+ background:#111319;
+ color:#aeb8c7;
+ line-height:1.5;
 }
 
 .verifyInfo{
-margin-top:14px;
-padding:14px;
-border:1px solid #293650;
-border-radius:15px;
-background:#080d18;
-color:#aeb7c8;
-font-size:13px;
-line-height:1.5;
+ margin-top:14px;
+ padding:14px;
+ border:1px solid #293650;
+ border-radius:15px;
+ background:#080d18;
+ color:#aeb7c8;
+ font-size:13px;
+ line-height:1.5;
+}
+
+.searchNumberBox{
+ margin-top:14px;
+ padding:13px;
+ border:1px solid #293650;
+ border-radius:15px;
+ background:#080d18;
+ color:#8994ae;
+ font-size:12px;
+ line-height:1.5;
 }
 
 @media(max-width:500px){
 
-main{padding:16px 12px 60px}
-header{padding:0 12px}
+ main{
+  padding:16px 12px 60px;
+ }
 
-.logo{
-font-size:14px;
-padding:9px 12px;
-}
+ header{
+  padding:0 12px;
+ }
 
-.hero{padding:27px 19px}
-.hero h1{font-size:35px}
-.photo{height:275px}
-.photoText h2{font-size:25px}
-.section{padding:18px}
+ .logo{
+  font-size:14px;
+  padding:9px 12px;
+ }
 
-.bankgrid{
-grid-template-columns:repeat(4,1fr);
-}
+ .hero{
+  padding:27px 19px;
+ }
 
-.bank{height:58px}
+ .hero h1{
+  font-size:35px;
+ }
 
-.pack .count{
-width:37%;
-font-size:22px;
-}
+ .photo{
+  height:275px;
+ }
 
-.qtyBtn{width:68px}
+ .photoText h2{
+  font-size:25px;
+ }
 
-.menu{
-right:10px;
-width:205px;
-}
+ .section{
+  padding:18px;
+ }
 
+ .bankgrid{
+  grid-template-columns:repeat(4,1fr);
+ }
+
+ .bank{
+  height:58px;
+ }
+
+ .pack .count{
+  width:37%;
+  font-size:22px;
+ }
+
+ .qtyBtn{
+  width:68px;
+ }
+
+ .menu{
+  right:10px;
+  width:205px;
+ }
+
+ .soldOutTag{
+  display:block;
+  width:max-content;
+  margin:8px 0 0;
+ }
 }
 </style>
 </head>
@@ -921,8 +992,7 @@ width:205px;
 <header>
 
 <div class="logo">
-RIFAS LUXURY
-<span>RD</span>
+ RIFAS LUXURY <span>RD</span>
 </div>
 
 <button class="menuBtn" onclick="toggleMenu()">☰</button>
@@ -948,28 +1018,29 @@ RIFAS LUXURY
 <div class="hero">
 
 <div class="eyebrow">
-✦ EXPERIENCIA EXCLUSIVA
+ ✦ EXPERIENCIA EXCLUSIVA
 </div>
 
 <h1>
-Premios que se sienten
-<br>
-<span class="gradient">
-extraordinarios.
-</span>
+ Premios que se sienten <br>
+ <span class="gradient">extraordinarios.</span>
 </h1>
 
 <p>
-Participa desde tu celular, consulta tus boletos
-y descubre rifas seleccionadas.
+ Participa desde tu celular, consulta tus boletos y descubre rifas seleccionadas.
 </p>
 
-<button class="btn primary" onclick="openCheckout()">
-QUIERO PARTICIPAR
+<button
+ id="heroParticipateBtn"
+ class="btn primary"
+ onclick="openCheckout()">
+ QUIERO PARTICIPAR
 </button>
 
-<button class="btn verifyBtn" onclick="openVerify()">
-🔎 VERIFICAR MIS NÚMEROS
+<button
+ class="btn verifyBtn"
+ onclick="openVerify()">
+ 🔎 VERIFICAR MIS NÚMEROS
 </button>
 
 </div>
@@ -987,9 +1058,7 @@ QUIERO PARTICIPAR
 
 <button class="back" onclick="closeVerify()">‹</button>
 
-<h2>
-Verificar números
-</h2>
+<h2>Verificar números</h2>
 
 <button class="close" onclick="closeVerify()">×</button>
 
@@ -998,7 +1067,7 @@ Verificar números
 <div class="section">
 
 <p class="muted" style="font-size:20px">
-Consulta tus números pendientes y aceptados
+ Consulta tus números pendientes y aceptados
 </p>
 
 <div class="participation">
@@ -1006,56 +1075,64 @@ Consulta tus números pendientes y aceptados
 <div class="participationTop">
 
 <div class="ticketIcon">
-🔎
+ 🔎
 </div>
 
 <div>
 <b>CONSULTA</b>
-
-<h3>
-MIS NÚMEROS
-</h3>
+<h3>MIS NÚMEROS</h3>
 </div>
 
 </div>
 
 
 <label>
-Nombre de la rifa *
+ Nombre de la rifa *
 </label>
 
 <select id="verifyRaffle">
+
 <option value="">
-Selecciona la rifa
+ Selecciona la rifa
 </option>
+
 </select>
 
 
 <label>
-Número de teléfono *
+ Teléfono o número de boleto *
 </label>
 
 <input
-id="verifyPhone"
-type="tel"
-placeholder="+1 809 000 0000"
-autocomplete="tel"
+ id="verifyPhone"
+ type="text"
+ inputmode="numeric"
+ placeholder="Teléfono o número de boleto"
+ autocomplete="off"
 >
+
+
+<div class="searchNumberBox">
+
+💡 Escribe tu número de teléfono o un número de boleto para consultar tus números pendientes y aceptados.
+
+</div>
 
 
 <button
-type="button"
-class="btn primary"
-onclick="verifyNumbers()"
-style="width:100%;margin-top:16px"
->
+ type="button"
+ class="btn primary"
+ onclick="verifyNumbers()"
+ style="width:100%;margin-top:16px">
+
 🔎 VERIFICAR
+
 </button>
 
 
 <div
-id="verifyResult"
-class="verifyResult">
+ id="verifyResult"
+ class="verifyResult">
 </div>
 
 </div>
@@ -1073,9 +1150,7 @@ class="verifyResult">
 
 <button class="back" onclick="closeCheckout()">‹</button>
 
-<h2 id="checkoutTitle">
-Rifa
-</h2>
+<h2 id="checkoutTitle">Rifa</h2>
 
 <button class="close" onclick="closeCheckout()">×</button>
 
@@ -1084,7 +1159,7 @@ Rifa
 <div class="section">
 
 <p class="muted" style="font-size:20px">
-Completa tu compra de boletos
+ Completa tu compra de boletos
 </p>
 
 <div class="participation">
@@ -1092,12 +1167,11 @@ Completa tu compra de boletos
 <div class="participationTop">
 
 <div class="ticketIcon">
-🎟
+ 🎟
 </div>
 
 <div>
 <b>TU PARTICIPACIÓN</b>
-
 <h3>CÓMO QUIERES PARTICIPAR</h3>
 </div>
 
@@ -1107,16 +1181,20 @@ Completa tu compra de boletos
 <div class="switch">
 
 <button
-id="pkgBtn"
-class="on"
-onclick="mode('packages')">
+ id="pkgBtn"
+ class="on"
+ onclick="mode('packages')">
+
 PAQUETES
+
 </button>
 
 <button
-id="freeBtn"
-onclick="mode('free')">
+ id="freeBtn"
+ onclick="mode('free')">
+
 CANTIDAD LIBRE
+
 </button>
 
 </div>
@@ -1124,76 +1202,91 @@ CANTIDAD LIBRE
 
 <div id="packages" class="packages">
 
-<div class="pack selected" data-count="2" onclick="choose(this)">
+<div
+ class="pack selected"
+ data-count="2"
+ onclick="choose(this)">
 
 <div class="count">
-⭐ 2
-<small>BOLETOS</small>
+ ⭐ 2
+ <small>BOLETOS</small>
 </div>
 
 <div class="amount">
-<span class="packPrice">RD$ 0.00</span>
-<small>SELECCIONAR ◯</small>
+ <span class="packPrice">RD$ 0.00</span>
+ <small>SELECCIONAR ◯</small>
 </div>
 
 </div>
 
 
-<div class="pack" data-count="5" onclick="choose(this)">
+<div
+ class="pack"
+ data-count="5"
+ onclick="choose(this)">
 
 <div class="count">
-⭐ 5
-<small>BOLETOS</small>
+ ⭐ 5
+ <small>BOLETOS</small>
 </div>
 
 <div class="amount">
-<span class="packPrice">RD$ 0.00</span>
-<small>SELECCIONAR ◯</small>
+ <span class="packPrice">RD$ 0.00</span>
+ <small>SELECCIONAR ◯</small>
 </div>
 
 </div>
 
 
-<div class="pack" data-count="15" onclick="choose(this)">
+<div
+ class="pack"
+ data-count="15"
+ onclick="choose(this)">
 
 <div class="count">
-⭐ 15
-<small>BOLETOS</small>
+ ⭐ 15
+ <small>BOLETOS</small>
 </div>
 
 <div class="amount">
-<span class="packPrice">RD$ 0.00</span>
-<small>SELECCIONAR ◯</small>
+ <span class="packPrice">RD$ 0.00</span>
+ <small>SELECCIONAR ◯</small>
 </div>
 
 </div>
 
 
-<div class="pack" data-count="30" onclick="choose(this)">
+<div
+ class="pack"
+ data-count="30"
+ onclick="choose(this)">
 
 <div class="count">
-⭐ 30
-<small>BOLETOS</small>
+ ⭐ 30
+ <small>BOLETOS</small>
 </div>
 
 <div class="amount">
-<span class="packPrice">RD$ 0.00</span>
-<small>SELECCIONAR ◯</small>
+ <span class="packPrice">RD$ 0.00</span>
+ <small>SELECCIONAR ◯</small>
 </div>
 
 </div>
 
 
-<div class="pack gold" data-count="100" onclick="choose(this)">
+<div
+ class="pack gold"
+ data-count="100"
+ onclick="choose(this)">
 
 <div class="count">
-⭐ 100
-<small>BOLETOS</small>
+ ⭐ 100
+ <small>BOLETOS</small>
 </div>
 
 <div class="amount">
-<span class="packPrice">RD$ 0.00</span>
-<small>SELECCIONAR ◯</small>
+ <span class="packPrice">RD$ 0.00</span>
+ <small>SELECCIONAR ◯</small>
 </div>
 
 </div>
@@ -1204,48 +1297,45 @@ CANTIDAD LIBRE
 <div id="freeBox" class="freeBox">
 
 <p class="freeHint">
-Selección aleatoria del sistema.
-<b>(Mínimo: 2)</b>
+ Selección aleatoria del sistema.
+ <b>(Mínimo: 2)</b>
 </p>
 
 <div class="quantity">
 
 <button
-type="button"
-id="minusBtn"
-class="qtyBtn"
-onclick="changeQty(-1)">
-−
+ type="button"
+ id="minusBtn"
+ class="qtyBtn"
+ onclick="changeQty(-1)">
+ −
 </button>
 
 <div id="qtyNumber" class="qtyNumber">
-2
+ 2
 </div>
 
 <button
-type="button"
-class="qtyBtn"
-onclick="changeQty(1)">
-+
+ type="button"
+ class="qtyBtn"
+ onclick="changeQty(1)">
+ +
 </button>
 
 </div>
 
 <div class="freeTotal">
 
-<small>
-TOTAL A PAGAR
-</small>
+<small>TOTAL A PAGAR</small>
 
 <strong id="freeTotal">
-RD$ 0.00
+ RD$ 0.00
 </strong>
 
 </div>
 
 <p class="limitText">
-Compra mínima: 2 boletos
-· Máximo: 10,000 por usuario
+ Compra mínima: 2 boletos · Máximo: 10,000 por usuario
 </p>
 
 </div>
@@ -1254,24 +1344,23 @@ Compra mínima: 2 boletos
 
 
 <p class="muted">
-Cantidad seleccionada:
 
-<b id="countText">
-2 boletos
-</b>
+Cantidad seleccionada:
+<b id="countText">2 boletos</b>
 
 · Máximo por usuario: 10,000
+
 </p>
 
 
 <div class="info">
+
 ⓘ Los números de boletos se
 <b>asignarán automáticamente al azar</b>
 al enviar la solicitud.
 
 Mientras la solicitud esté pendiente,
-los números quedan reservados y no se asignan
-a otra persona.
+los números quedan reservados y no se asignan a otra persona.
 
 </div>
 
@@ -1279,93 +1368,108 @@ a otra persona.
 <form id="form">
 
 <label>
-Nombre *
+ Nombre *
 </label>
 
 <input
-id="name"
-required
-placeholder="Ej: Juan o Juan Carlos"
+ id="name"
+ required
+ placeholder="Ej: Juan o Juan Carlos"
 >
 
 
 <label>
-Teléfono (WhatsApp) *
+ Teléfono (WhatsApp) *
 </label>
 
 <input
-id="phone"
-required
-type="tel"
-placeholder="+1 809 000 0000"
+ id="phone"
+ required
+ type="tel"
+ placeholder="+1 809 000 0000"
 >
 
 
 <label>
-Correo electrónico
+ Correo electrónico
 <span class="muted">(opcional)</span>
 </label>
 
 <input
-id="customerEmail"
-type="email"
-placeholder="correo@ejemplo.com"
+ id="customerEmail"
+ type="email"
+ placeholder="correo@ejemplo.com"
 >
 
 
 <label>
-Banco a transferir *
+ Banco a transferir *
 </label>
 
 <p class="muted" style="margin:0 0 10px">
-Elige una opción.
+ Elige una opción.
 </p>
 
 
 <div class="bankgrid">
 
 <button
-type="button"
-class="bank selected"
-data-bank="Banco Popular"
-data-account="CUENTA_A_CONFIGURAR"
-data-holder="TITULAR_A_CONFIGURAR"
-onclick="selectBank(this)">
+ type="button"
+ class="bank selected"
+ data-bank="Banco Popular"
+ data-account="CUENTA_A_CONFIGURAR"
+ data-holder="TITULAR_A_CONFIGURAR"
+ onclick="selectBank(this)">
+
 🏦
+
 <span class="check">✓</span>
+
 </button>
 
+
 <button
-type="button"
-class="bank"
-data-bank="Banreservas"
-data-account="CUENTA_A_CONFIGURAR"
-data-holder="TITULAR_A_CONFIGURAR"
-onclick="selectBank(this)">
+ type="button"
+ class="bank"
+ data-bank="Banreservas"
+ data-account="CUENTA_A_CONFIGURAR"
+ data-holder="TITULAR_A_CONFIGURAR"
+ onclick="selectBank(this)">
+
 ▣
+
 <span class="check">✓</span>
+
 </button>
 
+
 <button
-type="button"
-class="bank"
-data-bank="Banco BHD"
-data-account="CUENTA_A_CONFIGURAR"
-data-holder="TITULAR_A_CONFIGURAR"
-onclick="selectBank(this)">
+ type="button"
+ class="bank"
+ data-bank="Banco BHD"
+ data-account="CUENTA_A_CONFIGURAR"
+ data-holder="TITULAR_A_CONFIGURAR"
+ onclick="selectBank(this)">
+
 🔵
+
 <span class="check">✓</span>
+
 </button>
 
+
 <button
-type="button"
-class="bank"
-data-bank="Otra cuenta"
-data-account="CUENTA_A_CONFIGURAR"
-data-holder="TITULAR_A_CONFIGURAR"
-onclick="selectBank(this)">
+ type="button"
+ class="bank"
+ data-bank="Otra cuenta"
+ data-account="CUENTA_A_CONFIGURAR"
+ data-holder="TITULAR_A_CONFIGURAR"
+ onclick="selectBank(this)">
+
 💰
+
 <span class="check">✓</span>
+
 </button>
 
 </div>
@@ -1376,19 +1480,19 @@ onclick="selectBank(this)">
 <div class="bankTitle">
 
 <div id="bankLogo" class="bankLogo">
-P
+ P
 </div>
 
 <div>
 
 <strong id="bankName">
-Banco Popular
+ Banco Popular
 </strong>
 
 <br>
 
 <span class="muted">
-Corriente · DOP
+ Corriente · DOP
 </span>
 
 </div>
@@ -1398,63 +1502,73 @@ Corriente · DOP
 <hr>
 
 <div class="accountLabel">
-NÚMERO DE CUENTA
+ NÚMERO DE CUENTA
 </div>
 
 <div id="accountNumber" class="accountNumber">
-CUENTA_A_CONFIGURAR
+ CUENTA_A_CONFIGURAR
 </div>
 
 <button
-type="button"
-class="copy"
-onclick="copyAccount()">
+ type="button"
+ class="copy"
+ onclick="copyAccount()">
+
 ▣ &nbsp; COPIAR
+
 </button>
 
 <div style="clear:both"></div>
 
-<div class="accountLabel" style="margin-top:18px">
+<div
+ class="accountLabel"
+ style="margin-top:18px">
+
 TITULAR
+
 </div>
 
 <div id="holder" class="holder">
-TITULAR_A_CONFIGURAR
+ TITULAR_A_CONFIGURAR
 </div>
 
 <hr>
 
 <div class="transferNote">
+
 ⓘ Realiza la transferencia por el
 <b>monto total</b>
-y sube el comprobante abajo
-para validar tu compra.
+y sube el comprobante abajo para validar tu compra.
+
 </div>
 
 </div>
 
 
 <label>
-Comprobante de pago *
+ Comprobante de pago *
 </label>
 
 <label class="upload">
 
 <input
-id="receipt"
-type="file"
-accept=".jpg,.jpeg,.png,.pdf"
-required
-style="display:none"
-onchange="showFile(this)"
+ id="receipt"
+ type="file"
+ accept=".jpg,.jpeg,.png,.pdf"
+ required
+ style="display:none"
+ onchange="showFile(this)"
 >
 
 ⬆
 <br>
+
 Haz clic para subir tu comprobante
+
 <br>
+
 <small>
-JPG, PNG o PDF
+ JPG, PNG o PDF
 </small>
 
 <div id="fileName"></div>
@@ -1463,24 +1577,26 @@ JPG, PNG o PDF
 
 
 <label>
-Verificación de seguridad *
+ Verificación de seguridad *
 </label>
 
 <div class="cloudflare">
+
 ✓ Operación exitosa!
 
 <span style="float:right">
-CLOUDFLARE
+ CLOUDFLARE
 </span>
+
 </div>
 
 
 <label class="consent">
 
 <input
-type="checkbox"
-id="agree"
-required
+ type="checkbox"
+ id="agree"
+ required
 >
 
 <span>
@@ -1489,14 +1605,13 @@ Confirmo que mis datos
 <b>(nombre, teléfono y correo)</b>
 son correctos.
 
-Se me enviarán correos de confirmación
-y seguimiento de mi solicitud.
+Se me enviarán correos de confirmación y seguimiento de mi solicitud.
 
 <b style="color:#ffd84d">
-Rifas Luxury RD
+ Rifas Luxury RD
 </b>
-no se hace responsable
-por datos mal ingresados.
+
+no se hace responsable por datos mal ingresados.
 
 </span>
 
@@ -1506,26 +1621,28 @@ por datos mal ingresados.
 <div class="total">
 
 <small>
-TOTAL A PAGAR
+ TOTAL A PAGAR
 </small>
 
 <strong id="total">
-RD$ 0.00
+ RD$ 0.00
 </strong>
 
 <button
-type="submit"
-class="btn primary"
-style="width:100%;font-size:16px">
+ id="submitBtn"
+ type="submit"
+ class="btn primary"
+ style="width:100%;font-size:16px">
+
 ENVIAR SOLICITUD DE COMPRA →
+
 </button>
 
 <div id="notice" class="notice">
 
 ✓ Solicitud enviada.
 
-El administrador revisará el comprobante
-y validará tu pago.
+El administrador revisará el comprobante y validará tu pago.
 
 </div>
 
@@ -1556,41 +1673,41 @@ let currentMode='packages';
 
 function get(key,defaultValue=[]){
 
-try{
+ try{
 
-return JSON.parse(
-localStorage.getItem(key)
-) || defaultValue;
+  return JSON.parse(
+   localStorage.getItem(key)
+  ) || defaultValue;
 
-}catch(e){
+ }catch(e){
 
-return defaultValue;
+  return defaultValue;
 
-}
+ }
 
 }
 
 
 function put(key,value){
 
-localStorage.setItem(
-key,
-JSON.stringify(value)
-);
+ localStorage.setItem(
+  key,
+  JSON.stringify(value)
+ );
 
 }
 
 
 function money(value){
 
-return 'RD$ '+
-Number(value||0).toLocaleString(
-'en-US',
-{
-minimumFractionDigits:2,
-maximumFractionDigits:2
-}
-);
+ return 'RD$ '+
+ Number(value||0).toLocaleString(
+  'en-US',
+  {
+   minimumFractionDigits:2,
+   maximumFractionDigits:2
+  }
+ );
 
 }
 
@@ -1599,50 +1716,46 @@ maximumFractionDigits:2
 
 function loadRaffle(){
 
-const raffles=get(R,[]);
+ const raffles=get(R,[]);
 
-currentRaffle=
-raffles.find(x=>x.active===true) || null;
+ currentRaffle=
+  raffles.find(x=>x.active===true) || null;
 
+ updateVerifyRaffles();
 
-/*
-Actualizar siempre las rifas disponibles
-para la verificación, incluso si no hay
-una rifa activa.
-*/
+ if(!currentRaffle){
 
-updateVerifyRaffles();
+  document.getElementById(
+   'raffleCard'
+  ).innerHTML=`
 
+  <div class="card">
 
-if(!currentRaffle){
+   <div class="noRaffle">
 
-document.getElementById('raffleCard').innerHTML=`
+    <h2>
+     🎟 No hay rifas activas
+    </h2>
 
-<div class="card">
+    <p>
+     En este momento no hay ninguna rifa disponible.
+    </p>
 
-<div class="noRaffle">
+   </div>
 
-<h2>
-🎟 No hay rifas activas
-</h2>
+  </div>
 
-<p>
-En este momento no hay ninguna rifa disponible.
-</p>
+  `;
 
-</div>
+  updateParticipateButtons(true);
 
-</div>
+  return;
 
-`;
+ }
 
-return;
+ renderRaffle();
 
-}
-
-
-renderRaffle();
-updatePackages();
+ updatePackages();
 
 }
 
@@ -1651,103 +1764,155 @@ updatePackages();
 
 function updateVerifyRaffles(){
 
-const select=
-document.getElementById('verifyRaffle');
+ const select=
+  document.getElementById(
+   'verifyRaffle'
+  );
 
-if(!select)return;
+ if(!select)return;
 
+ const raffles=get(R,[]);
+ const requests=get(Q,[]);
 
-const raffles=get(R,[]);
-const requests=get(Q,[]);
-
-const raffleMap=new Map();
-
-
-/*
-Primero usamos las rifas creadas
-en el administrador.
-*/
-
-raffles.forEach(r=>{
-
-if(r && r.id && r.name){
-
-raffleMap.set(
-String(r.id),
-{
-id:String(r.id),
-name:String(r.name)
-}
-);
-
-}
-
-});
+ const raffleMap=new Map();
 
 
-/*
-Si existe una solicitud de una rifa
-que ya no está en la lista, también
-la agregamos para poder verificarla.
-*/
+ raffles.forEach(r=>{
 
-requests.forEach(q=>{
+  if(r && r.id && r.name){
 
-if(q && q.raffleId && q.raffleName){
+   raffleMap.set(
+    String(r.id),
+    {
+     id:String(r.id),
+     name:String(r.name)
+    }
+   );
 
-const id=String(q.raffleId);
+  }
 
-if(!raffleMap.has(id)){
-
-raffleMap.set(
-id,
-{
-id:id,
-name:String(q.raffleName)
-}
-);
-
-}
-
-}
-
-});
+ });
 
 
-const oldValue=select.value;
+ requests.forEach(q=>{
 
-select.innerHTML=`
+  if(q && q.raffleId && q.raffleName){
 
-<option value="">
-Selecciona la rifa
-</option>
+   const id=String(q.raffleId);
 
-`;
+   if(!raffleMap.has(id)){
 
+    raffleMap.set(
+     id,
+     {
+      id:id,
+      name:String(q.raffleName)
+     }
+    );
 
-Array.from(raffleMap.values())
-.forEach(r=>{
+   }
 
-const option=
-document.createElement('option');
+  }
 
-option.value=r.id;
-option.textContent=r.name;
-
-select.appendChild(option);
-
-});
+ });
 
 
-if(
-oldValue &&
-[...select.options]
-.some(o=>o.value===oldValue)
-){
+ const oldValue=select.value;
 
-select.value=oldValue;
+ select.innerHTML=`
+  <option value="">
+   Selecciona la rifa
+  </option>
+ `;
+
+
+ Array.from(raffleMap.values())
+ .forEach(r=>{
+
+  const option=
+   document.createElement('option');
+
+  option.value=r.id;
+  option.textContent=r.name;
+
+  select.appendChild(option);
+
+ });
+
+
+ if(
+  oldValue &&
+  [...select.options]
+  .some(o=>o.value===oldValue)
+ ){
+
+  select.value=oldValue;
+
+ }
 
 }
+
+
+/* SABER SI ESTÁ AGOTADA */
+
+function isRaffleSoldOut(raffle){
+
+ if(!raffle)return false;
+
+ const total=
+  Number(raffle.totalNumbers)||0;
+
+ const sold=
+  Array.isArray(raffle.sold)
+  ?
+  new Set(
+   raffle.sold.map(Number)
+  ).size
+  :
+  0;
+
+ return total>0 && sold>=total;
+
+}
+
+
+/* BOTONES DE PARTICIPAR */
+
+function updateParticipateButtons(soldOut){
+
+ const heroBtn=
+  document.getElementById(
+   'heroParticipateBtn'
+  );
+
+ const submitBtn=
+  document.getElementById(
+   'submitBtn'
+  );
+
+
+ if(heroBtn){
+
+  heroBtn.textContent=
+   soldOut
+   ?'AGOTADO'
+   :'QUIERO PARTICIPAR';
+
+  heroBtn.disabled=soldOut;
+
+ }
+
+
+ if(submitBtn){
+
+  submitBtn.textContent=
+   soldOut
+   ?'AGOTADO'
+   :'ENVIAR SOLICITUD DE COMPRA →';
+
+  submitBtn.disabled=soldOut;
+
+ }
 
 }
 
@@ -1756,1103 +1921,257 @@ select.value=oldValue;
 
 function renderRaffle(){
 
-const sold=
-Array.isArray(currentRaffle.sold)
-?currentRaffle.sold.length
-:0;
+ const sold=
+  Array.isArray(currentRaffle.sold)
+  ?
+  currentRaffle.sold.length
+  :
+  0;
 
-const total=
-Number(currentRaffle.totalNumbers);
+ const total=
+  Number(currentRaffle.totalNumbers)||0;
 
-const percent=
-total
-?Math.min(100,Math.round(sold/total*100))
-:0;
+ const soldOut=
+  isRaffleSoldOut(currentRaffle);
 
+ const percent=
+  total
+  ?
+  Math.min(
+   100,
+   Math.round(sold/total*100)
+  )
+  :
+  0;
 
-document.getElementById('raffleCard').innerHTML=`
 
-<div class="card">
+ const participateButton=
+  soldOut
 
-<div class="photo">
+  ?
 
-${
-currentRaffle.image
-?
-`<img src="${currentRaffle.image}" alt="${escapeHtml(currentRaffle.name)}">`
-:
-`📱`
-}
+  `
+  <button
+   class="btn primary"
+   style="float:right"
+   disabled>
 
-<div class="shade"></div>
+   AGOTADO
 
-<div class="photoText">
+  </button>
+  `
 
-<span class="tag">
-🔥 DESTACADA
-</span>
+  :
 
-<h2>
-${escapeHtml(currentRaffle.name)}
-</h2>
+  `
+  <button
+   class="btn primary"
+   style="float:right"
+   onclick="openCheckout()">
 
-<span>
-${escapeHtml(
-currentRaffle.description ||
-'Participa y llévate este gran premio.'
-)}
-</span>
+   PARTICIPAR →
 
-</div>
+  </button>
+  `;
 
-</div>
 
+ document.getElementById(
+  'raffleCard'
+ ).innerHTML=`
 
-<div class="body">
+ <div class="card">
 
-<div class="category">
-🎟 RIFA · 💵 PREMIO
-</div>
+  <div class="photo">
 
-<h2>
-${escapeHtml(currentRaffle.name)}
-</h2>
+   ${
+    currentRaffle.image
+    ?
+    `<img
+      src="${currentRaffle.image}"
+      alt="${escapeHtml(currentRaffle.name)}">`
+    :
+    `📱`
+   }
 
-<p class="muted">
-${escapeHtml(
-currentRaffle.description ||
-'Participa y llévate este gran premio.'
-)}
-</p>
+   <div class="shade"></div>
 
+   <div class="photoText">
 
-<div class="price">
-${money(currentRaffle.price)}
-</div>
+    <span class="tag">
+     🔥 DESTACADA
+    </span>
 
-<small class="muted">
-por boleto · mínimo 2
-</small>
+    ${
+     soldOut
+     ?
+     `<span class="soldOutTag">
+       🔴 AGOTADO
+      </span>`
+     :
+     ``
+    }
 
+    <h2>
+     ${escapeHtml(currentRaffle.name)}
+    </h2>
 
-<button
-class="btn primary"
-style="float:right"
-onclick="openCheckout()">
-PARTICIPAR →
-</button>
+    <span>
+     ${escapeHtml(
+      currentRaffle.description ||
+      'Participa y llévate este gran premio.'
+     )}
+    </span>
 
+   </div>
 
-<div style="clear:both;margin-top:25px">
+  </div>
 
-<div class="muted">
 
-Boletos vendidos
+  <div class="body">
 
-<span style="float:right">
-${percent}%
-</span>
+   <div class="category">
+    🎟 RIFA · 💵 PREMIO
+   </div>
 
-</div>
+   <h2>
+    ${escapeHtml(currentRaffle.name)}
+   </h2>
 
+   <p class="muted">
+    ${escapeHtml(
+     currentRaffle.description ||
+     'Participa y llévate este gran premio.'
+    )}
+   </p>
 
-<div class="progress">
 
-<i style="width:${percent}%"></i>
+   <div class="price">
+    ${money(currentRaffle.price)}
+   </div>
 
-</div>
+   <small class="muted">
+    por boleto · mínimo 2
+   </small>
 
 
-<div class="muted" style="margin-top:8px">
+   ${participateButton}
 
-${sold.toLocaleString()}
-vendidos ·
-${Math.max(0,total-sold).toLocaleString()}
-disponibles
 
-</div>
+   <div style="clear:both;margin-top:25px">
 
-</div>
+    <div class="muted">
 
-</div>
+     Boletos vendidos
 
-</div>
+     <span style="float:right">
+      ${percent}%
+     </span>
 
-`;
+    </div>
 
-document.getElementById(
-'checkoutTitle'
-).textContent=currentRaffle.name;
 
-}
+    <div class="progress">
 
+     <i style="width:${percent}%"></i>
 
-/* PAQUETES */
+    </div>
 
-function updatePackages(){
 
-if(!currentRaffle)return;
+    <div
+     class="muted"
+     style="margin-top:8px">
 
-const available=
-Math.max(
-0,
-Number(currentRaffle.totalNumbers)-
-getReservedNumbers().size-
-(Array.isArray(currentRaffle.sold)
-?currentRaffle.sold.length
-:0)
-);
+     ${sold.toLocaleString()}
+     vendidos ·
+     ${Math.max(0,total-sold).toLocaleString()}
+     disponibles
 
+    </div>
 
-document.querySelectorAll('.pack').forEach(pack=>{
 
-const count=
-Number(pack.dataset.count);
+    ${
+     soldOut
+     ?
+     `
+     <div class="soldOutBox">
 
-const price=
-count*Number(currentRaffle.price);
+      🔴 RIFA AGOTADA
 
-pack.querySelector('.packPrice')
-.textContent=money(price);
+      <br>
 
-if(count>available){
+      <small>
+       TODOS LOS NÚMEROS HAN SIDO VENDIDOS
+      </small>
 
-pack.classList.add('disabled');
+     </div>
+     `
+     :
+     ``
+    }
 
-}else{
+   </div>
 
-pack.classList.remove('disabled');
+  </div>
 
-}
+ </div>
 
-});
+ `;
 
 
-if(available<MIN_TICKETS){
+ document.getElementById(
+  'checkoutTitle'
+ ).textContent=currentRaffle.name;
 
-selectedCount=0;
-selectedPrice=0;
-updateTotals();
-
-return;
-
-}
-
-
-if(
-selectedCount<MIN_TICKETS ||
-selectedCount>available
-){
-
-selectedCount=
-Math.min(
-MIN_TICKETS,
-available
-);
-
-}
-
-
-selectedPrice=
-selectedCount*
-Number(currentRaffle.price);
-
-updateTotals();
-
-}
-
-
-/* TOTAL */
-
-function updateTotals(){
-
-if(!currentRaffle)return;
-
-selectedPrice=
-selectedCount*
-Number(currentRaffle.price);
-
-document.getElementById(
-'qtyNumber'
-).textContent=
-selectedCount || 0;
-
-document.getElementById(
-'freeTotal'
-).textContent=
-money(selectedPrice);
-
-document.getElementById(
-'total'
-).textContent=
-money(selectedPrice);
-
-document.getElementById(
-'countText'
-).textContent=
-(selectedCount || 0)+' boletos';
-
-document.getElementById(
-'minusBtn'
-).disabled=
-selectedCount<=MIN_TICKETS;
+ updateParticipateButtons(soldOut);
 
 }
 
 
-/* MENU */
-
-function toggleMenu(){
-
-document.getElementById(
-'menu'
-).classList.toggle('active');
-
-}
-
-
-function closeMenu(){
-
-document.getElementById(
-'menu'
-).classList.remove('active');
-
-}
-
-
-function goHome(){
-
-closeMenu();
-closeCheckout();
-closeVerify();
-
-window.scrollTo({
-top:0,
-behavior:'smooth'
-});
-
-}
-
-
-/* CHECKOUT */
-
-function openCheckout(){
-
-if(!currentRaffle){
-
-alert('No hay una rifa activa.');
-return;
-
-}
-
-closeMenu();
-closeVerify();
-
-document.getElementById(
-'catalog'
-).classList.add('hidden');
-
-document.getElementById(
-'checkout'
-).classList.add('active');
-
-window.scrollTo(0,0);
-
-}
-
-
-function closeCheckout(){
-
-document.getElementById(
-'checkout'
-).classList.remove('active');
-
-document.getElementById(
-'catalog'
-).classList.remove('hidden');
-
-window.scrollTo(0,0);
-
-}
-
-
-/* VERIFICAR */
-
-function openVerify(){
-
-closeMenu();
-closeCheckout();
-
-updateVerifyRaffles();
-
-document.getElementById(
-'catalog'
-).classList.add('hidden');
-
-document.getElementById(
-'verifyBox'
-).classList.add('active');
-
-document.getElementById(
-'verifyResult'
-).innerHTML='';
-
-window.scrollTo(0,0);
-
-setTimeout(()=>{
-
-document.getElementById(
-'verifyRaffle'
-).focus();
-
-},100);
-
-}
-
-
-function closeVerify(){
-
-document.getElementById(
-'verifyBox'
-).classList.remove('active');
-
-document.getElementById(
-'catalog'
-).classList.remove('hidden');
-
-}
-
-
-/* NORMALIZAR TELÉFONO */
-
-function normalizePhone(phone){
-
-return String(phone||'')
-.replace(/\D/g,'');
-
-}
-
-
-/* OBTENER NÚMEROS PENDIENTES */
+/* NÚMEROS PENDIENTES */
 
 function getReservedNumbers(){
 
-if(!currentRaffle){
+ if(!currentRaffle){
 
-return new Set();
+  return new Set();
 
-}
+ }
 
-const requests=get(Q,[]);
+ const requests=get(Q,[]);
+ const reserved=new Set();
 
-const reserved=new Set();
 
-requests.forEach(q=>{
+ requests.forEach(q=>{
 
-if(
-q &&
-q.raffleId===currentRaffle.id &&
-q.status==='pending' &&
-Array.isArray(q.numbers)
-){
+  if(
+   q &&
+   String(q.raffleId)===
+   String(currentRaffle.id) &&
+   q.status==='pending' &&
+   Array.isArray(q.numbers)
+  ){
 
-q.numbers.forEach(n=>{
+   q.numbers.forEach(n=>{
 
-const number=Number(n);
+    const number=Number(n);
 
-if(
-Number.isInteger(number) &&
-number>0
-){
+    if(
+     Number.isInteger(number) &&
+     number>0
+    ){
 
-reserved.add(number);
+     reserved.add(number);
 
-}
+    }
 
-});
+   });
 
-}
+  }
 
-});
+ });
 
-return reserved;
 
-}
-
-
-/* VERIFICAR NÚMEROS */
-
-function verifyNumbers(){
-
-const raffleSelect=
-document.getElementById(
-'verifyRaffle'
-);
-
-const phoneInput=
-document.getElementById(
-'verifyPhone'
-);
-
-const raffleId=
-raffleSelect.value;
-
-const phone=
-phoneInput.value.trim();
-
-
-if(!raffleId){
-
-alert(
-'Selecciona el nombre de la rifa.'
-);
-
-raffleSelect.focus();
-
-return;
-
-}
-
-
-if(!phone){
-
-alert(
-'Escribe tu número de teléfono.'
-);
-
-phoneInput.focus();
-
-return;
-
-}
-
-
-const searchedPhone=
-normalizePhone(phone);
-
-if(searchedPhone.length<7){
-
-alert(
-'Escribe un número de teléfono válido.'
-);
-
-phoneInput.focus();
-
-return;
-
-}
-
-
-const requests=
-get(Q,[]);
-
-
-const matches=
-requests.filter(q=>{
-
-if(!q)return false;
-
-if(
-String(q.raffleId)!==
-String(raffleId)
-){
-
-return false;
-
-}
-
-return normalizePhone(q.phone)===searchedPhone;
-
-});
-
-
-const pending=
-matches.filter(
-q=>q.status==='pending'
-);
-
-const accepted=
-matches.filter(
-q=>q.status==='accepted'
-);
-
-
-const result=
-document.getElementById(
-'verifyResult'
-);
-
-
-if(
-!pending.length &&
-!accepted.length
-){
-
-result.innerHTML=`
-
-<div class="verifyEmpty">
-
-🔎 <b>No encontramos solicitudes.</b>
-
-<br><br>
-
-No hay solicitudes pendientes ni aceptadas
-para este teléfono y esta rifa.
-
-<br><br>
-
-<span class="muted">
-
-Verifica que el número de teléfono
-y la rifa seleccionada sean los mismos
-utilizados al realizar la solicitud.
-
-</span>
-
-</div>
-
-`;
-
-return;
-
-}
-
-
-let html='';
-
-
-/* PENDIENTES */
-
-pending.forEach(q=>{
-
-const numbers=
-Array.isArray(q.numbers)
-?q.numbers
-:[];
-
-
-html+=`
-
-<div class="pendingCard">
-
-<div class="pendingTitle">
-⏳ SOLICITUD PENDIENTE
-</div>
-
-<h3 style="margin:10px 0">
-${escapeHtml(
-q.raffleName || 'Rifa'
-)}
-</h3>
-
-<div class="muted">
-
-Fecha:
-${escapeHtml(
-q.createdAt || ''
-)}
-
-</div>
-
-
-<div
-style="
-margin-top:16px;
-color:var(--gold);
-font-weight:900;
-">
-
-🎟 NÚMEROS PENDIENTES
-
-</div>
-
-
-<div class="numberGrid">
-
-${
-numbers.length
-?
-
-numbers
-.map(n=>`
-
-<div class="numberItem">
-
-${String(n).padStart(2,'0')}
-
-</div>
-
-`)
-.join('')
-
-:
-
-`
-
-<div class="muted">
-Los números todavía no han sido asignados.
-</div>
-
-`
-}
-
-</div>
-
-
-<div class="verifyInfo">
-
-⏳ <b style="color:var(--gold)">
-Estos números están reservados.
-</b>
-
-<br><br>
-
-Tu comprobante todavía está siendo revisado.
-Los números pasarán a ser <b>vendidos</b>
-cuando el administrador acepte la solicitud.
-
-</div>
-
-
-<div
-style="
-margin-top:15px;
-padding-top:14px;
-border-top:1px solid #202d45;
-">
-
-<span class="muted">
-Cantidad:
-</span>
-
-<b>
-${Number(
-q.count || numbers.length
-)}
-boletos
-</b>
-
-<br>
-
-<span class="muted">
-Total:
-</span>
-
-<b style="color:var(--blue)">
-${money(q.total)}
-</b>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-
-/* ACEPTADOS */
-
-accepted.forEach(q=>{
-
-const numbers=
-Array.isArray(q.numbers)
-?q.numbers
-:[];
-
-
-html+=`
-
-<div class="acceptedCard">
-
-<div class="acceptedTitle">
-
-✓ SOLICITUD ACEPTADA
-
-</div>
-
-
-<h3 style="margin:10px 0">
-
-${escapeHtml(
-q.raffleName || 'Rifa'
-)}
-
-</h3>
-
-
-<div class="muted">
-
-Fecha:
-${escapeHtml(
-q.createdAt || ''
-)}
-
-</div>
-
-
-<div
-style="
-margin-top:16px;
-color:var(--blue);
-font-weight:900;
-">
-
-🎟 TUS NÚMEROS
-
-</div>
-
-
-<div class="numberGrid">
-
-${
-numbers.length
-
-?
-
-numbers
-.map(n=>`
-
-<div class="numberItem">
-
-${String(n).padStart(2,'0')}
-
-</div>
-
-`)
-.join('')
-
-:
-
-`
-
-<div class="muted">
-
-Los números todavía no han sido asignados.
-
-</div>
-
-`
-}
-
-</div>
-
-
-<div
-style="
-margin-top:15px;
-padding-top:14px;
-border-top:1px solid #202d45;
-">
-
-<span class="muted">
-Cantidad:
-</span>
-
-<b>
-${Number(
-q.count || numbers.length
-)}
-boletos
-</b>
-
-<br>
-
-<span class="muted">
-Total:
-</span>
-
-<b style="color:var(--blue)">
-${money(q.total)}
-</b>
-
-</div>
-
-</div>
-
-`;
-
-});
-
-
-result.innerHTML=html;
-
-}
-
-
-/* ELEGIR PAQUETE */
-
-function choose(el){
-
-if(el.classList.contains('disabled')){
-
-alert(
-'Ese paquete ya no está disponible.'
-);
-
-return;
-
-}
-
-document.querySelectorAll('.pack')
-.forEach(x=>
-x.classList.remove('selected')
-);
-
-el.classList.add('selected');
-
-selectedCount=
-Number(el.dataset.count);
-
-selectedPrice=
-selectedCount*
-Number(currentRaffle.price);
-
-updateTotals();
-
-}
-
-
-/* MODO */
-
-function mode(m){
-
-currentMode=m;
-
-document.getElementById('pkgBtn')
-.classList.toggle(
-'on',
-m==='packages'
-);
-
-document.getElementById('freeBtn')
-.classList.toggle(
-'on',
-m==='free'
-);
-
-document.getElementById('packages')
-.style.display=
-m==='packages'
-?'grid'
-:'none';
-
-document.getElementById('freeBox')
-.classList.toggle(
-'active',
-m==='free'
-);
-
-
-if(m==='free'){
-
-if(selectedCount<MIN_TICKETS){
-
-selectedCount=MIN_TICKETS;
-
-}
-
-const available=
-getAvailableNumbers().length;
-
-if(selectedCount>available){
-
-selectedCount=
-Math.min(
-MIN_TICKETS,
-available
-);
-
-}
-
-updateTotals();
-
-}else{
-
-const selected=
-document.querySelector(
-'.pack.selected'
-);
-
-if(
-selected &&
-!selected.classList.contains('disabled')
-){
-
-choose(selected);
-
-}else{
-
-const first=
-[
-...document.querySelectorAll('.pack')
-]
-.find(
-x=>!x.classList.contains('disabled')
-);
-
-if(first){
-
-choose(first);
-
-}
-
-}
-
-}
-
-}
-
-
-/* CANTIDAD */
-
-function changeQty(amount){
-
-if(!currentRaffle)return;
-
-const available=
-getAvailableNumbers().length;
-
-const max=
-Math.min(
-MAX_TICKETS,
-available
-);
-
-const next=
-selectedCount+amount;
-
-if(
-next<MIN_TICKETS ||
-next>max
-){
-
-return;
-
-}
-
-selectedCount=next;
-
-updateTotals();
-
-}
-
-
-/* BANCO */
-
-function selectBank(el){
-
-document.querySelectorAll('.bank')
-.forEach(x=>
-x.classList.remove('selected')
-);
-
-el.classList.add('selected');
-
-document.getElementById(
-'bankName'
-).textContent=
-el.dataset.bank;
-
-document.getElementById(
-'accountNumber'
-).textContent=
-el.dataset.account;
-
-document.getElementById(
-'holder'
-).textContent=
-el.dataset.holder;
-
-document.getElementById(
-'bankLogo'
-).textContent=
-el.dataset.bank.charAt(0);
-
-}
-
-
-/* COPIAR CUENTA */
-
-function copyAccount(){
-
-const value=
-document.getElementById(
-'accountNumber'
-).textContent;
-
-if(navigator.clipboard){
-
-navigator.clipboard.writeText(value);
-
-}
-
-alert(
-'Número de cuenta copiado.'
-);
-
-}
-
-
-/* ARCHIVO */
-
-function showFile(input){
-
-document.getElementById(
-'fileName'
-).textContent=
-input.files[0]
-?'✓ '+input.files[0].name
-:'';
-
-}
-
-
-/* CONVERTIR COMPROBANTE */
-
-function readReceipt(file){
-
-return new Promise(
-(resolve,reject)=>{
-
-if(!file){
-
-resolve('');
-
-return;
-
-}
-
-if(file.size>5*1024*1024){
-
-reject(
-'El comprobante debe pesar menos de 5 MB.'
-);
-
-return;
-
-}
-
-const reader=
-new FileReader();
-
-reader.onload=()=>{
-
-resolve(reader.result);
-
-};
-
-reader.onerror=()=>{
-
-reject(
-'No se pudo leer el comprobante.'
-);
-
-};
-
-reader.readAsDataURL(file);
-
-});
+ return reserved;
 
 }
 
@@ -2861,52 +2180,1241 @@ reader.readAsDataURL(file);
 
 function getAvailableNumbers(){
 
-if(!currentRaffle){
+ if(!currentRaffle){
 
-return [];
+  return [];
+
+ }
+
+ const sold=
+  Array.isArray(currentRaffle.sold)
+  ?
+  currentRaffle.sold.map(Number)
+  :
+  [];
+
+ const soldSet=new Set(sold);
+
+ const reserved=
+  getReservedNumbers();
+
+ const total=
+  Number(currentRaffle.totalNumbers);
+
+ const result=[];
+
+
+ for(
+  let i=1;
+  i<=total;
+  i++
+ ){
+
+  if(
+   !soldSet.has(i) &&
+   !reserved.has(i)
+  ){
+
+   result.push(i);
+
+  }
+
+ }
+
+ return result;
 
 }
 
-const sold=
-Array.isArray(currentRaffle.sold)
-?currentRaffle.sold.map(Number)
-:[];
 
-const soldSet=
-new Set(sold);
+/* PAQUETES */
+
+function updatePackages(){
+
+ if(!currentRaffle)return;
+
+ const available=
+  getAvailableNumbers().length;
 
 
-/*
-También excluimos números de solicitudes
-pendientes para reservarlos.
+ document.querySelectorAll(
+  '.pack'
+ ).forEach(pack=>{
+
+  const count=
+   Number(pack.dataset.count);
+
+  const price=
+   count*
+   Number(currentRaffle.price);
+
+  pack.querySelector(
+   '.packPrice'
+  ).textContent=
+   money(price);
+
+
+  if(count>available){
+
+   pack.classList.add('disabled');
+
+  }else{
+
+   pack.classList.remove('disabled');
+
+  }
+
+ });
+
+
+ if(available<MIN_TICKETS){
+
+  selectedCount=0;
+  selectedPrice=0;
+
+  updateTotals();
+
+  return;
+
+ }
+
+
+ if(
+  selectedCount<MIN_TICKETS ||
+  selectedCount>available
+ ){
+
+  selectedCount=
+   Math.min(
+    MIN_TICKETS,
+    available
+   );
+
+ }
+
+
+ selectedPrice=
+  selectedCount*
+  Number(currentRaffle.price);
+
+ updateTotals();
+
+}
+
+
+/* TOTAL */
+
+function updateTotals(){
+
+ if(!currentRaffle)return;
+
+ selectedPrice=
+  selectedCount*
+  Number(currentRaffle.price);
+
+
+ document.getElementById(
+  'qtyNumber'
+ ).textContent=
+  selectedCount || 0;
+
+
+ document.getElementById(
+  'freeTotal'
+ ).textContent=
+  money(selectedPrice);
+
+
+ document.getElementById(
+  'total'
+ ).textContent=
+  money(selectedPrice);
+
+
+ document.getElementById(
+  'countText'
+ ).textContent=
+  (selectedCount||0)+
+  ' boletos';
+
+
+ document.getElementById(
+  'minusBtn'
+ ).disabled=
+  selectedCount<=MIN_TICKETS;
+
+}
+
+
+/* MENU */
+
+function toggleMenu(){
+
+ document.getElementById(
+  'menu'
+ ).classList.toggle('active');
+
+}
+
+
+function closeMenu(){
+
+ document.getElementById(
+  'menu'
+ ).classList.remove('active');
+
+}
+
+
+function goHome(){
+
+ closeMenu();
+ closeCheckout();
+ closeVerify();
+
+ window.scrollTo({
+  top:0,
+  behavior:'smooth'
+ });
+
+}
+
+
+/* CHECKOUT */
+
+function openCheckout(){
+
+ if(!currentRaffle){
+
+  alert(
+   'No hay una rifa activa.'
+  );
+
+  return;
+
+ }
+
+
+ if(
+  isRaffleSoldOut(
+   currentRaffle
+  )
+ ){
+
+  alert(
+   'Esta rifa está agotada. Todos los números han sido vendidos.'
+  );
+
+  renderRaffle();
+
+  return;
+
+ }
+
+
+ closeMenu();
+ closeVerify();
+
+ document.getElementById(
+  'catalog'
+ ).classList.add('hidden');
+
+ document.getElementById(
+  'checkout'
+ ).classList.add('active');
+
+ window.scrollTo(0,0);
+
+}
+
+
+function closeCheckout(){
+
+ document.getElementById(
+  'checkout'
+ ).classList.remove('active');
+
+ document.getElementById(
+  'catalog'
+ ).classList.remove('hidden');
+
+ window.scrollTo(0,0);
+
+}
+
+
+/* VERIFICAR */
+
+function openVerify(){
+
+ closeMenu();
+ closeCheckout();
+
+ updateVerifyRaffles();
+
+ document.getElementById(
+  'catalog'
+ ).classList.add('hidden');
+
+ document.getElementById(
+  'verifyBox'
+ ).classList.add('active');
+
+ document.getElementById(
+  'verifyResult'
+ ).innerHTML='';
+
+ window.scrollTo(0,0);
+
+ setTimeout(()=>{
+
+  document.getElementById(
+   'verifyRaffle'
+  ).focus();
+
+ },100);
+
+}
+
+
+function closeVerify(){
+
+ document.getElementById(
+  'verifyBox'
+ ).classList.remove('active');
+
+ document.getElementById(
+  'catalog'
+ ).classList.remove('hidden');
+
+}
+
+
+/* NORMALIZAR TELÉFONO */
+
+function normalizePhone(phone){
+
+ return String(phone||'')
+  .replace(/\D/g,'');
+
+}
+
+
+/* VERIFICAR NÚMEROS
+   AHORA ACEPTA TELÉFONO O BOLETO
 */
 
-const reserved=
-getReservedNumbers();
+function verifyNumbers(){
 
-const total=
-Number(currentRaffle.totalNumbers);
+ const raffleSelect=
+  document.getElementById(
+   'verifyRaffle'
+  );
 
-const result=[];
+ const searchInput=
+  document.getElementById(
+   'verifyPhone'
+  );
 
-for(
-let i=1;
-i<=total;
-i++
-){
 
-if(
-!soldSet.has(i) &&
-!reserved.has(i)
-){
+ const raffleId=
+  raffleSelect.value;
 
-result.push(i);
+ const search=
+  searchInput.value.trim();
+
+
+ if(!raffleId){
+
+  alert(
+   'Selecciona el nombre de la rifa.'
+  );
+
+  raffleSelect.focus();
+
+  return;
+
+ }
+
+
+ if(!search){
+
+  alert(
+   'Escribe tu número de teléfono o número de boleto.'
+  );
+
+  searchInput.focus();
+
+  return;
+
+ }
+
+
+ /*
+  Quitamos espacios, guiones, paréntesis, etc.
+  Esto permite buscar teléfonos como:
+
+  +1 809 555 1234
+
+  o números de boleto como:
+
+  25
+ */
+
+ const digits=
+  normalizePhone(search);
+
+
+ /*
+  Si el campo contiene solamente números,
+  también lo consideramos posible número
+  de boleto.
+ */
+
+ const isNumericTicket=
+  /^\d+$/.test(search);
+
+ const searchedTicket=
+  isNumericTicket
+  ?
+  Number(search)
+  :
+  null;
+
+
+ /*
+  Validación básica
+ */
+
+ if(digits.length<1){
+
+  alert(
+   'Escribe un número de teléfono o boleto válido.'
+  );
+
+  searchInput.focus();
+
+  return;
+
+ }
+
+
+ if(
+  isNumericTicket &&
+  (
+   !Number.isInteger(searchedTicket) ||
+   searchedTicket<1
+  )
+ ){
+
+  alert(
+   'Escribe un número de boleto válido.'
+  );
+
+  searchInput.focus();
+
+  return;
+
+ }
+
+
+ const requests=
+  get(Q,[]);
+
+
+ /*
+  BUSCAR POR:
+  1. TELÉFONO
+  2. NÚMERO DE BOLETO
+
+  Si coincide cualquiera de los dos,
+  se muestra la solicitud.
+ */
+
+ const matches=
+  requests.filter(q=>{
+
+   if(!q)return false;
+
+
+   /* RIFA */
+
+   if(
+    String(q.raffleId)!==
+    String(raffleId)
+   ){
+
+    return false;
+
+   }
+
+
+   /*
+    Coincidencia por teléfono.
+
+    Solo consideramos teléfono si tiene
+    al menos 7 dígitos.
+   */
+
+   const phoneMatch=
+    digits.length>=7 &&
+    normalizePhone(q.phone)===
+    digits;
+
+
+   /*
+    Coincidencia por número de boleto.
+   */
+
+   const ticketMatch=
+    isNumericTicket &&
+    Array.isArray(q.numbers) &&
+    q.numbers.some(
+     n=>Number(n)===searchedTicket
+    );
+
+
+   /*
+    Puede coincidir por cualquiera.
+   */
+
+   return phoneMatch || ticketMatch;
+
+  });
+
+
+ const pending=
+  matches.filter(
+   q=>q.status==='pending'
+  );
+
+
+ const accepted=
+  matches.filter(
+   q=>q.status==='accepted'
+  );
+
+
+ const result=
+  document.getElementById(
+   'verifyResult'
+  );
+
+
+ /*
+  SIN RESULTADOS
+ */
+
+ if(
+  !pending.length &&
+  !accepted.length
+ ){
+
+  result.innerHTML=`
+
+  <div class="verifyEmpty">
+
+   🔎
+   <b>No encontramos solicitudes.</b>
+
+   <br><br>
+
+   No hay solicitudes pendientes ni aceptadas
+   para esta rifa con:
+
+   <br><br>
+
+   <b>
+    ${escapeHtml(search)}
+   </b>
+
+   <br><br>
+
+   <span class="muted">
+
+    Puedes buscar usando el número de teléfono
+    utilizado al realizar la solicitud
+    o directamente el número de boleto.
+
+   </span>
+
+  </div>
+
+  `;
+
+  return;
+
+ }
+
+
+ let html='';
+
+
+ /*
+  MOSTRAR QUÉ SE BUSCÓ
+ */
+
+ if(isNumericTicket){
+
+  html+=`
+
+  <div class="searchNumberBox">
+
+   🔎 Boleto consultado:
+   <b>#${searchedTicket}</b>
+
+  </div>
+
+  `;
+
+ }else{
+
+  html+=`
+
+  <div class="searchNumberBox">
+
+   🔎 Teléfono consultado:
+   <b>${escapeHtml(search)}</b>
+
+  </div>
+
+  `;
+
+ }
+
+
+ /* PENDIENTES */
+
+ pending.forEach(q=>{
+
+  const numbers=
+   Array.isArray(q.numbers)
+   ?
+   q.numbers
+   :
+   [];
+
+
+  html+=`
+
+  <div class="pendingCard">
+
+   <div class="pendingTitle">
+
+    ⏳ SOLICITUD PENDIENTE
+
+   </div>
+
+
+   <h3 style="margin:10px 0">
+
+    ${escapeHtml(
+     q.raffleName ||
+     'Rifa'
+    )}
+
+   </h3>
+
+
+   <div class="muted">
+
+    Fecha:
+    ${escapeHtml(
+     q.createdAt || ''
+    )}
+
+   </div>
+
+
+   <div
+    style="
+    margin-top:16px;
+    color:var(--gold);
+    font-weight:900;
+    ">
+
+    🎟 NÚMEROS PENDIENTES
+
+   </div>
+
+
+   <div class="numberGrid">
+
+    ${
+     numbers.length
+
+     ?
+
+     numbers
+     .map(n=>`
+
+      <div class="numberItem">
+
+       ${String(n).padStart(2,'0')}
+
+      </div>
+
+     `)
+     .join('')
+
+     :
+
+     `
+
+     <div class="muted">
+
+      Los números todavía no han sido asignados.
+
+     </div>
+
+     `
+    }
+
+   </div>
+
+
+   <div class="verifyInfo">
+
+    ⏳
+
+    <b style="color:var(--gold)">
+
+     Estos números están reservados.
+
+    </b>
+
+    <br><br>
+
+    Tu comprobante todavía está siendo revisado.
+
+    Los números pasarán a ser
+    <b>vendidos</b>
+    cuando el administrador acepte la solicitud.
+
+   </div>
+
+
+   <div
+    style="
+    margin-top:15px;
+    padding-top:14px;
+    border-top:1px solid #202d45;
+    ">
+
+    <span class="muted">
+     Cantidad:
+    </span>
+
+    <b>
+
+     ${Number(
+      q.count ||
+      numbers.length
+     )}
+     boletos
+
+    </b>
+
+    <br>
+
+    <span class="muted">
+     Total:
+    </span>
+
+    <b style="color:var(--blue)">
+
+     ${money(q.total)}
+
+    </b>
+
+   </div>
+
+  </div>
+
+  `;
+
+ });
+
+
+ /* ACEPTADOS */
+
+ accepted.forEach(q=>{
+
+  const numbers=
+   Array.isArray(q.numbers)
+   ?
+   q.numbers
+   :
+   [];
+
+
+  html+=`
+
+  <div class="acceptedCard">
+
+   <div class="acceptedTitle">
+
+    ✓ SOLICITUD ACEPTADA
+
+   </div>
+
+
+   <h3 style="margin:10px 0">
+
+    ${escapeHtml(
+     q.raffleName ||
+     'Rifa'
+    )}
+
+   </h3>
+
+
+   <div class="muted">
+
+    Fecha:
+    ${escapeHtml(
+     q.createdAt || ''
+    )}
+
+   </div>
+
+
+   <div
+    style="
+    margin-top:16px;
+    color:var(--blue);
+    font-weight:900;
+    ">
+
+    🎟 TUS NÚMEROS
+
+   </div>
+
+
+   <div class="numberGrid">
+
+    ${
+     numbers.length
+
+     ?
+
+     numbers
+     .map(n=>`
+
+      <div class="numberItem">
+
+       ${String(n).padStart(2,'0')}
+
+      </div>
+
+     `)
+     .join('')
+
+     :
+
+     `
+
+     <div class="muted">
+
+      Los números todavía no han sido asignados.
+
+     </div>
+
+     `
+    }
+
+   </div>
+
+
+   <div
+    style="
+    margin-top:15px;
+    padding-top:14px;
+    border-top:1px solid #202d45;
+    ">
+
+    <span class="muted">
+     Cantidad:
+    </span>
+
+    <b>
+
+     ${Number(
+      q.count ||
+      numbers.length
+     )}
+     boletos
+
+    </b>
+
+    <br>
+
+    <span class="muted">
+     Total:
+    </span>
+
+    <b style="color:var(--blue)">
+
+     ${money(q.total)}
+
+    </b>
+
+   </div>
+
+  </div>
+
+  `;
+
+ });
+
+
+ result.innerHTML=html;
 
 }
 
+
+/* ELEGIR PAQUETE */
+
+function choose(el){
+
+ if(
+  el.classList.contains(
+   'disabled'
+  )
+ ){
+
+  alert(
+   'Ese paquete ya no está disponible.'
+  );
+
+  return;
+
+ }
+
+
+ document.querySelectorAll(
+  '.pack'
+ ).forEach(
+  x=>x.classList.remove(
+   'selected'
+  )
+ );
+
+
+ el.classList.add('selected');
+
+
+ selectedCount=
+  Number(el.dataset.count);
+
+
+ selectedPrice=
+  selectedCount*
+  Number(currentRaffle.price);
+
+
+ updateTotals();
+
 }
 
-return result;
+
+/* MODO */
+
+function mode(m){
+
+ currentMode=m;
+
+
+ document.getElementById(
+  'pkgBtn'
+ ).classList.toggle(
+  'on',
+  m==='packages'
+ );
+
+
+ document.getElementById(
+  'freeBtn'
+ ).classList.toggle(
+  'on',
+  m==='free'
+ );
+
+
+ document.getElementById(
+  'packages'
+ ).style.display=
+  m==='packages'
+  ?
+  'grid'
+  :
+  'none';
+
+
+ document.getElementById(
+  'freeBox'
+ ).classList.toggle(
+  'active',
+  m==='free'
+ );
+
+
+ if(m==='free'){
+
+  if(
+   selectedCount<
+   MIN_TICKETS
+  ){
+
+   selectedCount=
+    MIN_TICKETS;
+
+  }
+
+
+  const available=
+   getAvailableNumbers().length;
+
+
+  if(
+   selectedCount>
+   available
+  ){
+
+   selectedCount=
+    Math.min(
+     MIN_TICKETS,
+     available
+    );
+
+  }
+
+
+  updateTotals();
+
+ }else{
+
+  const selected=
+   document.querySelector(
+    '.pack.selected'
+   );
+
+
+  if(
+   selected &&
+   !selected.classList.contains(
+    'disabled'
+   )
+  ){
+
+   choose(selected);
+
+  }else{
+
+   const first=
+    [
+     ...document.querySelectorAll(
+      '.pack'
+     )
+    ].find(
+     x=>!x.classList.contains(
+      'disabled'
+     )
+    );
+
+
+   if(first){
+
+    choose(first);
+
+   }
+
+  }
+
+ }
+
+}
+
+
+/* CANTIDAD */
+
+function changeQty(amount){
+
+ if(!currentRaffle)return;
+
+
+ const available=
+  getAvailableNumbers().length;
+
+
+ const max=
+  Math.min(
+   MAX_TICKETS,
+   available
+  );
+
+
+ const next=
+  selectedCount+
+  amount;
+
+
+ if(
+  next<MIN_TICKETS ||
+  next>max
+ ){
+
+  return;
+
+ }
+
+
+ selectedCount=next;
+
+ updateTotals();
+
+}
+
+
+/* BANCO */
+
+function selectBank(el){
+
+ document.querySelectorAll(
+  '.bank'
+ ).forEach(
+  x=>x.classList.remove(
+   'selected'
+  )
+ );
+
+
+ el.classList.add('selected');
+
+
+ document.getElementById(
+  'bankName'
+ ).textContent=
+  el.dataset.bank;
+
+
+ document.getElementById(
+  'accountNumber'
+ ).textContent=
+  el.dataset.account;
+
+
+ document.getElementById(
+  'holder'
+ ).textContent=
+  el.dataset.holder;
+
+
+ document.getElementById(
+  'bankLogo'
+ ).textContent=
+  el.dataset.bank.charAt(0);
+
+}
+
+
+/* COPIAR CUENTA */
+
+function copyAccount(){
+
+ const value=
+  document.getElementById(
+   'accountNumber'
+  ).textContent;
+
+
+ if(navigator.clipboard){
+
+  navigator.clipboard.writeText(
+   value
+  );
+
+ }
+
+
+ alert(
+  'Número de cuenta copiado.'
+ );
+
+}
+
+
+/* ARCHIVO */
+
+function showFile(input){
+
+ document.getElementById(
+  'fileName'
+ ).textContent=
+  input.files[0]
+  ?
+  '✓ '+input.files[0].name
+  :
+  '';
+
+}
+
+
+/* CONVERTIR COMPROBANTE */
+
+function readReceipt(file){
+
+ return new Promise(
+  (resolve,reject)=>{
+
+   if(!file){
+
+    resolve('');
+
+    return;
+
+   }
+
+
+   if(
+    file.size>
+    5*1024*1024
+   ){
+
+    reject(
+     'El comprobante debe pesar menos de 5 MB.'
+    );
+
+    return;
+
+   }
+
+
+   const reader=
+    new FileReader();
+
+
+   reader.onload=()=>{
+
+    resolve(
+     reader.result
+    );
+
+   };
+
+
+   reader.onerror=()=>{
+
+    reject(
+     'No se pudo leer el comprobante.'
+    );
+
+   };
+
+
+   reader.readAsDataURL(file);
+
+  }
+ );
 
 }
 
@@ -2915,43 +3423,47 @@ return result;
 
 function randomNumbers(count){
 
-const available=
-getAvailableNumbers();
+ const available=
+  getAvailableNumbers();
 
-if(
-available.length<count
-){
 
-return null;
+ if(
+  available.length<count
+ ){
 
-}
+  return null;
 
-for(
-let i=available.length-1;
-i>0;
-i--
-){
+ }
 
-const j=
-Math.floor(
-Math.random()*(i+1)
-);
 
-[
-available[i],
-available[j]
-]=[
-available[j],
-available[i]
-];
+ for(
+  let i=available.length-1;
+  i>0;
+  i--
+ ){
 
-}
+  const j=
+   Math.floor(
+    Math.random()*(i+1)
+   );
 
-return available
-.slice(0,count)
-.sort(
-(a,b)=>a-b
-);
+
+  [
+   available[i],
+   available[j]
+  ]=[
+   available[j],
+   available[i]
+  ];
+
+ }
+
+
+ return available
+  .slice(0,count)
+  .sort(
+   (a,b)=>a-b
+  );
 
 }
 
@@ -2959,315 +3471,363 @@ return available
 /* FORMULARIO */
 
 document.getElementById(
-'form'
-).onsubmit=
-async function(e){
+ 'form'
+).onsubmit=async function(e){
 
-e.preventDefault();
+ e.preventDefault();
 
 
-if(!currentRaffle){
+ if(!currentRaffle){
 
-alert(
-'No hay una rifa activa.'
-);
+  alert(
+   'No hay una rifa activa.'
+  );
 
-return;
+  return;
 
-}
+ }
 
 
-const raffles=
-get(R,[]);
+ /* COMPROBAR AGOTADA */
 
+ if(
+  isRaffleSoldOut(
+   currentRaffle
+  )
+ ){
 
-currentRaffle=
-raffles.find(
-x=>
-x.id===currentRaffle.id &&
-x.active===true
-);
+  alert(
+   'Esta rifa ya está agotada.'
+  );
 
+  renderRaffle();
 
-if(!currentRaffle){
+  return;
 
-alert(
-'La rifa ya no está activa.'
-);
+ }
 
-return;
 
-}
+ const raffles=get(R,[]);
 
 
-if(selectedCount<MIN_TICKETS){
+ currentRaffle=
+  raffles.find(
+   x=>
+   x.id===currentRaffle.id &&
+   x.active===true
+  );
 
-alert(
-'La compra mínima es de 2 boletos.'
-);
 
-return;
+ if(!currentRaffle){
 
-}
+  alert(
+   'La rifa ya no está activa.'
+  );
 
+  return;
 
-const available=
-getAvailableNumbers();
+ }
 
 
-if(
-available.length<selectedCount
-){
+ if(
+  isRaffleSoldOut(
+   currentRaffle
+  )
+ ){
 
-alert(
-'No hay suficientes boletos disponibles.'
-);
+  alert(
+   'Esta rifa acaba de agotarse.'
+  );
 
-return;
+  renderRaffle();
 
-}
+  return;
 
+ }
 
-const name=
-document.getElementById(
-'name'
-).value.trim();
 
-const phone=
-document.getElementById(
-'phone'
-).value.trim();
+ if(
+  selectedCount<
+  MIN_TICKETS
+ ){
 
-const email=
-document.getElementById(
-'customerEmail'
-).value.trim();
+  alert(
+   'La compra mínima es de 2 boletos.'
+  );
 
-const bank=
-document.querySelector(
-'.bank.selected'
-);
+  return;
 
-const receiptFile=
-document.getElementById(
-'receipt'
-).files[0];
+ }
 
 
-if(!name){
+ const available=
+  getAvailableNumbers();
 
-alert(
-'Escribe tu nombre.'
-);
 
-return;
+ if(
+  available.length<
+  selectedCount
+ ){
 
-}
+  alert(
+   'No hay suficientes boletos disponibles.'
+  );
 
+  loadRaffle();
 
-if(!phone){
+  return;
 
-alert(
-'Escribe tu teléfono.'
-);
+ }
 
-return;
 
-}
+ const name=
+  document.getElementById(
+   'name'
+  ).value.trim();
 
 
-if(!bank){
+ const phone=
+  document.getElementById(
+   'phone'
+  ).value.trim();
 
-alert(
-'Selecciona un banco.'
-);
 
-return;
+ const email=
+  document.getElementById(
+   'customerEmail'
+  ).value.trim();
 
-}
 
+ const bank=
+  document.querySelector(
+   '.bank.selected'
+  );
 
-if(!receiptFile){
 
-alert(
-'Debes subir el comprobante de pago.'
-);
+ const receiptFile=
+  document.getElementById(
+   'receipt'
+  ).files[0];
 
-return;
 
-}
+ if(!name){
 
+  alert(
+   'Escribe tu nombre.'
+  );
 
-let receiptData='';
+  return;
 
+ }
 
-try{
 
-receiptData=
-await readReceipt(
-receiptFile
-);
+ if(!phone){
 
-}catch(error){
+  alert(
+   'Escribe tu teléfono.'
+  );
 
-alert(error);
+  return;
 
-return;
+ }
 
-}
 
+ if(!bank){
 
-/*
-Los números se generan al crear
-la solicitud y quedan RESERVADOS.
+  alert(
+   'Selecciona un banco.'
+  );
 
-No pasan a vendidos hasta que
-el administrador acepte la solicitud.
-*/
+  return;
 
-const numbers=
-randomNumbers(
-selectedCount
-);
+ }
 
 
-if(!numbers){
+ if(!receiptFile){
 
-alert(
-'No se pudieron asignar números disponibles.'
-);
+  alert(
+   'Debes subir el comprobante de pago.'
+  );
 
-return;
+  return;
 
-}
+ }
 
 
-const requests=
-get(Q,[]);
+ let receiptData='';
 
 
-const request={
+ try{
 
-id:'SOL-'+Date.now(),
+  receiptData=
+   await readReceipt(
+    receiptFile
+   );
 
-raffleId:
-currentRaffle.id,
+ }catch(error){
 
-raffleName:
-currentRaffle.name,
+  alert(error);
 
-price:
-Number(currentRaffle.price),
+  return;
 
-name:
-name,
+ }
 
-phone:
-phone,
 
-email:
-email,
+ /*
+  LOS NÚMEROS SE GENERAN
+  Y QUEDAN RESERVADOS.
+ */
 
-bank:
-bank.dataset.bank,
+ const numbers=
+  randomNumbers(
+   selectedCount
+  );
 
-account:
-bank.dataset.account,
 
-holder:
-bank.dataset.holder,
+ if(!numbers){
 
-count:
-selectedCount,
+  alert(
+   'No se pudieron asignar números disponibles.'
+  );
 
-total:
-selectedCount*
-Number(currentRaffle.price),
+  return;
 
-numbers:
-numbers,
+ }
 
-fileName:
-receiptFile.name,
 
-receiptData:
-receiptData,
+ const requests=
+  get(Q,[]);
 
-receiptType:
-receiptFile.type || '',
 
-status:
-'pending',
+ const request={
 
-createdAt:
-new Date().toLocaleString('es-DO')
+  id:
+   'SOL-'+Date.now(),
 
-};
+  raffleId:
+   currentRaffle.id,
 
+  raffleName:
+   currentRaffle.name,
 
-try{
+  price:
+   Number(currentRaffle.price),
 
-requests.push(request);
+  name:name,
 
-put(
-Q,
-requests
-);
+  phone:phone,
 
-}catch(error){
+  email:email,
 
-alert(
-'No se pudo guardar la solicitud. El comprobante puede ser demasiado grande.'
-);
+  bank:
+   bank.dataset.bank,
 
-return;
+  account:
+   bank.dataset.account,
 
-}
+  holder:
+   bank.dataset.holder,
 
+  count:
+   selectedCount,
 
-/* LIMPIAR */
+  total:
+   selectedCount*
+   Number(currentRaffle.price),
 
-document.getElementById(
-'notice'
-).style.display=
-'block';
+  numbers:
+   numbers,
 
-document.getElementById(
-'form'
-).reset();
+  fileName:
+   receiptFile.name,
 
-document.getElementById(
-'fileName'
-).textContent='';
+  receiptData:
+   receiptData,
 
+  receiptType:
+   receiptFile.type || '',
 
-const firstBank=
-document.querySelector('.bank');
+  status:
+   'pending',
 
-if(firstBank){
+  createdAt:
+   new Date().toLocaleString(
+    'es-DO'
+   )
 
-selectBank(firstBank);
+ };
 
-}
 
+ try{
 
-updateVerifyRaffles();
+  requests.push(request);
 
+  put(
+   Q,
+   requests
+  );
 
-setTimeout(()=>{
+ }catch(error){
 
-document.getElementById(
-'notice'
-).style.display=
-'none';
+  alert(
+   'No se pudo guardar la solicitud. El comprobante puede ser demasiado grande.'
+  );
 
-},6000);
+  return;
 
+ }
 
-window.scrollTo(
-0,
-document.body.scrollHeight
-);
+
+ document.getElementById(
+  'notice'
+ ).style.display=
+  'block';
+
+
+ document.getElementById(
+  'form'
+ ).reset();
+
+
+ document.getElementById(
+  'fileName'
+ ).textContent='';
+
+
+ const firstBank=
+  document.querySelector(
+   '.bank'
+  );
+
+
+ if(firstBank){
+
+  selectBank(
+   firstBank
+  );
+
+ }
+
+
+ updateVerifyRaffles();
+
+ updatePackages();
+
+
+ setTimeout(()=>{
+
+  document.getElementById(
+   'notice'
+  ).style.display=
+   'none';
+
+ },6000);
+
+
+ window.scrollTo(
+  0,
+  document.body.scrollHeight
+ );
 
 };
 
@@ -3276,12 +3836,32 @@ document.body.scrollHeight
 
 function escapeHtml(value){
 
-return String(value||'')
-.replaceAll('&','&amp;')
-.replaceAll('<','&lt;')
-.replaceAll('>','&gt;')
-.replaceAll('"','&quot;')
-.replaceAll("'","&#039;");
+ return String(value||'')
+
+  .replaceAll(
+   '&',
+   '&amp;'
+  )
+
+  .replaceAll(
+   '<',
+   '&lt;'
+  )
+
+  .replaceAll(
+   '>',
+   '&gt;'
+  )
+
+  .replaceAll(
+   '"',
+   '&quot;'
+  )
+
+  .replaceAll(
+   "'",
+   '&#039;'
+  );
 
 }
 
@@ -3291,87 +3871,81 @@ return String(value||'')
 loadRaffle();
 
 
-/*
-Actualizar si el administrador
-modifica localStorage desde otra pestaña.
-*/
+/* ACTUALIZAR ENTRE PESTAÑAS */
 
 window.addEventListener(
-'storage',
-function(e){
+ 'storage',
+ function(e){
 
-if(
-e.key===R ||
-e.key===Q
-){
+  if(
+   e.key===R ||
+   e.key===Q
+  ){
 
-loadRaffle();
+   loadRaffle();
 
-}
+  }
 
-});
+ }
+);
 
 
-/*
-Permitir ENTER para verificar.
-*/
+/* ENTER PARA VERIFICAR */
 
 document.getElementById(
-'verifyPhone'
+ 'verifyPhone'
 ).addEventListener(
-'keydown',
-function(e){
+ 'keydown',
+ function(e){
 
-if(e.key==='Enter'){
+  if(e.key==='Enter'){
 
-e.preventDefault();
+   e.preventDefault();
 
-verifyNumbers();
+   verifyNumbers();
 
-}
+  }
 
-});
+ }
+);
 
 
-/*
-Limpiar resultados cuando se cambia
-la rifa seleccionada.
-*/
+/* CAMBIAR RIFA */
 
 document.getElementById(
-'verifyRaffle'
+ 'verifyRaffle'
 ).addEventListener(
-'change',
-function(){
+ 'change',
+ function(){
+
+  document.getElementById(
+   'verifyResult'
+  ).innerHTML='';
+
+ }
+);
+
+
+/* ENTER DESDE SELECT */
 
 document.getElementById(
-'verifyResult'
-).innerHTML='';
-
-});
-
-
-/*
-También permite ENTER desde el selector.
-*/
-
-document.getElementById(
-'verifyRaffle'
+ 'verifyRaffle'
 ).addEventListener(
-'keydown',
-function(e){
+ 'keydown',
+ function(e){
 
-if(e.key==='Enter'){
+  if(e.key==='Enter'){
 
-e.preventDefault();
+   e.preventDefault();
 
-document.getElementById(
-'verifyPhone'
-).focus();
+   document.getElementById(
+    'verifyPhone'
+   ).focus();
 
-}
+  }
 
-});
+ }
+);
 
 </script>
 
