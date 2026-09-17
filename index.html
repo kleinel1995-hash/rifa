@@ -35,14 +35,10 @@ body{
   min-height:100vh;
 }
 
-button,input{
-  font-family:inherit;
-}
+button,input{font-family:inherit}
+button{-webkit-tap-highlight-color:transparent}
 
-button{
-  -webkit-tap-highlight-color:transparent;
-}
-
+/* HEADER */
 header{
   height:72px;
   position:sticky;
@@ -52,11 +48,12 @@ header{
   align-items:center;
   justify-content:space-between;
   padding:0 15px;
-  background:#050816dd;
+  background:#050816ee;
   backdrop-filter:blur(20px);
   border-bottom:1px solid #263352;
 }
 
+/* LOGO IZQUIERDA */
 .logo{
   padding:10px 16px;
   border:1px solid #34446e;
@@ -77,15 +74,59 @@ header{
   background:linear-gradient(135deg,var(--blue),#9b7bff);
 }
 
-.icon{
-  width:44px;
-  height:44px;
-  border-radius:14px;
-  border:1px solid #304064;
+/* MENU DERECHA */
+.menuBtn{
+  width:48px;
+  height:48px;
+  border-radius:15px;
+  border:1px solid #34446e;
   color:var(--blue);
   background:#0a1123;
-  font-size:26px;
+  font-size:25px;
   cursor:pointer;
+  box-shadow:0 0 20px #42e8ff12;
+}
+
+.menuBtn:active{
+  transform:scale(.95);
+}
+
+/* MENU */
+.menu{
+  position:fixed;
+  top:72px;
+  right:12px;
+  z-index:100;
+  width:220px;
+  display:none;
+  padding:10px;
+  border:1px solid #304064;
+  border-radius:18px;
+  background:#080e1cee;
+  backdrop-filter:blur(20px);
+  box-shadow:0 20px 50px #000b;
+}
+
+.menu.active{
+  display:block;
+}
+
+.menu button{
+  width:100%;
+  padding:14px;
+  margin:3px 0;
+  border:0;
+  border-radius:12px;
+  text-align:left;
+  background:transparent;
+  color:white;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.menu button:hover{
+  background:#17233d;
+  color:var(--blue);
 }
 
 main{
@@ -95,6 +136,7 @@ main{
   padding:20px 15px 70px;
 }
 
+/* HERO */
 .hero{
   position:relative;
   overflow:hidden;
@@ -206,6 +248,7 @@ main{
   margin-top:14px;
 }
 
+/* CARD */
 .card{
   margin-top:22px;
   overflow:hidden;
@@ -246,11 +289,10 @@ main{
 .shade{
   position:absolute;
   inset:35% 0 0;
-  background:
-    linear-gradient(
-      transparent,
-      #060a14
-    );
+  background:linear-gradient(
+    transparent,
+    #060a14
+  );
 }
 
 .photoText{
@@ -264,7 +306,11 @@ main{
   display:inline-block;
   padding:8px 11px;
   border-radius:9px;
-  background:linear-gradient(90deg,var(--blue),#8c7aff);
+  background:linear-gradient(
+    90deg,
+    var(--blue),
+    #8c7aff
+  );
   color:#06101b;
   font-size:11px;
   font-weight:900;
@@ -329,7 +375,6 @@ main{
 }
 
 /* CHECKOUT */
-
 .checkout{
   display:none;
   overflow:hidden;
@@ -363,7 +408,11 @@ main{
 .checkoutHead h2{
   margin:0;
   font-size:18px;
-  background:linear-gradient(90deg,var(--blue),#c2b5ff);
+  background:linear-gradient(
+    90deg,
+    var(--blue),
+    #c2b5ff
+  );
   -webkit-background-clip:text;
   color:transparent;
 }
@@ -405,10 +454,13 @@ main{
   align-items:center;
   justify-content:center;
   border-radius:18px;
-  background:linear-gradient(135deg,#c9fbff,#716dff);
+  background:linear-gradient(
+    135deg,
+    #c9fbff,
+    #716dff
+  );
   color:#081021;
   font-size:32px;
-  box-shadow:0 0 25px #42e8ff22;
 }
 
 .participationTop b{
@@ -445,11 +497,14 @@ main{
 
 .switch button.on{
   color:#06101b;
-  background:linear-gradient(90deg,var(--blue),#8790ff);
+  background:linear-gradient(
+    90deg,
+    var(--blue),
+    #8790ff
+  );
 }
 
 /* PACKAGES */
-
 .packages{
   display:grid;
   gap:11px;
@@ -474,8 +529,7 @@ main{
 
 .pack.selected{
   outline:2px solid var(--blue);
-  box-shadow:
-    0 0 20px #42e8ff18;
+  box-shadow:0 0 20px #42e8ff18;
 }
 
 .pack .count{
@@ -505,12 +559,11 @@ main{
 
 .pack.gold{
   border-color:#5e5328;
-  background:
-    linear-gradient(
-      90deg,
-      #171508,
-      #0b101c
-    );
+  background:linear-gradient(
+    90deg,
+    #171508,
+    #0b101c
+  );
 }
 
 .pack.gold .count{
@@ -519,7 +572,6 @@ main{
 }
 
 /* FREE */
-
 .freeBox{
   display:none;
   margin-top:16px;
@@ -528,7 +580,11 @@ main{
   border:1px solid #275d70;
   border-radius:21px;
   background:
-    radial-gradient(circle at top,#123348,#080e1a 65%);
+    radial-gradient(
+      circle at top,
+      #123348,
+      #080e1a 65%
+    );
 }
 
 .freeBox.active{
@@ -619,7 +675,6 @@ main{
 }
 
 /* FORM */
-
 label{
   display:block;
   margin:18px 0 8px;
@@ -643,7 +698,6 @@ input:focus{
 }
 
 /* BANKS */
-
 .bankgrid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -691,7 +745,6 @@ input:focus{
 }
 
 /* ACCOUNT */
-
 .account{
   display:none;
   margin-top:15px;
@@ -773,7 +826,6 @@ input:focus{
 }
 
 /* UPLOAD */
-
 .upload{
   padding:30px 15px;
   text-align:center;
@@ -791,7 +843,6 @@ input:focus{
 }
 
 /* SECURITY */
-
 .cloudflare{
   padding:17px;
   border-radius:6px;
@@ -801,7 +852,6 @@ input:focus{
 }
 
 /* CONSENT */
-
 .consent{
   display:flex;
   align-items:flex-start;
@@ -819,7 +869,6 @@ input:focus{
 }
 
 /* TOTAL */
-
 .total{
   margin-top:25px;
   padding-top:24px;
@@ -850,11 +899,19 @@ input:focus{
 }
 
 /* MOBILE */
-
 @media(max-width:500px){
 
   main{
     padding:16px 12px 60px;
+  }
+
+  header{
+    padding:0 12px;
+  }
+
+  .logo{
+    font-size:14px;
+    padding:9px 12px;
   }
 
   .hero{
@@ -894,8 +951,11 @@ input:focus{
     width:68px;
   }
 
+  .menu{
+    right:10px;
+    width:205px;
+  }
 }
-
 </style>
 </head>
 
@@ -903,21 +963,23 @@ input:focus{
 
 <header>
 
-  <button class="icon" onclick="closeCheckout()">
-    ‹
-  </button>
-
+  <!-- LOGO A LA IZQUIERDA -->
   <div class="logo">
     RIFAS LUXURY
     <span>RD</span>
   </div>
 
-  <button class="icon" onclick="closeCheckout()">
-    ×
-  </button>
+  <!-- MENU A LA DERECHA -->
+  <button class="menuBtn" onclick="toggleMenu()">☰</button>
 
 </header>
 
+<!-- MENU DESPLEGABLE -->
+<div id="menu" class="menu">
+  <button onclick="goHome()">🏠 Inicio</button>
+  <button onclick="openCheckout()">🎟 Participar</button>
+  <button onclick="closeMenu()">✕ Cerrar menú</button>
+</div>
 
 <main>
 
@@ -945,13 +1007,10 @@ input:focus{
     <button
       class="btn primary"
       onclick="openCheckout()">
-
       QUIERO PARTICIPAR
-
     </button>
 
   </div>
-
 
   <div class="card">
 
@@ -979,7 +1038,6 @@ input:focus{
 
     </div>
 
-
     <div class="body">
 
       <div class="category">
@@ -1006,21 +1064,16 @@ input:focus{
         class="btn primary"
         style="float:right"
         onclick="openCheckout()">
-
         PARTICIPAR →
-
       </button>
 
       <div style="clear:both;margin-top:25px">
 
         <div class="muted">
-
           Boletos vendidos
-
           <span style="float:right">
             68%
           </span>
-
         </div>
 
         <div class="progress">
@@ -1035,7 +1088,6 @@ input:focus{
 
 </section>
 
-
 <section id="checkout" class="checkout">
 
   <div class="checkoutHead">
@@ -1043,9 +1095,7 @@ input:focus{
     <button
       class="back"
       onclick="closeCheckout()">
-
       ‹
-
     </button>
 
     <h2>
@@ -1055,24 +1105,18 @@ input:focus{
     <button
       class="close"
       onclick="closeCheckout()">
-
       ×
-
     </button>
 
   </div>
-
 
   <div class="section">
 
     <p
       class="muted"
       style="font-size:20px">
-
       Completa tu compra de boletos
-
     </p>
-
 
     <div class="participation">
 
@@ -1096,28 +1140,22 @@ input:focus{
 
       </div>
 
-
       <div class="switch">
 
         <button
           id="pkgBtn"
           class="on"
           onclick="mode('packages')">
-
           PAQUETES
-
         </button>
 
         <button
           id="freeBtn"
           onclick="mode('free')">
-
           CANTIDAD LIBRE
-
         </button>
 
       </div>
-
 
       <div
         id="packages"
@@ -1141,7 +1179,6 @@ input:focus{
 
         </div>
 
-
         <div
           class="pack"
           data-count="5"
@@ -1159,7 +1196,6 @@ input:focus{
           </div>
 
         </div>
-
 
         <div
           class="pack"
@@ -1179,7 +1215,6 @@ input:focus{
 
         </div>
 
-
         <div
           class="pack"
           data-count="30"
@@ -1197,7 +1232,6 @@ input:focus{
           </div>
 
         </div>
-
 
         <div
           class="pack gold"
@@ -1219,18 +1253,14 @@ input:focus{
 
       </div>
 
-
       <div
         id="freeBox"
         class="freeBox">
 
         <p class="freeHint">
-
           Selección aleatoria del sistema.
           <b>(Mínimo: 2)</b>
-
         </p>
-
 
         <div class="quantity">
 
@@ -1239,32 +1269,23 @@ input:focus{
             id="minusBtn"
             class="qtyBtn"
             onclick="changeQty(-1)">
-
             −
-
           </button>
-
 
           <div
             id="qtyNumber"
             class="qtyNumber">
-
             2
-
           </div>
-
 
           <button
             type="button"
             class="qtyBtn"
             onclick="changeQty(1)">
-
             +
-
           </button>
 
         </div>
-
 
         <div class="freeTotal">
 
@@ -1278,40 +1299,29 @@ input:focus{
 
         </div>
 
-
         <p class="limitText">
-
           Compra mínima: 2 boletos
           · Máximo: 10,000 por usuario
-
         </p>
 
       </div>
 
     </div>
 
-
     <p class="muted">
-
       Cantidad seleccionada:
       <b id="countText">
         2 boletos
       </b>
-
       · Máximo por usuario: 10,000
-
     </p>
 
-
     <div class="info">
-
       ⓘ Los números de boletos se
       <b>asignarán automáticamente al azar</b>
       tras validar tu pago.
       ¡Mayor cantidad = más oportunidades de ganar!
-
     </div>
-
 
     <form id="form">
 
@@ -1324,7 +1334,6 @@ input:focus{
         required
         placeholder="Ej: Juan o Juan Carlos">
 
-
       <label>
         Teléfono (WhatsApp) *
       </label>
@@ -1335,21 +1344,17 @@ input:focus{
         type="tel"
         placeholder="+1 809 000 0000">
 
-
       <label>
-
         Correo electrónico
         <span class="muted">
           (opcional)
         </span>
-
       </label>
 
       <input
         id="email"
         type="email"
         placeholder="correo@ejemplo.com">
-
 
       <label>
         Banco a transferir *
@@ -1358,11 +1363,8 @@ input:focus{
       <p
         class="muted"
         style="margin:0 0 10px">
-
         Elige una opción.
-
       </p>
-
 
       <div class="bankgrid">
 
@@ -1382,7 +1384,6 @@ input:focus{
 
         </button>
 
-
         <button
           type="button"
           class="bank"
@@ -1399,7 +1400,6 @@ input:focus{
 
         </button>
 
-
         <button
           type="button"
           class="bank"
@@ -1415,7 +1415,6 @@ input:focus{
           </span>
 
         </button>
-
 
         <button
           type="button"
@@ -1435,7 +1434,6 @@ input:focus{
 
       </div>
 
-
       <div
         id="accountBox"
         class="account active">
@@ -1445,9 +1443,7 @@ input:focus{
           <div
             class="bankLogo"
             id="bankLogo">
-
             P
-
           </div>
 
           <div>
@@ -1466,9 +1462,7 @@ input:focus{
 
         </div>
 
-
         <hr>
-
 
         <div class="accountLabel">
           NÚMERO DE CUENTA
@@ -1477,56 +1471,40 @@ input:focus{
         <div
           class="accountNumber"
           id="accountNumber">
-
           CUENTA_A_CONFIGURAR
-
         </div>
-
 
         <button
           type="button"
           class="copy"
           onclick="copyAccount()">
-
           ▣ &nbsp; COPIAR
-
         </button>
 
-
         <div style="clear:both"></div>
-
 
         <div
           class="accountLabel"
           style="margin-top:18px">
-
           TITULAR
-
         </div>
 
         <div
           class="holder"
           id="holder">
-
           TITULAR_A_CONFIGURAR
-
         </div>
-
 
         <hr>
 
-
         <div class="transferNote">
-
           ⓘ Realiza la transferencia por el
           <b>monto total</b>
           y sube el comprobante abajo
           para validar tu compra.
-
         </div>
 
       </div>
-
 
       <label>
         Comprobante de pago *
@@ -1543,7 +1521,6 @@ input:focus{
           onchange="showFile(this)">
 
         ⬆
-
         <br>
 
         Haz clic para subir tu comprobante
@@ -1557,7 +1534,6 @@ input:focus{
         <div id="fileName"></div>
 
       </label>
-
 
       <label>
         Verificación de seguridad *
@@ -1573,7 +1549,6 @@ input:focus{
 
       </div>
 
-
       <label class="consent">
 
         <input
@@ -1588,6 +1563,7 @@ input:focus{
             (nombre, teléfono y correo)
           </b>
           son correctos.
+
           Se me enviarán correos de confirmación
           y seguimiento de mi solicitud.
 
@@ -1601,7 +1577,6 @@ input:focus{
         </span>
 
       </label>
-
 
       <div class="total">
 
@@ -1620,7 +1595,6 @@ input:focus{
           ENVIAR SOLICITUD DE COMPRA →
 
         </button>
-
 
         <div
           id="notice"
@@ -1642,7 +1616,6 @@ input:focus{
 
 </main>
 
-
 <script>
 
 const PRICE_PER_TICKET = 100;
@@ -1653,6 +1626,37 @@ let selectedPrice = 200;
 let selectedCount = 2;
 let currentMode = 'packages';
 
+/* MENU */
+
+function toggleMenu(){
+
+  document
+    .getElementById('menu')
+    .classList.toggle('active');
+
+}
+
+function closeMenu(){
+
+  document
+    .getElementById('menu')
+    .classList.remove('active');
+
+}
+
+function goHome(){
+
+  closeMenu();
+  closeCheckout();
+
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  });
+
+}
+
+/* MONEY */
 
 function money(value){
 
@@ -1667,6 +1671,7 @@ function money(value){
 
 }
 
+/* TOTALS */
 
 function updateTotals(){
 
@@ -1689,9 +1694,11 @@ function updateTotals(){
     'countText'
   ).textContent =
     selectedCount +
-    (selectedCount === 1
+    (
+      selectedCount === 1
       ? ' boleto'
-      : ' boletos');
+      : ' boletos'
+    );
 
   document.getElementById(
     'minusBtn'
@@ -1700,8 +1707,11 @@ function updateTotals(){
 
 }
 
+/* CHECKOUT */
 
 function openCheckout(){
+
+  closeMenu();
 
   document
     .getElementById('catalog')
@@ -1714,7 +1724,6 @@ function openCheckout(){
   window.scrollTo(0,0);
 
 }
-
 
 function closeCheckout(){
 
@@ -1730,6 +1739,7 @@ function closeCheckout(){
 
 }
 
+/* PACKAGES */
 
 function choose(el){
 
@@ -1759,6 +1769,7 @@ function choose(el){
 
 }
 
+/* MODE */
 
 function mode(m){
 
@@ -1782,8 +1793,8 @@ function mode(m){
     'packages'
   ).style.display =
     m === 'packages'
-      ? 'grid'
-      : 'none';
+    ? 'grid'
+    : 'none';
 
   document.getElementById(
     'freeBox'
@@ -1791,7 +1802,6 @@ function mode(m){
     'active',
     m === 'free'
   );
-
 
   if(m === 'free'){
 
@@ -1818,6 +1828,7 @@ function mode(m){
 
 }
 
+/* QUANTITY */
 
 function changeQty(amount){
 
@@ -1837,6 +1848,7 @@ function changeQty(amount){
 
 }
 
+/* BANK */
 
 function selectBank(el){
 
@@ -1870,6 +1882,7 @@ function selectBank(el){
 
 }
 
+/* COPY */
 
 function copyAccount(){
 
@@ -1890,6 +1903,7 @@ function copyAccount(){
 
 }
 
+/* FILE */
 
 function showFile(input){
 
@@ -1902,6 +1916,7 @@ function showFile(input){
 
 }
 
+/* FORM */
 
 document.getElementById(
   'form'
@@ -1919,7 +1934,6 @@ document.getElementById(
   );
 
 };
-
 
 updateTotals();
 
