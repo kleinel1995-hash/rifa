@@ -921,6 +921,39 @@ select{
  line-height:1.5;
 }
 
+.buyerBox{
+ margin-top:18px;
+ padding:16px;
+ border:1px solid #293650;
+ border-radius:15px;
+ background:#080d18;
+}
+
+.buyerLabel{
+ color:var(--muted);
+ font-size:11px;
+ font-weight:900;
+ letter-spacing:1.5px;
+}
+
+.buyerName{
+ margin-top:6px;
+ color:#fff;
+ font-size:21px;
+ font-weight:900;
+}
+
+.buyerPhone{
+ margin-top:7px;
+ color:var(--muted);
+}
+
+.ticketStatus{
+ margin-top:15px;
+ padding-top:14px;
+ border-top:1px solid #202d45;
+}
+
 @media(max-width:500px){
 
  main{
@@ -983,6 +1016,7 @@ select{
   width:max-content;
   margin:8px 0 0;
  }
+
 }
 </style>
 </head>
@@ -1114,7 +1148,7 @@ select{
 
 <div class="searchNumberBox">
 
-💡 Escribe tu número de teléfono o un número de boleto para consultar tus números pendientes y aceptados.
+💡 Escribe tu número de teléfono para ver todos tus boletos, o escribe un número de boleto para consultar solamente ese boleto y saber quién lo compró.
 
 </div>
 
@@ -2499,8 +2533,16 @@ function normalizePhone(phone){
 }
 
 
-/* VERIFICAR NÚMEROS
-   AHORA ACEPTA TELÉFONO O BOLETO
+/*
+==================================================
+VERIFICAR NÚMEROS
+
+TELÉFONO:
+Muestra TODOS los boletos asociados.
+
+BOLETO:
+Muestra SOLAMENTE ese boleto y quién lo compró.
+==================================================
 */
 
 function verifyNumbers(){
@@ -2549,29 +2591,13 @@ function verifyNumbers(){
  }
 
 
- /*
-  Quitamos espacios, guiones, paréntesis, etc.
-  Esto permite buscar teléfonos como:
-
-  +1 809 555 1234
-
-  o números de boleto como:
-
-  25
- */
-
  const digits=
   normalizePhone(search);
 
 
- /*
-  Si el campo contiene solamente números,
-  también lo consideramos posible número
-  de boleto.
- */
-
  const isNumericTicket=
   /^\d+$/.test(search);
+
 
  const searchedTicket=
   isNumericTicket
@@ -2581,11 +2607,7 @@ function verifyNumbers(){
   null;
 
 
- /*
-  Validación básica
- */
-
- if(digits.length<1){
+ if(!digits.length){
 
   alert(
    'Escribe un número de teléfono o boleto válido.'
@@ -2622,12 +2644,300 @@ function verifyNumbers(){
 
 
  /*
-  BUSCAR POR:
-  1. TELÉFONO
-  2. NÚMERO DE BOLETO
+ ==================================================
+ BUSCAR POR BOLETO
+ ==================================================
+ */
 
-  Si coincide cualquiera de los dos,
-  se muestra la solicitud.
+ if(isNumericTicket){
+
+  const matches=
+   requests.filter(q=>{
+
+    if(!q)return false;
+
+
+    if(
+     String(q.raffleId)!==
+     String(raffleId)
+    ){
+
+     return false;
+
+    }
+
+
+    if(
+     !Array.isArray(q.numbers)
+    ){
+
+     return false;
+
+    }
+
+
+    return q.numbers.some(
+     n=>Number(n)===searchedTicket
+    );
+
+   });
+
+
+  const result=
+   document.getElementById(
+    'verifyResult'
+   );
+
+
+  if(!matches.length){
+
+   result.innerHTML=`
+
+   <div class="verifyEmpty">
+
+    🔎
+    <b>
+     No encontramos el boleto
+     #${searchedTicket}.
+    </b>
+
+    <br><br>
+
+    El número de boleto no aparece
+    en las solicitudes de esta rifa.
+
+   </div>
+
+   `;
+
+   return;
+
+  }
+
+
+  let html=`
+
+  <div class="searchNumberBox">
+
+   🔎 Boleto consultado:
+   <b>#${searchedTicket}</b>
+
+  </div>
+
+  `;
+
+
+  matches.forEach(q=>{
+
+   const isAccepted=
+    q.status==='accepted';
+
+
+   html+=`
+
+   <div class="${
+    isAccepted
+    ?
+    'acceptedCard'
+    :
+    'pendingCard'
+   }">
+
+
+    <div class="${
+     isAccepted
+     ?
+     'acceptedTitle'
+     :
+     'pendingTitle'
+    }">
+
+     ${
+      isAccepted
+      ?
+      '✓ BOLETO VENDIDO'
+      :
+      '⏳ BOLETO PENDIENTE'
+     }
+
+    </div>
+
+
+    <h3 style="margin:10px 0">
+
+     ${escapeHtml(
+      q.raffleName ||
+      'Rifa'
+     )}
+
+    </h3>
+
+
+    <div
+     style="
+     margin-top:16px;
+     color:var(--blue);
+     font-weight:900;
+     ">
+
+     🎟 NÚMERO DE BOLETO
+
+    </div>
+
+
+    <div class="numberGrid">
+
+     <div class="numberItem">
+
+      ${String(
+       searchedTicket
+      ).padStart(2,'0')}
+
+     </div>
+
+    </div>
+
+
+    <div class="buyerBox">
+
+     <div class="buyerLabel">
+
+      COMPRADO POR
+
+     </div>
+
+
+     <div class="buyerName">
+
+      👤
+      ${escapeHtml(
+       q.name ||
+       'Nombre no disponible'
+      )}
+
+     </div>
+
+
+     ${
+      q.phone
+      ?
+      `
+      <div class="buyerPhone">
+
+       📱
+       ${escapeHtml(q.phone)}
+
+      </div>
+      `
+      :
+      ''
+     }
+
+    </div>
+
+
+    <div class="ticketStatus">
+
+     <span class="muted">
+      Estado:
+     </span>
+
+     <b
+      style="
+      color:${
+       isAccepted
+       ?
+       'var(--green)'
+       :
+       'var(--gold)'
+      };
+      ">
+
+      ${
+       isAccepted
+       ?
+       'VENDIDO / ACEPTADO'
+       :
+       'RESERVADO / PENDIENTE'
+      }
+
+     </b>
+
+     <br><br>
+
+     <span class="muted">
+      Fecha:
+     </span>
+
+     <b>
+
+      ${escapeHtml(
+       q.createdAt ||
+       ''
+      )}
+
+     </b>
+
+    </div>
+
+
+    ${
+     !isAccepted
+     ?
+     `
+     <div class="verifyInfo">
+
+      ⏳
+
+      <b style="color:var(--gold)">
+       Este boleto está reservado.
+      </b>
+
+      <br><br>
+
+      El comprobante todavía está siendo
+      revisado por el administrador.
+
+     </div>
+     `
+     :
+     `
+     <div class="verifyInfo">
+
+      ✓
+
+      <b style="color:var(--green)">
+       Este boleto fue vendido.
+      </b>
+
+      <br><br>
+
+      La solicitud de compra fue aceptada
+      por el administrador.
+
+     </div>
+     `
+    }
+
+
+   </div>
+
+   `;
+
+  });
+
+
+  result.innerHTML=html;
+
+  return;
+
+ }
+
+
+ /*
+ ==================================================
+ BUSCAR POR TELÉFONO
+ ==================================================
  */
 
  const matches=
@@ -2635,8 +2945,6 @@ function verifyNumbers(){
 
    if(!q)return false;
 
-
-   /* RIFA */
 
    if(
     String(q.raffleId)!==
@@ -2648,36 +2956,15 @@ function verifyNumbers(){
    }
 
 
-   /*
-    Coincidencia por teléfono.
+   if(!q.phone){
 
-    Solo consideramos teléfono si tiene
-    al menos 7 dígitos.
-   */
+    return false;
 
-   const phoneMatch=
-    digits.length>=7 &&
-    normalizePhone(q.phone)===
+   }
+
+
+   return normalizePhone(q.phone)===
     digits;
-
-
-   /*
-    Coincidencia por número de boleto.
-   */
-
-   const ticketMatch=
-    isNumericTicket &&
-    Array.isArray(q.numbers) &&
-    q.numbers.some(
-     n=>Number(n)===searchedTicket
-    );
-
-
-   /*
-    Puede coincidir por cualquiera.
-   */
-
-   return phoneMatch || ticketMatch;
 
   });
 
@@ -2700,10 +2987,6 @@ function verifyNumbers(){
   );
 
 
- /*
-  SIN RESULTADOS
- */
-
  if(
   !pending.length &&
   !accepted.length
@@ -2718,8 +3001,7 @@ function verifyNumbers(){
 
    <br><br>
 
-   No hay solicitudes pendientes ni aceptadas
-   para esta rifa con:
+   No hay boletos asociados al teléfono:
 
    <br><br>
 
@@ -2731,9 +3013,9 @@ function verifyNumbers(){
 
    <span class="muted">
 
-    Puedes buscar usando el número de teléfono
-    utilizado al realizar la solicitud
-    o directamente el número de boleto.
+    Verifica que estés utilizando el mismo
+    número de teléfono utilizado al realizar
+    la solicitud.
 
    </span>
 
@@ -2746,43 +3028,29 @@ function verifyNumbers(){
  }
 
 
- let html='';
+ let html=`
+
+ <div class="searchNumberBox">
+
+  📱 Teléfono consultado:
+  <b>${escapeHtml(search)}</b>
+
+  <br><br>
+
+  🎟 Se encontraron
+  <b>${matches.length}</b>
+  solicitud(es).
+
+ </div>
+
+ `;
 
 
  /*
-  MOSTRAR QUÉ SE BUSCÓ
+ ==================================================
+ PENDIENTES
+ ==================================================
  */
-
- if(isNumericTicket){
-
-  html+=`
-
-  <div class="searchNumberBox">
-
-   🔎 Boleto consultado:
-   <b>#${searchedTicket}</b>
-
-  </div>
-
-  `;
-
- }else{
-
-  html+=`
-
-  <div class="searchNumberBox">
-
-   🔎 Teléfono consultado:
-   <b>${escapeHtml(search)}</b>
-
-  </div>
-
-  `;
-
- }
-
-
- /* PENDIENTES */
 
  pending.forEach(q=>{
 
@@ -2819,7 +3087,8 @@ function verifyNumbers(){
 
     Fecha:
     ${escapeHtml(
-     q.createdAt || ''
+     q.createdAt ||
+     ''
     )}
 
    </div>
@@ -2832,7 +3101,7 @@ function verifyNumbers(){
     font-weight:900;
     ">
 
-    🎟 NÚMEROS PENDIENTES
+    🎟 TUS NÚMEROS RESERVADOS
 
    </div>
 
@@ -2884,11 +3153,13 @@ function verifyNumbers(){
 
     <br><br>
 
-    Tu comprobante todavía está siendo revisado.
+    Tu comprobante todavía está siendo
+    revisado.
 
     Los números pasarán a ser
     <b>vendidos</b>
-    cuando el administrador acepte la solicitud.
+    cuando el administrador acepte
+    la solicitud.
 
    </div>
 
@@ -2935,7 +3206,11 @@ function verifyNumbers(){
  });
 
 
- /* ACEPTADOS */
+ /*
+ ==================================================
+ ACEPTADOS
+ ==================================================
+ */
 
  accepted.forEach(q=>{
 
@@ -2972,7 +3247,8 @@ function verifyNumbers(){
 
     Fecha:
     ${escapeHtml(
-     q.createdAt || ''
+     q.createdAt ||
+     ''
     )}
 
    </div>
@@ -2985,7 +3261,7 @@ function verifyNumbers(){
     font-weight:900;
     ">
 
-    🎟 TUS NÚMEROS
+    🎟 TUS NÚMEROS VENDIDOS
 
    </div>
 
@@ -2997,8 +3273,7 @@ function verifyNumbers(){
 
      ?
 
-     numbers
-     .map(n=>`
+     numbers.map(n=>`
 
       <div class="numberItem">
 
@@ -3006,8 +3281,7 @@ function verifyNumbers(){
 
       </div>
 
-     `)
-     .join('')
+     `).join('')
 
      :
 
@@ -3488,8 +3762,6 @@ document.getElementById(
  }
 
 
- /* COMPROBAR AGOTADA */
-
  if(
   isRaffleSoldOut(
    currentRaffle
@@ -3672,11 +3944,6 @@ document.getElementById(
 
  }
 
-
- /*
-  LOS NÚMEROS SE GENERAN
-  Y QUEDAN RESERVADOS.
- */
 
  const numbers=
   randomNumbers(
