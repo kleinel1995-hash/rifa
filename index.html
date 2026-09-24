@@ -61,7 +61,6 @@ header{
  font-size:16px;
  font-weight:900;
  letter-spacing:.8px;
- box-shadow:0 0 25px #426aff15;
 }
 
 .logo span{
@@ -2395,12 +2394,20 @@ function renderAllRaffles(raffles){
        )}
       </h2>
 
-      <span>
-       ${escapeHtml(
-        raffle.description ||
-        'Participa y llévate este gran premio.'
-       )}
-      </span>
+      <!-- DESCRIPCIÓN SOLO SI EXISTE -->
+      ${
+       raffle.description
+       ?
+       `
+       <span>
+        ${escapeHtml(
+         raffle.description
+        )}
+       </span>
+       `
+       :
+       ''
+      }
 
      </div>
 
@@ -2419,12 +2426,20 @@ function renderAllRaffles(raffles){
       )}
      </h2>
 
-     <p class="muted">
-      ${escapeHtml(
-       raffle.description ||
-       'Participa y llévate este gran premio.'
-      )}
-     </p>
+     <!-- DESCRIPCIÓN SOLO SI EXISTE -->
+     ${
+      raffle.description
+      ?
+      `
+      <p class="muted">
+       ${escapeHtml(
+        raffle.description
+       )}
+      </p>
+      `
+      :
+      ''
+     }
 
      <div class="price">
       ${money(raffle.price)}
@@ -2837,11 +2852,9 @@ function openVerifyFromConfirmation(){
 
  }
 
-
  document.getElementById(
   'verifyResult'
  ).innerHTML='';
-
 
  window.scrollTo(
   0,
@@ -3104,8 +3117,6 @@ function verifyNumbers(){
   null;
 
 
- /* BUSCAR BOLETO */
-
  if(
   isNumericTicket
  ){
@@ -3137,8 +3148,6 @@ function verifyNumbers(){
 
  }
 
-
- /* BUSCAR TELÉFONO */
 
  const phoneMatches=
   raffleRequests.filter(
@@ -3421,10 +3430,6 @@ function renderPhoneResults(
  let totalAccepted=0;
 
 
- /*
-  MOSTRAR CADA COMPRADOR
- */
-
  matches.forEach(
   q=>{
 
@@ -3469,7 +3474,6 @@ function renderPhoneResults(
     'pendingCard'
    }">
 
-
     <div class="${
      accepted
      ?
@@ -3488,8 +3492,6 @@ function renderPhoneResults(
 
     </div>
 
-
-    <!-- NOMBRE Y TELÉFONO -->
 
     <div class="buyerBox">
 
@@ -4565,20 +4567,10 @@ document.getElementById(
   }
 
 
-  /*
-   =========================================
-   MOSTRAR CONFIRMACIÓN
-  =========================================
-  */
-
   showConfirmation(
    request
   );
 
-
-  /*
-   Actualizar datos
-  */
 
   updateVerifyRaffles();
 
@@ -4749,21 +4741,6 @@ function goHome(){
   top:0,
   behavior:'smooth'
  });
-
-}
-
-
-/* =========================================
-   CERRAR CONFIRMACION
-========================================= */
-
-function closeConfirmation(){
-
- document.getElementById(
-  'confirmation'
- ).classList.remove(
-  'active'
- );
 
 }
 
