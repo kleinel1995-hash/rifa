@@ -2,1999 +2,1136 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050816">
 <title>Rifas Luxury RD</title>
 
 <style>
+:root{
+  --bg:#050816;
+  --card:#0b1020;
+  --card2:#10172b;
+  --line:#202d4d;
+  --blue:#42e8ff;
+  --purple:#8b5cf6;
+  --pink:#d946ef;
+  --gold:#ffd84d;
+  --text:#fff;
+  --muted:#8994ae;
+  --green:#22d47a;
+  --red:#ff4d67;
+}
+
 *{box-sizing:border-box}
 
-:root{
- --bg:#050816;
- --card:#0b1020;
- --card2:#10172b;
- --line:#202d4d;
- --blue:#42e8ff;
- --purple:#8b5cf6;
- --pink:#d946ef;
- --gold:#ffd84d;
- --text:#fff;
- --muted:#8994ae;
- --green:#22d47a;
- --red:#ff4d67;
+html{
+  scroll-behavior:smooth;
 }
-
-html{scroll-behavior:smooth}
 
 body{
- margin:0;
- color:var(--text);
- font-family:Arial,Helvetica,sans-serif;
- background:
- radial-gradient(circle at 10% 0%,#17255a 0,transparent 32%),
- radial-gradient(circle at 90% 10%,#35145b 0,transparent 28%),
- linear-gradient(180deg,#040714,#02040b);
- min-height:100vh;
+  margin:0;
+  background:
+    radial-gradient(circle at 20% -10%,rgba(66,232,255,.10),transparent 28%),
+    radial-gradient(circle at 100% 10%,rgba(139,92,246,.13),transparent 30%),
+    var(--bg);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+  min-height:100vh;
 }
 
-button,input,select{font-family:inherit}
-button{-webkit-tap-highlight-color:transparent}
+button,input,select{
+  font:inherit;
+}
 
-header{
- height:72px;
- position:sticky;
- top:0;
- z-index:50;
- display:flex;
- align-items:center;
- justify-content:space-between;
- padding:0 15px;
- background:#050816ee;
- backdrop-filter:blur(20px);
- border-bottom:1px solid #263352;
+button{
+  cursor:pointer;
+}
+
+.app{
+  width:100%;
+  max-width:760px;
+  margin:auto;
+  min-height:100vh;
+}
+
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 16px;
+  background:rgba(5,8,22,.88);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.07);
 }
 
 .logo{
- padding:10px 16px;
- border:1px solid #34446e;
- border-radius:30px;
- background:#0b1124;
- font-size:16px;
- font-weight:900;
- letter-spacing:.8px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-weight:900;
+  letter-spacing:.8px;
 }
 
 .logo span{
- display:inline-block;
- margin-left:5px;
- padding:5px 8px;
- border-radius:8px;
- color:#071020;
- background:linear-gradient(135deg,var(--blue),#9b7bff);
+  padding:4px 8px;
+  border-radius:999px;
+  color:#050816;
+  background:linear-gradient(135deg,var(--blue),var(--purple));
+  font-size:11px;
 }
 
 .menuBtn{
- width:48px;
- height:48px;
- border-radius:15px;
- border:1px solid #34446e;
- color:var(--blue);
- background:#0a1123;
- font-size:25px;
- cursor:pointer;
+  width:42px;
+  height:42px;
+  border:1px solid var(--line);
+  background:var(--card);
+  color:white;
+  border-radius:13px;
+  font-size:21px;
 }
 
 .menu{
- position:fixed;
- top:72px;
- right:12px;
- z-index:100;
- width:220px;
- display:none;
- padding:10px;
- border:1px solid #304064;
- border-radius:18px;
- background:#080e1cee;
- backdrop-filter:blur(20px);
- box-shadow:0 20px 50px #000b;
+  position:absolute;
+  right:14px;
+  top:65px;
+  width:205px;
+  display:none;
+  padding:8px;
+  background:rgba(11,16,32,.98);
+  border:1px solid var(--line);
+  border-radius:17px;
+  box-shadow:0 20px 50px rgba(0,0,0,.45);
 }
 
 .menu.active{display:block}
 
 .menu button{
- width:100%;
- padding:14px;
- margin:3px 0;
- border:0;
- border-radius:12px;
- text-align:left;
- background:transparent;
- color:white;
- font-weight:800;
- cursor:pointer;
+  width:100%;
+  padding:12px;
+  border:0;
+  background:transparent;
+  color:white;
+  text-align:left;
+  border-radius:10px;
 }
 
 .menu button:hover{
- background:#17233d;
- color:var(--blue);
+  background:rgba(66,232,255,.08);
+  color:var(--blue);
 }
 
 main{
- width:100%;
- max-width:760px;
- margin:auto;
- padding:20px 15px 70px;
+  padding:18px 14px 50px;
 }
 
 .hero{
- position:relative;
- overflow:hidden;
- padding:30px 22px;
- border:1px solid #29385f;
- border-radius:30px;
- background:linear-gradient(135deg,#0c1630,#080d1e 60%,#160d27);
- box-shadow:0 25px 70px #0008,inset 0 1px #ffffff08;
-}
-
-.hero:before{
- content:"";
- position:absolute;
- width:250px;
- height:250px;
- right:-110px;
- top:-120px;
- border-radius:50%;
- background:#42e8ff22;
- filter:blur(12px);
-}
-
-.hero:after{
- content:"";
- position:absolute;
- width:200px;
- height:200px;
- left:-130px;
- bottom:-130px;
- border-radius:50%;
- background:#a855f722;
- filter:blur(15px);
+  padding:28px 18px;
+  min-height:330px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border:1px solid var(--line);
+  border-radius:27px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 90% 20%,rgba(139,92,246,.30),transparent 30%),
+    radial-gradient(circle at 5% 100%,rgba(66,232,255,.18),transparent 30%),
+    linear-gradient(145deg,#0c1427,#080b18);
 }
 
 .eyebrow{
- position:relative;
- z-index:2;
- display:inline-flex;
- align-items:center;
- gap:7px;
- padding:8px 12px;
- border:1px solid #355477;
- border-radius:30px;
- color:var(--blue);
- background:#071325;
- font-size:11px;
- font-weight:900;
- letter-spacing:1.5px;
+  color:var(--blue);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:2px;
+  margin-bottom:13px;
 }
 
 .hero h1{
- position:relative;
- z-index:2;
- margin:18px 0 12px;
- font-size:41px;
- line-height:1.02;
-}
-
-.gradient{
- background:linear-gradient(90deg,var(--blue),#8f78ff,#e45cff);
- -webkit-background-clip:text;
- color:transparent;
+  font-size:clamp(35px,9vw,58px);
+  line-height:.98;
+  margin:0;
+  max-width:620px;
+  letter-spacing:-2px;
 }
 
 .hero p{
- position:relative;
- z-index:2;
- color:var(--muted);
- line-height:1.55;
-}
-
-.btn{
- border:0;
- border-radius:15px;
- padding:15px 18px;
- font-weight:900;
- cursor:pointer;
- transition:.2s;
+  color:var(--muted);
+  line-height:1.6;
+  margin:18px 0 23px;
+  max-width:560px;
 }
 
 .primary{
- color:#03101b;
- background:linear-gradient(100deg,var(--blue),#7597ff);
- box-shadow:0 8px 25px #42e8ff25,0 0 25px #8b5cf625;
+  width:100%;
+  border:0;
+  color:#031018;
+  font-weight:900;
+  padding:15px 18px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--blue),#72f5ff);
+  box-shadow:0 12px 30px rgba(66,232,255,.16);
 }
 
-.hero .btn{
- position:relative;
- z-index:3;
- width:100%;
- margin-top:14px;
+.secondary{
+  width:100%;
+  border:1px solid var(--line);
+  color:white;
+  font-weight:800;
+  padding:14px 18px;
+  border-radius:14px;
+  background:var(--card);
 }
 
-.verifyBtn{
- color:#fff;
- background:linear-gradient(100deg,#8b5cf6,#d946ef);
- box-shadow:0 8px 25px #8b5cf625;
+.verifyHero{
+  margin-top:10px;
 }
 
-.btn:disabled{
- opacity:.55;
- cursor:not-allowed;
- box-shadow:none;
+.sectionTitle{
+  margin:30px 3px 13px;
+  font-size:22px;
+  font-weight:900;
 }
 
-.raffleList{
- margin-top:22px;
-}
-
-.listTitle{
- margin:0 0 13px;
- padding:0 4px;
- font-size:20px;
- font-weight:900;
-}
-
-.listTitle span{
- color:var(--blue);
+.sectionTitle span{
+  color:var(--blue);
 }
 
 .card{
- margin-top:18px;
- overflow:hidden;
- border:1px solid #273654;
- border-radius:30px;
- background:linear-gradient(180deg,#0c1325,#070b16);
- box-shadow:0 25px 60px #0009;
+  overflow:hidden;
+  background:linear-gradient(180deg,#0d1426,#090e1d);
+  border:1px solid var(--line);
+  border-radius:23px;
+  margin-bottom:18px;
+  box-shadow:0 14px 45px rgba(0,0,0,.20);
 }
 
 .photo{
- height:330px;
- position:relative;
- display:flex;
- align-items:center;
- justify-content:center;
- font-size:120px;
- background:radial-gradient(circle at 50% 40%,#334d83,#111a31 40%,#070b16 75%);
+  height:330px;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 30%,rgba(66,232,255,.25),transparent 35%),
+    linear-gradient(135deg,#111a31,#070a13);
 }
 
 .photo img{
- position:absolute;
- inset:0;
- width:100%;
- height:100%;
- object-fit:cover;
-}
-
-.photo:before{
- content:"";
- position:absolute;
- inset:18px;
- z-index:2;
- border-radius:24px;
- border:1px solid #62eaff33;
- box-shadow:inset 0 0 40px #42e8ff09,0 0 40px #42e8ff0a;
- pointer-events:none;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 
 .shade{
- position:absolute;
- inset:35% 0 0;
- z-index:3;
- background:linear-gradient(transparent,#060a14);
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.80));
 }
 
 .photoText{
- position:absolute;
- z-index:4;
- left:22px;
- right:22px;
- bottom:21px;
-}
-
-.tag{
- display:inline-block;
- padding:8px 11px;
- border-radius:9px;
- background:linear-gradient(90deg,var(--blue),#8c7aff);
- color:#06101b;
- font-size:11px;
- font-weight:900;
-}
-
-.soldOutTag{
- display:inline-block;
- margin-left:6px;
- padding:8px 11px;
- border-radius:9px;
- background:linear-gradient(90deg,#ff4d67,#ff8b4d);
- color:#fff;
- font-size:11px;
- font-weight:900;
- box-shadow:0 0 20px #ff4d6740;
+  position:absolute;
+  left:17px;
+  right:17px;
+  bottom:17px;
 }
 
 .photoText h2{
- margin:11px 0 4px;
- font-size:29px;
+  margin:10px 0 4px;
+  font-size:25px;
+}
+
+.photoText span:not(.tag):not(.soldOutTag){
+  color:#dbe2f4;
+}
+
+.tag,.soldOutTag{
+  display:inline-flex;
+  padding:6px 9px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:900;
+  margin-right:5px;
+}
+
+.tag{
+  background:rgba(66,232,255,.14);
+  color:var(--blue);
+  border:1px solid rgba(66,232,255,.25);
+}
+
+.soldOutTag{
+  background:rgba(255,77,103,.13);
+  color:#ff788c;
+  border:1px solid rgba(255,77,103,.25);
 }
 
 .body{
- padding:23px;
+  padding:18px;
 }
 
 .category{
- color:#a78bfa;
- font-size:12px;
- font-weight:900;
- letter-spacing:1px;
+  color:var(--blue);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px;
 }
 
 .body h2{
- margin:11px 0 5px;
- font-size:24px;
+  margin:8px 0 5px;
+  font-size:24px;
 }
 
 .muted{
- color:var(--muted);
- line-height:1.5;
+  color:var(--muted);
+  line-height:1.55;
 }
 
 .price{
- margin-top:17px;
- color:var(--blue);
- font-size:32px;
- font-weight:900;
+  margin:15px 0;
+  font-size:26px;
+  font-weight:900;
+}
+
+.price small{
+  color:var(--muted);
+  font-size:12px;
+  font-weight:normal;
+}
+
+.progressTop{
+  display:flex;
+  justify-content:space-between;
+  color:var(--muted);
+  font-size:12px;
+  margin-bottom:7px;
 }
 
 .progress{
- height:9px;
- margin-top:9px;
- overflow:hidden;
- border-radius:20px;
- background:#182039;
+  height:8px;
+  background:#182038;
+  border-radius:99px;
+  overflow:hidden;
 }
 
-.progress i{
- display:block;
- height:100%;
- border-radius:20px;
- background:linear-gradient(90deg,#536cff,var(--purple),var(--blue));
+.progress div{
+  height:100%;
+  background:linear-gradient(90deg,var(--blue),var(--purple));
+  border-radius:99px;
 }
 
-.soldOutBox{
- margin-top:18px;
- padding:15px;
- text-align:center;
- border:1px solid #743143;
- border-radius:16px;
- background:linear-gradient(145deg,#24101a,#110b12);
- color:#ff8093;
- font-weight:900;
- letter-spacing:1px;
+.card .primary{
+  margin-top:17px;
 }
 
-.noRaffle{
- padding:30px;
- text-align:center;
- border:1px dashed #334361;
- border-radius:20px;
- color:var(--muted);
+.hidden{
+  display:none!important;
 }
 
-.checkout{
- display:none;
- overflow:hidden;
- border:1px solid #29385b;
- border-radius:30px;
- background:#070b16;
- box-shadow:0 25px 80px #000b;
+.view{
+  display:none;
 }
 
-.checkout.active{display:block}
-
-.catalog.hidden{display:none}
+.view.active{
+  display:block;
+}
 
 .checkoutHead{
- position:sticky;
- top:0;
- z-index:10;
- display:flex;
- align-items:center;
- justify-content:space-between;
- padding:13px 15px;
- border-bottom:1px solid #202d49;
- background:#070b16ee;
- backdrop-filter:blur(18px);
+  position:sticky;
+  top:72px;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  min-height:70px;
+  background:rgba(5,8,22,.94);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
 
-.checkoutHead h2{
- margin:0;
- font-size:18px;
- background:linear-gradient(90deg,var(--blue),#c2b5ff);
- -webkit-background-clip:text;
- color:transparent;
- text-align:center;
- max-width:70%;
+.iconBtn{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background:var(--card);
+  color:white;
+  font-size:23px;
 }
 
-.back,.close{
- width:44px;
- height:44px;
- border-radius:14px;
- border:1px solid #304064;
- background:#0d1426;
- color:var(--blue);
- font-size:25px;
- cursor:pointer;
+.checkoutTitle{
+  text-align:center;
+  max-width:70%;
 }
 
-.section{
- padding:22px;
+.checkoutTitle strong{
+  display:block;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
-.participation{
- padding:18px;
- border:1px solid #304365;
- border-radius:22px;
- background:linear-gradient(145deg,#0e172c,#090e1c);
+.checkoutTitle small{
+  color:var(--muted);
 }
 
-.participationTop{
- display:flex;
- align-items:center;
- gap:14px;
+.panel{
+  margin-top:15px;
+  padding:17px;
+  border:1px solid var(--line);
+  border-radius:21px;
+  background:rgba(11,16,32,.88);
 }
 
-.ticketIcon{
- width:66px;
- height:66px;
- display:flex;
- align-items:center;
- justify-content:center;
- border-radius:18px;
- background:linear-gradient(135deg,#c9fbff,#716dff);
- color:#081021;
- font-size:32px;
-}
-
-.participationTop b{
- color:var(--blue);
- font-size:11px;
- letter-spacing:2px;
-}
-
-.participationTop h3{
- margin:6px 0 0;
- font-size:18px;
-}
-
-.switch{
- display:flex;
- gap:4px;
- margin-top:19px;
- padding:4px;
- border:1px solid #273652;
- border-radius:16px;
- background:#080d19;
-}
-
-.switch button{
- flex:1;
- padding:14px 7px;
- border:0;
- border-radius:12px;
- color:#7e899f;
- background:transparent;
- font-weight:900;
- cursor:pointer;
-}
-
-.switch button.on{
- color:#06101b;
- background:linear-gradient(90deg,var(--blue),#8790ff);
+.panel h3{
+  margin:0 0 13px;
 }
 
 .packages{
- display:grid;
- gap:11px;
- margin-top:16px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:9px;
 }
 
 .pack{
- display:flex;
- align-items:center;
- overflow:hidden;
- border:1px solid #2b3a58;
- border-radius:19px;
- background:#0c1221;
- cursor:pointer;
+  padding:15px 10px;
+  border-radius:15px;
+  border:1px solid var(--line);
+  background:#0b1122;
+  color:white;
+  text-align:center;
+  position:relative;
 }
 
-.pack.selected{
- outline:2px solid var(--blue);
-}
-
-.pack.disabled{
- opacity:.35;
- cursor:not-allowed;
-}
-
-.pack .count{
- width:38%;
- padding:17px 8px;
- text-align:center;
- color:var(--blue);
- background:#111a30;
- font-size:25px;
- font-weight:900;
-}
-
-.pack .amount{
- flex:1;
- padding:15px;
- text-align:center;
- font-size:18px;
- font-weight:900;
+.pack strong{
+  display:block;
+  font-size:18px;
 }
 
 .pack small{
- display:block;
- margin-top:5px;
- color:#7e899d;
- font-size:10px;
+  color:var(--muted);
+}
+
+.pack.selected{
+  border-color:var(--blue);
+  background:rgba(66,232,255,.08);
+  box-shadow:inset 0 0 0 1px rgba(66,232,255,.15);
 }
 
 .pack.gold{
- border-color:#5e5328;
- background:linear-gradient(90deg,#171508,#0b101c);
+  border-color:rgba(255,216,77,.5);
 }
 
-.pack.gold .count{
- color:var(--gold);
- background:#211d0b;
+.pack.gold.selected{
+  background:rgba(255,216,77,.08);
+}
+
+.modeTabs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px;
+  padding:5px;
+  background:#070b17;
+  border-radius:14px;
+  margin-bottom:15px;
+}
+
+.modeTabs button{
+  padding:11px;
+  border:0;
+  border-radius:10px;
+  background:transparent;
+  color:var(--muted);
+  font-weight:800;
+}
+
+.modeTabs button.active{
+  color:white;
+  background:#18233e;
 }
 
 .freeBox{
- display:none;
- margin-top:16px;
- padding:20px;
- text-align:center;
- border:1px solid #275d70;
- border-radius:21px;
- background:radial-gradient(circle at top,#123348,#080e1a 65%);
+  display:none;
 }
 
 .freeBox.active{
- display:block;
+  display:block;
 }
 
-.freeHint{
- color:#aeb8cb;
-}
-
-.quantity{
- display:flex;
- align-items:center;
- justify-content:center;
- gap:11px;
- margin-top:18px;
+.qtyRow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  margin:12px 0;
 }
 
 .qtyBtn{
- width:73px;
- height:68px;
- border-radius:18px;
- border:1px solid #34758c;
- background:#0b1321;
- color:var(--blue);
- font-size:38px;
- font-weight:900;
- cursor:pointer;
-}
-
-.qtyBtn:disabled{
- opacity:.25;
- cursor:not-allowed;
+  width:44px;
+  height:44px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#10182c;
+  color:white;
+  font-size:24px;
 }
 
 .qtyNumber{
- width:105px;
- height:68px;
- display:flex;
- align-items:center;
- justify-content:center;
- border:2px solid var(--blue);
- border-radius:18px;
- background:#060b14;
- font-size:36px;
- font-weight:900;
-}
-
-.freeTotal{
- margin-top:18px;
- padding:18px;
- border:1px solid #253450;
- border-radius:17px;
- background:#060a12;
-}
-
-.freeTotal small,
-.total small{
- color:#7e899e;
- letter-spacing:3px;
-}
-
-.freeTotal strong{
- display:block;
- margin-top:7px;
- color:var(--blue);
- font-size:32px;
-}
-
-.limitText{
- color:#7f899e;
- font-size:13px;
-}
-
-.info{
- margin-top:18px;
- padding:16px;
- border:1px solid #4d4828;
- border-radius:17px;
- background:#111319;
- color:#aeb7c8;
- line-height:1.5;
-}
-
-.info b{
- color:var(--gold);
-}
-
-label{
- display:block;
- margin:18px 0 8px;
- font-weight:800;
+  min-width:90px;
+  text-align:center;
+  font-size:25px;
+  font-weight:900;
 }
 
 input,select{
- width:100%;
- padding:15px;
- border:1px solid #2c3954;
- border-radius:13px;
- outline:none;
- background:#080d18;
- color:white;
- font-size:16px;
+  width:100%;
+  color:white;
+  background:#080e1d;
+  border:1px solid var(--line);
+  border-radius:12px;
+  outline:none;
+  padding:13px;
 }
 
-select{
- cursor:pointer;
+input:focus,select:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(66,232,255,.08);
 }
 
-.bankgrid{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:8px;
- padding:10px;
- border:1px solid #293650;
- border-radius:19px;
- background:#090e19;
+label{
+  display:block;
+  color:#dce3f4;
+  font-size:13px;
+  font-weight:800;
+  margin:13px 0 7px;
 }
 
-.bank{
- position:relative;
- height:65px;
- border:1px solid #293650;
- border-radius:14px;
- background:#111827;
- color:white;
- font-size:24px;
- cursor:pointer;
+.fieldHint{
+  color:var(--muted);
+  font-size:11px;
+  margin-top:6px;
 }
 
-.bank.selected{
- border:2px solid var(--blue);
- box-shadow:0 0 18px #42e8ff1c;
+.bankGrid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
 }
 
-.check{
- position:absolute;
- top:-7px;
- right:-5px;
- width:23px;
- height:23px;
- display:none;
- align-items:center;
- justify-content:center;
- border-radius:50%;
- background:var(--blue);
- color:#06101b;
- font-size:14px;
- font-weight:900;
+.bankBtn{
+  border:1px solid var(--line);
+  background:#080e1d;
+  color:white;
+  padding:12px 8px;
+  border-radius:12px;
+  font-size:12px;
 }
 
-.bank.selected .check{
- display:flex;
+.bankBtn.active{
+  border-color:var(--blue);
+  background:rgba(66,232,255,.07);
+  color:var(--blue);
 }
 
-.account{
- display:none;
- margin-top:15px;
- padding:18px;
- border:1px solid #35476a;
- border-radius:20px;
- background:#080d18;
+.accountCard{
+  margin-top:12px;
+  padding:13px;
+  border:1px dashed #334263;
+  border-radius:13px;
+  background:#080e1d;
 }
 
-.account.active{
- display:block;
+.accountLine{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin:6px 0;
 }
 
-.bankTitle{
- display:flex;
- align-items:center;
- gap:12px;
+.accountLine small{
+  color:var(--muted);
 }
 
-.bankLogo{
- width:56px;
- height:56px;
- display:flex;
- align-items:center;
- justify-content:center;
- border-radius:14px;
- background:#eef3fa;
- color:#152343;
- font-size:25px;
- font-weight:900;
+.copyBtn{
+  padding:7px 9px;
+  border:1px solid var(--line);
+  border-radius:9px;
+  background:#10172b;
+  color:white;
+  font-size:11px;
 }
 
-.account hr{
- margin:16px 0;
- border:0;
- border-top:1px solid #202b41;
+.fileBox{
+  border:1px dashed #405174;
+  border-radius:14px;
+  padding:16px;
+  text-align:center;
+  background:#080e1d;
 }
 
-.accountLabel{
- color:#7f899b;
- font-size:11px;
- font-weight:900;
- letter-spacing:1px;
+.fileBox input{
+  display:none;
 }
 
-.accountNumber{
- margin:8px 0;
- color:#fff;
- font-size:26px;
- font-weight:900;
- word-break:break-all;
+.fileLabel{
+  display:block;
+  margin:0;
+  cursor:pointer;
+  color:var(--blue);
 }
 
-.copy{
- float:right;
- margin-top:-47px;
- padding:11px 14px;
- border:1px solid #2e4a69;
- border-radius:12px;
- background:#0c1728;
- color:var(--blue);
- font-weight:900;
- cursor:pointer;
+.fileName{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:8px;
+  word-break:break-word;
 }
 
-.holder{
- margin-top:7px;
- font-size:20px;
- font-weight:900;
-}
-
-.transferNote{
- color:#a9b2c2;
- line-height:1.5;
-}
-
-.transferNote b{
- color:var(--gold);
-}
-
-.upload{
- display:block;
- padding:30px 15px;
- text-align:center;
- border:2px dashed #344664;
- border-radius:19px;
- color:#9aa5b8;
- cursor:pointer;
- background:#080d18;
-}
-
-#fileName{
- margin-top:10px;
- color:var(--green);
- font-weight:bold;
-}
-
-.cloudflare{
- padding:17px;
- border-radius:6px;
- background:#fff;
- color:#222;
- font-weight:bold;
-}
-
-.consent{
- display:flex;
- align-items:flex-start;
- gap:10px;
- padding:16px;
- border:1px solid #293650;
- border-radius:17px;
- color:#aeb7c7;
- line-height:1.5;
-}
-
-.consent input{
- width:20px;
- margin-top:4px;
-}
-
-.total{
- margin-top:25px;
- padding-top:24px;
- text-align:center;
- border-top:1px solid #202d45;
-}
-
-.total strong{
- display:block;
- margin:8px 0 18px;
- color:var(--blue);
- font-size:38px;
-}
-
-.total .btn{
- width:100%;
-}
-
-.notice{
- display:none;
- margin-top:14px;
- padding:14px;
- border:1px solid #238052;
- border-radius:13px;
- background:#092318;
- color:#6ff0aa;
-}
-
-/* VERIFICADOR */
-
-.verifyResult{
- margin-top:18px;
-}
-
-.numberGrid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(70px,1fr));
- gap:8px;
- margin-top:10px;
-}
-
-.numberItem{
- padding:12px 5px;
- text-align:center;
- border:1px solid #34758c;
- border-radius:12px;
- background:#071321;
- color:var(--gold);
- font-size:18px;
- font-weight:900;
- box-shadow:0 0 15px #42e8ff10;
+.verifyBtn{
+  width:100%;
+  border:1px solid rgba(139,92,246,.55);
+  background:linear-gradient(135deg,rgba(139,92,246,.16),rgba(217,70,239,.12));
+  color:#e6d9ff;
+  padding:13px;
+  border-radius:13px;
+  font-weight:900;
 }
 
 .acceptedCard{
- margin-top:14px;
- padding:18px;
- border:1px solid #275d70;
- border-radius:20px;
- background:linear-gradient(145deg,#0e172c,#090e1c);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:13px;
+  border:1px solid rgba(34,212,122,.3);
+  background:rgba(34,212,122,.07);
+  border-radius:13px;
+  color:#9af0c3;
 }
 
-.acceptedTitle{
- color:var(--green);
- font-weight:900;
- font-size:13px;
- letter-spacing:1px;
+.acceptedCard b{
+  display:block;
+  color:white;
 }
 
 .pendingCard{
- margin-top:14px;
- padding:18px;
- border:1px solid #5e5328;
- border-radius:20px;
- background:linear-gradient(145deg,#171508,#0b101c);
+  padding:13px;
+  border:1px solid rgba(255,216,77,.25);
+  background:rgba(255,216,77,.06);
+  border-radius:13px;
+  color:#ffe992;
 }
 
-.pendingTitle{
- color:var(--gold);
- font-weight:900;
- font-size:13px;
- letter-spacing:1px;
+.consent{
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  margin-top:14px;
 }
 
-.verifyEmpty{
- margin-top:16px;
- padding:18px;
- border:1px solid #4d4828;
- border-radius:17px;
- background:#111319;
- color:#aeb8c7;
- line-height:1.5;
+.consent input{
+  width:18px;
+  height:18px;
+  margin-top:2px;
+  flex:none;
 }
 
-.verifyInfo{
- margin-top:14px;
- padding:14px;
- border:1px solid #293650;
- border-radius:15px;
- background:#080d18;
- color:#aeb7c8;
- font-size:13px;
- line-height:1.5;
+.consent label{
+  margin:0;
+  font-size:12px;
+  line-height:1.45;
+  color:var(--muted);
+}
+
+.totalBox{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:15px;
+  padding:15px;
+  border-radius:14px;
+  background:linear-gradient(135deg,rgba(66,232,255,.08),rgba(139,92,246,.09));
+  border:1px solid var(--line);
+}
+
+.totalBox span{
+  color:var(--muted);
+}
+
+.totalBox strong{
+  font-size:24px;
+}
+
+.formActions{
+  margin-top:12px;
+}
+
+.verifyPanel{
+  margin-top:16px;
 }
 
 .searchNumberBox{
- margin-top:14px;
- padding:13px;
- border:1px solid #293650;
- border-radius:15px;
- background:#080d18;
- color:#8994ae;
- font-size:12px;
- line-height:1.5;
+  margin-top:12px;
+}
+
+.verifyEmpty{
+  color:var(--muted);
+  text-align:center;
+  padding:18px 4px;
+}
+
+.verifyInfo{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+}
+
+.numberGrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:8px;
+  margin-top:13px;
+}
+
+.numberItem{
+  padding:10px 5px;
+  border:1px solid rgba(34,212,122,.28);
+  border-radius:10px;
+  background:rgba(34,212,122,.06);
+  color:#a8f5ca;
+  text-align:center;
+  font-size:12px;
+  font-weight:900;
 }
 
 .buyerBox{
- margin-top:18px;
- padding:16px;
- border:1px solid #293650;
- border-radius:15px;
- background:#080d18;
+  margin-top:12px;
+  padding:13px;
+  border-radius:13px;
+  background:#080e1d;
+  border:1px solid var(--line);
+  color:#dfe6f6;
+  font-size:13px;
+  line-height:1.6;
 }
-
-.buyerLabel{
- color:var(--muted);
- font-size:11px;
- font-weight:900;
- letter-spacing:1.5px;
-}
-
-.buyerName{
- margin-top:6px;
- color:#fff;
- font-size:21px;
- font-weight:900;
-}
-
-.buyerPhone{
- margin-top:7px;
- color:var(--muted);
-}
-
-/* CONFIRMACION */
 
 .confirmation{
- display:none;
- overflow:hidden;
- border:1px solid #263b5d;
- border-radius:30px;
- background:
- radial-gradient(circle at 20% 0%,#143653,transparent 35%),
- linear-gradient(180deg,#071322,#040812);
- box-shadow:0 25px 80px #000c;
+  text-align:center;
+  padding:18px 0 35px;
 }
 
-.confirmation.active{
- display:block;
+.confirmIcon{
+  width:78px;
+  height:78px;
+  margin:15px auto;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:rgba(34,212,122,.12);
+  border:1px solid rgba(34,212,122,.35);
+  font-size:36px;
 }
 
-.confirmationBody{
- padding:22px;
+.confirmation h1{
+  margin:5px 0 8px;
 }
 
-.importantBox{
- position:relative;
- overflow:hidden;
- padding:24px 18px;
- border:2px solid #1ec9ef;
- border-radius:24px;
- background:
- radial-gradient(circle at 100% 0%,#12364d,transparent 35%),
- linear-gradient(145deg,#071a2a,#07101c);
- box-shadow:
- 0 0 25px #42e8ff15,
- inset 0 0 35px #42e8ff08;
-}
-
-.importantBox:before{
- content:"";
- position:absolute;
- left:0;
- top:0;
- bottom:0;
- width:7px;
- background:var(--blue);
- box-shadow:0 0 18px var(--blue);
-}
-
-.importantTitle{
- display:flex;
- align-items:center;
- gap:10px;
- color:var(--gold);
- font-size:24px;
- font-weight:900;
- letter-spacing:2px;
-}
-
-.importantTitle .icons{
- color:var(--blue);
- font-size:31px;
-}
-
-.confirmText{
- margin-top:25px;
- color:#d9deea;
- font-size:19px;
- line-height:1.55;
-}
-
-.confirmText b{
- color:var(--gold);
-}
-
-.reservedNumbers{
- margin-top:20px;
- padding:18px;
- border:1px solid #273b5d;
- border-radius:18px;
- background:#050b15;
-}
-
-.reservedNumbersTitle{
- color:var(--blue);
- font-weight:900;
- letter-spacing:1px;
+.important{
+  margin-top:18px;
+  padding:15px;
+  text-align:left;
+  border-radius:15px;
+  border:1px solid rgba(255,216,77,.3);
+  background:rgba(255,216,77,.06);
 }
 
 .confirmNumbers{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(70px,1fr));
- gap:8px;
- margin-top:13px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+  margin:15px 0;
 }
 
 .confirmNumber{
- padding:12px 5px;
- text-align:center;
- border:1px solid #3a7589;
- border-radius:12px;
- color:var(--gold);
- background:#071523;
- font-size:20px;
- font-weight:900;
+  padding:10px 13px;
+  border-radius:10px;
+  background:#111a2e;
+  border:1px solid var(--blue);
+  color:var(--blue);
+  font-weight:900;
 }
 
-.verifyLinkBox{
- margin-top:20px;
- padding:17px;
- display:flex;
- align-items:center;
- gap:12px;
- border:1px solid #253550;
- border-radius:17px;
- background:#050a14;
- color:#dce3ef;
- font-size:17px;
- font-weight:700;
+.countdown{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:12px;
 }
 
-.verifyLinkBox .searchIcon{
- color:var(--blue);
- font-size:28px;
-}
-
-.verifyLinkBox b{
- color:var(--gold);
- text-decoration:underline;
-}
-
-.homeCountdown{
- margin-top:15px;
- text-align:center;
- color:var(--muted);
- font-size:13px;
-}
-
-.raffleCounter{
- margin-top:12px;
- padding:13px 15px;
- border:1px solid #293650;
- border-radius:15px;
- background:#080d18;
- color:var(--muted);
- font-size:13px;
- text-align:center;
-}
-
-@media(max-width:500px){
-
- main{
-  padding:16px 12px 60px;
- }
-
- header{
-  padding:0 12px;
- }
-
- .logo{
-  font-size:14px;
-  padding:9px 12px;
- }
-
- .hero{
-  padding:27px 19px;
- }
-
- .hero h1{
-  font-size:35px;
- }
-
- .photo{
-  height:275px;
- }
-
- .photoText h2{
-  font-size:25px;
- }
-
- .section{
-  padding:18px;
- }
-
- .bankgrid{
-  grid-template-columns:repeat(4,1fr);
- }
-
- .bank{
-  height:58px;
- }
-
- .pack .count{
-  width:37%;
-  font-size:22px;
- }
-
- .qtyBtn{
-  width:68px;
- }
-
- .menu{
-  right:10px;
-  width:205px;
- }
-
- .soldOutTag{
-  display:block;
-  width:max-content;
-  margin:8px 0 0;
- }
-
- .importantTitle{
-  font-size:21px;
- }
-
- .confirmText{
-  font-size:17px;
- }
-
+@media(min-width:600px){
+  main{padding:24px 18px 60px}
+  .packages{grid-template-columns:repeat(5,1fr)}
+  .bankGrid{grid-template-columns:repeat(4,1fr)}
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<div class="app">
 
-<div class="logo">
- RIFAS LUXURY <span>RD</span>
-</div>
+<header class="header">
+  <button class="menuBtn" onclick="toggleMenu()" aria-label="Menú">☰</button>
 
-<button class="menuBtn" onclick="toggleMenu()">☰</button>
+  <div class="logo">
+    RIFAS LUXURY
+    <span>RD</span>
+  </div>
 
+  <div class="menu" id="menu">
+    <button onclick="goHome()">⌂ Inicio</button>
+    <button onclick="scrollToCatalog()">🎟 Rifas activas</button>
+    <button onclick="openVerify()">🔎 Verificar mis números</button>
+  </div>
 </header>
-
-<div id="menu" class="menu">
-
-<button onclick="goHome()">🏠 Inicio</button>
-
-<button onclick="openCheckout()">🎟 Participar</button>
-
-<button onclick="openVerify()">🔎 Verificar mis números</button>
-
-<button onclick="closeMenu()">✕ Cerrar menú</button>
-
-</div>
 
 <main>
 
-<!-- =========================
-     INICIO
-========================= -->
+<section id="homeView" class="view active">
 
-<section id="catalog" class="catalog">
+  <div class="hero">
+    <div class="eyebrow">✦ EXPERIENCIA EXCLUSIVA</div>
 
-<div class="hero">
+    <h1>Premios que se sienten extraordinarios.</h1>
 
-<div class="eyebrow">
- ✦ EXPERIENCIA EXCLUSIVA
-</div>
+    <p>
+      Participa desde tu celular, consulta tus boletos y descubre rifas seleccionadas.
+    </p>
 
-<h1>
- Premios que se sienten <br>
- <span class="gradient">extraordinarios.</span>
-</h1>
+    <button class="primary" onclick="scrollToCatalog()">
+      VER RIFAS DISPONIBLES
+    </button>
 
-<p>
- Participa desde tu celular, consulta tus boletos y descubre rifas seleccionadas.
-</p>
+    <button class="secondary verifyHero" onclick="openVerify()">
+      🔎 VERIFICAR MIS NÚMEROS
+    </button>
+  </div>
 
-<button
- id="heroParticipateBtn"
- class="btn primary"
- onclick="scrollToRaffles()">
+  <div id="catalog">
+    <div class="sectionTitle">
+      Rifas <span>activas</span>
+    </div>
 
-VER RIFAS DISPONIBLES
-
-</button>
-
-<button
- class="btn verifyBtn"
- onclick="openVerify()">
-
-🔎 VERIFICAR MIS NÚMEROS
-
-</button>
-
-</div>
-
-<div id="raffleList" class="raffleList"></div>
+    <div id="raffleList"></div>
+  </div>
 
 </section>
 
+<section id="checkoutView" class="view">
 
-<!-- =========================
-     VERIFICADOR
-========================= -->
+  <div class="checkoutHead">
+    <button class="iconBtn" onclick="closeCheckout()">‹</button>
 
-<section id="verifyBox" class="checkout">
+    <div class="checkoutTitle">
+      <strong id="checkoutTitle">Rifa</strong>
+      <small>Completa tu compra de boletos</small>
+    </div>
 
-<div class="checkoutHead">
+    <button class="iconBtn" onclick="closeCheckout()">×</button>
+  </div>
 
-<button class="back" onclick="closeVerify()">‹</button>
+  <div class="panel">
 
-<h2>Verificar números</h2>
+    <h3>Elige tu cantidad</h3>
 
-<button class="close" onclick="closeVerify()">×</button>
+    <div class="modeTabs">
+      <button id="packagesTab" class="active" onclick="mode('packages')">
+        PAQUETES
+      </button>
 
-</div>
+      <button id="freeTab" onclick="mode('free')">
+        CANTIDAD LIBRE
+      </button>
+    </div>
 
-<div class="section">
+    <div id="packagesBox">
 
-<p class="muted" style="font-size:20px">
- Consulta tus números pendientes y aceptados
-</p>
+      <div class="packages">
 
-<div class="participation">
+        <button class="pack selected" data-count="2" onclick="choose(this)">
+          <strong>2</strong>
+          <small>boletos</small>
+        </button>
 
-<div class="participationTop">
+        <button class="pack" data-count="5" onclick="choose(this)">
+          <strong>5</strong>
+          <small>boletos</small>
+        </button>
 
-<div class="ticketIcon">
- 🔎
-</div>
+        <button class="pack" data-count="15" onclick="choose(this)">
+          <strong>15</strong>
+          <small>boletos</small>
+        </button>
 
-<div>
-<b>CONSULTA</b>
-<h3>MIS NÚMEROS</h3>
-</div>
+        <button class="pack" data-count="30" onclick="choose(this)">
+          <strong>30</strong>
+          <small>boletos</small>
+        </button>
 
-</div>
+        <button class="pack gold" data-count="100" onclick="choose(this)">
+          <strong>100</strong>
+          <small>boletos</small>
+        </button>
 
-<label>
- Nombre de la rifa *
-</label>
+      </div>
 
-<select id="verifyRaffle">
+    </div>
 
-<option value="">
- Selecciona la rifa
-</option>
+    <div id="freeBox" class="freeBox">
 
-</select>
+      <div class="freeBox active">
 
-<label>
- Teléfono o número de boleto *
-</label>
+        <div class="qtyRow">
+          <button class="qtyBtn" onclick="changeQty(-1)">−</button>
 
-<input
- id="verifyPhone"
- type="text"
- inputmode="numeric"
- placeholder="Teléfono o número de boleto"
- autocomplete="off"
->
+          <div class="qtyNumber" id="qtyNumber">2</div>
 
-<div class="searchNumberBox">
+          <button class="qtyBtn" onclick="changeQty(1)">+</button>
+        </div>
 
-💡 Escribe tu número de teléfono para ver todos tus boletos, o escribe un número de boleto para consultar solamente ese boleto.
+        <div class="fieldHint" style="text-align:center">
+          Selección aleatoria del sistema. (Mínimo: 2)
+        </div>
 
-</div>
+      </div>
 
-<button
- type="button"
- class="btn primary"
- onclick="verifyNumbers()"
- style="width:100%;margin-top:16px">
+    </div>
 
-🔎 VERIFICAR
+    <div class="totalBox">
+      <span>Total</span>
+      <strong id="totalAmount">RD$0.00</strong>
+    </div>
 
-</button>
+    <p class="muted">
+      Los números de tus boletos serán asignados automáticamente al azar
+      después de validar el pago. Mayor cantidad = más oportunidades de ganar.
+    </p>
 
-<div id="verifyResult" class="verifyResult"></div>
+  </div>
 
-</div>
+  <div class="panel">
 
-</div>
+    <h3>Datos del participante</h3>
+
+    <label for="name">Nombre *</label>
+    <input id="name" type="text" autocomplete="name" placeholder="Tu nombre completo">
+
+    <label for="phone">Teléfono (WhatsApp) *</label>
+    <input id="phone" type="tel" autocomplete="tel" placeholder="Ej. 8090000000">
+
+    <label for="email">Correo electrónico</label>
+    <input id="email" type="email" autocomplete="email" placeholder="correo@ejemplo.com">
+
+  </div>
+
+  <div class="panel">
+
+    <h3>Pago por transferencia</h3>
+
+    <div class="bankGrid">
+
+      <button class="bankBtn active" onclick="selectBank(this)" data-bank="Banco Popular">
+        Banco Popular
+      </button>
+
+      <button class="bankBtn" onclick="selectBank(this)" data-bank="Banreservas">
+        Banreservas
+      </button>
+
+      <button class="bankBtn" onclick="selectBank(this)" data-bank="Banco BHD">
+        Banco BHD
+      </button>
+
+      <button class="bankBtn" onclick="selectBank(this)" data-bank="Otra cuenta">
+        Otra cuenta
+      </button>
+
+    </div>
+
+    <div class="accountCard">
+
+      <div class="accountLine">
+        <div>
+          <small>Cuenta</small><br>
+          <b id="accountNumber">CUENTA_A_CONFIGURAR</b>
+        </div>
+
+        <button class="copyBtn" onclick="copyAccount()">
+          COPIAR
+        </button>
+      </div>
+
+      <div class="accountLine">
+        <div>
+          <small>Titular</small><br>
+          <b id="accountHolder">TITULAR_A_CONFIGURAR</b>
+        </div>
+      </div>
+
+      <div class="fieldHint">
+        Realiza la transferencia por el monto total y luego carga el comprobante.
+      </div>
+
+    </div>
+
+    <label>Comprobante de pago *</label>
+
+    <div class="fileBox">
+      <label class="fileLabel" for="receipt">
+        📎 SELECCIONAR COMPROBANTE
+      </label>
+
+      <input
+        id="receipt"
+        type="file"
+        accept=".jpg,.jpeg,.png,.pdf"
+        onchange="showFile(this)"
+      >
+
+      <div class="fieldHint">
+        JPG, PNG o PDF · Máximo 10 MB
+      </div>
+
+      <div class="fileName" id="fileName">
+        Ningún archivo seleccionado
+      </div>
+    </div>
+
+  </div>
+
+  <div class="panel">
+
+    <h3>Verificación de seguridad</h3>
+
+    <div class="acceptedCard">
+      <div>✓</div>
+      <div>
+        <b>Verificación completada</b>
+        Tu solicitud está lista para continuar.
+      </div>
+    </div>
+
+    <button class="verifyBtn" type="button" onclick="securityCheck()">
+      ✓ VERIFICACIÓN DE SEGURIDAD
+    </button>
+
+    <div class="consent">
+      <input id="consent" type="checkbox">
+
+      <label for="consent">
+        Confirmo que mis datos son correctos y acepto recibir confirmaciones
+        y seguimiento por WhatsApp o correo electrónico. Entiendo que los
+        datos incorrectos pueden impedir la correcta comunicación de mi compra.
+      </label>
+    </div>
+
+    <div class="formActions">
+      <button class="primary" onclick="submitPurchase()">
+        ENVIAR SOLICITUD DE COMPRA →
+      </button>
+    </div>
+
+  </div>
 
 </section>
 
+<section id="verifyView" class="view">
 
-<!-- =========================
-     CHECKOUT
-========================= -->
+  <div class="checkoutHead">
+    <button class="iconBtn" onclick="closeVerify()">‹</button>
 
-<section id="checkout" class="checkout">
+    <div class="checkoutTitle">
+      <strong>Verificar mis números</strong>
+      <small>Consulta tus boletos</small>
+    </div>
 
-<div class="checkoutHead">
+    <button class="iconBtn" onclick="closeVerify()">×</button>
+  </div>
 
-<button class="back" onclick="closeCheckout()">‹</button>
+  <div class="panel verifyPanel">
 
-<h2 id="checkoutTitle">Rifa</h2>
+    <h3>Selecciona la rifa</h3>
 
-<button class="close" onclick="closeCheckout()">×</button>
+    <select id="verifyRaffle"></select>
 
-</div>
+    <label for="verifyQuery">
+      Teléfono o número de boleto
+    </label>
 
-<div class="section">
+    <input
+      id="verifyQuery"
+      class="searchNumberBox"
+      type="text"
+      placeholder="Ej. 8090000000 o 00425"
+    >
 
-<p class="muted" style="font-size:20px">
- Completa tu compra de boletos
-</p>
+    <button class="primary" style="margin-top:12px" onclick="verifyNumbers()">
+      🔎 BUSCAR
+    </button>
 
-<div class="participation">
+    <div id="verifyResults" class="verifyEmpty">
+      Introduce tu teléfono o número de boleto para consultar.
+    </div>
 
-<div class="participationTop">
-
-<div class="ticketIcon">
- 🎟
-</div>
-
-<div>
-<b>TU PARTICIPACIÓN</b>
-<h3 id="participationRaffleName">
- CÓMO QUIERES PARTICIPAR
-</h3>
-</div>
-
-</div>
-
-<div class="switch">
-
-<button
- id="pkgBtn"
- class="on"
- onclick="mode('packages')">
-
-PAQUETES
-
-</button>
-
-<button
- id="freeBtn"
- onclick="mode('free')">
-
-CANTIDAD LIBRE
-
-</button>
-
-</div>
-
-<div id="packages" class="packages">
-
-<div
- class="pack selected"
- data-count="2"
- onclick="choose(this)">
-
-<div class="count">
- ⭐ 2
- <small>BOLETOS</small>
-</div>
-
-<div class="amount">
- <span class="packPrice">RD$ 0.00</span>
- <small>SELECCIONAR ◯</small>
-</div>
-
-</div>
-
-<div
- class="pack"
- data-count="5"
- onclick="choose(this)">
-
-<div class="count">
- ⭐ 5
- <small>BOLETOS</small>
-</div>
-
-<div class="amount">
- <span class="packPrice">RD$ 0.00</span>
- <small>SELECCIONAR ◯</small>
-</div>
-
-</div>
-
-<div
- class="pack"
- data-count="15"
- onclick="choose(this)">
-
-<div class="count">
- ⭐ 15
- <small>BOLETOS</small>
-</div>
-
-<div class="amount">
- <span class="packPrice">RD$ 0.00</span>
- <small>SELECCIONAR ◯</small>
-</div>
-
-</div>
-
-<div
- class="pack"
- data-count="30"
- onclick="choose(this)">
-
-<div class="count">
- ⭐ 30
- <small>BOLETOS</small>
-</div>
-
-<div class="amount">
- <span class="packPrice">RD$ 0.00</span>
- <small>SELECCIONAR ◯</small>
-</div>
-
-</div>
-
-<div
- class="pack gold"
- data-count="100"
- onclick="choose(this)">
-
-<div class="count">
- ⭐ 100
- <small>BOLETOS</small>
-</div>
-
-<div class="amount">
- <span class="packPrice">RD$ 0.00</span>
- <small>SELECCIONAR ◯</small>
-</div>
-
-</div>
-
-</div>
-
-
-<div id="freeBox" class="freeBox">
-
-<p class="freeHint">
- Selección aleatoria del sistema.
- <b>(Mínimo: 2)</b>
-</p>
-
-<div class="quantity">
-
-<button
- type="button"
- id="minusBtn"
- class="qtyBtn"
- onclick="changeQty(-1)">
-
-−
-
-</button>
-
-<div id="qtyNumber" class="qtyNumber">
-2
-</div>
-
-<button
- type="button"
- class="qtyBtn"
- onclick="changeQty(1)">
-
-+
-
-</button>
-
-</div>
-
-<div class="freeTotal">
-
-<small>TOTAL A PAGAR</small>
-
-<strong id="freeTotal">
-RD$ 0.00
-</strong>
-
-</div>
-
-<p class="limitText">
- Compra mínima: 2 boletos · Máximo: 10,000 por usuario
-</p>
-
-</div>
-
-</div>
-
-<p class="muted">
-
-Cantidad seleccionada:
-<b id="countText">2 boletos</b>
-
-· Máximo por usuario: 10,000
-
-</p>
-
-<div class="info">
-
-ⓘ Los números de boletos se
-<b>asignarán automáticamente al azar</b>
-al enviar la solicitud.
-
-Mientras la solicitud esté pendiente,
-los números quedan reservados y no se asignan a otra persona.
-
-</div>
-
-
-<form id="form">
-
-<label>
-Nombre *
-</label>
-
-<input
- id="name"
- required
- placeholder="Ej: Juan o Juan Carlos"
->
-
-<label>
-Teléfono (WhatsApp) *
-</label>
-
-<input
- id="phone"
- required
- type="tel"
- placeholder="+1 809 000 0000"
->
-
-<label>
-Correo electrónico
-<span class="muted">(opcional)</span>
-</label>
-
-<input
- id="customerEmail"
- type="email"
- placeholder="correo@ejemplo.com"
->
-
-<label>
-Banco a transferir *
-</label>
-
-<p class="muted" style="margin:0 0 10px">
-Elige una opción.
-</p>
-
-<div class="bankgrid">
-
-<button
- type="button"
- class="bank selected"
- data-bank="Banco Popular"
- data-account="CUENTA_A_CONFIGURAR"
- data-holder="TITULAR_A_CONFIGURAR"
- onclick="selectBank(this)">
-
-🏦
-
-<span class="check">✓</span>
-
-</button>
-
-<button
- type="button"
- class="bank"
- data-bank="Banreservas"
- data-account="CUENTA_A_CONFIGURAR"
- data-holder="TITULAR_A_CONFIGURAR"
- onclick="selectBank(this)">
-
-▣
-
-<span class="check">✓</span>
-
-</button>
-
-<button
- type="button"
- class="bank"
- data-bank="Banco BHD"
- data-account="CUENTA_A_CONFIGURAR"
- data-holder="TITULAR_A_CONFIGURAR"
- onclick="selectBank(this)">
-
-🔵
-
-<span class="check">✓</span>
-
-</button>
-
-<button
- type="button"
- class="bank"
- data-bank="Otra cuenta"
- data-account="CUENTA_A_CONFIGURAR"
- data-holder="TITULAR_A_CONFIGURAR"
- onclick="selectBank(this)">
-
-💰
-
-<span class="check">✓</span>
-
-</button>
-
-</div>
-
-
-<div id="accountBox" class="account active">
-
-<div class="bankTitle">
-
-<div id="bankLogo" class="bankLogo">
-P
-</div>
-
-<div>
-
-<strong id="bankName">
-Banco Popular
-</strong>
-
-<br>
-
-<span class="muted">
-Corriente · DOP
-</span>
-
-</div>
-
-</div>
-
-<hr>
-
-<div class="accountLabel">
-NÚMERO DE CUENTA
-</div>
-
-<div id="accountNumber" class="accountNumber">
-CUENTA_A_CONFIGURAR
-</div>
-
-<button
- type="button"
- class="copy"
- onclick="copyAccount()">
-
-▣ &nbsp; COPIAR
-
-</button>
-
-<div style="clear:both"></div>
-
-<div
- class="accountLabel"
- style="margin-top:18px">
-
-TITULAR
-
-</div>
-
-<div id="holder" class="holder">
-TITULAR_A_CONFIGURAR
-</div>
-
-<hr>
-
-<div class="transferNote">
-
-ⓘ Realiza la transferencia por el
-<b>monto total</b>
-y sube el comprobante abajo para validar tu compra.
-
-</div>
-
-</div>
-
-
-<label>
-Comprobante de pago *
-</label>
-
-<label class="upload">
-
-<input
- id="receipt"
- type="file"
- accept=".jpg,.jpeg,.png,.pdf"
- required
- style="display:none"
- onchange="showFile(this)"
->
-
-⬆
-<br>
-
-Haz clic para subir tu comprobante
-
-<br>
-
-<small>
-JPG, PNG o PDF · Máximo 10 MB
-</small>
-
-<div id="fileName"></div>
-
-</label>
-
-
-<label>
-Verificación de seguridad *
-</label>
-
-<div class="cloudflare">
-
-✓ Operación exitosa!
-
-<span style="float:right">
-CLOUDFLARE
-</span>
-
-</div>
-
-
-<label class="consent">
-
-<input
- type="checkbox"
- id="agree"
- required
->
-
-<span>
-
-Confirmo que mis datos
-<b>(nombre, teléfono y correo)</b>
-son correctos.
-
-Se me enviarán correos de confirmación y seguimiento de mi solicitud.
-
-<b style="color:#ffd84d">
-Rifas Luxury RD
-</b>
-
-no se hace responsable por datos mal ingresados.
-
-</span>
-
-</label>
-
-
-<div class="total">
-
-<small>
-TOTAL A PAGAR
-</small>
-
-<strong id="total">
-RD$ 0.00
-</strong>
-
-<button
- id="submitBtn"
- type="submit"
- class="btn primary"
- style="width:100%;font-size:16px">
-
-ENVIAR SOLICITUD DE COMPRA →
-
-</button>
-
-<div id="notice" class="notice">
-
-✓ Solicitud enviada.
-
-</div>
-
-</div>
-
-</form>
-
-</div>
+  </div>
 
 </section>
 
+<section id="confirmationView" class="view">
 
-<!-- =========================
-     CONFIRMACION
-========================= -->
+  <div class="confirmation">
 
-<section id="confirmation" class="confirmation">
+    <div class="confirmIcon">✓</div>
 
-<div class="checkoutHead">
+    <h1>¡Solicitud enviada!</h1>
 
-<button class="back" onclick="goHome()">‹</button>
+    <p class="muted">
+      Tu solicitud fue guardada correctamente y está pendiente de validación.
+    </p>
 
-<h2>Solicitud recibida</h2>
+    <div class="important">
+      <b>¡IMPORTANTE!</b>
+      <p class="muted">
+        Conserva estos números de referencia. Los boletos quedan sujetos
+        a la validación del comprobante de pago.
+      </p>
+    </div>
 
-<button class="close" onclick="goHome()">×</button>
+    <div class="sectionTitle">
+      Números <span>reservados</span>
+    </div>
 
-</div>
+    <div id="confirmationNumbers" class="confirmNumbers"></div>
 
-<div class="confirmationBody">
+    <button class="verifyBtn" onclick="openVerifyFromConfirmation()">
+      🔎 VERIFICAR MIS NÚMEROS
+    </button>
 
-<div class="importantBox">
+    <div class="countdown">
+      Volviendo al inicio en <b id="countdown">6</b> segundos...
+    </div>
 
-<div class="importantTitle">
-
-<span class="icons">♧ ⚡</span>
-
-<span>¡IMPORTANTE!</span>
-
-</div>
-
-
-<div class="confirmText">
-
-Tus números han sido
-<b>reservados.</b>
-
-No enviamos listados por WhatsApp.
-
-Pasadas las
-<b>24 horas</b>,
-entra al
-<b>verificador</b>
-para ver el estado de tus boletos.
-
-</div>
-
-
-<div class="reservedNumbers">
-
-<div class="reservedNumbersTitle">
-
-🎟 TUS NÚMEROS RESERVADOS
-
-</div>
-
-<div
- id="confirmationNumbers"
- class="confirmNumbers">
-
-</div>
-
-</div>
-
-
-<div
- class="verifyLinkBox"
- onclick="openVerifyFromConfirmation()"
- style="cursor:pointer">
-
-<div class="searchIcon">
-⌕
-</div>
-
-<div>
-
-Consulta tus boletos en el
-<b>VERIFICADOR</b>
-
-</div>
-
-</div>
-
-
-<div class="homeCountdown">
-
-Volviendo al inicio en
-<b id="countdown">6</b>
-segundos...
-
-</div>
-
-</div>
-
-<br>
-
-<button
- class="btn primary"
- style="width:100%"
- onclick="openVerifyFromConfirmation()">
-
-🔎 VERIFICAR MIS NÚMEROS
-
-</button>
-
-<br>
-
-<button
- class="btn verifyBtn"
- style="width:100%;margin-top:12px"
- onclick="goHome()">
-
-🏠 VOLVER AL INICIO
-
-</button>
-
-</div>
+  </div>
 
 </section>
 
 </main>
-
+</div>
 
 <script>
-
-/* =========================================
-   CONFIGURACIÓN
-========================================= */
-
 const R='rlrd_raffles';
 const Q='rlrd_requests';
 
@@ -2005,2841 +1142,770 @@ let currentRaffle=null;
 let selectedPrice=0;
 let selectedCount=2;
 let currentMode='packages';
-
+let selectedBank='Banco Popular';
+let securityVerified=true;
 let confirmationTimer=null;
 
-
-/* =========================================
-   LOCAL STORAGE
-========================================= */
-
-function get(key,defaultValue=[]){
-
- try{
-
-  return JSON.parse(
-   localStorage.getItem(key)
-  ) || defaultValue;
-
- }catch(e){
-
-  return defaultValue;
-
- }
-
+function get(key,fallback=[]){
+  try{
+    const value=localStorage.getItem(key);
+    return value ? JSON.parse(value) : fallback;
+  }catch(e){
+    return fallback;
+  }
 }
-
 
 function put(key,value){
-
- localStorage.setItem(
-  key,
-  JSON.stringify(value)
- );
-
+  localStorage.setItem(key,JSON.stringify(value));
 }
-
-
-/* =========================================
-   DINERO
-========================================= */
 
 function money(value){
-
- return 'RD$ '+
- Number(value||0).toLocaleString(
-  'en-US',
-  {
-   minimumFractionDigits:2,
-   maximumFractionDigits:2
-  }
- );
-
+  return new Intl.NumberFormat('en-US',{
+    style:'currency',
+    currency:'DOP'
+  }).format(Number(value)||0).replace('DOP','RD$');
 }
-
-
-/* =========================================
-   ESCAPAR HTML
-========================================= */
 
 function escapeHtml(value){
-
- return String(value||'')
-
- .replaceAll('&','&amp;')
- .replaceAll('<','&lt;')
- .replaceAll('>','&gt;')
- .replaceAll('"','&quot;')
- .replaceAll("'","&#039;");
-
+  return String(value ?? '')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#039;');
 }
 
-
-/* =========================================
-   RIFA AGOTADA
-========================================= */
-
-function isRaffleSoldOut(raffle){
-
- if(!raffle)return false;
-
- const total=
-  Number(raffle.totalNumbers)||0;
-
- const sold=
-  Array.isArray(raffle.sold)
-  ?
-  new Set(
-   raffle.sold.map(Number)
-  ).size
-  :
-  0;
-
- return total>0 && sold>=total;
-
+function defaultRaffle(){
+  return [{
+    id:'iphone17',
+    name:'iPhone 17 Pro Max',
+    description:'',
+    price:100,
+    totalNumbers:10000,
+    sold:6800,
+    image:'',
+    active:true
+  }];
 }
-
-
-/* =========================================
-   RIFAS ACTIVAS
-========================================= */
 
 function getActiveRaffles(){
+  const data=get(R,null);
 
- return get(R,[]).filter(
-  r=>
-   r &&
-   r.id &&
-   r.active===true
- );
-
-}
-
-
-/* =========================================
-   CARGAR TODAS LAS RIFAS
-========================================= */
-
-function loadRaffle(){
-
- const activeRaffles=
-  getActiveRaffles();
-
- updateVerifyRaffles();
-
- renderAllRaffles(
-  activeRaffles
- );
-
-
- if(!activeRaffles.length){
-
-  currentRaffle=null;
-
-  updateHeroButton();
-
-  return;
-
- }
-
-
- if(
-  currentRaffle &&
-  !activeRaffles.some(
-   r=>
-    String(r.id)===
-    String(currentRaffle.id)
-  )
- ){
-
-  currentRaffle=null;
-
- }
-
-
- if(
-  !currentRaffle
- ){
-
-  currentRaffle=
-   activeRaffles[0];
-
- }
-
-
- document.getElementById(
-  'checkoutTitle'
- ).textContent=
-  currentRaffle.name;
-
-
- document.getElementById(
-  'participationRaffleName'
- ).textContent=
-  currentRaffle.name;
-
-
- updateHeroButton();
-
- updatePackages();
-
-}
-
-
-/* =========================================
-   BOTÓN DEL HERO
-========================================= */
-
-function updateHeroButton(){
-
- const btn=
-  document.getElementById(
-   'heroParticipateBtn'
-  );
-
- if(!btn)return;
-
- const active=
-  getActiveRaffles();
-
- if(!active.length){
-
-  btn.textContent=
-   'NO HAY RIFAS DISPONIBLES';
-
-  btn.disabled=true;
-
- }else{
-
-  btn.textContent=
-   'VER RIFAS DISPONIBLES';
-
-  btn.disabled=false;
-
- }
-
-}
-
-
-/* =========================================
-   IR A LAS RIFAS
-========================================= */
-
-function scrollToRaffles(){
-
- closeMenu();
- closeCheckout();
- closeVerify();
- closeConfirmation();
-
- const catalog=
-  document.getElementById(
-   'catalog'
-  );
-
- catalog.classList.remove(
-  'hidden'
- );
-
- setTimeout(
-  ()=>{
-
-   document.getElementById(
-    'raffleList'
-   ).scrollIntoView({
-    behavior:'smooth',
-    block:'start'
-   });
-
-  },
-  100
- );
-
-}
-
-
-/* =========================================
-   MOSTRAR TODAS LAS RIFAS
-========================================= */
-
-function renderAllRaffles(raffles){
-
- const container=
-  document.getElementById(
-   'raffleList'
-  );
-
- if(!container)return;
-
-
- if(!raffles.length){
-
-  container.innerHTML=`
-
-  <div class="card">
-
-   <div class="noRaffle">
-
-    <h2>
-     🎟 No hay rifas disponibles
-    </h2>
-
-    <p>
-     En este momento no hay ninguna rifa activa.
-    </p>
-
-   </div>
-
-  </div>
-
-  `;
-
-  return;
-
- }
-
-
- let html=`
-
- <div class="listTitle">
-
-  🎟 Rifas <span>disponibles</span>
-
- </div>
-
- `;
-
-
- raffles.forEach(
-  raffle=>{
-
-   const total=
-    Number(
-     raffle.totalNumbers
-    )||0;
-
-
-   const sold=
-    Array.isArray(
-     raffle.sold
-    )
-    ?
-    new Set(
-     raffle.sold.map(Number)
-    ).size
-    :
-    0;
-
-
-   const soldOut=
-    isRaffleSoldOut(
-     raffle
-    );
-
-
-   const percent=
-    total
-    ?
-    Math.min(
-     100,
-     Math.round(
-      sold/total*100
-     )
-    )
-    :
-    0;
-
-
-   html+=`
-
-   <div class="card">
-
-    <div class="photo">
-
-     ${
-      raffle.image
-      ?
-      `
-      <img
-       src="${escapeHtml(raffle.image)}"
-       alt="${escapeHtml(raffle.name)}">
-      `
-      :
-      `📱`
-     }
-
-     <div class="shade"></div>
-
-     <div class="photoText">
-
-      <span class="tag">
-       🔥 DESTACADA
-      </span>
-
-      ${
-       soldOut
-       ?
-       `
-       <span class="soldOutTag">
-        🔴 AGOTADO
-       </span>
-       `
-       :
-       ''
-      }
-
-      <h2>
-       ${escapeHtml(
-        raffle.name
-       )}
-      </h2>
-
-      <!-- DESCRIPCIÓN SOLO SI EXISTE -->
-      ${
-       raffle.description
-       ?
-       `
-       <span>
-        ${escapeHtml(
-         raffle.description
-        )}
-       </span>
-       `
-       :
-       ''
-      }
-
-     </div>
-
-    </div>
-
-
-    <div class="body">
-
-     <div class="category">
-      🎟 RIFA · 💵 PREMIO
-     </div>
-
-     <h2>
-      ${escapeHtml(
-       raffle.name
-      )}
-     </h2>
-
-     <!-- DESCRIPCIÓN SOLO SI EXISTE -->
-     ${
-      raffle.description
-      ?
-      `
-      <p class="muted">
-       ${escapeHtml(
-        raffle.description
-       )}
-      </p>
-      `
-      :
-      ''
-     }
-
-     <div class="price">
-      ${money(raffle.price)}
-     </div>
-
-     <small class="muted">
-      por boleto · mínimo 2
-     </small>
-
-
-     ${
-      soldOut
-      ?
-      `
-      <button
-       class="btn primary"
-       style="float:right;margin-top:-55px"
-       disabled>
-
-       AGOTADO
-
-      </button>
-      `
-      :
-      `
-      <button
-       class="btn primary"
-       style="float:right;margin-top:-55px"
-       data-raffle-id="${escapeHtml(raffle.id)}"
-       onclick="selectRaffle(this.dataset.raffleId)">
-
-       PARTICIPAR →
-
-      </button>
-      `
-     }
-
-
-     <div style="clear:both;margin-top:25px">
-
-      <div class="muted">
-
-       Boletos vendidos
-
-       <span style="float:right">
-        ${percent}%
-       </span>
-
-      </div>
-
-      <div class="progress">
-
-       <i style="width:${percent}%"></i>
-
-      </div>
-
-      <div
-       class="muted"
-       style="margin-top:8px">
-
-       ${sold.toLocaleString()}
-       vendidos ·
-       ${Math.max(
-        0,
-        total-sold
-       ).toLocaleString()}
-       disponibles
-
-      </div>
-
-
-      ${
-       soldOut
-       ?
-       `
-       <div class="soldOutBox">
-
-        🔴 RIFA AGOTADA
-
-        <br>
-
-        <small>
-         TODOS LOS NÚMEROS HAN SIDO VENDIDOS
-        </small>
-
-       </div>
-       `
-       :
-       ''
-      }
-
-     </div>
-
-    </div>
-
-   </div>
-
-   `;
-
+  if(!Array.isArray(data) || !data.length){
+    return defaultRaffle();
   }
- );
 
-
- container.innerHTML=html;
-
+  return data.filter(r=>r.active!==false);
 }
 
+function renderAllRaffles(){
+  const list=document.getElementById('raffleList');
+  const raffles=getActiveRaffles();
 
-/* =========================================
-   SELECCIONAR RIFA
-========================================= */
+  if(!raffles.length){
+    list.innerHTML='<div class="panel"><div class="verifyEmpty">No hay rifas activas.</div></div>';
+    return;
+  }
+
+  let html='';
+
+  raffles.forEach(raffle=>{
+    const total=Number(raffle.totalNumbers)||10000;
+    const sold=Number(raffle.sold)||0;
+    const percent=Math.min(100,Math.max(0,(sold/total)*100));
+    const soldOut=percent>=100 || isRaffleSoldOut(raffle);
+
+    html+=`
+      <div class="card">
+
+        <div class="photo">
+
+          ${
+            raffle.image
+            ?
+            `
+            <img
+              src="${escapeHtml(raffle.image)}"
+              alt="${escapeHtml(raffle.name)}">
+            `
+            :
+            `<div style="
+              height:100%;
+              display:grid;
+              place-items:center;
+              font-size:100px;
+              opacity:.85;
+            ">📱</div>`
+          }
+
+          <div class="shade"></div>
+
+          <div class="photoText">
+
+            <span class="tag">
+              🔥 DESTACADA
+            </span>
+
+            ${
+              soldOut
+              ?
+              `
+              <span class="soldOutTag">
+                🔴 AGOTADO
+              </span>
+              `
+              :
+              ''
+            }
+
+          </div>
+
+        </div>
+
+        <div class="body">
+
+          <div class="category">
+            🎟 RIFA · 💵 PREMIO
+          </div>
+
+          <h2>
+            ${escapeHtml(raffle.name)}
+          </h2>
+
+          ${
+            raffle.description
+            ?
+            `
+            <p class="muted">
+              ${escapeHtml(raffle.description)}
+            </p>
+            `
+            :
+            ''
+          }
+
+          <div class="price">
+            ${money(raffle.price)}
+            <small>por boleto</small>
+          </div>
+
+          <div class="progressTop">
+            <span>${sold.toLocaleString('en-US')} vendidos</span>
+            <span>${Math.round(percent)}%</span>
+          </div>
+
+          <div class="progress">
+            <div style="width:${percent}%"></div>
+          </div>
+
+          <button
+            class="${soldOut ? 'secondary' : 'primary'}"
+            ${soldOut ? 'disabled' : ''}
+            onclick="selectRaffle('${escapeHtml(raffle.id)}')">
+            ${soldOut ? 'RIFA AGOTADA' : 'PARTICIPAR →'}
+          </button>
+
+        </div>
+
+      </div>
+    `;
+  });
+
+  list.innerHTML=html;
+}
+
+function isRaffleSoldOut(raffle){
+  const total=Number(raffle.totalNumbers)||0;
+  const sold=Number(raffle.sold)||0;
+  return total>0 && sold>=total;
+}
 
 function selectRaffle(id){
+  const raffle=getActiveRaffles().find(r=>String(r.id)===String(id));
 
- const raffle=
-  getActiveRaffles().find(
-   r=>
-    String(r.id)===
-    String(id)
-  );
+  if(!raffle || isRaffleSoldOut(raffle)) return;
 
-
- if(!raffle){
-
-  alert(
-   'La rifa ya no está disponible.'
-  );
-
-  loadRaffle();
-
-  return;
-
- }
-
-
- if(
-  isRaffleSoldOut(
-   raffle
-  )
- ){
-
-  alert(
-   'Esta rifa está agotada.'
-  );
-
-  return;
-
- }
-
-
- currentRaffle=raffle;
-
- selectedCount=MIN_TICKETS;
-
- currentMode='packages';
-
-
- document.querySelectorAll(
-  '.pack'
- ).forEach(
-  p=>
-   p.classList.remove(
-    'selected'
-   )
- );
-
-
- const firstPack=
-  document.querySelector(
-   '.pack[data-count="2"]'
-  );
-
-
- if(firstPack){
-
-  firstPack.classList.add(
-   'selected'
-  );
-
- }
-
-
- document.getElementById(
-  'checkoutTitle'
- ).textContent=
-  raffle.name;
-
-
- document.getElementById(
-  'participationRaffleName'
- ).textContent=
-  raffle.name;
-
-
- updatePackages();
-
- openCheckout();
-
+  currentRaffle=raffle;
+  openCheckout();
 }
-
-
-/* =========================================
-   CHECKOUT
-========================================= */
 
 function openCheckout(){
+  if(!currentRaffle) return;
 
- const active=
-  getActiveRaffles();
+  document.getElementById('homeView').classList.remove('active');
+  document.getElementById('verifyView').classList.remove('active');
+  document.getElementById('confirmationView').classList.remove('active');
+  document.getElementById('checkoutView').classList.add('active');
 
+  document.getElementById('checkoutTitle').textContent=currentRaffle.name;
 
- if(!active.length){
+  selectedCount=2;
+  selectedPrice=selectedCount*Number(currentRaffle.price||100);
+  currentMode='packages';
 
-  alert(
-   'No hay rifas activas.'
-  );
-
-  return;
-
- }
-
-
- if(
-  !currentRaffle ||
-  !active.some(
-   r=>
-    String(r.id)===
-    String(currentRaffle.id)
-  )
- ){
-
-  currentRaffle=
-   active[0];
-
- }
-
-
- if(
-  isRaffleSoldOut(
-   currentRaffle
-  )
- ){
-
-  alert(
-   'Esta rifa está agotada.'
-  );
-
-  return;
-
- }
-
-
- closeMenu();
- closeVerify();
- closeConfirmation();
-
-
- document.getElementById(
-  'catalog'
- ).classList.add(
-  'hidden'
- );
-
-
- document.getElementById(
-  'checkout'
- ).classList.add(
-  'active'
- );
-
-
- document.getElementById(
-  'checkoutTitle'
- ).textContent=
-  currentRaffle.name;
-
-
- document.getElementById(
-  'participationRaffleName'
- ).textContent=
-  currentRaffle.name;
-
-
- updatePackages();
-
-
- window.scrollTo(
-  0,
-  0
- );
-
-}
-
-
-function closeCheckout(){
-
- document.getElementById(
-  'checkout'
- ).classList.remove(
-  'active'
- );
-
- document.getElementById(
-  'catalog'
- ).classList.remove(
-  'hidden'
- );
-
-}
-
-
-/* =========================================
-   VERIFICADOR
-========================================= */
-
-function openVerify(){
-
- closeMenu();
- closeCheckout();
- closeConfirmation();
-
- updateVerifyRaffles();
-
- document.getElementById(
-  'catalog'
- ).classList.add(
-  'hidden'
- );
-
- document.getElementById(
-  'verifyBox'
- ).classList.add(
-  'active'
- );
-
- document.getElementById(
-  'verifyResult'
- ).innerHTML='';
-
- window.scrollTo(
-  0,
-  0
- );
-
- setTimeout(
-  ()=>{
-
-   document.getElementById(
-    'verifyRaffle'
-   ).focus();
-
-  },
-  100
- );
-
-}
-
-
-function closeVerify(){
-
- document.getElementById(
-  'verifyBox'
- ).classList.remove(
-  'active'
- );
-
- document.getElementById(
-  'catalog'
- ).classList.remove(
-  'hidden'
- );
-
-}
-
-
-/* =========================================
-   VERIFICADOR DESDE CONFIRMACION
-========================================= */
-
-function openVerifyFromConfirmation(){
-
- clearConfirmationTimer();
-
- closeConfirmation();
- closeCheckout();
-
- document.getElementById(
-  'catalog'
- ).classList.add(
-  'hidden'
- );
-
- document.getElementById(
-  'verifyBox'
- ).classList.add(
-  'active'
- );
-
- updateVerifyRaffles();
-
- if(currentRaffle){
-
-  const select=
-   document.getElementById(
-    'verifyRaffle'
-   );
-
-  select.value=
-   currentRaffle.id;
-
- }
-
- document.getElementById(
-  'verifyResult'
- ).innerHTML='';
-
- window.scrollTo(
-  0,
-  0
- );
-
-}
-
-
-function closeConfirmation(){
-
- document.getElementById(
-  'confirmation'
- ).classList.remove(
-  'active'
- );
-
-}
-
-
-function clearConfirmationTimer(){
-
- if(
-  confirmationTimer
- ){
-
-  clearInterval(
-   confirmationTimer
-  );
-
-  confirmationTimer=null;
-
- }
-
-}
-
-
-/* =========================================
-   NORMALIZAR TELÉFONO
-========================================= */
-
-function normalizePhone(phone){
-
- return String(phone||'')
-  .replace(
-   /\D/g,
-   ''
-  );
-
-}
-
-
-/* =========================================
-   RIFAS PARA VERIFICAR
-========================================= */
-
-function updateVerifyRaffles(){
-
- const select=
-  document.getElementById(
-   'verifyRaffle'
-  );
-
- if(!select)return;
-
- const raffles=
-  get(R,[]);
-
- const requests=
-  get(Q,[]);
-
- const raffleMap=
-  new Map();
-
-
- raffles.forEach(
-  r=>{
-
-   if(
-    r &&
-    r.id &&
-    r.name
-   ){
-
-    raffleMap.set(
-     String(r.id),
-     {
-      id:String(r.id),
-      name:String(r.name)
-     }
-    );
-
-   }
-
-  }
- );
-
-
- requests.forEach(
-  q=>{
-
-   if(
-    q &&
-    q.raffleId &&
-    q.raffleName
-   ){
-
-    const id=
-     String(q.raffleId);
-
-    if(
-     !raffleMap.has(id)
-    ){
-
-     raffleMap.set(
-      id,
-      {
-       id:id,
-       name:String(
-        q.raffleName
-       )
-      }
-     );
-
-    }
-
-   }
-
-  }
- );
-
-
- const oldValue=
-  select.value;
-
-
- select.innerHTML=`
-
- <option value="">
-  Selecciona la rifa
- </option>
-
- `;
-
-
- Array.from(
-  raffleMap.values()
- ).forEach(
-  r=>{
-
-   const option=
-    document.createElement(
-     'option'
-    );
-
-   option.value=r.id;
-   option.textContent=r.name;
-
-   select.appendChild(
-    option
-   );
-
-  }
- );
-
-
- if(
-  oldValue &&
-  [...select.options].some(
-   o=>o.value===oldValue
-  )
- ){
-
-  select.value=oldValue;
-
- }
-
-}
-
-
-/* =========================================
-   VERIFICAR
-========================================= */
-
-function verifyNumbers(){
-
- const raffleId=
-  document.getElementById(
-   'verifyRaffle'
-  ).value;
-
-
- const search=
-  document.getElementById(
-   'verifyPhone'
-  ).value.trim();
-
-
- if(!raffleId){
-
-  alert(
-   'Selecciona el nombre de la rifa.'
-  );
-
-  return;
-
- }
-
-
- if(!search){
-
-  alert(
-   'Escribe tu número de teléfono o número de boleto.'
-  );
-
-  return;
-
- }
-
-
- const digits=
-  normalizePhone(
-   search
-  );
-
-
- if(!digits){
-
-  alert(
-   'Escribe un número válido.'
-  );
-
-  return;
-
- }
-
-
- const requests=
-  get(Q,[]);
-
-
- const raffleRequests=
-  requests.filter(
-   q=>
-    q &&
-    String(q.raffleId)===
-    String(raffleId)
-  );
-
-
- const isNumericTicket=
-  /^\d+$/.test(search);
-
-
- const searchedTicket=
-  isNumericTicket
-  ?
-  Number(search)
-  :
-  null;
-
-
- if(
-  isNumericTicket
- ){
-
-  const ticketMatches=
-   raffleRequests.filter(
-    q=>
-     Array.isArray(q.numbers) &&
-     q.numbers.some(
-      n=>
-       Number(n)===
-       searchedTicket
-     )
-   );
-
-
-  if(
-   ticketMatches.length
-  ){
-
-   renderTicketResults(
-    ticketMatches,
-    searchedTicket
-   );
-
-   return;
-
-  }
-
- }
-
-
- const phoneMatches=
-  raffleRequests.filter(
-   q=>
-    q.phone &&
-    normalizePhone(q.phone)===
-    digits
-  );
-
-
- if(
-  phoneMatches.length
- ){
-
-  renderPhoneResults(
-   phoneMatches,
-   search
-  );
-
-  return;
-
- }
-
-
- document.getElementById(
-  'verifyResult'
- ).innerHTML=`
-
- <div class="verifyEmpty">
-
-  🔎
-
-  <b>
-   No encontramos resultados.
-  </b>
-
-  <br><br>
-
-  No encontramos un boleto ni solicitudes
-  asociadas con:
-
-  <br><br>
-
-  <b>
-   ${escapeHtml(search)}
-  </b>
-
-  <br><br>
-
-  para la rifa seleccionada.
-
- </div>
-
- `;
-
-}
-
-
-/* =========================================
-   RESULTADO POR BOLETO
-========================================= */
-
-function renderTicketResults(
- matches,
- searchedTicket
-){
-
- const result=
-  document.getElementById(
-   'verifyResult'
-  );
-
-
- let html=`
-
- <div class="searchNumberBox">
-
-  🔎 Boleto consultado:
-  <b>#${searchedTicket}</b>
-
- </div>
-
- `;
-
-
- matches.forEach(
-  q=>{
-
-   const accepted=
-    q.status==='accepted';
-
-
-   html+=`
-
-   <div class="${
-    accepted
-    ?
-    'acceptedCard'
-    :
-    'pendingCard'
-   }">
-
-    <div class="${
-     accepted
-     ?
-     'acceptedTitle'
-     :
-     'pendingTitle'
-    }">
-
-     ${
-      accepted
-      ?
-      '✓ BOLETO VENDIDO'
-      :
-      '⏳ BOLETO PENDIENTE'
-     }
-
-    </div>
-
-
-    <div class="buyerBox">
-
-     <div class="buyerLabel">
-      ${accepted ? 'COMPRADO POR' : 'RESERVADO POR'}
-     </div>
-
-     <div class="buyerName">
-
-      👤
-      ${escapeHtml(
-       q.name ||
-       'Nombre no disponible'
-      )}
-
-     </div>
-
-     <div class="buyerPhone">
-
-      📱
-      ${escapeHtml(
-       q.phone ||
-       'Teléfono no disponible'
-      )}
-
-     </div>
-
-    </div>
-
-
-    <div
-     style="
-     margin-top:18px;
-     color:var(--blue);
-     font-weight:900;
-     ">
-
-     🎟 NÚMERO DE BOLETO
-
-    </div>
-
-
-    <div class="numberGrid">
-
-     <div class="numberItem">
-
-      ${String(
-       searchedTicket
-      ).padStart(
-       2,
-       '0'
-      )}
-
-     </div>
-
-    </div>
-
-
-    <div class="ticketStatus">
-
-     <span class="muted">
-      Estado:
-     </span>
-
-     <b
-      style="
-      color:${
-       accepted
-       ?
-       'var(--green)'
-       :
-       'var(--gold)'
-      };
-      ">
-
-      ${
-       accepted
-       ?
-       'VENDIDO / ACEPTADO'
-       :
-       'RESERVADO / PENDIENTE'
-      }
-
-     </b>
-
-    </div>
-
-
-    <div class="verifyInfo">
-
-     ${
-      accepted
-      ?
-      `
-      ✓
-      <b style="color:var(--green)">
-       Este boleto fue vendido.
-      </b>
-      `
-      :
-      `
-      ⏳
-      <b style="color:var(--gold)">
-       Este boleto está reservado.
-      </b>
-      `
-     }
-
-    </div>
-
-   </div>
-
-   `;
-
-  }
- );
-
-
- result.innerHTML=
-  html;
-
-}
-
-
-/* =========================================
-   RESULTADO POR TELÉFONO
-========================================= */
-
-function renderPhoneResults(
- matches,
- search
-){
-
- const result=
-  document.getElementById(
-   'verifyResult'
-  );
-
-
- let html=`
-
- <div class="searchNumberBox">
-
-  📱 Teléfono consultado:
-  <b>${escapeHtml(search)}</b>
-
-  <br><br>
-
-  Se encontraron
-  <b>${matches.length}</b>
-  solicitud(es) asociada(s).
-
- </div>
-
- `;
-
-
- let totalNumbers=0;
- let totalPending=0;
- let totalAccepted=0;
-
-
- matches.forEach(
-  q=>{
-
-   const accepted=
-    q.status==='accepted';
-
-
-   const numbers=
-    Array.isArray(q.numbers)
-    ?
-    q.numbers.map(Number).sort(
-     (a,b)=>a-b
-    )
-    :
-    [];
-
-
-   totalNumbers+=
-    numbers.length;
-
-
-   if(accepted){
-
-    totalAccepted+=
-     numbers.length;
-
-   }else{
-
-    totalPending+=
-     numbers.length;
-
-   }
-
-
-   html+=`
-
-   <div class="${
-    accepted
-    ?
-    'acceptedCard'
-    :
-    'pendingCard'
-   }">
-
-    <div class="${
-     accepted
-     ?
-     'acceptedTitle'
-     :
-     'pendingTitle'
-    }">
-
-     ${
-      accepted
-      ?
-      '✓ BOLETOS ACEPTADOS / VENDIDOS'
-      :
-      '⏳ BOLETOS PENDIENTES / RESERVADOS'
-     }
-
-    </div>
-
-
-    <div class="buyerBox">
-
-     <div class="buyerLabel">
-      ${accepted ? 'COMPRADOR' : 'SOLICITANTE'}
-     </div>
-
-     <div class="buyerName">
-
-      👤
-      ${escapeHtml(
-       q.name ||
-       'Nombre no disponible'
-      )}
-
-     </div>
-
-     <div class="buyerPhone">
-
-      📱
-      ${escapeHtml(
-       q.phone ||
-       'Teléfono no disponible'
-      )}
-
-     </div>
-
-    </div>
-
-
-    <div
-     style="
-     margin-top:18px;
-     color:var(--blue);
-     font-weight:900;
-     ">
-
-     🎟 NÚMEROS DE BOLETO
-
-    </div>
-
-
-    <div class="numberGrid">
-
-     ${
-      numbers.length
-      ?
-      numbers.map(
-       n=>`
-
-       <div class="numberItem">
-
-        ${String(n).padStart(2,'0')}
-
-       </div>
-
-       `
-      ).join('')
-      :
-      `
-      <div class="muted">
-       No hay números registrados.
-      </div>
-      `
-     }
-
-    </div>
-
-
-    <div class="ticketStatus">
-
-     <span class="muted">
-      Estado de la solicitud:
-     </span>
-
-     <b
-      style="
-      color:${
-       accepted
-       ?
-       'var(--green)'
-       :
-       'var(--gold)'
-      };
-      ">
-
-      ${
-       accepted
-       ?
-       'ACEPTADA'
-       :
-       'PENDIENTE'
-      }
-
-     </b>
-
-    </div>
-
-   </div>
-
-   `;
-
-  }
- );
-
-
- html+=`
-
- <div class="raffleCounter">
-
-  🎟 Total de boletos encontrados:
-  <b>
-   ${totalNumbers}
-  </b>
-
-  <br><br>
-
-  ⏳ Pendientes:
-  <b style="color:var(--gold)">
-   ${totalPending}
-  </b>
-
-  ·
-
-  ✓ Aceptados:
-  <b style="color:var(--green)">
-   ${totalAccepted}
-  </b>
-
- </div>
-
- `;
-
-
- result.innerHTML=
-  html;
-
-}
-
-
-/* =========================================
-   NÚMEROS RESERVADOS
-========================================= */
-
-function getReservedNumbers(){
-
- if(!currentRaffle){
-
-  return new Set();
-
- }
-
-
- const requests=
-  get(Q,[]);
-
-
- const reserved=
-  new Set();
-
-
- requests.forEach(
-  q=>{
-
-   if(
-    q &&
-    String(q.raffleId)===
-    String(currentRaffle.id) &&
-    q.status==='pending' &&
-    Array.isArray(q.numbers)
-   ){
-
-    q.numbers.forEach(
-     n=>{
-
-      const number=
-       Number(n);
-
-      if(
-       Number.isInteger(number) &&
-       number>0
-      ){
-
-       reserved.add(
-        number
-       );
-
-      }
-
-     }
-    );
-
-   }
-
-  }
- );
-
-
- return reserved;
-
-}
-
-
-/* =========================================
-   NÚMEROS DISPONIBLES
-========================================= */
-
-function getAvailableNumbers(){
-
- if(!currentRaffle){
-
-  return [];
-
- }
-
-
- const soldSet=
-  new Set(
-   Array.isArray(
-    currentRaffle.sold
-   )
-   ?
-   currentRaffle.sold.map(Number)
-   :
-   []
-  );
-
-
- const reserved=
-  getReservedNumbers();
-
-
- const total=
-  Number(
-   currentRaffle.totalNumbers
-  )||0;
-
-
- const result=[];
-
-
- for(
-  let i=1;
-  i<=total;
-  i++
- ){
-
-  if(
-   !soldSet.has(i) &&
-   !reserved.has(i)
-  ){
-
-   result.push(i);
-
-  }
-
- }
-
-
- return result;
-
-}
-
-
-/* =========================================
-   PAQUETES
-========================================= */
-
-function updatePackages(){
-
- if(!currentRaffle)return;
-
-
- const available=
-  getAvailableNumbers().length;
-
-
- document.querySelectorAll(
-  '.pack'
- ).forEach(
-  pack=>{
-
-   const count=
-    Number(
-     pack.dataset.count
-    );
-
-
-   const price=
-    count*
-    Number(
-     currentRaffle.price
-    );
-
-
-   pack.querySelector(
-    '.packPrice'
-   ).textContent=
-    money(price);
-
-
-   pack.classList.toggle(
-    'disabled',
-    count>available
-   );
-
-  }
- );
-
-
- if(
-  available<MIN_TICKETS
- ){
-
-  selectedCount=0;
-
- }else if(
-  selectedCount<MIN_TICKETS ||
-  selectedCount>available
- ){
-
-  selectedCount=
-   MIN_TICKETS;
-
- }
-
-
- selectedPrice=
-  selectedCount*
-  Number(
-   currentRaffle.price
-  );
-
-
- updateTotals();
-
-}
-
-
-/* =========================================
-   TOTALES
-========================================= */
-
-function updateTotals(){
-
- if(!currentRaffle)return;
-
-
- selectedPrice=
-  selectedCount*
-  Number(
-   currentRaffle.price
-  );
-
-
- document.getElementById(
-  'qtyNumber'
- ).textContent=
-  selectedCount||0;
-
-
- document.getElementById(
-  'freeTotal'
- ).textContent=
-  money(selectedPrice);
-
-
- document.getElementById(
-  'total'
- ).textContent=
-  money(selectedPrice);
-
-
- document.getElementById(
-  'countText'
- ).textContent=
-  (selectedCount||0)+
-  ' boletos';
-
-
- document.getElementById(
-  'minusBtn'
- ).disabled=
-  selectedCount<=MIN_TICKETS;
-
-}
-
-
-/* =========================================
-   ELEGIR PAQUETE
-========================================= */
-
-function choose(el){
-
- if(
-  el.classList.contains(
-   'disabled'
-  )
- ){
-
-  alert(
-   'Ese paquete ya no está disponible.'
-  );
-
-  return;
-
- }
-
-
- document.querySelectorAll(
-  '.pack'
- ).forEach(
-  x=>
-   x.classList.remove(
-    'selected'
-   )
- );
-
-
- el.classList.add(
-  'selected'
- );
-
-
- selectedCount=
-  Number(
-   el.dataset.count
-  );
-
-
- updateTotals();
-
-}
-
-
-/* =========================================
-   MODO
-========================================= */
-
-function mode(m){
-
- currentMode=m;
-
-
- document.getElementById(
-  'pkgBtn'
- ).classList.toggle(
-  'on',
-  m==='packages'
- );
-
-
- document.getElementById(
-  'freeBtn'
- ).classList.toggle(
-  'on',
-  m==='free'
- );
-
-
- document.getElementById(
-  'packages'
- ).style.display=
-  m==='packages'
-  ?
-  'grid'
-  :
-  'none';
-
-
- document.getElementById(
-  'freeBox'
- ).classList.toggle(
-  'active',
-  m==='free'
- );
-
-
- if(
-  m==='free'
- ){
-
-  if(
-   selectedCount<MIN_TICKETS
-  ){
-
-   selectedCount=
-    MIN_TICKETS;
-
-  }
-
-
-  const available=
-   getAvailableNumbers().length;
-
-
-  if(
-   selectedCount>available
-  ){
-
-   selectedCount=
-    Math.min(
-     MIN_TICKETS,
-     available
-    );
-
-  }
-
-
+  mode('packages');
+  updatePackages();
   updateTotals();
 
- }
-
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
+function closeCheckout(){
+  document.getElementById('checkoutView').classList.remove('active');
+  document.getElementById('homeView').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-/* =========================================
-   CANTIDAD
-========================================= */
+function choose(el){
+  document.querySelectorAll('.pack').forEach(p=>p.classList.remove('selected'));
+  el.classList.add('selected');
 
-function changeQty(amount){
-
- if(!currentRaffle)return;
-
-
- const available=
-  getAvailableNumbers().length;
-
-
- const max=
-  Math.min(
-   MAX_TICKETS,
-   available
+  selectedCount=Math.max(
+    MIN_TICKETS,
+    Number(el.dataset.count)||MIN_TICKETS
   );
 
+  selectedPrice=selectedCount*Number(currentRaffle?.price||100);
 
- const next=
-  selectedCount+
-  amount;
-
-
- if(
-  next<MIN_TICKETS ||
-  next>max
- ){
-
-  return;
-
- }
-
-
- selectedCount=
-  next;
-
-
- updateTotals();
-
+  updateTotals();
 }
 
+function mode(type){
+  currentMode=type;
 
-/* =========================================
-   BANCO
-========================================= */
+  const packagesTab=document.getElementById('packagesTab');
+  const freeTab=document.getElementById('freeTab');
+  const packagesBox=document.getElementById('packagesBox');
+  const freeBox=document.getElementById('freeBox');
 
-function selectBank(el){
+  if(type==='packages'){
+    packagesTab.classList.add('active');
+    freeTab.classList.remove('active');
+    packagesBox.style.display='block';
+    freeBox.classList.remove('active');
+  }else{
+    packagesTab.classList.remove('active');
+    freeTab.classList.add('active');
+    packagesBox.style.display='none';
+    freeBox.classList.add('active');
 
- document.querySelectorAll(
-  '.bank'
- ).forEach(
-  x=>
-   x.classList.remove(
-    'selected'
-   )
- );
+    selectedCount=Math.max(MIN_TICKETS,selectedCount||MIN_TICKETS);
+    selectedPrice=selectedCount*Number(currentRaffle?.price||100);
+  }
 
-
- el.classList.add(
-  'selected'
- );
-
-
- document.getElementById(
-  'bankName'
- ).textContent=
-  el.dataset.bank;
-
-
- document.getElementById(
-  'accountNumber'
- ).textContent=
-  el.dataset.account;
-
-
- document.getElementById(
-  'holder'
- ).textContent=
-  el.dataset.holder;
-
-
- document.getElementById(
-  'bankLogo'
- ).textContent=
-  el.dataset.bank.charAt(0);
-
+  updateTotals();
 }
 
+function changeQty(delta){
+  let next=selectedCount+delta;
 
-/* =========================================
-   COPIAR CUENTA
-========================================= */
+  if(next<MIN_TICKETS) next=MIN_TICKETS;
+  if(next>MAX_TICKETS) next=MAX_TICKETS;
+
+  selectedCount=next;
+  selectedPrice=selectedCount*Number(currentRaffle?.price||100);
+
+  document.getElementById('qtyNumber').textContent=selectedCount;
+
+  updateTotals();
+}
+
+function updatePackages(){
+  if(!currentRaffle) return;
+
+  document.querySelectorAll('.pack').forEach(pack=>{
+    const count=Number(pack.dataset.count)||0;
+    const price=count*Number(currentRaffle.price||100);
+
+    pack.querySelector('small').textContent=money(price);
+
+    pack.classList.toggle('selected',count===selectedCount);
+  });
+}
+
+function updateTotals(){
+  const price=Number(currentRaffle?.price||100);
+
+  selectedPrice=selectedCount*price;
+
+  document.getElementById('totalAmount').textContent=money(selectedPrice);
+
+  const qty=document.getElementById('qtyNumber');
+  if(qty) qty.textContent=selectedCount;
+
+  if(currentMode==='packages'){
+    updatePackages();
+  }
+}
+
+function selectBank(button){
+  document.querySelectorAll('.bankBtn')
+    .forEach(b=>b.classList.remove('active'));
+
+  button.classList.add('active');
+  selectedBank=button.dataset.bank||button.textContent.trim();
+
+  const number=document.getElementById('accountNumber');
+  const holder=document.getElementById('accountHolder');
+
+  if(selectedBank==='Banco Popular'){
+    number.textContent='CUENTA_A_CONFIGURAR';
+    holder.textContent='TITULAR_A_CONFIGURAR';
+  }else if(selectedBank==='Banreservas'){
+    number.textContent='CUENTA_A_CONFIGURAR';
+    holder.textContent='TITULAR_A_CONFIGURAR';
+  }else if(selectedBank==='Banco BHD'){
+    number.textContent='CUENTA_A_CONFIGURAR';
+    holder.textContent='TITULAR_A_CONFIGURAR';
+  }else{
+    number.textContent='CUENTA_A_CONFIGURAR';
+    holder.textContent='TITULAR_A_CONFIGURAR';
+  }
+}
 
 function copyAccount(){
+  const text=document.getElementById('accountNumber').textContent;
 
- const value=
-  document.getElementById(
-   'accountNumber'
-  ).textContent;
-
-
- if(
-  navigator.clipboard
- ){
-
-  navigator.clipboard.writeText(
-   value
-  );
-
- }
-
-
- alert(
-  'Número de cuenta copiado.'
- );
-
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(text)
+      .then(()=>alert('Número de cuenta copiado.'));
+  }else{
+    alert(text);
+  }
 }
-
-
-/* =========================================
-   ARCHIVO
-========================================= */
 
 function showFile(input){
+  const file=input.files?.[0];
+  const target=document.getElementById('fileName');
 
- document.getElementById(
-  'fileName'
- ).textContent=
-  input.files[0]
-  ?
-  '✓ '+input.files[0].name
-  :
-  '';
-
-}
-
-
-/* =========================================
-   LEER COMPROBANTE
-========================================= */
-
-function readReceipt(file){
-
- return new Promise(
-  (
-   resolve,
-   reject
-  )=>{
-
-   if(!file){
-
-    resolve('');
-
+  if(!file){
+    target.textContent='Ningún archivo seleccionado';
     return;
-
-   }
-
-
-   if(
-    file.size>
-    10*1024*1024
-   ){
-
-    reject(
-     'El comprobante debe pesar menos de 10 MB.'
-    );
-
-    return;
-
-   }
-
-
-   const reader=
-    new FileReader();
-
-
-   reader.onload=()=>{
-    resolve(
-     reader.result
-    );
-   };
-
-
-   reader.onerror=()=>{
-    reject(
-     'No se pudo leer el comprobante.'
-    );
-   };
-
-
-   reader.readAsDataURL(
-    file
-   );
-
   }
- );
 
+  const max=10*1024*1024;
+
+  if(file.size>max){
+    alert('El archivo supera el máximo de 10 MB.');
+    input.value='';
+    target.textContent='Ningún archivo seleccionado';
+    return;
+  }
+
+  target.textContent=file.name;
 }
 
+function securityCheck(){
+  securityVerified=true;
+  alert('✓ Verificación de seguridad completada.');
+}
 
-/* =========================================
-   NÚMEROS ALEATORIOS
-========================================= */
+function getRequests(){
+  return get(Q,[]);
+}
+
+function getPendingNumbers(raffleId){
+  const requests=getRequests();
+  const result=[];
+
+  requests.forEach(req=>{
+    if(
+      String(req.raffleId)===String(raffleId) &&
+      req.status==='pending' &&
+      Array.isArray(req.numbers)
+    ){
+      result.push(...req.numbers.map(Number));
+    }
+  });
+
+  return result;
+}
+
+function getAvailableNumbers(raffle){
+  const total=Number(raffle.totalNumbers)||10000;
+
+  const sold=Array.isArray(raffle.soldNumbers)
+    ? raffle.soldNumbers.map(Number)
+    : [];
+
+  const pending=getPendingNumbers(raffle.id);
+
+  const blocked=new Set([
+    ...sold,
+    ...pending
+  ]);
+
+  const available=[];
+
+  for(let i=1;i<=total;i++){
+    if(!blocked.has(i)) available.push(i);
+  }
+
+  return available;
+}
 
 function randomNumbers(count){
+  const available=getAvailableNumbers(currentRaffle);
 
- const available=
-  getAvailableNumbers();
+  if(available.length<count){
+    throw new Error('No hay suficientes números disponibles.');
+  }
 
+  for(let i=available.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [available[i],available[j]]=[available[j],available[i]];
+  }
 
- if(
-  available.length<count
- ){
-
-  return null;
-
- }
-
-
- for(
-  let i=available.length-1;
-  i>0;
-  i--
- ){
-
-  const j=
-   Math.floor(
-    Math.random()*(i+1)
-   );
-
-
-  [
-   available[i],
-   available[j]
-  ]=[
-   available[j],
-   available[i]
-  ];
-
- }
-
-
- return available
-  .slice(
-   0,
-   count
-  )
-  .sort(
-   (a,b)=>a-b
-  );
-
+  return available
+    .slice(0,count)
+    .sort((a,b)=>a-b);
 }
 
+function formatTicket(n){
+  const total=Number(currentRaffle?.totalNumbers||10000);
+  const digits=Math.max(3,String(total).length);
 
-/* =========================================
-   FORMULARIO
-========================================= */
+  return String(n).padStart(digits,'0');
+}
 
-document.getElementById(
- 'form'
-).addEventListener(
- 'submit',
- async function(e){
-
-  e.preventDefault();
-
-
+function submitPurchase(){
   if(!currentRaffle){
-
-   alert(
-    'Selecciona una rifa.'
-   );
-
-   return;
-
+    alert('Selecciona una rifa.');
+    return;
   }
 
-
-  const raffles=
-   get(R,[]);
-
-
-  const freshRaffle=
-   raffles.find(
-    x=>
-     String(x.id)===
-     String(currentRaffle.id) &&
-     x.active===true
-   );
-
-
-  if(!freshRaffle){
-
-   alert(
-    'La rifa ya no está activa.'
-   );
-
-   loadRaffle();
-
-   return;
-
-  }
-
-
-  currentRaffle=
-   freshRaffle;
-
-
-  if(
-   isRaffleSoldOut(
-    currentRaffle
-   )
-  ){
-
-   alert(
-    'Esta rifa ya está agotada.'
-   );
-
-   loadRaffle();
-
-   return;
-
-  }
-
-
-  if(
-   selectedCount<MIN_TICKETS
-  ){
-
-   alert(
-    'La compra mínima es de 2 boletos.'
-   );
-
-   return;
-
-  }
-
-
-  const available=
-   getAvailableNumbers();
-
-
-  if(
-   available.length<
-   selectedCount
-  ){
-
-   alert(
-    'No hay suficientes boletos disponibles.'
-   );
-
-   loadRaffle();
-
-   return;
-
-  }
-
-
-  const name=
-   document.getElementById(
-    'name'
-   ).value.trim();
-
-
-  const phone=
-   document.getElementById(
-    'phone'
-   ).value.trim();
-
-
-  const email=
-   document.getElementById(
-    'customerEmail'
-   ).value.trim();
-
-
-  const bank=
-   document.querySelector(
-    '.bank.selected'
-   );
-
-
-  const receiptFile=
-   document.getElementById(
-    'receipt'
-   ).files[0];
-
+  const name=document.getElementById('name').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const email=document.getElementById('email').value.trim();
+  const receipt=document.getElementById('receipt').files?.[0];
+  const consent=document.getElementById('consent').checked;
 
   if(!name){
-
-   alert(
-    'Escribe tu nombre.'
-   );
-
-   return;
-
+    alert('Escribe tu nombre completo.');
+    document.getElementById('name').focus();
+    return;
   }
-
 
   if(!phone){
-
-   alert(
-    'Escribe tu teléfono.'
-   );
-
-   return;
-
+    alert('Escribe tu número de WhatsApp.');
+    document.getElementById('phone').focus();
+    return;
   }
 
-
-  if(!bank){
-
-   alert(
-    'Selecciona un banco.'
-   );
-
-   return;
-
+  if(!receipt){
+    alert('Debes cargar el comprobante de pago.');
+    return;
   }
 
-
-  if(!receiptFile){
-
-   alert(
-    'Debes subir el comprobante de pago.'
-   );
-
-   return;
-
+  if(!securityVerified){
+    alert('Completa la verificación de seguridad.');
+    return;
   }
 
+  if(!consent){
+    alert('Debes aceptar la confirmación de tus datos.');
+    return;
+  }
 
-  let receiptData='';
+  if(selectedCount<MIN_TICKETS || selectedCount>MAX_TICKETS){
+    alert('La cantidad seleccionada no es válida.');
+    return;
+  }
 
+  let numbers;
 
   try{
-
-   receiptData=
-    await readReceipt(
-     receiptFile
-    );
-
+    numbers=randomNumbers(selectedCount);
   }catch(error){
-
-   alert(error);
-
-   return;
-
+    alert(error.message);
+    return;
   }
-
-
-  const numbers=
-   randomNumbers(
-    selectedCount
-   );
-
-
-  if(!numbers){
-
-   alert(
-    'No se pudieron asignar números disponibles.'
-   );
-
-   return;
-
-  }
-
-
-  const requests=
-   get(Q,[]);
-
 
   const request={
-
-   id:
-    'SOL-'+Date.now(),
-
-   raffleId:
-    currentRaffle.id,
-
-   raffleName:
-    currentRaffle.name,
-
-   price:
-    Number(
-     currentRaffle.price
-    ),
-
-   name:name,
-
-   phone:phone,
-
-   email:email,
-
-   bank:
-    bank.dataset.bank,
-
-   account:
-    bank.dataset.account,
-
-   holder:
-    bank.dataset.holder,
-
-   count:
-    selectedCount,
-
-   total:
-    selectedCount*
-    Number(
-     currentRaffle.price
-    ),
-
-   numbers:
+    id:'REQ-'+Date.now(),
+    raffleId:currentRaffle.id,
+    raffleName:currentRaffle.name,
+    name,
+    phone,
+    email,
+    bank:selectedBank,
+    amount:selectedPrice,
+    quantity:selectedCount,
     numbers,
-
-   fileName:
-    receiptFile.name,
-
-   receiptData:
-    receiptData,
-
-   receiptType:
-    receiptFile.type || '',
-
-   status:
-    'pending',
-
-   createdAt:
-    new Date().toLocaleString(
-     'es-DO'
-    )
-
+    status:'pending',
+    createdAt:new Date().toLocaleString('es-DO')
   };
 
+  const requests=getRequests();
+  requests.push(request);
+  put(Q,requests);
 
-  try{
+  showConfirmation(request);
+}
 
-   requests.push(
-    request
-   );
+function showConfirmation(request){
+  document.getElementById('checkoutView').classList.remove('active');
+  document.getElementById('homeView').classList.remove('active');
+  document.getElementById('verifyView').classList.remove('active');
+  document.getElementById('confirmationView').classList.add('active');
 
-   put(
-    Q,
-    requests
-   );
+  const box=document.getElementById('confirmationNumbers');
 
-  }catch(error){
+  box.innerHTML=request.numbers.map(n=>`
+    <span class="confirmNumber">
+      #${formatTicket(n)}
+    </span>
+  `).join('');
 
-   alert(
-    'No se pudo guardar la solicitud. El comprobante puede ser demasiado grande.'
-   );
+  startCountdown();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-   return;
+function startCountdown(){
+  clearInterval(confirmationTimer);
 
-  }
+  let seconds=6;
+  document.getElementById('countdown').textContent=seconds;
 
+  confirmationTimer=setInterval(()=>{
+    seconds--;
 
-  showConfirmation(
-   request
-  );
+    const element=document.getElementById('countdown');
+    if(element) element.textContent=seconds;
 
+    if(seconds<=0){
+      clearInterval(confirmationTimer);
+      goHome();
+    }
+  },1000);
+}
+
+function openVerifyFromConfirmation(){
+  clearInterval(confirmationTimer);
+  openVerify();
+}
+
+function openVerify(){
+  clearInterval(confirmationTimer);
+
+  document.getElementById('homeView').classList.remove('active');
+  document.getElementById('checkoutView').classList.remove('active');
+  document.getElementById('confirmationView').classList.remove('active');
+  document.getElementById('verifyView').classList.add('active');
 
   updateVerifyRaffles();
 
-  updatePackages();
-
-  renderAllRaffles(
-   getActiveRaffles()
-  );
-
- });
-
-
-/* =========================================
-   MOSTRAR CONFIRMACIÓN
-========================================= */
-
-function showConfirmation(request){
-
- clearConfirmationTimer();
-
-
- document.getElementById(
-  'checkout'
- ).classList.remove(
-  'active'
- );
-
-
- document.getElementById(
-  'verifyBox'
- ).classList.remove(
-  'active'
- );
-
-
- document.getElementById(
-  'catalog'
- ).classList.add(
-  'hidden'
- );
-
-
- document.getElementById(
-  'confirmation'
- ).classList.add(
-  'active'
- );
-
-
- const numbers=
-  Array.isArray(
-   request.numbers
-  )
-  ?
-  request.numbers
-  :
-  [];
-
-
- document.getElementById(
-  'confirmationNumbers'
- ).innerHTML=
-  numbers.map(
-   n=>`
-
-   <div class="confirmNumber">
-
-    ${String(n).padStart(2,'0')}
-
-   </div>
-
-   `
-  ).join('');
-
-
- window.scrollTo(
-  0,
-  0
- );
-
-
- let seconds=6;
-
-
- document.getElementById(
-  'countdown'
- ).textContent=
-  seconds;
-
-
- confirmationTimer=
-  setInterval(
-   ()=>{
-
-    seconds--;
-
-    document.getElementById(
-     'countdown'
-    ).textContent=
-     seconds;
-
-
-    if(
-     seconds<=0
-    ){
-
-     clearConfirmationTimer();
-
-     goHome();
-
-    }
-
-   },
-   1000
-  );
-
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
+function closeVerify(){
+  document.getElementById('verifyView').classList.remove('active');
+  document.getElementById('homeView').classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-/* =========================================
-   MENÚ
-========================================= */
+function updateVerifyRaffles(){
+  const select=document.getElementById('verifyRaffle');
+  const raffles=getActiveRaffles();
+
+  select.innerHTML=raffles.map((r,i)=>`
+    <option value="${escapeHtml(r.id)}">
+      ${escapeHtml(r.name)}
+    </option>
+  `).join('');
+}
+
+function verifyNumbers(){
+  const raffleId=document.getElementById('verifyRaffle').value;
+  const query=document.getElementById('verifyQuery').value.trim();
+
+  const result=document.getElementById('verifyResults');
+
+  if(!query){
+    result.className='verifyEmpty';
+    result.textContent='Introduce tu teléfono o número de boleto para consultar.';
+    return;
+  }
+
+  const raffle=getActiveRaffles().find(
+    r=>String(r.id)===String(raffleId)
+  );
+
+  if(!raffle){
+    result.className='verifyEmpty';
+    result.textContent='No se encontró la rifa.';
+    return;
+  }
+
+  const requests=getRequests().filter(
+    req=>
+      String(req.raffleId)===String(raffle.id) &&
+      (
+        String(req.phone).replace(/\D/g,'').includes(query.replace(/\D/g,''))
+        ||
+        Array.isArray(req.numbers) &&
+        req.numbers.some(n=>formatTicketForRaffle(n,raffle).includes(query))
+      )
+  );
+
+  if(!requests.length){
+    result.className='verifyEmpty';
+    result.textContent='No encontramos números asociados a esa búsqueda.';
+    return;
+  }
+
+  const phoneSearch=/\d{7,}/.test(query.replace(/\D/g,''));
+
+  if(phoneSearch){
+    renderPhoneResults(requests,result,raffle);
+  }else{
+    renderTicketResults(requests,result,raffle,query);
+  }
+}
+
+function formatTicketForRaffle(n,raffle){
+  const total=Number(raffle.totalNumbers||10000);
+  const digits=Math.max(3,String(total).length);
+  return String(n).padStart(digits,'0');
+}
+
+function renderPhoneResults(requests,result,raffle){
+  result.className='';
+
+  let html=`
+    <div class="verifyInfo">
+      Se encontraron ${requests.length} solicitud(es) para esta rifa.
+    </div>
+  `;
+
+  requests.forEach(req=>{
+    const status=req.status==='pending'
+      ? 'Pendiente de validación'
+      : 'Validado';
+
+    html+=`
+      <div class="buyerBox">
+        <b>${escapeHtml(req.name)}</b><br>
+        Estado: ${escapeHtml(status)}<br>
+        Cantidad: ${req.numbers?.length||0}<br>
+        Solicitud: ${escapeHtml(req.id)}
+
+        <div class="numberGrid">
+          ${(req.numbers||[]).map(n=>`
+            <div class="numberItem">
+              #${formatTicketForRaffle(n,raffle)}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  });
+
+  result.innerHTML=html;
+}
+
+function renderTicketResults(requests,result,raffle,query){
+  result.className='';
+
+  let found=[];
+
+  requests.forEach(req=>{
+    (req.numbers||[]).forEach(n=>{
+      const formatted=formatTicketForRaffle(n,raffle);
+
+      if(
+        String(n)===query ||
+        formatted===query ||
+        formatted.includes(query)
+      ){
+        found.push({req,n,formatted});
+      }
+    });
+  });
+
+  if(!found.length){
+    result.className='verifyEmpty';
+    result.textContent='No encontramos ese número de boleto.';
+    return;
+  }
+
+  result.innerHTML=found.map(item=>`
+    <div class="buyerBox">
+      <b>Boleto #${escapeHtml(item.formatted)}</b><br>
+      Participante: ${escapeHtml(item.req.name)}<br>
+      Estado:
+      ${
+        item.req.status==='pending'
+        ?
+        '<span style="color:#ffe992">Pendiente de validación</span>'
+        :
+        '<span style="color:#9af0c3">Validado</span>'
+      }
+    </div>
+  `).join('');
+}
 
 function toggleMenu(){
-
- document.getElementById(
-  'menu'
- ).classList.toggle(
-  'active'
- );
-
+  document.getElementById('menu').classList.toggle('active');
 }
 
+function scrollToCatalog(){
+  document.getElementById('menu').classList.remove('active');
 
-function closeMenu(){
+  document.getElementById('homeView').classList.add('active');
+  document.getElementById('checkoutView').classList.remove('active');
+  document.getElementById('verifyView').classList.remove('active');
+  document.getElementById('confirmationView').classList.remove('active');
 
- document.getElementById(
-  'menu'
- ).classList.remove(
-  'active'
- );
-
+  setTimeout(()=>{
+    document.getElementById('catalog')
+      .scrollIntoView({behavior:'smooth'});
+  },50);
 }
-
-
-/* =========================================
-   INICIO
-========================================= */
 
 function goHome(){
+  clearInterval(confirmationTimer);
 
- clearConfirmationTimer();
+  document.getElementById('checkoutView').classList.remove('active');
+  document.getElementById('verifyView').classList.remove('active');
+  document.getElementById('confirmationView').classList.remove('active');
+  document.getElementById('homeView').classList.add('active');
 
- closeMenu();
- closeCheckout();
- closeVerify();
- closeConfirmation();
+  document.getElementById('menu').classList.remove('active');
 
+  renderAllRaffles();
 
- document.getElementById(
-  'catalog'
- ).classList.remove(
-  'hidden'
- );
-
-
- window.scrollTo({
-  top:0,
-  behavior:'smooth'
- });
-
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
-
-/* =========================================
-   CARGAR
-========================================= */
-
-loadRaffle();
-
-
-/* =========================================
-   ACTUALIZAR ENTRE PESTAÑAS
-========================================= */
-
-window.addEventListener(
- 'storage',
- function(e){
+document.addEventListener('click',function(event){
+  const menu=document.getElementById('menu');
+  const button=document.querySelector('.menuBtn');
 
   if(
-   e.key===R ||
-   e.key===Q
+    menu.classList.contains('active') &&
+    !menu.contains(event.target) &&
+    !button.contains(event.target)
   ){
-
-   loadRaffle();
-
+    menu.classList.remove('active');
   }
+});
 
- }
-);
+document.getElementById('verifyQuery').addEventListener('keydown',function(e){
+  if(e.key==='Enter') verifyNumbers();
+});
 
-
-/* =========================================
-   ENTER PARA VERIFICAR
-========================================= */
-
-document.getElementById(
- 'verifyPhone'
-).addEventListener(
- 'keydown',
- function(e){
+window.addEventListener('storage',function(){
+  renderAllRaffles();
 
   if(
-   e.key==='Enter'
+    document.getElementById('verifyView').classList.contains('active')
   ){
-
-   e.preventDefault();
-
-   verifyNumbers();
-
+    updateVerifyRaffles();
   }
+});
 
- }
-);
-
-
-/* =========================================
-   CAMBIAR RIFA DEL VERIFICADOR
-========================================= */
-
-document.getElementById(
- 'verifyRaffle'
-).addEventListener(
- 'change',
- function(){
-
-  document.getElementById(
-   'verifyResult'
-  ).innerHTML='';
-
- }
-);
-
-
-/* =========================================
-   ENTER DESDE SELECT
-========================================= */
-
-document.getElementById(
- 'verifyRaffle'
-).addEventListener(
- 'keydown',
- function(e){
-
-  if(
-   e.key==='Enter'
-  ){
-
-   e.preventDefault();
-
-   document.getElementById(
-    'verifyPhone'
-   ).focus();
-
-  }
-
- }
-);
-
+renderAllRaffles();
 </script>
 
 </body>
