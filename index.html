@@ -110,11 +110,13 @@ button{
   border-radius:999px;
 
   color:#fff;
-  background:linear-gradient(
-    135deg,
-    #c9942d,
-    #80550c
-  );
+
+  background:
+    linear-gradient(
+      135deg,
+      #c9942d,
+      #80550c
+    );
 
   font-size:11px;
 
@@ -336,7 +338,8 @@ main{
 
   background:#fffaf0;
 
-  box-shadow:0 4px 10px rgba(90,55,0,.08);
+  box-shadow:
+    0 4px 10px rgba(90,55,0,.08);
 }
 
 .secondary:hover{
@@ -1250,7 +1253,7 @@ select:focus{
 }
 
 /* =========================
-   BANKS
+   BANCOS / METODOS DE PAGO
 ========================= */
 
 .bankGrid{
@@ -1258,20 +1261,40 @@ select:focus{
 
   grid-template-columns:repeat(2,1fr);
 
-  gap:8px;
+  gap:9px;
 }
 
 .bankBtn{
-  padding:12px 8px;
+  min-height:82px;
+
+  padding:9px 7px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  gap:7px;
 
   border:1px solid #cdb78d;
-  border-radius:12px;
+  border-radius:14px;
 
   color:#5b441e;
 
   background:#fffaf0;
 
-  font-size:12px;
+  font-size:11px;
+  font-weight:900;
+
+  transition:.2s ease;
+}
+
+.bankBtn:hover{
+  transform:translateY(-1px);
+
+  border-color:#956511;
+
+  background:#f8ead1;
 }
 
 .bankBtn.active{
@@ -1279,7 +1302,86 @@ select:focus{
 
   border-color:#956511;
 
-  background:#956511;
+  background:
+    linear-gradient(
+      145deg,
+      #a97519,
+      #80540b
+    );
+
+  box-shadow:
+    0 5px 13px rgba(105,66,4,.20);
+}
+
+.bankLogo{
+  width:100%;
+  height:34px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  border-radius:8px;
+}
+
+.bankLogo img{
+  max-width:92px;
+  max-height:32px;
+
+  display:block;
+
+  object-fit:contain;
+}
+
+.popularLogo img{
+  background:#fff;
+  padding:4px 7px;
+  border-radius:6px;
+}
+
+.banreservasLogo img{
+  background:#fff;
+  padding:4px 7px;
+  border-radius:6px;
+}
+
+.qikLogo{
+  width:58px;
+  height:32px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:8px;
+
+  color:#fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #181818,
+      #5d5d5d
+    );
+
+  font-size:19px;
+  font-weight:1000;
+  letter-spacing:-1px;
+}
+
+.cashLogo{
+  width:58px;
+  height:32px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:8px;
+
+  background:#edf4d8;
+
+  font-size:24px;
 }
 
 /* =========================
@@ -1672,6 +1774,7 @@ select:focus{
   .totalAmount{
     font-size:32px;
   }
+
 }
 
 @media(min-width:600px){
@@ -1683,6 +1786,7 @@ select:focus{
   .bankGrid{
     grid-template-columns:repeat(4,1fr);
   }
+
 }
 </style>
 </head>
@@ -1693,7 +1797,11 @@ select:focus{
 
 <header class="header">
 
-  <button class="menuBtn" onclick="toggleMenu()">☰</button>
+  <button
+    class="menuBtn"
+    onclick="toggleMenu()">
+    ☰
+  </button>
 
   <div class="logo">
     RIFAS LUXURY <span>RD</span>
@@ -1723,7 +1831,9 @@ select:focus{
      INICIO
 ========================= -->
 
-<section id="homeView" class="view active">
+<section
+  id="homeView"
+  class="view active">
 
   <div class="hero">
 
@@ -1740,12 +1850,20 @@ select:focus{
       y descubre rifas seleccionadas.
     </p>
 
-    <button class="primary" onclick="scrollToCatalog()">
+    <button
+      class="primary"
+      onclick="scrollToCatalog()">
+
       VER RIFAS DISPONIBLES
+
     </button>
 
-    <button class="secondary verifyHero" onclick="openVerify()">
+    <button
+      class="secondary verifyHero"
+      onclick="openVerify()">
+
       🔎 VERIFICAR MIS NÚMEROS
+
     </button>
 
   </div>
@@ -1766,11 +1884,15 @@ select:focus{
      CHECKOUT
 ========================= -->
 
-<section id="checkoutView" class="view">
+<section
+  id="checkoutView"
+  class="view">
 
   <div class="checkoutHead">
 
-    <button class="iconBtn" onclick="closeCheckout()">
+    <button
+      class="iconBtn"
+      onclick="closeCheckout()">
       ‹
     </button>
 
@@ -1786,7 +1908,9 @@ select:focus{
 
     </div>
 
-    <button class="iconBtn" onclick="closeCheckout()">
+    <button
+      class="iconBtn"
+      onclick="closeCheckout()">
       ×
     </button>
 
@@ -1836,8 +1960,6 @@ select:focus{
       </button>
 
     </div>
-
-    <!-- PAQUETES -->
 
     <div id="packagesBox">
 
@@ -2047,9 +2169,9 @@ select:focus{
 
     </div>
 
-    <!-- CANTIDAD LIBRE -->
-
-    <div id="freeBox" class="freeBox">
+    <div
+      id="freeBox"
+      class="freeBox">
 
       <div class="qtyCard">
 
@@ -2146,37 +2268,87 @@ select:focus{
   <div class="panel">
 
     <h3 class="formTitle">
-      Pago por transferencia
+      Método de pago
     </h3>
 
     <div class="bankGrid">
+
+      <!-- BANCO POPULAR -->
 
       <button
         class="bankBtn active"
         data-bank="Banco Popular"
         onclick="selectBank(this)">
-        Banco Popular
+
+        <div class="bankLogo popularLogo">
+
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Popular_bank_logo.png"
+            alt="Banco Popular"
+            loading="lazy">
+
+        </div>
+
+        <span>
+          Banco Popular
+        </span>
+
       </button>
+
+      <!-- BANRESERVAS -->
 
       <button
         class="bankBtn"
         data-bank="Banreservas"
         onclick="selectBank(this)">
-        Banreservas
+
+        <div class="bankLogo banreservasLogo">
+
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Banreservas-logo.png"
+            alt="Banreservas"
+            loading="lazy">
+
+        </div>
+
+        <span>
+          Banreservas
+        </span>
+
       </button>
+
+      <!-- QIK -->
 
       <button
         class="bankBtn"
-        data-bank="Banco BHD"
+        data-bank="Qik"
         onclick="selectBank(this)">
-        Banco BHD
+
+        <div class="qikLogo">
+          Qik
+        </div>
+
+        <span>
+          Qik
+        </span>
+
       </button>
+
+      <!-- EFECTIVO -->
 
       <button
         class="bankBtn"
-        data-bank="Otra cuenta"
+        data-bank="Efectivo"
         onclick="selectBank(this)">
-        Otra cuenta
+
+        <div class="cashLogo">
+          💵
+        </div>
+
+        <span>
+          Efectivo
+        </span>
+
       </button>
 
     </div>
@@ -2187,7 +2359,7 @@ select:focus{
 
         <div>
 
-          <small>
+          <small id="accountLabel">
             Cuenta
           </small>
 
@@ -2201,8 +2373,11 @@ select:focus{
 
         <button
           class="copyBtn"
+          id="copyAccountBtn"
           onclick="copyAccount()">
+
           COPIAR
+
         </button>
 
       </div>
@@ -2225,9 +2400,13 @@ select:focus{
 
       </div>
 
-      <div class="fieldHint">
+      <div
+        class="fieldHint"
+        id="paymentHint">
+
         Realiza la transferencia por el monto total
         y luego carga el comprobante.
+
       </div>
 
     </div>
@@ -2338,14 +2517,18 @@ select:focus{
      VERIFICAR
 ========================= -->
 
-<section id="verifyView" class="view">
+<section
+  id="verifyView"
+  class="view">
 
   <div class="checkoutHead">
 
     <button
       class="iconBtn"
       onclick="closeVerify()">
+
       ‹
+
     </button>
 
     <div class="checkoutTitle">
@@ -2363,7 +2546,9 @@ select:focus{
     <button
       class="iconBtn"
       onclick="closeVerify()">
+
       ×
+
     </button>
 
   </div>
@@ -2411,7 +2596,9 @@ select:focus{
      CONFIRMACION
 ========================= -->
 
-<section id="confirmationView" class="view">
+<section
+  id="confirmationView"
+  class="view">
 
   <div class="confirmation">
 
@@ -2574,7 +2761,8 @@ function defaultRaffle(){
 
     name:'Porsche Cayenne S',
 
-    description:'Participa y descubre si eres el próximo ganador.',
+    description:
+      'Participa y descubre si eres el próximo ganador.',
 
     price:PRICE_PER_TICKET,
 
@@ -3058,7 +3246,68 @@ function updateTotals(){
 
 
 /* =========================
-   BANCO
+   METODO DE PAGO
+========================= */
+
+const paymentDetails={
+
+  'Banco Popular':{
+
+    account:'CUENTA_A_CONFIGURAR',
+
+    holder:'TITULAR_A_CONFIGURAR',
+
+    label:'Cuenta',
+
+    hint:
+      'Realiza la transferencia por el monto total y luego carga el comprobante.'
+
+  },
+
+  'Banreservas':{
+
+    account:'CUENTA_A_CONFIGURAR',
+
+    holder:'TITULAR_A_CONFIGURAR',
+
+    label:'Cuenta',
+
+    hint:
+      'Realiza la transferencia por el monto total y luego carga el comprobante.'
+
+  },
+
+  'Qik':{
+
+    account:'CUENTA_QIK_A_CONFIGURAR',
+
+    holder:'TITULAR_A_CONFIGURAR',
+
+    label:'Cuenta / teléfono',
+
+    hint:
+      'Realiza el pago mediante Qik por el monto total y luego carga el comprobante.'
+
+  },
+
+  'Efectivo':{
+
+    account:'PAGO_EN_EFECTIVO',
+
+    holder:'TITULAR_A_CONFIGURAR',
+
+    label:'Referencia',
+
+    hint:
+      'Coordina previamente la entrega o el punto de pago en efectivo y conserva tu comprobante.'
+
+  }
+
+};
+
+
+/* =========================
+   SELECCIONAR METODO
 ========================= */
 
 function selectBank(button){
@@ -3074,15 +3323,44 @@ function selectBank(button){
   selectedBank=
     button.dataset.bank;
 
+  const details=
+    paymentDetails[selectedBank]||
+    paymentDetails['Banco Popular'];
+
+  document
+    .getElementById('accountLabel')
+    .textContent=
+    details.label;
+
   document
     .getElementById('accountNumber')
     .textContent=
-    'CUENTA_A_CONFIGURAR';
+    details.account;
 
   document
     .getElementById('accountHolder')
     .textContent=
-    'TITULAR_A_CONFIGURAR';
+    details.holder;
+
+  document
+    .getElementById('paymentHint')
+    .textContent=
+    details.hint;
+
+  const copyButton=
+    document.getElementById(
+      'copyAccountBtn'
+    );
+
+  if(selectedBank==='Efectivo'){
+
+    copyButton.style.display='none';
+
+  }else{
+
+    copyButton.style.display='inline-block';
+
+  }
 
 }
 
@@ -3098,14 +3376,34 @@ function copyAccount(){
       .getElementById('accountNumber')
       .textContent;
 
+  if(
+    !text ||
+    text.includes('CONFIGURAR')
+  ){
+
+    alert(
+      'La cuenta todavía no ha sido configurada.'
+    );
+
+    return;
+
+  }
+
   if(navigator.clipboard){
 
     navigator.clipboard
       .writeText(text)
       .then(()=>{
+
         alert(
           'Número de cuenta copiado.'
         );
+
+      })
+      .catch(()=>{
+
+        alert(text);
+
       });
 
   }else{
@@ -3191,7 +3489,7 @@ function getRequests(){
 
 
 /* =========================
-   NÚMEROS PENDIENTES
+   NUMEROS PENDIENTES
 ========================= */
 
 function getPendingNumbers(raffleId){
@@ -3221,7 +3519,7 @@ function getPendingNumbers(raffleId){
 
 
 /* =========================
-   NÚMEROS DISPONIBLES
+   NUMEROS DISPONIBLES
 ========================= */
 
 function getAvailableNumbers(raffle){
@@ -3275,7 +3573,7 @@ function getAvailableNumbers(raffle){
 
 
 /* =========================
-   NÚMEROS ALEATORIOS
+   NUMEROS ALEATORIOS
 ========================= */
 
 function randomNumbers(count){
