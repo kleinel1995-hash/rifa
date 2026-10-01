@@ -1256,132 +1256,153 @@ select:focus{
    BANCOS / METODOS DE PAGO
 ========================= */
 
+/* =========================
+   BANCOS / METODOS DE PAGO
+   ICONOS GRANDES
+========================= */
+
 .bankGrid{
   display:grid;
-
-  grid-template-columns:repeat(2,1fr);
-
-  gap:9px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
 }
 
 .bankBtn{
-  min-height:82px;
-
-  padding:9px 7px;
+  min-height:120px;
+  padding:12px 8px;
 
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-
-  gap:7px;
+  gap:10px;
 
   border:1px solid #cdb78d;
-  border-radius:14px;
+  border-radius:16px;
 
   color:#5b441e;
-
   background:#fffaf0;
 
-  font-size:11px;
+  font-size:13px;
   font-weight:900;
-
   transition:.2s ease;
 }
 
 .bankBtn:hover{
-  transform:translateY(-1px);
-
+  transform:translateY(-2px);
   border-color:#956511;
-
   background:#f8ead1;
 }
 
 .bankBtn.active{
   color:#fff;
-
   border-color:#956511;
 
-  background:
-    linear-gradient(
-      145deg,
-      #a97519,
-      #80540b
-    );
+  background:linear-gradient(
+    145deg,
+    #a97519,
+    #80540b
+  );
 
-  box-shadow:
-    0 5px 13px rgba(105,66,4,.20);
+  box-shadow:0 5px 13px rgba(105,66,4,.20);
 }
+
+/* LOGOS DE LOS BANCOS */
 
 .bankLogo{
   width:100%;
-  height:34px;
+  height:65px;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
   overflow:hidden;
-
   border-radius:8px;
 }
 
 .bankLogo img{
-  max-width:92px;
-  max-height:32px;
+  width:100%;
+  max-width:145px;
+  height:58px;
 
   display:block;
-
   object-fit:contain;
 }
 
+/* BANCO POPULAR */
+
 .popularLogo img{
+  max-width:145px;
+  height:58px;
+  padding:4px;
+  border-radius:7px;
   background:#fff;
-  padding:4px 7px;
-  border-radius:6px;
 }
+
+/* BANRESERVAS */
 
 .banreservasLogo img{
+  max-width:145px;
+  height:58px;
+  padding:4px;
+  border-radius:7px;
   background:#fff;
-  padding:4px 7px;
-  border-radius:6px;
 }
 
+/* QIK */
+
 .qikLogo{
-  width:58px;
-  height:32px;
+  width:100px;
+  height:58px;
 
   display:grid;
   place-items:center;
 
-  border-radius:8px;
+  border-radius:12px;
 
   color:#fff;
+  background:linear-gradient(
+    135deg,
+    #181818,
+    #5d5d5d
+  );
 
-  background:
-    linear-gradient(
-      135deg,
-      #181818,
-      #5d5d5d
-    );
-
-  font-size:19px;
+  font-size:32px;
   font-weight:1000;
   letter-spacing:-1px;
 }
 
+/* EFECTIVO */
+
 .cashLogo{
-  width:58px;
-  height:32px;
+  width:100px;
+  height:58px;
 
   display:grid;
   place-items:center;
 
-  border-radius:8px;
-
+  border-radius:12px;
   background:#edf4d8;
 
-  font-size:24px;
+  font-size:39px;
+}
+
+/* PANTALLAS GRANDES */
+
+@media(min-width:600px){
+  .bankGrid{
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+
+  .bankBtn{
+    min-height:135px;
+  }
+
+  .bankLogo img{
+    max-width:155px;
+    height:62px;
+  }
 }
 
 /* =========================
