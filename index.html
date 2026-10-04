@@ -532,12 +532,37 @@ function mode(type){
 function changeQty(delta){selectedCount=Math.min(MAX_TICKETS,Math.max(MIN_TICKETS,selectedCount+delta));updateTotals()}  
 function updateTotals(){selectedPrice=selectedCount*Number(currentRaffle?.price||PRICE_PER_TICKET);document.getElementById('totalAmount').textContent=money(selectedPrice);document.getElementById('qtyNumber').textContent=selectedCount}  
   
-const paymentDetails={  
- 'Banco Popular':{account:'CUENTA_A_CONFIGURAR',holder:'TITULAR_A_CONFIGURAR',label:'Cuenta',hint:'Realiza la transferencia por el monto total y luego carga el comprobante.'},  
- 'Banreservas':{account:'CUENTA_A_CONFIGURAR',holder:'TITULAR_A_CONFIGURAR',label:'Cuenta',hint:'Realiza la transferencia por el monto total y luego carga el comprobante.'},  
- 'Qik':{account:'CUENTA_QIK_A_CONFIGURAR',holder:'TITULAR_A_CONFIGURAR',label:'Cuenta / teléfono',hint:'Realiza el pago mediante Qik por el monto total y luego carga el comprobante.'},  
- 'Efectivo':{account:'PAGO_EN_EFECTIVO',holder:'TITULAR_A_CONFIGURAR',label:'Referencia',hint:'Coordina previamente la entrega o el punto de pago en efectivo y conserva tu comprobante.'}  
-};  
+const defaultPaymentDetails={
+  'Banco Popular':{
+    account:'CUENTA_A_CONFIGURAR',
+    holder:'TITULAR_A_CONFIGURAR',
+    label:'Cuenta',
+    hint:'Realiza la transferencia por el monto total y luego carga el comprobante.'
+  },
+  'Banreservas':{
+    account:'CUENTA_A_CONFIGURAR',
+    holder:'TITULAR_A_CONFIGURAR',
+    label:'Cuenta',
+    hint:'Realiza la transferencia por el monto total y luego carga el comprobante.'
+  },
+  'Qik':{
+    account:'CUENTA_QIK_A_CONFIGURAR',
+    holder:'TITULAR_A_CONFIGURAR',
+    label:'Cuenta / teléfono',
+    hint:'Realiza el pago mediante Qik por el monto total y luego carga el comprobante.'
+  },
+  'Efectivo':{
+    account:'PAGO_EN_EFECTIVO',
+    holder:'TITULAR_A_CONFIGURAR',
+    label:'Referencia',
+    hint:'Coordina previamente la entrega o el punto de pago en efectivo y conserva tu comprobante.'
+  }
+};
+
+const paymentDetails =
+  JSON.parse(
+    localStorage.getItem('rlrd_payment_details')
+  ) || defaultPaymentDetails;
 function selectBank(button){  
   document.querySelectorAll('.bankBtn').forEach(b=>b.classList.remove('active'));button.classList.add('active');selectedBank=button.dataset.bank;  
   const d=paymentDetails[selectedBank];document.getElementById('accountLabel').textContent=d.label;document.getElementById('accountNumber').textContent=d.account;document.getElementById('accountHolder').textContent=d.holder;document.getElementById('paymentHint').textContent=d.hint;  
