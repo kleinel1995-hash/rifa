@@ -507,6 +507,7 @@ function getActiveRaffles(){
   return data.filter(r=>r.active!==false);
 }
 function isRaffleSoldOut(r){const t=Number(r.totalNumbers)||0,s=Array.isArray(r.soldNumbers)?r.soldNumbers.length:Number(r.sold||0);return t>0&&s>=t}
+function getApprovedSpecialHits(raffleId){const hits=[];getRequests().forEach(req=>{if(String(req.raffleId)===String(raffleId)&&req.status==='approved'&&Array.isArray(req.specialHits))hits.push(...req.specialHits.map(String))});return [...new Set(hits)]}
 
 function renderAllRaffles(){
   const list=document.getElementById('raffleList'),raffles=getActiveRaffles();
@@ -528,7 +529,7 @@ function renderAllRaffles(){
             <div class="luckyTitle">SI TE SALE UNO DE ESTOS NÚMEROS TE GANAS</div>
             <div class="luckyPrize">${escapeHtml(r.specialPrize)}</div>
             <div class="luckyGrid">
-              ${r.specialNumbers.map(n=>{const hit=(r.drawnSpecialNumbers||[]).map(String).includes(String(n));return `<div class="luckyNumber ${hit?'hit':''}">${escapeHtml(n)}${hit?'<small style="display:block;font-size:9px">✓ SALIÓ</small>':''}</div>`}).join('')}
+              ${r.specialNumbers.map(n=>{const hit=getApprovedSpecialHits(r.id).includes(String(n));return `<div class="luckyNumber ${hit?'hit':''}">${escapeHtml(n)}${hit?'<small style="display:block;font-size:9px">✓ SALIÓ</small>':''}</div>`}).join('')}
             </div>
           </div>`:''}
         <div class="body">
@@ -604,7 +605,6 @@ function submitPurchase(){
     const requests=getRequests();requests.push(request);
     try{
       put(Q,requests);
-      if(specialHits.length){const all=get(R,[]);const raffle=all.find(x=>String(x.id)===String(currentRaffle.id));if(raffle){raffle.drawnSpecialNumbers=[...new Set([...(raffle.drawnSpecialNumbers||[]).map(String),...specialHits])];put(R,all)}}
       showConfirmation(request);renderAllRaffles();
     }catch(e){alert('No se pudo guardar la solicitud o el comprobante. El archivo puede ser demasiado grande para el almacenamiento del navegador.');}
   };
@@ -615,9 +615,9 @@ function showConfirmation(request){
   ['checkoutView','homeView','verifyView'].forEach(id=>document.getElementById(id).classList.remove('active'));
   document.getElementById('confirmationView').classList.add('active');
   document.getElementById('confirmationNumbers').innerHTML=request.numbers.map(n=>`<span class="confirmNumber">#${formatTicket(n)}</span>`).join('');
+  // No anunciar números premiados mientras la solicitud siga pendiente.
   const box=document.getElementById('specialWinReceipt');
-  if(request.specialHits&&request.specialHits.length){box.style.display='block';box.innerHTML=`<b>🎉 ¡NÚMERO PREMIADO!</b><p>Tu selección incluye ${request.specialHits.map(n=>`<strong>#${formatTicket(Number(n))}</strong>`).join(', ')}. Premio especial: ${escapeHtml(currentRaffle?.specialPrize||'Premio especial')}.</p>`}
-  else{box.style.display='none';box.innerHTML=''}
+  box.style.display='none';box.innerHTML='';
   window.scrollTo({top:0,behavior:'smooth'})
 }
 function openVerifyFromConfirmation(){openVerify()}
