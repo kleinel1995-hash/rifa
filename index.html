@@ -678,19 +678,22 @@ function verifyNumbers(){
   if(!query){result.className='verifyEmpty';result.textContent='Introduce tu teléfono o número de boleto para consultar.';return}
   if(!raffle){result.className='verifyEmpty';result.textContent='No se encontró la rifa.';return}
   const clean=query.replace(/\D/g,'');
-  const requests=getRequests().filter(req=>String(req.raffleId)===String(raffle.id)&&(
-    (clean.length>=7&&String(req.phone||'').replace(/\D/g,'')===clean)||
-    (Array.isArray(req.numbers)&&req.numbers.some(n=>formatTicket(n,raffle)===query||String(n)===clean))
-  ));
-  if(!requests.length){result.className='verifyEmpty';result.textContent='No encontramos solicitudes asociadas a ese teléfono o número de boleto.';return}
+  const allRequests=getRequests().filter(req=>String(req.raffleId)===String(raffle.id));
+  const phoneRequests=clean.length>=7?allRequests.filter(req=>String(req.phone||'').replace(/\D/g,'')===clean):[];
+  const searchingByPhone=phoneRequests.length>0;
+  const matchingRequests=searchingByPhone?phoneRequests:allRequests.filter(req=>
+    Array.isArray(req.numbers)&&req.numbers.some(n=>formatTicket(n,raffle)===query||String(n)===clean)
+  );
+  if(!matchingRequests.length){result.className='verifyEmpty';result.textContent='No encontramos solicitudes asociadas a ese teléfono o número de boleto.';return}
   result.className='';
-  result.innerHTML=requests.map(req=>{
+  result.innerHTML=matchingRequests.map(req=>{
     const approved=req.status==='approved'||req.status==='validated'||req.status==='validado';
     const status=approved?'APROBADA':'PENDIENTE DE VALIDACIÓN';
     const reviewTimeHtml=approved?'':'<div class="reviewTime">Tiempo de revisión: &nbsp;<strong>de 12 a 24 horas</strong></div>';
     const reqId=String(req.id||'').replace(/^REQ-/,'');
     const order=req.orderNumber||req.orderId||reqId.slice(-5)||'—';
-    const ticketHtml=(req.numbers||[]).map(n=>{
+    const matchingNumbers=(req.numbers||[]).filter(n=>searchingByPhone||formatTicket(n,raffle)===query||String(n)===clean);
+    const ticketHtml=matchingNumbers.map(n=>{
       const isSpecial=(req.specialHits||[]).map(String).includes(String(n));
       return `<div class="numberItem"><span>${formatTicket(n,raffle)}</span><span class="ticketStatus ${approved?'approved':''}">${approved?(isSpecial?'✓ PREMIADO':'✓ APROBADO'):'PENDIENTE DE VALIDACIÓN'}</span></div>`;
     }).join('');
