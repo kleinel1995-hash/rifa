@@ -255,6 +255,45 @@ input:focus,select:focus{border-color:#a16d14;box-shadow:0 0 0 3px rgba(166,112,
 .confirmNumber{padding:10px 13px;border:1px solid #a87517;border-radius:10px;color:#80570e;background:#fff3d7;font-weight:900}
 .soldOutOverlay{position:absolute;inset:0;z-index:4;display:grid;place-items:center;background:rgba(15,12,7,.48);color:#fff;font-size:clamp(25px,7vw,42px);font-weight:1000;letter-spacing:3px;text-shadow:0 3px 12px #000;pointer-events:none}.luckyNumber.hit{border-color:#f0d36b;background:#6d1f16;color:#fff4b0;box-shadow:0 0 0 1px #f0d36b}.luckyNumber.hit:after{content:" ✓ SALIÓ";display:block;font-size:9px;color:#ffe8a0;margin-top:3px}
 
+/* VERIFICACIÓN: misma identidad visual beige y dorada del sitio */
+#verifyView{color:var(--text)}
+#verifyView .checkoutHead{background:rgba(251,242,227,.96);border-color:var(--line);color:var(--text)}
+#verifyView .checkoutTitle strong{color:#291e0e}
+#verifyView .checkoutTitle small{color:var(--muted)}
+#verifyView .iconBtn{background:#fff9ed;border-color:#cdb78c;color:#69470d}
+#verifyView .verifyPanel{padding:22px 18px 24px;border:1px solid #d4bd91;border-radius:25px;background:linear-gradient(145deg,#fffaf1,#f6e8d1);box-shadow:0 12px 32px rgba(86,56,12,.12)}
+#verifyView .verifyPanel h3{margin:8px 0 16px;color:#35250f;font-size:20px;font-weight:900}
+#verifyView .verifyPanel label{margin:25px 0 10px;color:#4b3920;font-size:17px;font-weight:900}
+#verifyView .verifyPanel select,#verifyView .verifyPanel input{min-height:58px;padding:14px 16px;border:1px solid #cdb78d;border-radius:17px;background:#fffaf0;color:#30230f;font-size:18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.45)}
+#verifyView .verifyPanel select:focus,#verifyView .verifyPanel input:focus{border-color:#a16d14;box-shadow:0 0 0 3px rgba(166,112,17,.12)}
+#verifyView .verifySearchRow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:stretch}
+#verifyView .verifySearchRow label{grid-column:1/-1}
+#verifyView .verifySearchRow input{min-width:0}
+#verifyView .verifySearchBtn{width:auto;min-width:145px;margin:0;padding:0 19px;border:1px solid #a87818;border-radius:18px;color:#fff;background:linear-gradient(180deg,#ad7719,#8c5e0e);font-weight:1000;letter-spacing:1px;box-shadow:0 5px 15px rgba(91,58,5,.15)}
+#verifyView .verifyHelp{display:flex;gap:12px;margin:20px 0 24px;color:#756b5b;font-size:15px;line-height:1.65}
+#verifyView .verifyHelp .infoIcon{flex:none;color:#956511;font-size:24px;line-height:1.2}
+#verifyView .verifyHelp b{color:#80570e}
+#verifyView .reviewTime{padding:15px 10px;text-align:center;border:1px solid #d1ad55;border-radius:15px;color:#49371b;background:linear-gradient(90deg,#fff4d7,#f5e5bd);font-size:16px;font-weight:900;box-shadow:inset 0 0 0 1px rgba(255,219,84,.06)}
+#verifyView .reviewTime strong{color:#956511}
+#verifyView .verifyResultsWrap{margin-top:27px;padding-top:25px;border-top:1px solid #d8c4a0}
+#verifyView .verifyRaffleHeading{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 15px;color:#80570e;font-size:25px;font-weight:1000}
+#verifyView .activeBadge{padding:7px 12px;border:1px solid #d1ba8c;border-radius:999px;color:#80570e;background:#fff3d7;font-size:12px;letter-spacing:2px}
+#verifyView .verifyEmpty{padding:22px 8px;color:#827561;text-align:center;line-height:1.6}
+#verifyView .buyerBox{margin-top:14px;padding:20px 17px;border:1px solid #d1bb91;border-radius:23px;color:#49371b;background:linear-gradient(145deg,#fffaf1,#f6e8d1);font-size:15px;line-height:1.65;box-shadow:0 8px 20px rgba(86,56,12,.08)}
+#verifyView .orderTop{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:14px}
+#verifyView .orderId{color:#80570e;font-size:17px;font-weight:1000;letter-spacing:1px}
+#verifyView .statusText{color:#b64232;text-align:right;font-size:12px;font-weight:1000;letter-spacing:.7px}
+#verifyView .statusText.approved{color:#2f8f4e}
+#verifyView .detailRow{display:grid;grid-template-columns:1fr 1.15fr;gap:12px;margin:8px 0}
+#verifyView .detailLabel{color:#756b5b;font-weight:800;letter-spacing:.5px}
+#verifyView .detailValue{min-width:0;color:#30230f;overflow-wrap:anywhere}
+#verifyView .ticketsLabel{margin-top:18px;text-align:center;color:#956511;font-size:13px;font-weight:1000;letter-spacing:3px}
+#verifyView .numberGrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+#verifyView .numberItem{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;padding:12px 8px;border:1px solid #b7a069;border-radius:14px;color:#80570e;background:#fff3d7;font-size:16px;letter-spacing:2px}
+#verifyView .ticketStatus{font-size:10px;letter-spacing:.4px;color:#b64232;font-weight:1000}
+#verifyView .ticketStatus.approved{color:#2f8f4e}
+@media(max-width:430px){#verifyView .verifySearchRow{grid-template-columns:minmax(0,1fr) 118px;gap:8px}#verifyView .verifySearchBtn{min-width:0;padding:0 9px;font-size:12px}#verifyView .verifyRaffleHeading{font-size:22px}#verifyView .buyerBox{padding:17px 13px}#verifyView .detailRow{grid-template-columns:.9fr 1.1fr;gap:8px;font-size:13px}}
+
 @media(min-width:600px){
   main{padding:24px 18px 60px}
   .bankGrid{grid-template-columns:repeat(4,1fr)}
@@ -435,12 +474,18 @@ input:focus,select:focus{border-color:#a16d14;box-shadow:0 0 0 3px rgba(166,112,
     <button class="iconBtn" onclick="closeVerify()">×</button>
   </div>
   <div class="panel verifyPanel">
-    <h3>Selecciona la rifa</h3>
+    <h3>⚑ Selecciona la rifa</h3>
     <select id="verifyRaffle"></select>
-    <label for="verifyQuery">Teléfono o número de boleto</label>
-    <input id="verifyQuery" type="text" placeholder="Ej. 8090000000 o 0002">
-    <button class="primary" style="margin-top:12px" onclick="verifyNumbers()">🔎 BUSCAR</button>
-    <div id="verifyResults" class="verifyEmpty">Introduce tu teléfono o número de boleto para consultar.</div>
+    <div class="verifySearchRow">
+      <label for="verifyQuery">🎟 Teléfono o # de boleto</label>
+      <input id="verifyQuery" type="text" inputmode="numeric" placeholder="8090000000" autocomplete="off">
+      <button class="verifySearchBtn" onclick="verifyNumbers()">⌕ &nbsp; BUSCAR</button>
+    </div>
+    <div class="verifyHelp"><span class="infoIcon">ⓘ</span><div>Ingrese el <b>teléfono</b> (10 dígitos), solo números sin espacios ni guiones.<br>El <b>número de boleto</b> debe coincidir exactamente con el indicado en su selección o comprobante.</div></div>
+    <div class="verifyResultsWrap">
+      <h3 class="verifyRaffleHeading"><span id="verifyRaffleName">Rifa seleccionada</span><span class="activeBadge">ACTIVA</span></h3>
+      <div id="verifyResults" class="verifyEmpty">Introduce tu teléfono o número de boleto para consultar.</div>
+    </div>
   </div>
 </section>
 
@@ -623,20 +668,50 @@ function showConfirmation(request){
 function openVerifyFromConfirmation(){openVerify()}
 function openVerify(){['homeView','checkoutView','confirmationView'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById('verifyView').classList.add('active');updateVerifyRaffles();window.scrollTo({top:0,behavior:'smooth'})}
 function closeVerify(){document.getElementById('verifyView').classList.remove('active');document.getElementById('homeView').classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
-function updateVerifyRaffles(){document.getElementById('verifyRaffle').innerHTML=getActiveRaffles().map(r=>`<option value="${escapeHtml(r.id)}">${escapeHtml(r.name)}</option>`).join('')}
+function updateVerifyRaffles(){const select=document.getElementById('verifyRaffle');select.innerHTML=getActiveRaffles().map(r=>`<option value="${escapeHtml(r.id)}">${escapeHtml(r.name)}</option>`).join('');const raffle=getActiveRaffles().find(r=>String(r.id)===String(select.value));document.getElementById('verifyRaffleName').textContent=raffle?.name||'Rifa seleccionada'}
+function maskPhone(value){const digits=String(value||'').replace(/\D/g,'');return digits.length>4?'*'.repeat(Math.max(0,digits.length-4))+digits.slice(-4):digits}
+function formatRequestDate(value){if(!value)return '—';return String(value)}
 function verifyNumbers(){
   const raffleId=document.getElementById('verifyRaffle').value,query=document.getElementById('verifyQuery').value.trim(),result=document.getElementById('verifyResults');
+  const raffle=getActiveRaffles().find(r=>String(r.id)===String(raffleId));
+  document.getElementById('verifyRaffleName').textContent=raffle?.name||'Rifa seleccionada';
   if(!query){result.className='verifyEmpty';result.textContent='Introduce tu teléfono o número de boleto para consultar.';return}
-  const raffle=getActiveRaffles().find(r=>String(r.id)===String(raffleId));if(!raffle){result.className='verifyEmpty';result.textContent='No se encontró la rifa.';return}
-  const clean=query.replace(/\D/g,''),requests=getRequests().filter(req=>String(req.raffleId)===String(raffle.id)&&(String(req.phone).replace(/\D/g,'').includes(clean)||(Array.isArray(req.numbers)&&req.numbers.some(n=>formatTicket(n,raffle).includes(query)))));
-  if(!requests.length){result.className='verifyEmpty';result.textContent='No encontramos números asociados a esa búsqueda.';return}
-  result.className='';result.innerHTML=requests.map(req=>`<div class="buyerBox"><b>${escapeHtml(req.name)}</b><br>Estado: <span style="color:#956511;font-weight:900">${req.status==='pending'?'Pendiente de validación':'Validado'}</span><br>Cantidad: ${req.numbers?.length||0}<div class="numberGrid">${(req.numbers||[]).map(n=>`<div class="numberItem">#${formatTicket(n,raffle)}</div>`).join('')}</div></div>`).join('')
+  if(!raffle){result.className='verifyEmpty';result.textContent='No se encontró la rifa.';return}
+  const clean=query.replace(/\D/g,'');
+  const requests=getRequests().filter(req=>String(req.raffleId)===String(raffle.id)&&(
+    (clean.length>=7&&String(req.phone||'').replace(/\D/g,'')===clean)||
+    (Array.isArray(req.numbers)&&req.numbers.some(n=>formatTicket(n,raffle)===query||String(n)===clean))
+  ));
+  if(!requests.length){result.className='verifyEmpty';result.textContent='No encontramos solicitudes asociadas a ese teléfono o número de boleto.';return}
+  result.className='';
+  result.innerHTML=requests.map(req=>{
+    const approved=req.status==='approved'||req.status==='validated'||req.status==='validado';
+    const status=approved?'APROBADA':'PENDIENTE DE VALIDACIÓN';
+    const reviewTimeHtml=approved?'':'<div class="reviewTime">Tiempo de revisión: &nbsp;<strong>de 12 a 24 horas</strong></div>';
+    const reqId=String(req.id||'').replace(/^REQ-/,'');
+    const order=req.orderNumber||req.orderId||reqId.slice(-5)||'—';
+    const ticketHtml=(req.numbers||[]).map(n=>{
+      const isSpecial=(req.specialHits||[]).map(String).includes(String(n));
+      return `<div class="numberItem"><span>${formatTicket(n,raffle)}</span><span class="ticketStatus ${approved?'approved':''}">${approved?(isSpecial?'✓ PREMIADO':'✓ APROBADO'):'PENDIENTE DE VALIDACIÓN'}</span></div>`;
+    }).join('');
+    return `<article class="buyerBox">
+      <div class="orderTop"><span class="orderId">Orden #${escapeHtml(order)}</span><span class="statusText ${approved?'approved':''}">${status}</span></div>
+      <div class="detailRow"><span class="detailLabel">Participante</span><span class="detailValue">${escapeHtml(req.name||'—')}</span></div>
+      <div class="detailRow"><span class="detailLabel">Teléfono</span><span class="detailValue">${escapeHtml(maskPhone(req.phone))}</span></div>
+      <div class="detailRow"><span class="detailLabel">Correo</span><span class="detailValue">${escapeHtml(req.email||'—')}</span></div>
+      <div class="detailRow"><span class="detailLabel">Registro</span><span class="detailValue">${escapeHtml(formatRequestDate(req.createdAt))}</span></div>
+      ${reviewTimeHtml}
+      <div class="ticketsLabel">BOLETOS</div><div class="numberGrid">${ticketHtml}</div>
+    </article>`;
+  }).join('');
 }
+
 function toggleMenu(){document.getElementById('menu').classList.toggle('active')}
 function scrollToCatalog(){document.getElementById('menu').classList.remove('active');goHome();setTimeout(()=>document.getElementById('catalog').scrollIntoView({behavior:'smooth'}),50)}
 function goHome(){['checkoutView','verifyView','confirmationView'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById('homeView').classList.add('active');document.getElementById('menu').classList.remove('active');renderAllRaffles();window.scrollTo({top:0,behavior:'smooth'})}
 document.addEventListener('click',e=>{const m=document.getElementById('menu'),b=document.querySelector('.menuBtn');if(m.classList.contains('active')&&!m.contains(e.target)&&!b.contains(e.target))m.classList.remove('active')});
 document.getElementById('verifyQuery').addEventListener('keydown',e=>{if(e.key==='Enter')verifyNumbers()});
+document.getElementById('verifyRaffle').addEventListener('change',()=>{const raffle=getActiveRaffles().find(r=>String(r.id)===String(document.getElementById('verifyRaffle').value));document.getElementById('verifyRaffleName').textContent=raffle?.name||'Rifa seleccionada';document.getElementById('verifyResults').className='verifyEmpty';document.getElementById('verifyResults').textContent='Introduce tu teléfono o número de boleto para consultar.'});
 window.addEventListener('storage',()=>{renderAllRaffles();if(document.getElementById('verifyView').classList.contains('active'))updateVerifyRaffles()});
 renderAllRaffles();
 </script>
