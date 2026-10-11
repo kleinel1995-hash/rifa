@@ -253,7 +253,7 @@ input:focus,select:focus{border-color:#a16d14;box-shadow:0 0 0 3px rgba(166,112,
 .confirmation h1{margin:5px 0 8px}.important{margin-top:18px;padding:15px;border:1px solid #d1ad55;border-radius:15px;background:#fff4d7;text-align:left}
 .confirmNumbers{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:15px 0}
 .confirmNumber{padding:10px 13px;border:1px solid #a87517;border-radius:10px;color:#80570e;background:#fff3d7;font-weight:900}
-.soldOutOverlay{position:absolute;inset:0;z-index:4;display:grid;place-items:center;background:rgba(15,12,7,.48);color:#fff;font-size:clamp(25px,7vw,42px);font-weight:1000;letter-spacing:3px;text-shadow:0 3px 12px #000;pointer-events:none}.luckyNumber.hit{border-color:#f0d36b;background:#6d1f16;color:#fff4b0;box-shadow:0 0 0 1px #f0d36b}.luckyNumber.hit:after{content:" ✓ SALIÓ";display:block;font-size:9px;color:#ffe8a0;margin-top:3px}
+.soldOutOverlay{position:absolute;inset:0;z-index:4;display:grid;place-items:center;background:rgba(15,12,7,.48);color:#fff;font-size:clamp(25px,7vw,42px);font-weight:1000;letter-spacing:3px;text-shadow:0 3px 12px #000;pointer-events:none}.luckyNumber.hit{position:relative;isolation:isolate;overflow:hidden;border-color:#b57a16;background:linear-gradient(180deg,#211d0f,#080807);color:rgba(255,255,255,.28);box-shadow:inset 0 0 0 1px rgba(240,211,107,.12)}.luckyHitLabel{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#f6d66c;font-size:10px;font-weight:1000;letter-spacing:.3px;text-shadow:0 1px 3px #000}
 
 /* VERIFICACIÓN: misma identidad visual beige y dorada del sitio */
 #verifyView{color:var(--text)}
@@ -574,7 +574,7 @@ function renderAllRaffles(){
             <div class="luckyTitle">SI TE SALE UNO DE ESTOS NÚMEROS TE GANAS</div>
             <div class="luckyPrize">${escapeHtml(r.specialPrize)}</div>
             <div class="luckyGrid">
-              ${r.specialNumbers.map(n=>{const hit=getApprovedSpecialHits(r.id).includes(String(n));return `<div class="luckyNumber ${hit?'hit':''}">${escapeHtml(n)}${hit?'<small style="display:block;font-size:9px">✓ SALIÓ</small>':''}</div>`}).join('')}
+              ${r.specialNumbers.map(n=>{const hit=getApprovedSpecialHits(r.id).includes(String(n));return `<div class="luckyNumber ${hit?'hit':''}">${escapeHtml(n)}${hit?'<span class="luckyHitLabel">ACEPTADO</span>':''}</div>`}).join('')}
             </div>
           </div>`:''}
         <div class="body">
@@ -678,22 +678,19 @@ function verifyNumbers(){
   if(!query){result.className='verifyEmpty';result.textContent='Introduce tu teléfono o número de boleto para consultar.';return}
   if(!raffle){result.className='verifyEmpty';result.textContent='No se encontró la rifa.';return}
   const clean=query.replace(/\D/g,'');
-  const allRequests=getRequests().filter(req=>String(req.raffleId)===String(raffle.id));
-  const phoneRequests=clean.length>=7?allRequests.filter(req=>String(req.phone||'').replace(/\D/g,'')===clean):[];
-  const searchingByPhone=phoneRequests.length>0;
-  const matchingRequests=searchingByPhone?phoneRequests:allRequests.filter(req=>
-    Array.isArray(req.numbers)&&req.numbers.some(n=>formatTicket(n,raffle)===query||String(n)===clean)
-  );
-  if(!matchingRequests.length){result.className='verifyEmpty';result.textContent='No encontramos solicitudes asociadas a ese teléfono o número de boleto.';return}
+  const requests=getRequests().filter(req=>String(req.raffleId)===String(raffle.id)&&(
+    (clean.length>=7&&String(req.phone||'').replace(/\D/g,'')===clean)||
+    (Array.isArray(req.numbers)&&req.numbers.some(n=>formatTicket(n,raffle)===query||String(n)===clean))
+  ));
+  if(!requests.length){result.className='verifyEmpty';result.textContent='No encontramos solicitudes asociadas a ese teléfono o número de boleto.';return}
   result.className='';
-  result.innerHTML=matchingRequests.map(req=>{
+  result.innerHTML=requests.map(req=>{
     const approved=req.status==='approved'||req.status==='validated'||req.status==='validado';
     const status=approved?'APROBADA':'PENDIENTE DE VALIDACIÓN';
     const reviewTimeHtml=approved?'':'<div class="reviewTime">Tiempo de revisión: &nbsp;<strong>de 12 a 24 horas</strong></div>';
     const reqId=String(req.id||'').replace(/^REQ-/,'');
     const order=req.orderNumber||req.orderId||reqId.slice(-5)||'—';
-    const matchingNumbers=(req.numbers||[]).filter(n=>searchingByPhone||formatTicket(n,raffle)===query||String(n)===clean);
-    const ticketHtml=matchingNumbers.map(n=>{
+    const ticketHtml=(req.numbers||[]).map(n=>{
       const isSpecial=(req.specialHits||[]).map(String).includes(String(n));
       return `<div class="numberItem"><span>${formatTicket(n,raffle)}</span><span class="ticketStatus ${approved?'approved':''}">${approved?(isSpecial?'✓ PREMIADO':'✓ APROBADO'):'PENDIENTE DE VALIDACIÓN'}</span></div>`;
     }).join('');
