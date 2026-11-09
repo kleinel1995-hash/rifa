@@ -49,7 +49,53 @@ main{padding:22px 18px 55px}.view{display:none}.view.active{display:block}
 .acceptedCard{display:flex;gap:10px;align-items:center;padding:12px;border:1px solid #31894a;border-radius:12px;color:#9dffb0;background:#092011}.consent{display:flex;gap:9px;align-items:flex-start;margin-top:13px}.consent input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:#ffc51c}.consent label{margin:0;color:#c7b996;font-size:11px;line-height:1.45}
 #verifyView .verifyPanel h3{margin:7px 0 14px;color:#ffdf75;font-size:19px}#verifyView .verifyPanel label{margin:20px 0 9px;font-size:15px}#verifyView .verifyPanel select,#verifyView .verifyPanel input{min-height:54px;padding:13px;border-radius:14px;font-size:15px}#verifyView .verifySearchRow{display:grid;grid-template-columns:minmax(0,1fr) 112px;gap:9px;align-items:end}#verifyView .verifySearchRow label{grid-column:1/-1}#verifyView .verifySearchBtn{min-height:54px;border:1px solid #ffe27c;border-radius:13px;color:#120c00;background:linear-gradient(#ffe879,#e9a500);font-size:12px;font-weight:1000}#verifyView .verifyHelp{display:flex;gap:10px;margin:17px 0;color:#c3b697;font-size:12px;line-height:1.6}#verifyView .infoIcon{color:#ffd21f;font-size:22px}#verifyView .verifyResultsWrap{margin-top:22px;padding-top:20px;border-top:1px solid #765716}#verifyView .verifyRaffleHeading{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:#ffdc68;font-size:20px}#verifyView .activeBadge{padding:6px 10px;border:1px solid #9c741d;border-radius:30px;color:#ffdc68;background:#201700;font-size:10px}#verifyView .verifyEmpty{padding:20px 8px;color:#b9ad91;text-align:center;line-height:1.6}#verifyView .buyerBox{margin-top:13px;padding:17px 13px;border:1px solid #94701b;border-radius:18px;background:#0c0c0c;font-size:13px;line-height:1.6}#verifyView .orderTop{display:flex;justify-content:space-between;gap:10px;margin-bottom:12px}#verifyView .orderId{color:#ffdb59;font-weight:1000}#verifyView .statusText{color:#ff766a;text-align:right;font-size:10px;font-weight:1000}#verifyView .statusText.approved,#verifyView .ticketStatus.approved{color:#70ed91}#verifyView .detailRow{display:grid;grid-template-columns:1fr 1.1fr;gap:10px;margin:7px 0}#verifyView .detailLabel{color:#b9ad91;font-weight:800}#verifyView .detailValue{overflow-wrap:anywhere}#verifyView .reviewTime{margin-top:12px;padding:12px;text-align:center;border:1px solid #a77b16;border-radius:12px;color:#ffe28a;background:#211700;font-weight:900}#verifyView .ticketsLabel{margin:16px 0 8px;text-align:center;color:#ffd21f;font-size:12px;font-weight:1000;letter-spacing:3px}#verifyView .numberGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}#verifyView .numberItem{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:7px;padding:10px 7px;border:1px solid #8e6818;border-radius:11px;color:#ffdc68;background:#191306;font-size:13px}#verifyView .ticketStatus{font-size:9px;color:#ff8c7c;font-weight:1000}
 .confirmation{padding:18px 0 30px;text-align:center}.confirmIcon{width:76px;height:76px;display:grid;place-items:center;margin:15px auto;border:1px solid #8be6a0;border-radius:50%;color:#061108;background:#58d878;font-size:35px;box-shadow:0 0 20px #49d86d88}.confirmation h1{margin:6px 0}.important{margin-top:17px;padding:14px;border:1px solid #a77b16;border-radius:13px;background:#1c1507;text-align:left}.confirmNumbers{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:14px 0}.confirmNumber{padding:9px 12px;border:1px solid #ffd21f;border-radius:9px;color:#ffdf69;background:#1d1606;font-weight:900}
-@media(min-width:600px){main{padding:25px 20px 60px}.bankGrid{grid-template-columns:repeat(4,1fr)}}@media(max-width:430px){main{padding:17px 12px 40px}.header{padding:0 14px}.logo{font-size:16px}.hero{padding:27px 19px}.hero h1{font-size:41px}.participationHeader{gap:12px}.ticketIcon{width:66px;height:66px;flex-basis:66px;font-size:34px}.pack{grid-template-columns:38% 62%;min-height:98px;padding:5px}.ticketSide,.packPrice{min-height:83px}.ticketCount{font-size:33px}.ticketLabel{font-size:10px}.selectText{font-size:9px;padding:5px 9px}.totalAmount{font-size:30px}.body{padding:0 16px 19px}.body h2{font-size:25px}}
+
+/* BOTON FLOTANTE WHATSAPP */
+.whatsapp-float{
+position:fixed;
+right:20px;
+bottom:22px;
+z-index:9999;
+width:62px;
+height:62px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:#25D366;
+color:#fff;
+text-decoration:none;
+border:2px solid #fff;
+box-shadow:0 0 12px #25D366,0 0 25px #25D36688;
+animation:whatsappPulse 2s infinite;
+transition:transform .2s;
+}
+.whatsapp-float:hover{transform:scale(1.12)}
+.whatsapp-float svg{width:35px;height:35px;fill:white}
+@keyframes whatsappPulse{
+0%,100%{box-shadow:0 0 10px #25D366,0 0 20px #25D36666}
+50%{box-shadow:0 0 18px #25D366,0 0 35px #25D366aa}
+}
+
+@media(min-width:600px){main{padding:25px 20px 60px}.bankGrid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:430px){
+main{padding:17px 12px 40px}
+.header{padding:0 14px}
+.logo{font-size:16px}
+.hero{padding:27px 19px}
+.hero h1{font-size:41px}
+.participationHeader{gap:12px}
+.ticketIcon{width:66px;height:66px;flex-basis:66px;font-size:34px}
+.pack{grid-template-columns:38% 62%;min-height:98px;padding:5px}
+.ticketSide,.packPrice{min-height:83px}
+.ticketCount{font-size:33px}
+.ticketLabel{font-size:10px}
+.selectText{font-size:9px;padding:5px 9px}
+.totalAmount{font-size:30px}
+.body{padding:0 16px 19px}
+.body h2{font-size:25px}
+.whatsapp-float{width:57px;height:57px;right:15px;bottom:17px}
+}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -108,7 +154,19 @@ main{padding:22px 18px 55px}.view{display:none}.view.active{display:block}
 </section>
 
 <section id="confirmationView" class="view"><div class="confirmation"><div class="confirmIcon">✓</div><h1>¡Solicitud enviada!</h1><p class="muted">Tu solicitud fue guardada en este dispositivo y está pendiente de validación.</p><div class="important"><b>¡IMPORTANTE!</b><p class="muted">Conserva estos números de referencia. Los boletos quedan sujetos a la validación del comprobante de pago.</p></div><div class="sectionTitle">Números <span>reservados</span></div><div id="confirmationNumbers" class="confirmNumbers"></div><button class="verifyBtn" onclick="openVerify()">🔎 VERIFICAR MIS NÚMEROS</button><button class="secondary" onclick="goHome()">VOLVER AL INICIO</button></div></section>
-</main></div>
+</main>
+</div>
+
+<!-- BOTON FLOTANTE WHATSAPP -->
+<a class="whatsapp-float"
+href="https://wa.me/18090000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20rifas%20de%20Rifas%20Luxury%20RD."
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Contactar por WhatsApp">
+<svg viewBox="0 0 32 32" aria-hidden="true">
+<path d="M16 .5A15.4 15.4 0 0 0 2.7 23.7L.5 31.5l8-2.1A15.5 15.5 0 1 0 16 .5zm0 28.2a12.7 12.7 0 0 1-6.5-1.8l-.5-.3-4.8 1.3 1.3-4.7-.3-.5A12.7 12.7 0 1 1 16 28.7zm7-9.5c-.4-.2-2.2-1.1-2.6-1.2-.4-.1-.6-.2-.9.2-.3.4-1 1.2-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.7.1-.2 0-.5 0-.7-.1-.2-.9-2-1.2-2.7-.3-.7-.6-.6-.9-.6h-.8c-.3 0-.7.1-1 .5-.4.4-1.3 1.3-1.3 3.1s1.3 3.5 1.5 3.8c.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.1.7.9.3 1.8.2 2.4.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.4-.2-.8-.4z"/>
+</svg>
+</a>
 
 <script>
 const R='rlrd_raffles',Q='rlrd_requests',MIN_TICKETS=2,MAX_TICKETS=10000;
