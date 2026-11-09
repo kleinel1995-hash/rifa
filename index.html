@@ -8,74 +8,219 @@
 <title>Rifas Luxury RD</title>
 <style>
 :root{--bg:#050505;--panel:#101010;--gold:#ffd21f;--gold2:#ff9f00;--line:#9a6900;--white:#fff;--muted:#c5bda9;--green:#31d65b;--red:#ff3838}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;color:#fff;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(ellipse at 50% -15%,#503500 0,#130d02 30%,#050505 70%);background-attachment:fixed}button,input,select{font:inherit}button{cursor:pointer}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:#fff;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(ellipse at 50% -15%,#503500 0,#130d02 30%,#050505 70%);background-attachment:fixed}
+button,input,select{font:inherit}
+button{cursor:pointer}
 button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #ffe36b;outline-offset:3px}
+
 .lottery-background{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
 .lottery-ball{position:absolute;left:var(--left);bottom:-100px;width:var(--size);height:var(--size);display:grid;place-items:center;border-radius:50%;color:#6d4800;font-size:calc(var(--size)*.32);font-weight:900;background:radial-gradient(circle at 30% 25%,#fff9c7,#e6ae13 48%,#714400 100%);box-shadow:0 0 18px #ffbd20aa,inset 0 0 8px #fff;opacity:.16;animation:floatUp var(--duration) linear var(--delay) infinite}
 @keyframes floatUp{to{transform:translate3d(25px,-125vh,0) rotate(360deg)}}
+
 .app{width:100%;max-width:760px;min-height:100vh;margin:auto;position:relative}
-.header{height:76px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:#050505eF;border-bottom:1px solid #8c6000;box-shadow:0 0 22px #ffb90035;backdrop-filter:blur(14px)}
-.logo{font-size:20px;font-weight:1000;font-style:italic;letter-spacing:1px;color:#fff;text-shadow:0 0 8px #ffd32a,2px 3px 0 #805000}.logo span{color:#ffd21f}
+.header{height:76px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:#050505ef;border-bottom:1px solid #8c6000;box-shadow:0 0 22px #ffb90035;backdrop-filter:blur(14px)}
+.logo{font-size:20px;font-weight:1000;font-style:italic;letter-spacing:1px;color:#fff;text-shadow:0 0 8px #ffd32a,2px 3px 0 #805000}
+.logo span{color:#ffd21f}
 .menuBtn,.iconBtn{width:46px;height:46px;border:2px solid var(--gold);border-radius:50%;background:#090909;color:var(--gold);font-size:25px;box-shadow:0 0 14px #ffc40055}
-.menu{position:absolute;right:14px;top:68px;width:230px;display:none;padding:8px;border:1px solid var(--gold);border-radius:15px;background:#101010;box-shadow:0 0 25px #ffba0055}.menu.active{display:block}.menu button{width:100%;padding:13px;border:0;border-radius:9px;text-align:left;color:white;background:transparent;font-weight:800}.menu button:hover{background:#332300}
-main{padding:22px 18px 55px}.view{display:none}.view.active{display:block}
+.menu{position:absolute;right:14px;top:68px;width:230px;display:none;padding:8px;border:1px solid var(--gold);border-radius:15px;background:#101010;box-shadow:0 0 25px #ffba0055}
+.menu.active{display:block}
+.menu button{width:100%;padding:13px;border:0;border-radius:9px;text-align:left;color:white;background:transparent;font-weight:800}
+.menu button:hover{background:#332300}
+main{padding:22px 18px 55px}
+.view{display:none}
+.view.active{display:block}
+
 .hero,.panel,.card{border:1px solid #a87900;border-radius:24px;background:linear-gradient(145deg,#17130a,#050505 65%);box-shadow:0 0 12px #ffbd1d66,0 0 30px #ffbd1d24,inset 0 0 20px #ffca2220}
 .hero{position:relative;overflow:hidden;padding:32px 25px;background:radial-gradient(circle at 90% 5%,#8a5d083d,transparent 34%),linear-gradient(145deg,#18140a,#050505 70%)}
 .hero:before,.panel:before{content:"";position:absolute;pointer-events:none;inset:0;background:linear-gradient(115deg,transparent 35%,#ffd54a0c 48%,transparent 60%)}
 .eyebrow{color:#ffd21f;font-size:12px;font-weight:1000;letter-spacing:3px;text-shadow:0 0 9px #ffb700}
-.hero h1{margin:12px 0;max-width:600px;font-size:clamp(37px,8vw,57px);line-height:.98;letter-spacing:-2px;text-shadow:0 0 16px #ffc21c55}.hero p,.muted{color:var(--muted);line-height:1.6}
+.hero h1{margin:12px 0;max-width:600px;font-size:clamp(37px,8vw,57px);line-height:.98;letter-spacing:-2px;text-shadow:0 0 16px #ffc21c55}
+.hero p,.muted{color:var(--muted);line-height:1.6}
 .primary,.secondary{width:100%;min-height:58px;padding:15px 18px;border-radius:16px;font-weight:1000;font-size:16px}
 .primary{border:1px solid #fff18a;color:#160e00;background:linear-gradient(180deg,#fff17a 0%,#ffd21f 45%,#e89a00 100%);box-shadow:0 0 12px #ffd21f88,0 5px 0 #8e5700}
-.primary:disabled{opacity:.45;cursor:not-allowed}.secondary{margin-top:12px;border:1px solid var(--gold);color:var(--gold);background:#101010}
-.sectionTitle{margin:32px 4px 16px;font-size:27px;font-weight:1000;text-shadow:0 0 10px #ffbd1d55}.sectionTitle span{color:var(--gold)}
-.card{overflow:hidden;margin-bottom:25px;border-radius:23px}.photo{height:clamp(280px,60vw,430px);position:relative;overflow:hidden;background:#17120a}.photo img{width:100%;height:100%;object-fit:cover;display:block}.shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,#000c)}.photoText{position:absolute;left:18px;bottom:17px}.tag{padding:8px 13px;border:1px solid #ffe27b;border-radius:30px;color:#171000;background:linear-gradient(#ffe879,#eaa400);font-size:12px;font-weight:1000}.body{padding:0 20px 23px}.body h2{font-size:28px;margin:14px 0 6px}.price{margin:18px 0;color:#ffd21f;font-size:32px;font-weight:1000;text-shadow:0 0 12px #ffbd1d66}.price small{font-size:13px;color:#b9ae94;font-weight:500}.progressTop{display:flex;justify-content:flex-end;margin-bottom:7px;color:#d6c9a9;font-size:13px}.progress{height:10px;border-radius:30px;background:#302819;overflow:hidden}.progress div{height:100%;background:linear-gradient(90deg,#ff9d00,#fff078);box-shadow:0 0 12px #ffc400}.card .primary{margin-top:20px}.soldOutOverlay{position:absolute;inset:0;display:grid;place-items:center;background:#000b;color:white;font-size:35px;font-weight:1000;letter-spacing:3px}
-.luckyBox{padding:14px;border:1px solid #ffd21f;border-top:0;border-radius:0 0 18px 18px;background:radial-gradient(ellipse at 50% 0,#9b6a1c55,transparent 65%),#080808;box-shadow:inset 0 0 20px #ffc21c22}.luckyTitle{text-align:center;font-weight:1000}.luckyPrize{text-align:center;color:#ffd21f;font-size:38px;font-weight:1000;text-shadow:0 0 14px #ffb700;margin:5px}.luckyGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.luckyNumber{position:relative;min-height:40px;display:grid;place-items:center;border:1px solid #8c650e;border-radius:9px;background:#17130b;font-weight:900}.luckyNumber.hit{color:#777}.luckyHitLabel{position:absolute;color:#ffe37a;font-size:10px}
-.checkoutHead{position:sticky;top:76px;z-index:50;display:grid;grid-template-columns:48px 1fr 48px;align-items:center;min-height:76px;background:#080808ed;border-bottom:1px solid #8b620c;backdrop-filter:blur(12px)}.checkoutTitle{text-align:center;min-width:0}.checkoutTitle strong{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:19px}.checkoutTitle small{display:block;margin-top:6px;color:#c9b98e}
-.panel{position:relative;overflow:hidden;margin-top:15px;padding:19px}.participationPanel{padding:23px 15px}.participationHeader{display:flex;align-items:center;gap:16px;margin-bottom:19px}.ticketIcon{width:76px;height:76px;flex:0 0 76px;display:grid;place-items:center;border-radius:18px;color:#1b1100;font-size:39px;background:linear-gradient(145deg,#fff6a2,#ffbd00 60%,#a75d00);box-shadow:0 0 22px #ffca2b99}.participationEyebrow{color:#ffd21f;font-size:11px;font-weight:1000;letter-spacing:2px}.participationTitle{margin:5px 0 0;font-size:clamp(16px,4vw,21px)}
-.modeTabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:19px}.modeTabs button{min-height:52px;border:1px solid #80600e;border-radius:13px;color:#eee;background:linear-gradient(#222,#101010);font-weight:1000}.modeTabs button.active{color:#130d00;border-color:#fff08a;background:linear-gradient(#fff17a,#ffc000);box-shadow:0 0 14px #ffca33aa}
+.primary:disabled{opacity:.45;cursor:not-allowed}
+.secondary{margin-top:12px;border:1px solid var(--gold);color:var(--gold);background:#101010}
+.sectionTitle{margin:32px 4px 16px;font-size:27px;font-weight:1000;text-shadow:0 0 10px #ffbd1d55}
+.sectionTitle span{color:var(--gold)}
+.card{overflow:hidden;margin-bottom:25px;border-radius:23px}
+.photo{height:clamp(280px,60vw,430px);position:relative;overflow:hidden;background:#17120a}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,#000c)}
+.photoText{position:absolute;left:18px;bottom:17px}
+.tag{padding:8px 13px;border:1px solid #ffe27b;border-radius:30px;color:#171000;background:linear-gradient(#ffe879,#eaa400);font-size:12px;font-weight:1000}
+.body{padding:0 20px 23px}
+.body h2{font-size:28px;margin:14px 0 6px}
+.price{margin:18px 0;color:#ffd21f;font-size:32px;font-weight:1000;text-shadow:0 0 12px #ffbd1d66}
+.price small{font-size:13px;color:#b9ae94;font-weight:500}
+.progressTop{display:flex;justify-content:flex-end;margin-bottom:7px;color:#d6c9a9;font-size:13px}
+.progress{height:10px;border-radius:30px;background:#302819;overflow:hidden}
+.progress div{height:100%;background:linear-gradient(90deg,#ff9d00,#fff078);box-shadow:0 0 12px #ffc400}
+.card .primary{margin-top:20px}
+.soldOutOverlay{position:absolute;inset:0;display:grid;place-items:center;background:#000b;color:white;font-size:35px;font-weight:1000;letter-spacing:3px}
+
+.luckyBox{padding:14px;border:1px solid #ffd21f;border-top:0;border-radius:0 0 18px 18px;background:radial-gradient(ellipse at 50% 0,#9b6a1c55,transparent 65%),#080808;box-shadow:inset 0 0 20px #ffc21c22}
+.luckyTitle{text-align:center;font-weight:1000}
+.luckyPrize{text-align:center;color:#ffd21f;font-size:38px;font-weight:1000;text-shadow:0 0 14px #ffb700;margin:5px}
+.luckyGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.luckyNumber{position:relative;min-height:40px;display:grid;place-items:center;border:1px solid #8c650e;border-radius:9px;background:#17130b;font-weight:900}
+.luckyNumber.hit{color:#777}
+.luckyHitLabel{position:absolute;color:#ffe37a;font-size:10px}
+
+/* FECHA DEL SORTEO */
+.drawDateBox{
+margin-top:17px;
+padding:15px;
+display:flex;
+align-items:center;
+gap:13px;
+border:1px solid #b88a20;
+border-radius:15px;
+background:linear-gradient(110deg,#241900,#0b0b0b);
+box-shadow:0 0 12px #ffbd1d30,inset 0 0 15px #ffbd1d10;
+}
+.drawDateIcon{
+width:48px;
+height:48px;
+flex:0 0 48px;
+display:grid;
+place-items:center;
+border:1px solid #ffe27b;
+border-radius:13px;
+color:#170f00;
+background:linear-gradient(145deg,#fff17a,#e9a500);
+font-size:25px;
+}
+.drawDateInfo{min-width:0}
+.drawDateLabel{
+display:block;
+margin-bottom:5px;
+color:#c9b98e;
+font-size:10px;
+font-weight:1000;
+letter-spacing:2px;
+}
+.drawDateValue{
+display:block;
+color:#ffdc58;
+font-size:17px;
+font-weight:1000;
+overflow-wrap:anywhere;
+}
+.drawDateNotice{
+margin-top:7px;
+color:#c5bda9;
+font-size:11px;
+line-height:1.5;
+}
+.drawDateBox.pending .drawDateValue{color:#ffe27b}
+.drawDateBox.available{border-color:#31a950}
+.drawDateBox.available .drawDateIcon{border-color:#83e69a;color:#071108;background:linear-gradient(145deg,#a7ffb5,#31c65b)}
+.drawDateBox.available .drawDateValue{color:#8bffa1}
+
+.checkoutHead{position:sticky;top:76px;z-index:50;display:grid;grid-template-columns:48px 1fr 48px;align-items:center;min-height:76px;background:#080808ed;border-bottom:1px solid #8b620c;backdrop-filter:blur(12px)}
+.checkoutTitle{text-align:center;min-width:0}
+.checkoutTitle strong{display:block;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:19px}
+.checkoutTitle small{display:block;margin-top:6px;color:#c9b98e}
+.panel{position:relative;overflow:hidden;margin-top:15px;padding:19px}
+.participationPanel{padding:23px 15px}
+.participationHeader{display:flex;align-items:center;gap:16px;margin-bottom:19px}
+.ticketIcon{width:76px;height:76px;flex:0 0 76px;display:grid;place-items:center;border-radius:18px;color:#1b1100;font-size:39px;background:linear-gradient(145deg,#fff6a2,#ffbd00 60%,#a75d00);box-shadow:0 0 22px #ffca2b99}
+.participationEyebrow{color:#ffd21f;font-size:11px;font-weight:1000;letter-spacing:2px}
+.participationTitle{margin:5px 0 0;font-size:clamp(16px,4vw,21px)}
+.modeTabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:19px}
+.modeTabs button{min-height:52px;border:1px solid #80600e;border-radius:13px;color:#eee;background:linear-gradient(#222,#101010);font-weight:1000}
+.modeTabs button.active{color:#130d00;border-color:#fff08a;background:linear-gradient(#fff17a,#ffc000);box-shadow:0 0 14px #ffca33aa}
 .packageList{display:flex;flex-direction:column;gap:13px}
 .pack{position:relative;width:100%;min-height:105px;display:grid;grid-template-columns:38% 62%;gap:5px;padding:7px;border:2px solid #ffca20;border-radius:22px;color:white;background:radial-gradient(ellipse at 80% 50%,#a96b0d55,transparent 55%),linear-gradient(110deg,#3c2600,#090909 60%,#251700);box-shadow:0 0 8px #ffd21f,0 0 20px #ffb80055,inset 0 0 18px #ffcf2630;overflow:hidden;transition:transform .18s,box-shadow .18s}
 .pack:before{content:"";position:absolute;inset:-50% -20%;pointer-events:none;background:linear-gradient(115deg,transparent 42%,#fff9c044 48%,transparent 53%);transform:translateX(-55%);animation:shine 4s ease-in-out infinite}
 @keyframes shine{50%,100%{transform:translateX(70%)}}
 .pack.selected{border-color:#fff7a1;box-shadow:0 0 10px #fff18a,0 0 27px #ffc400aa,inset 0 0 20px #ffda4b55;transform:scale(1.008)}
 .ticketSide{position:relative;z-index:1;min-height:88px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:8px;border:1px solid #fff0a0;border-radius:14px;color:#100b00;background:linear-gradient(145deg,#fff18a 0%,#ffc21a 48%,#bd7400 100%);box-shadow:inset 0 0 10px #fff9c9,0 0 12px #ffbd24}
-.premiado{position:absolute;top:5px;left:7px;color:#543600;font-size:9px;font-weight:1000}.ticketStar{position:absolute;right:9px;top:5px;color:#5d3b00;font-size:17px}.ticketCount{font-size:clamp(30px,7vw,42px);line-height:.9;font-weight:1000;text-shadow:0 2px 0 #fff5a6}.ticketLabel{margin-top:7px;font-size:11px;font-weight:1000;letter-spacing:1.5px}
-.packPrice{position:relative;z-index:1;min-height:88px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:14px;color:#fff;background:linear-gradient(110deg,#090909dd,#211600aa);text-shadow:0 0 10px #ffbd1d77}.packPrice strong{font-size:clamp(17px,4.3vw,25px);color:#ffdb48}.selectText{display:flex;align-items:center;gap:8px;margin-top:8px;padding:6px 14px;border:1px solid #ffd21f;border-radius:30px;color:white;background:#090909;font-size:11px;font-weight:1000;box-shadow:0 0 8px #ffbf1f55}.radio{width:16px;height:16px;display:inline-block;border:2px solid #ffd21f;border-radius:50%}.pack.selected .radio{background:#ffd21f;box-shadow:inset 0 0 0 3px #111}
-.freeBox{display:none}.freeBox.active{display:block}.qtyCard{padding:20px;text-align:center;border:1px solid #a77b16;border-radius:17px;background:#0c0c0c}.qtyRow{display:flex;justify-content:center;align-items:center;gap:18px;margin:12px}.qtyBtn{width:45px;height:45px;border:1px solid #ffda4b;border-radius:12px;color:#120c00;background:linear-gradient(#ffe875,#e9a500);font-size:26px}.qtyNumber{min-width:80px;color:#ffd21f;font-size:30px;font-weight:1000}.fieldHint{color:#b9ad91;font-size:12px;line-height:1.5}
-.totalBox{margin-top:19px;padding:17px;text-align:center;border:1px solid #ffd21f;border-radius:17px;background:linear-gradient(110deg,#201600,#090909);box-shadow:0 0 12px #ffba1d44}.totalLabel{color:#f5dda0;font-size:12px;font-weight:1000;letter-spacing:3px}.totalAmount{margin-top:5px;color:#ffd21f;font-size:35px;font-weight:1000;text-shadow:0 0 12px #ffb70088}
-.formTitle{margin:0 0 12px;color:#ffe28a;font-size:18px}label{display:block;margin:13px 0 7px;color:#e5d6b2;font-size:13px;font-weight:800}input,select{width:100%;padding:13px;border:1px solid #765716;border-radius:11px;outline:none;color:white;background:#090909}input:focus,select:focus{border-color:#ffd21f;box-shadow:0 0 0 3px #ffd21f22}
-.bankGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.bankBtn{min-height:110px;padding:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1px solid #765716;border-radius:14px;color:#fff;background:#0b0b0b;font-size:12px;font-weight:900}.bankBtn.active{border-color:#ffda3d;box-shadow:0 0 13px #ffbd1d77;background:#241900}.bankLogo{width:100%;height:57px;display:grid;place-items:center}.bankLogo img{width:100%;max-width:135px;height:53px;object-fit:contain;background:#fff;border-radius:7px}.qikLogo,.cashLogo{width:95px;height:53px;display:grid;place-items:center;border-radius:10px;font-size:29px;font-weight:1000}.qikLogo{background:#191919;color:#fff}.cashLogo{background:#e9f2d9;color:#1c4e20}
-.accountCard,.fileBox{margin-top:12px;padding:13px;border:1px dashed #a57b1b;border-radius:12px;background:#100d06}.accountLine{display:flex;justify-content:space-between;align-items:center;gap:9px;margin:6px 0}.accountLine small{color:#b8a77f}.accountLine b{overflow-wrap:anywhere;color:#ffe08a}.copyBtn{padding:7px 9px;border:1px solid #c39422;border-radius:8px;color:#ffe28a;background:#211700;font-size:10px}.fileBox{text-align:center}.fileBox input{display:none}.fileLabel{display:block;margin:0;color:#ffd21f;cursor:pointer;font-weight:900}.fileName{margin-top:8px;color:#c6b58e;font-size:12px;word-break:break-word}
-.acceptedCard{display:flex;gap:10px;align-items:center;padding:12px;border:1px solid #31894a;border-radius:12px;color:#9dffb0;background:#092011}.consent{display:flex;gap:9px;align-items:flex-start;margin-top:13px}.consent input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:#ffc51c}.consent label{margin:0;color:#c7b996;font-size:11px;line-height:1.45}
-#verifyView .verifyPanel h3{margin:7px 0 14px;color:#ffdf75;font-size:19px}#verifyView .verifyPanel label{margin:20px 0 9px;font-size:15px}#verifyView .verifyPanel select,#verifyView .verifyPanel input{min-height:54px;padding:13px;border-radius:14px;font-size:15px}#verifyView .verifySearchRow{display:grid;grid-template-columns:minmax(0,1fr) 112px;gap:9px;align-items:end}#verifyView .verifySearchRow label{grid-column:1/-1}#verifyView .verifySearchBtn{min-height:54px;border:1px solid #ffe27c;border-radius:13px;color:#120c00;background:linear-gradient(#ffe879,#e9a500);font-size:12px;font-weight:1000}#verifyView .verifyHelp{display:flex;gap:10px;margin:17px 0;color:#c3b697;font-size:12px;line-height:1.6}#verifyView .infoIcon{color:#ffd21f;font-size:22px}#verifyView .verifyResultsWrap{margin-top:22px;padding-top:20px;border-top:1px solid #765716}#verifyView .verifyRaffleHeading{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:#ffdc68;font-size:20px}#verifyView .activeBadge{padding:6px 10px;border:1px solid #9c741d;border-radius:30px;color:#ffdc68;background:#201700;font-size:10px}#verifyView .verifyEmpty{padding:20px 8px;color:#b9ad91;text-align:center;line-height:1.6}#verifyView .buyerBox{margin-top:13px;padding:17px 13px;border:1px solid #94701b;border-radius:18px;background:#0c0c0c;font-size:13px;line-height:1.6}#verifyView .orderTop{display:flex;justify-content:space-between;gap:10px;margin-bottom:12px}#verifyView .orderId{color:#ffdb59;font-weight:1000}#verifyView .statusText{color:#ff766a;text-align:right;font-size:10px;font-weight:1000}#verifyView .statusText.approved,#verifyView .ticketStatus.approved{color:#70ed91}#verifyView .detailRow{display:grid;grid-template-columns:1fr 1.1fr;gap:10px;margin:7px 0}#verifyView .detailLabel{color:#b9ad91;font-weight:800}#verifyView .detailValue{overflow-wrap:anywhere}#verifyView .reviewTime{margin-top:12px;padding:12px;text-align:center;border:1px solid #a77b16;border-radius:12px;color:#ffe28a;background:#211700;font-weight:900}#verifyView .ticketsLabel{margin:16px 0 8px;text-align:center;color:#ffd21f;font-size:12px;font-weight:1000;letter-spacing:3px}#verifyView .numberGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}#verifyView .numberItem{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:7px;padding:10px 7px;border:1px solid #8e6818;border-radius:11px;color:#ffdc68;background:#191306;font-size:13px}#verifyView .ticketStatus{font-size:9px;color:#ff8c7c;font-weight:1000}
-.confirmation{padding:18px 0 30px;text-align:center}.confirmIcon{width:76px;height:76px;display:grid;place-items:center;margin:15px auto;border:1px solid #8be6a0;border-radius:50%;color:#061108;background:#58d878;font-size:35px;box-shadow:0 0 20px #49d86d88}.confirmation h1{margin:6px 0}.important{margin-top:17px;padding:14px;border:1px solid #a77b16;border-radius:13px;background:#1c1507;text-align:left}.confirmNumbers{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:14px 0}.confirmNumber{padding:9px 12px;border:1px solid #ffd21f;border-radius:9px;color:#ffdf69;background:#1d1606;font-weight:900}
+.premiado{position:absolute;top:5px;left:7px;color:#543600;font-size:9px;font-weight:1000}
+.ticketStar{position:absolute;right:9px;top:5px;color:#5d3b00;font-size:17px}
+.ticketCount{font-size:clamp(30px,7vw,42px);line-height:.9;font-weight:1000;text-shadow:0 2px 0 #fff5a6}
+.ticketLabel{margin-top:7px;font-size:11px;font-weight:1000;letter-spacing:1.5px}
+.packPrice{position:relative;z-index:1;min-height:88px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:14px;color:#fff;background:linear-gradient(110deg,#090909dd,#211600aa);text-shadow:0 0 10px #ffbd1d77}
+.packPrice strong{font-size:clamp(17px,4.3vw,25px);color:#ffdb48}
+.selectText{display:flex;align-items:center;gap:8px;margin-top:8px;padding:6px 14px;border:1px solid #ffd21f;border-radius:30px;color:white;background:#090909;font-size:11px;font-weight:1000;box-shadow:0 0 8px #ffbf1f55}
+.radio{width:16px;height:16px;display:inline-block;border:2px solid #ffd21f;border-radius:50%}
+.pack.selected .radio{background:#ffd21f;box-shadow:inset 0 0 0 3px #111}
+.freeBox{display:none}
+.freeBox.active{display:block}
+.qtyCard{padding:20px;text-align:center;border:1px solid #a77b16;border-radius:17px;background:#0c0c0c}
+.qtyRow{display:flex;justify-content:center;align-items:center;gap:18px;margin:12px}
+.qtyBtn{width:45px;height:45px;border:1px solid #ffda4b;border-radius:12px;color:#120c00;background:linear-gradient(#ffe875,#e9a500);font-size:26px}
+.qtyNumber{min-width:80px;color:#ffd21f;font-size:30px;font-weight:1000}
+.fieldHint{color:#b9ad91;font-size:12px;line-height:1.5}
+.totalBox{margin-top:19px;padding:17px;text-align:center;border:1px solid #ffd21f;border-radius:17px;background:linear-gradient(110deg,#201600,#090909);box-shadow:0 0 12px #ffba1d44}
+.totalLabel{color:#f5dda0;font-size:12px;font-weight:1000;letter-spacing:3px}
+.totalAmount{margin-top:5px;color:#ffd21f;font-size:35px;font-weight:1000;text-shadow:0 0 12px #ffb70088}
+.formTitle{margin:0 0 12px;color:#ffe28a;font-size:18px}
+label{display:block;margin:13px 0 7px;color:#e5d6b2;font-size:13px;font-weight:800}
+input,select{width:100%;padding:13px;border:1px solid #765716;border-radius:11px;outline:none;color:white;background:#090909}
+input:focus,select:focus{border-color:#ffd21f;box-shadow:0 0 0 3px #ffd21f22}
+.bankGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.bankBtn{min-height:110px;padding:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;border:1px solid #765716;border-radius:14px;color:#fff;background:#0b0b0b;font-size:12px;font-weight:900}
+.bankBtn.active{border-color:#ffda3d;box-shadow:0 0 13px #ffbd1d77;background:#241900}
+.bankLogo{width:100%;height:57px;display:grid;place-items:center}
+.bankLogo img{width:100%;max-width:135px;height:53px;object-fit:contain;background:#fff;border-radius:7px}
+.qikLogo,.cashLogo{width:95px;height:53px;display:grid;place-items:center;border-radius:10px;font-size:29px;font-weight:1000}
+.qikLogo{background:#191919;color:#fff}
+.cashLogo{background:#e9f2d9;color:#1c4e20}
+.accountCard,.fileBox{margin-top:12px;padding:13px;border:1px dashed #a57b1b;border-radius:12px;background:#100d06}
+.accountLine{display:flex;justify-content:space-between;align-items:center;gap:9px;margin:6px 0}
+.accountLine small{color:#b8a77f}
+.accountLine b{overflow-wrap:anywhere;color:#ffe08a}
+.copyBtn{padding:7px 9px;border:1px solid #c39422;border-radius:8px;color:#ffe28a;background:#211700;font-size:10px}
+.fileBox{text-align:center}
+.fileBox input{display:none}
+.fileLabel{display:block;margin:0;color:#ffd21f;cursor:pointer;font-weight:900}
+.fileName{margin-top:8px;color:#c6b58e;font-size:12px;word-break:break-word}
+.acceptedCard{display:flex;gap:10px;align-items:center;padding:12px;border:1px solid #31894a;border-radius:12px;color:#9dffb0;background:#092011}
+.consent{display:flex;gap:9px;align-items:flex-start;margin-top:13px}
+.consent input{width:18px;height:18px;margin-top:2px;flex:none;accent-color:#ffc51c}
+.consent label{margin:0;color:#c7b996;font-size:11px;line-height:1.45}
+
+#verifyView .verifyPanel h3{margin:7px 0 14px;color:#ffdf75;font-size:19px}
+#verifyView .verifyPanel label{margin:20px 0 9px;font-size:15px}
+#verifyView .verifyPanel select,#verifyView .verifyPanel input{min-height:54px;padding:13px;border-radius:14px;font-size:15px}
+#verifyView .verifySearchRow{display:grid;grid-template-columns:minmax(0,1fr) 112px;gap:9px;align-items:end}
+#verifyView .verifySearchRow label{grid-column:1/-1}
+#verifyView .verifySearchBtn{min-height:54px;border:1px solid #ffe27c;border-radius:13px;color:#120c00;background:linear-gradient(#ffe879,#e9a500);font-size:12px;font-weight:1000}
+#verifyView .verifyHelp{display:flex;gap:10px;margin:17px 0;color:#c3b697;font-size:12px;line-height:1.6}
+#verifyView .infoIcon{color:#ffd21f;font-size:22px}
+#verifyView .verifyResultsWrap{margin-top:22px;padding-top:20px;border-top:1px solid #765716}
+#verifyView .verifyRaffleHeading{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:#ffdc68;font-size:20px}
+#verifyView .activeBadge{padding:6px 10px;border:1px solid #9c741d;border-radius:30px;color:#ffdc68;background:#201700;font-size:10px}
+#verifyView .verifyEmpty{padding:20px 8px;color:#b9ad91;text-align:center;line-height:1.6}
+#verifyView .buyerBox{margin-top:13px;padding:17px 13px;border:1px solid #94701b;border-radius:18px;background:#0c0c0c;font-size:13px;line-height:1.6}
+#verifyView .orderTop{display:flex;justify-content:space-between;gap:10px;margin-bottom:12px}
+#verifyView .orderId{color:#ffdb59;font-weight:1000}
+#verifyView .statusText{color:#ff766a;text-align:right;font-size:10px;font-weight:1000}
+#verifyView .statusText.approved,#verifyView .ticketStatus.approved{color:#70ed91}
+#verifyView .detailRow{display:grid;grid-template-columns:1fr 1.1fr;gap:10px;margin:7px 0}
+#verifyView .detailLabel{color:#b9ad91;font-weight:800}
+#verifyView .detailValue{overflow-wrap:anywhere}
+#verifyView .reviewTime{margin-top:12px;padding:12px;text-align:center;border:1px solid #a77b16;border-radius:12px;color:#ffe28a;background:#211700;font-weight:900}
+#verifyView .ticketsLabel{margin:16px 0 8px;text-align:center;color:#ffd21f;font-size:12px;font-weight:1000;letter-spacing:3px}
+#verifyView .numberGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+#verifyView .numberItem{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:7px;padding:10px 7px;border:1px solid #8e6818;border-radius:11px;color:#ffdc68;background:#191306;font-size:13px}
+#verifyView .ticketStatus{font-size:9px;color:#ff8c7c;font-weight:1000}
+
+.confirmation{padding:18px 0 30px;text-align:center}
+.confirmIcon{width:76px;height:76px;display:grid;place-items:center;margin:15px auto;border:1px solid #8be6a0;border-radius:50%;color:#061108;background:#58d878;font-size:35px;box-shadow:0 0 20px #49d86d88}
+.confirmation h1{margin:6px 0}
+.important{margin-top:17px;padding:14px;border:1px solid #a77b16;border-radius:13px;background:#1c1507;text-align:left}
+.confirmNumbers{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:14px 0}
+.confirmNumber{padding:9px 12px;border:1px solid #ffd21f;border-radius:9px;color:#ffdf69;background:#1d1606;font-weight:900}
 
 /* BOTON FLOTANTE WHATSAPP */
-.whatsapp-float{
-position:fixed;
-right:20px;
-bottom:22px;
-z-index:9999;
-width:62px;
-height:62px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:#25D366;
-color:#fff;
-text-decoration:none;
-border:2px solid #fff;
-box-shadow:0 0 12px #25D366,0 0 25px #25D36688;
-animation:whatsappPulse 2s infinite;
-transition:transform .2s;
-}
+.whatsapp-float{position:fixed;right:20px;bottom:22px;z-index:9999;width:62px;height:62px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#25D366;color:#fff;text-decoration:none;border:2px solid #fff;box-shadow:0 0 12px #25D366,0 0 25px #25D36688;animation:whatsappPulse 2s infinite;transition:transform .2s}
 .whatsapp-float:hover{transform:scale(1.12)}
 .whatsapp-float svg{width:35px;height:35px;fill:white}
-@keyframes whatsappPulse{
-0%,100%{box-shadow:0 0 10px #25D366,0 0 20px #25D36666}
-50%{box-shadow:0 0 18px #25D366,0 0 35px #25D366aa}
-}
+@keyframes whatsappPulse{0%,100%{box-shadow:0 0 10px #25D366,0 0 20px #25D36666}50%{box-shadow:0 0 18px #25D366,0 0 35px #25D366aa}}
 
 @media(min-width:600px){main{padding:25px 20px 60px}.bankGrid{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:430px){
@@ -100,64 +245,214 @@ main{padding:17px 12px 40px}
 </style>
 </head>
 <body>
+
 <div class="lottery-background" id="lotteryBackground" aria-hidden="true"></div>
+
 <div class="app">
 <header class="header">
 <button class="menuBtn" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
 <div class="logo">RIFAS <span>LUXURY RD</span></div>
 <button class="menuBtn" onclick="openVerify()" aria-label="Verificar números">⌕</button>
-<div class="menu" id="menu"><button onclick="goHome()">⌂ Inicio</button><button onclick="scrollToCatalog()">🎟 Rifas activas</button><button onclick="openVerify()">🔎 Verificar mis números</button></div>
+<div class="menu" id="menu">
+<button onclick="goHome()">⌂ Inicio</button>
+<button onclick="scrollToCatalog()">🎟 Rifas activas</button>
+<button onclick="openVerify()">🔎 Verificar mis números</button>
+</div>
 </header>
+
 <main>
 <section id="homeView" class="view active">
-<div class="hero"><div class="eyebrow">✦ EXPERIENCIA EXCLUSIVA</div><h1>Premios que se sienten extraordinarios.</h1><p>Participa desde tu celular, consulta tus boletos y descubre rifas seleccionadas.</p><button class="primary" onclick="scrollToCatalog()">VER RIFAS DISPONIBLES</button><button class="secondary" onclick="openVerify()">🔎 VERIFICAR MIS NÚMEROS</button></div>
-<div id="catalog"><div class="sectionTitle">Rifas <span>activas</span></div><div id="raffleList"></div></div>
+<div class="hero">
+<div class="eyebrow">✦ EXPERIENCIA EXCLUSIVA</div>
+<h1>Premios que se sienten extraordinarios.</h1>
+<p>Participa desde tu celular, consulta tus boletos y descubre rifas seleccionadas.</p>
+<button class="primary" onclick="scrollToCatalog()">VER RIFAS DISPONIBLES</button>
+<button class="secondary" onclick="openVerify()">🔎 VERIFICAR MIS NÚMEROS</button>
+</div>
+<div id="catalog">
+<div class="sectionTitle">Rifas <span>activas</span></div>
+<div id="raffleList"></div>
+</div>
 </section>
 
 <section id="checkoutView" class="view">
-<div class="checkoutHead"><button class="iconBtn" onclick="closeCheckout()">‹</button><div class="checkoutTitle"><strong id="checkoutTitle">Rifa</strong><small>Completa tu compra de boletos</small></div><button class="iconBtn" onclick="closeCheckout()">×</button></div>
-<div class="panel participationPanel">
-<div class="participationHeader"><div class="ticketIcon">🎟</div><div><div class="participationEyebrow">TU PARTICIPACIÓN</div><h2 class="participationTitle">CÓMO QUIERES PARTICIPAR</h2></div></div>
-<div class="modeTabs"><button id="packagesTab" class="active" onclick="mode('packages')">★ PAQUETES</button><button id="freeTab" onclick="mode('free')">▥ CANTIDAD LIBRE</button></div>
-<div id="packagesBox"><div class="packageList">
-<button class="pack selected" data-count="2" onclick="choose(this)"><div class="ticketSide"><span class="premiado">★ PREMIADO</span><span class="ticketStar">★</span><span class="ticketCount">2</span><span class="ticketLabel">BOLETOS</span></div><div class="packPrice"><strong>RD$ 200.00</strong><span class="selectText">✓ SELECCIONAR <i class="radio"></i></span></div></button>
-<button class="pack" data-count="5" onclick="choose(this)"><div class="ticketSide"><span class="premiado">★ PREMIADO</span><span class="ticketStar">★</span><span class="ticketCount">5</span><span class="ticketLabel">BOLETOS</span></div><div class="packPrice"><strong>RD$ 500.00</strong><span class="selectText">✓ SELECCIONAR <i class="radio"></i></span></div></button>
-<button class="pack" data-count="10" onclick="choose(this)"><div class="ticketSide"><span class="premiado">★ PREMIADO</span><span class="ticketStar">★</span><span class="ticketCount">10</span><span class="ticketLabel">BOLETOS</span></div><div class="packPrice"><strong>RD$ 1,000.00</strong><span class="selectText">✓ SELECCIONAR <i class="radio"></i></span></div></button>
-<button class="pack" data-count="20" onclick="choose(this)"><div class="ticketSide"><span class="premiado">★ PREMIADO</span><span class="ticketStar">★</span><span class="ticketCount">20</span><span class="ticketLabel">BOLETOS</span></div><div class="packPrice"><strong>RD$ 1,800.00</strong><span class="selectText">✓ SELECCIONAR <i class="radio"></i></span></div></button>
-<button class="pack" data-count="50" onclick="choose(this)"><div class="ticketSide"><span class="premiado">★ PREMIADO</span><span class="ticketStar">★</span><span class="ticketCount">50</span><span class="ticketLabel">BOLETOS</span></div><div class="packPrice"><strong>RD$ 3,500.00</strong><span class="selectText">✓ SELECCIONAR <i class="radio"></i></span></div></button>
-<button class="pack" data-count="100" onclick="choose(this)"><div class="ticketSide"><span class="premiado">★ PREMIADO</span><span class="ticketStar">★</span><span class="ticketCount">100</span><span class="ticketLabel">BOLETOS</span></div><div class="packPrice"><strong>RD$ 5,000.00</strong><span class="selectText">✓ SELECCIONAR <i class="radio"></i></span></div></button>
-</div></div>
-<div id="freeBox" class="freeBox"><div class="qtyCard"><h3>Cantidad de boletos</h3><div class="qtyRow"><button class="qtyBtn" onclick="changeQty(-1)">−</button><div class="qtyNumber" id="qtyNumber">2</div><button class="qtyBtn" onclick="changeQty(1)">+</button></div><div class="fieldHint">Selección aleatoria del sistema. Mínimo: 2 · Máximo: 10,000</div></div></div>
-<div class="totalBox"><div class="totalLabel">TOTAL A PAGAR</div><div class="totalAmount" id="totalAmount">RD$ 200.00</div></div>
+<div class="checkoutHead">
+<button class="iconBtn" onclick="closeCheckout()">‹</button>
+<div class="checkoutTitle">
+<strong id="checkoutTitle">Rifa</strong>
+<small>Completa tu compra de boletos</small>
+</div>
+<button class="iconBtn" onclick="closeCheckout()">×</button>
 </div>
 
-<div class="panel"><h3 class="formTitle">Datos del participante</h3><label for="name">Nombre *</label><input id="name" type="text" placeholder="Tu nombre completo" autocomplete="name"><label for="phone">Teléfono (WhatsApp) *</label><input id="phone" type="tel" placeholder="Ej. 8090000000" autocomplete="tel"><label for="email">Correo electrónico</label><input id="email" type="email" placeholder="correo@ejemplo.com" autocomplete="email"></div>
+<div class="panel participationPanel">
+<div class="participationHeader">
+<div class="ticketIcon">🎟</div>
+<div>
+<div class="participationEyebrow">TU PARTICIPACIÓN</div>
+<h2 class="participationTitle">CÓMO QUIERES PARTICIPAR</h2>
+</div>
+</div>
 
-<div class="panel"><h3 class="formTitle">Método de pago</h3><div class="bankGrid">
-<button class="bankBtn active" data-bank="Banco Popular" onclick="selectBank(this)"><div class="bankLogo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Popular_bank_logo.png" alt="Banco Popular"></div><span>Banco Popular</span></button>
-<button class="bankBtn" data-bank="Banreservas" onclick="selectBank(this)"><div class="bankLogo"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Banreservas-logo.png" alt="Banreservas"></div><span>Banreservas</span></button>
-<button class="bankBtn" data-bank="Qik" onclick="selectBank(this)"><div class="qikLogo">Qik</div><span>Qik</span></button>
-<button class="bankBtn" data-bank="Efectivo" onclick="selectBank(this)"><div class="cashLogo">💵</div><span>Efectivo</span></button></div>
-<div class="accountCard"><div class="accountLine"><div><small id="accountLabel">Cuenta</small><br><b id="accountNumber">CUENTA_A_CONFIGURAR</b></div><button class="copyBtn" id="copyAccountBtn" onclick="copyAccount()">COPIAR</button></div><div class="accountLine"><div><small>Titular</small><br><b id="accountHolder">TITULAR_A_CONFIGURAR</b></div></div><div class="fieldHint" id="paymentHint">Realiza la transferencia por el monto total y luego carga el comprobante.</div></div>
-<label>Comprobante de pago *</label><div class="fileBox"><label class="fileLabel" for="receipt">📎 SELECCIONAR COMPROBANTE</label><input id="receipt" type="file" accept=".jpg,.jpeg,.png,.pdf" onchange="showFile(this)"><div class="fieldHint">JPG, PNG o PDF · Máximo 10 MB</div><div class="fileName" id="fileName">Ningún archivo seleccionado</div></div></div>
+<div class="modeTabs">
+<button id="packagesTab" class="active" onclick="mode('packages')">★ PAQUETES</button>
+<button id="freeTab" onclick="mode('free')">▥ CANTIDAD LIBRE</button>
+</div>
+
+<div id="packagesBox">
+<div class="packageList">
+<button class="pack selected" data-count="2" onclick="choose(this)">
+<div class="ticketSide"><span class="premiado">★ PREMIADO</span><span class="ticketStar">★</span><span class="ticketCount">2</span><span class="ticketLabel">BOLETOS</span></div>
+<div class="packPrice"><strong>RD$ 200.00</strong><span class="selectText">✓ SELECCIONAR <i class="radio"></i></span></div>
+</button>
+<button class="pack" data-count="5" onclick="choose(this)">
+<div class="ticketSide"><span class="premiado">★ PREMIADO</span><span class="ticketStar">★</span><span class="ticketCount">5</span><span class="ticketLabel">BOLETOS</span></div>
+<div class="packPrice"><strong>RD$ 500.00</strong><span class="selectText">✓ SELECCIONAR <i class="radio"></i></span></div>
+</button>
+<button class="pack" data-count="10" onclick="choose(this)">
+<div class="ticketSide"><span class="premiado">★ PREMIADO</span><span class="ticketStar">★</span><span class="ticketCount">10</span><span class="ticketLabel">BOLETOS</span></div>
+<div class="packPrice"><strong>RD$ 1,000.00</strong><span class="selectText">✓ SELECCIONAR <i class="radio"></i></span></div>
+</button>
+<button class="pack" data-count="20" onclick="choose(this)">
+<div class="ticketSide"><span class="premiado">★ PREMIADO</span><span class="ticketStar">★</span><span class="ticketCount">20</span><span class="ticketLabel">BOLETOS</span></div>
+<div class="packPrice"><strong>RD$ 1,800.00</strong><span class="selectText">✓ SELECCIONAR <i class="radio"></i></span></div>
+</button>
+<button class="pack" data-count="50" onclick="choose(this)">
+<div class="ticketSide"><span class="premiado">★ PREMIADO</span><span class="ticketStar">★</span><span class="ticketCount">50</span><span class="ticketLabel">BOLETOS</span></div>
+<div class="packPrice"><strong>RD$ 3,500.00</strong><span class="selectText">✓ SELECCIONAR <i class="radio"></i></span></div>
+</button>
+<button class="pack" data-count="100" onclick="choose(this)">
+<div class="ticketSide"><span class="premiado">★ PREMIADO</span><span class="ticketStar">★</span><span class="ticketCount">100</span><span class="ticketLabel">BOLETOS</span></div>
+<div class="packPrice"><strong>RD$ 5,000.00</strong><span class="selectText">✓ SELECCIONAR <i class="radio"></i></span></div>
+</button>
+</div>
+</div>
+
+<div id="freeBox" class="freeBox">
+<div class="qtyCard">
+<h3>Cantidad de boletos</h3>
+<div class="qtyRow">
+<button class="qtyBtn" onclick="changeQty(-1)">−</button>
+<div class="qtyNumber" id="qtyNumber">2</div>
+<button class="qtyBtn" onclick="changeQty(1)">+</button>
+</div>
+<div class="fieldHint">Selección aleatoria del sistema. Mínimo: 2 · Máximo: 10,000</div>
+</div>
+</div>
+
+<div class="totalBox">
+<div class="totalLabel">TOTAL A PAGAR</div>
+<div class="totalAmount" id="totalAmount">RD$ 200.00</div>
+</div>
+</div>
+
+<div class="panel">
+<h3 class="formTitle">Datos del participante</h3>
+<label for="name">Nombre *</label>
+<input id="name" type="text" placeholder="Tu nombre completo" autocomplete="name">
+<label for="phone">Teléfono (WhatsApp) *</label>
+<input id="phone" type="tel" placeholder="Ej. 8090000000" autocomplete="tel">
+<label for="email">Correo electrónico</label>
+<input id="email" type="email" placeholder="correo@ejemplo.com" autocomplete="email">
+</div>
+
+<div class="panel">
+<h3 class="formTitle">Método de pago</h3>
+<div class="bankGrid">
+<button class="bankBtn active" data-bank="Banco Popular" onclick="selectBank(this)">
+<div class="bankLogo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Popular_bank_logo.png" alt="Banco Popular"></div>
+<span>Banco Popular</span>
+</button>
+<button class="bankBtn" data-bank="Banreservas" onclick="selectBank(this)">
+<div class="bankLogo"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Banreservas-logo.png" alt="Banreservas"></div>
+<span>Banreservas</span>
+</button>
+<button class="bankBtn" data-bank="Qik" onclick="selectBank(this)">
+<div class="qikLogo">Qik</div><span>Qik</span>
+</button>
+<button class="bankBtn" data-bank="Efectivo" onclick="selectBank(this)">
+<div class="cashLogo">💵</div><span>Efectivo</span>
+</button>
+</div>
+
+<div class="accountCard">
+<div class="accountLine">
+<div><small id="accountLabel">Cuenta</small><br><b id="accountNumber">CUENTA_A_CONFIGURAR</b></div>
+<button class="copyBtn" id="copyAccountBtn" onclick="copyAccount()">COPIAR</button>
+</div>
+<div class="accountLine">
+<div><small>Titular</small><br><b id="accountHolder">TITULAR_A_CONFIGURAR</b></div>
+</div>
+<div class="fieldHint" id="paymentHint">Realiza la transferencia por el monto total y luego carga el comprobante.</div>
+</div>
+
+<label>Comprobante de pago *</label>
+<div class="fileBox">
+<label class="fileLabel" for="receipt">📎 SELECCIONAR COMPROBANTE</label>
+<input id="receipt" type="file" accept=".jpg,.jpeg,.png,.pdf" onchange="showFile(this)">
+<div class="fieldHint">JPG, PNG o PDF · Máximo 10 MB</div>
+<div class="fileName" id="fileName">Ningún archivo seleccionado</div>
+</div>
+</div>
 
 <div class="panel">
 <h3 class="formTitle">Confirmación de compra</h3>
-<div class="consent"><input id="consent" type="checkbox"><label for="consent">Confirmo que mis datos son correctos y acepto recibir confirmaciones y seguimiento por WhatsApp o correo electrónico.</label></div>
-<div style="margin-top:12px"><button class="primary" onclick="submitPurchase()">ENVIAR SOLICITUD DE COMPRA →</button></div>
+<div class="consent">
+<input id="consent" type="checkbox">
+<label for="consent">Confirmo que mis datos son correctos y acepto recibir confirmaciones y seguimiento por WhatsApp o correo electrónico.</label>
+</div>
+<div style="margin-top:12px">
+<button class="primary" onclick="submitPurchase()">ENVIAR SOLICITUD DE COMPRA →</button>
+</div>
 </div>
 </section>
 
 <section id="verifyView" class="view">
-<div class="checkoutHead"><button class="iconBtn" onclick="closeVerify()">‹</button><div class="checkoutTitle"><strong>Verificar mis números</strong><small>Consulta tus boletos</small></div><button class="iconBtn" onclick="closeVerify()">×</button></div>
-<div class="panel verifyPanel"><h3>⚑ Selecciona la rifa</h3><select id="verifyRaffle"></select><div class="verifySearchRow"><label for="verifyQuery">🎟 Teléfono o # de boleto</label><input id="verifyQuery" type="text" inputmode="numeric" placeholder="8090000000" autocomplete="off"><button class="verifySearchBtn" onclick="verifyNumbers()">⌕ BUSCAR</button></div><div class="verifyHelp"><span class="infoIcon">ⓘ</span><div>Ingresa tu teléfono o el número exacto de boleto para consultar tu solicitud.</div></div><div class="verifyResultsWrap"><h3 class="verifyRaffleHeading"><span id="verifyRaffleName">Rifa seleccionada</span><span class="activeBadge">ACTIVA</span></h3><div id="verifyResults" class="verifyEmpty">Introduce tu teléfono o número de boleto para consultar.</div></div></div>
+<div class="checkoutHead">
+<button class="iconBtn" onclick="closeVerify()">‹</button>
+<div class="checkoutTitle"><strong>Verificar mis números</strong><small>Consulta tus boletos</small></div>
+<button class="iconBtn" onclick="closeVerify()">×</button>
+</div>
+<div class="panel verifyPanel">
+<h3>⚑ Selecciona la rifa</h3>
+<select id="verifyRaffle"></select>
+<div class="verifySearchRow">
+<label for="verifyQuery">🎟 Teléfono o # de boleto</label>
+<input id="verifyQuery" type="text" inputmode="numeric" placeholder="8090000000" autocomplete="off">
+<button class="verifySearchBtn" onclick="verifyNumbers()">⌕ BUSCAR</button>
+</div>
+<div class="verifyHelp">
+<span class="infoIcon">ⓘ</span>
+<div>Ingresa tu teléfono o el número exacto de boleto para consultar tu solicitud.</div>
+</div>
+<div class="verifyResultsWrap">
+<h3 class="verifyRaffleHeading">
+<span id="verifyRaffleName">Rifa seleccionada</span>
+<span class="activeBadge">ACTIVA</span>
+</h3>
+<div id="verifyResults" class="verifyEmpty">Introduce tu teléfono o número de boleto para consultar.</div>
+</div>
+</div>
 </section>
 
-<section id="confirmationView" class="view"><div class="confirmation"><div class="confirmIcon">✓</div><h1>¡Solicitud enviada!</h1><p class="muted">Tu solicitud fue guardada en este dispositivo y está pendiente de validación.</p><div class="important"><b>¡IMPORTANTE!</b><p class="muted">Conserva estos números de referencia. Los boletos quedan sujetos a la validación del comprobante de pago.</p></div><div class="sectionTitle">Números <span>reservados</span></div><div id="confirmationNumbers" class="confirmNumbers"></div><button class="verifyBtn" onclick="openVerify()">🔎 VERIFICAR MIS NÚMEROS</button><button class="secondary" onclick="goHome()">VOLVER AL INICIO</button></div></section>
+<section id="confirmationView" class="view">
+<div class="confirmation">
+<div class="confirmIcon">✓</div>
+<h1>¡Solicitud enviada!</h1>
+<p class="muted">Tu solicitud fue guardada en este dispositivo y está pendiente de validación.</p>
+<div class="important">
+<b>¡IMPORTANTE!</b>
+<p class="muted">Conserva estos números de referencia. Los boletos quedan sujetos a la validación del comprobante de pago.</p>
+</div>
+<div class="sectionTitle">Números <span>reservados</span></div>
+<div id="confirmationNumbers" class="confirmNumbers"></div>
+<button class="secondary" onclick="openVerify()">🔎 VERIFICAR MIS NÚMEROS</button>
+<button class="secondary" onclick="goHome()">VOLVER AL INICIO</button>
+</div>
+</section>
 </main>
 </div>
 
-<!-- BOTON FLOTANTE WHATSAPP -->
 <a class="whatsapp-float"
 href="https://wa.me/18090000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20rifas%20de%20Rifas%20Luxury%20RD."
 target="_blank"
@@ -170,45 +465,245 @@ aria-label="Contactar por WhatsApp">
 
 <script>
 const R='rlrd_raffles',Q='rlrd_requests',MIN_TICKETS=2,MAX_TICKETS=10000;
+const DRAW_DATE_THRESHOLD=75;
+
 let currentRaffle=null,selectedCount=2,selectedPrice=200,currentMode='packages',selectedBank='Banco Popular';
 
-function get(k,f=[]){try{const v=localStorage.getItem(k);return v?JSON.parse(v):f}catch(e){return f}}
-function put(k,v){localStorage.setItem(k,JSON.stringify(v))}
-function money(v){return 'RD$ '+Number(v||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
-function escapeHtml(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
-
-function defaultRaffle(){return [{id:'porsche-cayenne-s',name:'Porsche Cayenne S',description:'Participa y descubre si eres el próximo ganador.',price:100,totalNumbers:10000,sold:3000,image:'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85',active:true,specialPrize:'5,000',specialNumbers:['35','02','25']},{id:'car-25',name:'Rifa especial',description:'Participa por una gran oportunidad.',price:25,totalNumbers:10000,sold:0,image:'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=85',active:true}]}
-
-function getActiveRaffles(){const d=get(R,null);return !Array.isArray(d)||!d.length?defaultRaffle():d.filter(r=>r.active!==false)}
-function isRaffleSoldOut(r){const t=Number(r.totalNumbers)||0,s=Array.isArray(r.soldNumbers)?r.soldNumbers.length:Number(r.sold||0);return t>0&&s>=t}
-function getRequests(){return get(Q,[])}
-function getApprovedSpecialHits(id){let h=[];getRequests().forEach(q=>{if(String(q.raffleId)===String(id)&&q.status==='approved'&&Array.isArray(q.specialHits))h.push(...q.specialHits.map(String))});return [...new Set(h)]}
-
-function renderAllRaffles(){
-const list=document.getElementById('raffleList'),raffles=getActiveRaffles();
-if(!raffles.length){list.innerHTML='<div class="panel">No hay rifas activas.</div>';return}
-list.innerHTML=raffles.map(r=>{
-const total=Number(r.totalNumbers)||10000,sold=Array.isArray(r.soldNumbers)?r.soldNumbers.length:Number(r.sold)||0,pct=Math.min(100,Math.max(0,sold/total*100)),soldOut=isRaffleSoldOut(r),hits=getApprovedSpecialHits(r.id),lucky=Array.isArray(r.specialNumbers)&&r.specialNumbers.length;
-return `<div class="card">
-<div class="photo">${r.image?`<img src="${escapeHtml(r.image)}" alt="${escapeHtml(r.name)}">`:'<div style="height:100%;display:grid;place-items:center;font-size:100px">🏆</div>'}
-<div class="shade"></div><div class="photoText"><span class="tag">✦ RIFA DESTACADA</span></div>
-${soldOut?'<div class="soldOutOverlay">AGOTADO</div>':''}</div>
-${lucky?`<div class="luckyBox"><div class="luckyTitle">SI TE SALE UNO DE ESTOS NÚMEROS TE GANAS</div><div class="luckyPrize">${escapeHtml(r.specialPrize||'5,000')}</div><div class="luckyGrid">${r.specialNumbers.map(n=>{const hit=hits.includes(String(n));return `<div class="luckyNumber ${hit?'hit':''}">${escapeHtml(n)}${hit?'<span class="luckyHitLabel">ACEPTADO</span>':''}</div>`}).join('')}</div></div>`:''}
-<div class="body"><h2>${escapeHtml(r.name)}</h2><p class="muted">${escapeHtml(r.description||'')}</p>
-<div class="price">${money(r.price)} <small>por boleto</small></div>
-<div class="progressTop"><span>${Math.round(pct)}%</span></div>
-<div class="progress"><div style="width:${pct}%"></div></div>
-<button class="primary" ${soldOut?'disabled':''} onclick="selectRaffle('${escapeHtml(r.id)}')">${soldOut?'RIFA AGOTADA':'PARTICIPAR →'}</button>
-</div></div>`}).join('')
+function get(k,f=[]){
+try{
+const v=localStorage.getItem(k);
+return v?JSON.parse(v):f;
+}catch(e){return f}
 }
 
-function selectRaffle(id){const r=getActiveRaffles().find(x=>String(x.id)===String(id));if(!r||isRaffleSoldOut(r))return;currentRaffle=r;openCheckout()}
-function openCheckout(){if(!currentRaffle)return;['homeView','verifyView','confirmationView'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById('checkoutView').classList.add('active');document.getElementById('checkoutTitle').textContent=currentRaffle.name;selectedCount=2;document.querySelectorAll('.pack').forEach((p,i)=>p.classList.toggle('selected',i===0));mode('packages');updateTotals();window.scrollTo({top:0,behavior:'smooth'})}
-function closeCheckout(){document.getElementById('checkoutView').classList.remove('active');document.getElementById('homeView').classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
-function choose(el){document.querySelectorAll('.pack').forEach(p=>p.classList.remove('selected'));el.classList.add('selected');selectedCount=Math.max(MIN_TICKETS,Number(el.dataset.count)||MIN_TICKETS);updateTotals()}
-function mode(t){currentMode=t;document.getElementById('packagesTab').classList.toggle('active',t==='packages');document.getElementById('freeTab').classList.toggle('active',t==='free');document.getElementById('packagesBox').style.display=t==='packages'?'block':'none';document.getElementById('freeBox').classList.toggle('active',t==='free');updateTotals()}
-function changeQty(d){selectedCount=Math.min(MAX_TICKETS,Math.max(MIN_TICKETS,selectedCount+d));updateTotals()}
-function updateTotals(){selectedPrice=selectedCount*Number(currentRaffle?.price||100);document.getElementById('totalAmount').textContent=money(selectedPrice);document.getElementById('qtyNumber').textContent=selectedCount}
+function put(k,v){localStorage.setItem(k,JSON.stringify(v))}
+
+function money(v){
+return 'RD$ '+Number(v||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+
+function escapeHtml(v){
+return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
+}
+
+function defaultRaffle(){
+return [
+{
+id:'porsche-cayenne-s',
+name:'Porsche Cayenne S',
+description:'Participa y descubre si eres el próximo ganador.',
+price:100,
+totalNumbers:10000,
+sold:3000,
+image:'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=85',
+active:true,
+drawDate:'Fecha pendiente',
+specialPrize:'5,000',
+specialNumbers:['35','02','25']
+},
+{
+id:'car-25',
+name:'Rifa especial',
+description:'Participa por una gran oportunidad.',
+price:25,
+totalNumbers:10000,
+sold:0,
+image:'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=1200&q=85',
+active:true,
+drawDate:'Fecha pendiente'
+}
+];
+}
+
+function getActiveRaffles(){
+const d=get(R,null);
+return !Array.isArray(d)||!d.length?defaultRaffle():d.filter(r=>r.active!==false);
+}
+
+function getRaffleSoldCount(r){
+return Array.isArray(r.soldNumbers)?r.soldNumbers.length:Number(r.sold||0);
+}
+
+function getRafflePercent(r){
+const total=Number(r.totalNumbers)||10000;
+const sold=getRaffleSoldCount(r);
+return Math.min(100,Math.max(0,sold/total*100));
+}
+
+function isRaffleSoldOut(r){
+const t=Number(r.totalNumbers)||0;
+return t>0&&getRaffleSoldCount(r)>=t;
+}
+
+function getRequests(){return get(Q,[])}
+
+function getApprovedSpecialHits(id){
+let h=[];
+getRequests().forEach(q=>{
+if(String(q.raffleId)===String(id)&&q.status==='approved'&&Array.isArray(q.specialHits)){
+h.push(...q.specialHits.map(String));
+}
+});
+return [...new Set(h)];
+}
+
+/* FECHA DEL SORTEO:
+   Se muestra la fecha cuando la rifa llega al 75%.
+   Si no hay una fecha configurada, muestra FECHA PENDIENTE.
+*/
+function getDrawDate(r){
+return String(r.drawDate||r.fechaSorteo||r.fecha||'').trim();
+}
+
+function renderDrawDate(r,pct){
+if(pct<DRAW_DATE_THRESHOLD){
+return `
+<div class="drawDateBox pending">
+<div class="drawDateIcon">📅</div>
+<div class="drawDateInfo">
+<span class="drawDateLabel">FECHA DEL SORTEO</span>
+<span class="drawDateValue">PRÓXIMAMENTE</span>
+<div class="drawDateNotice">La fecha del sorteo estará disponible cuando se alcance el 75% de los boletos vendidos.</div>
+</div>
+</div>`;
+}
+
+const date=getDrawDate(r);
+const isPending=!date||/pendiente/i.test(date);
+
+if(isPending){
+return `
+<div class="drawDateBox pending">
+<div class="drawDateIcon">📅</div>
+<div class="drawDateInfo">
+<span class="drawDateLabel">FECHA DEL SORTEO</span>
+<span class="drawDateValue">FECHA PENDIENTE</span>
+<div class="drawDateNotice">Ya se alcanzó el 75% de los boletos. La fecha será anunciada próximamente.</div>
+</div>
+</div>`;
+}
+
+return `
+<div class="drawDateBox available">
+<div class="drawDateIcon">📅</div>
+<div class="drawDateInfo">
+<span class="drawDateLabel">FECHA DEL SORTEO</span>
+<span class="drawDateValue">${escapeHtml(date)}</span>
+<div class="drawDateNotice">Fecha del sorteo anunciada.</div>
+</div>
+</div>`;
+}
+
+function renderAllRaffles(){
+const list=document.getElementById('raffleList');
+const raffles=getActiveRaffles();
+
+if(!raffles.length){
+list.innerHTML='<div class="panel">No hay rifas activas.</div>';
+return;
+}
+
+list.innerHTML=raffles.map(r=>{
+const total=Number(r.totalNumbers)||10000;
+const sold=getRaffleSoldCount(r);
+const pct=getRafflePercent(r);
+const soldOut=isRaffleSoldOut(r);
+const hits=getApprovedSpecialHits(r.id);
+const lucky=Array.isArray(r.specialNumbers)&&r.specialNumbers.length;
+
+return `
+<div class="card">
+<div class="photo">
+${r.image?`<img src="${escapeHtml(r.image)}" alt="${escapeHtml(r.name)}">`:'<div style="height:100%;display:grid;place-items:center;font-size:100px">🏆</div>'}
+<div class="shade"></div>
+<div class="photoText"><span class="tag">✦ RIFA DESTACADA</span></div>
+${soldOut?'<div class="soldOutOverlay">AGOTADO</div>':''}
+</div>
+
+${lucky?`
+<div class="luckyBox">
+<div class="luckyTitle">SI TE SALE UNO DE ESTOS NÚMEROS TE GANAS</div>
+<div class="luckyPrize">${escapeHtml(r.specialPrize||'5,000')}</div>
+<div class="luckyGrid">
+${r.specialNumbers.map(n=>{
+const hit=hits.includes(String(n));
+return `<div class="luckyNumber ${hit?'hit':''}">${escapeHtml(n)}${hit?'<span class="luckyHitLabel">ACEPTADO</span>':''}</div>`;
+}).join('')}
+</div>
+</div>`:''}
+
+<div class="body">
+<h2>${escapeHtml(r.name)}</h2>
+<p class="muted">${escapeHtml(r.description||'')}</p>
+
+<div class="price">${money(r.price)} <small>por boleto</small></div>
+
+<div class="progressTop"><span>${Math.round(pct)}% vendido</span></div>
+<div class="progress"><div style="width:${pct}%"></div></div>
+
+${renderDrawDate(r,pct)}
+
+<button class="primary" ${soldOut?'disabled':''} onclick="selectRaffle('${escapeHtml(r.id)}')">
+${soldOut?'RIFA AGOTADA':'PARTICIPAR →'}
+</button>
+</div>
+</div>`;
+}).join('');
+}
+
+function selectRaffle(id){
+const r=getActiveRaffles().find(x=>String(x.id)===String(id));
+if(!r||isRaffleSoldOut(r))return;
+currentRaffle=r;
+openCheckout();
+}
+
+function openCheckout(){
+if(!currentRaffle)return;
+
+['homeView','verifyView','confirmationView'].forEach(id=>document.getElementById(id).classList.remove('active'));
+document.getElementById('checkoutView').classList.add('active');
+document.getElementById('checkoutTitle').textContent=currentRaffle.name;
+
+selectedCount=2;
+document.querySelectorAll('.pack').forEach((p,i)=>p.classList.toggle('selected',i===0));
+mode('packages');
+updateTotals();
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function closeCheckout(){
+document.getElementById('checkoutView').classList.remove('active');
+document.getElementById('homeView').classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function choose(el){
+document.querySelectorAll('.pack').forEach(p=>p.classList.remove('selected'));
+el.classList.add('selected');
+selectedCount=Math.max(MIN_TICKETS,Number(el.dataset.count)||MIN_TICKETS);
+updateTotals();
+}
+
+function mode(t){
+currentMode=t;
+document.getElementById('packagesTab').classList.toggle('active',t==='packages');
+document.getElementById('freeTab').classList.toggle('active',t==='free');
+document.getElementById('packagesBox').style.display=t==='packages'?'block':'none';
+document.getElementById('freeBox').classList.toggle('active',t==='free');
+updateTotals();
+}
+
+function changeQty(d){
+selectedCount=Math.min(MAX_TICKETS,Math.max(MIN_TICKETS,selectedCount+d));
+updateTotals();
+}
+
+function updateTotals(){
+selectedPrice=selectedCount*Number(currentRaffle?.price||100);
+document.getElementById('totalAmount').textContent=money(selectedPrice);
+document.getElementById('qtyNumber').textContent=selectedCount;
+}
 
 const paymentDetails={
 'Banco Popular':{account:'CUENTA_A_CONFIGURAR',holder:'TITULAR_A_CONFIGURAR',label:'Cuenta',hint:'Realiza la transferencia por el monto total y luego carga el comprobante.'},
@@ -217,63 +712,298 @@ const paymentDetails={
 'Efectivo':{account:'PAGO_EN_EFECTIVO',holder:'TITULAR_A_CONFIGURAR',label:'Referencia',hint:'Coordina previamente la entrega o el punto de pago en efectivo.'}
 };
 
-function selectBank(b){document.querySelectorAll('.bankBtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');selectedBank=b.dataset.bank;const d=paymentDetails[selectedBank];document.getElementById('accountLabel').textContent=d.label;document.getElementById('accountNumber').textContent=d.account;document.getElementById('accountHolder').textContent=d.holder;document.getElementById('paymentHint').textContent=d.hint;document.getElementById('copyAccountBtn').style.display=selectedBank==='Efectivo'?'none':'inline-block'}
-function copyAccount(){const t=document.getElementById('accountNumber').textContent;if(!t||t.includes('CONFIGURAR')){alert('La cuenta todavía no ha sido configurada.');return}navigator.clipboard?.writeText(t).then(()=>alert('Número de cuenta copiado.')).catch(()=>alert(t))}
-function showFile(i){const f=i.files?.[0],target=document.getElementById('fileName');if(!f){target.textContent='Ningún archivo seleccionado';return}if(f.size>10*1024*1024||!(/^(image\/(jpeg|png)|application\/pdf)$/.test(f.type))){alert('Selecciona JPG, PNG o PDF de máximo 10 MB.');i.value='';target.textContent='Ningún archivo seleccionado';return}target.textContent=f.name}
+function selectBank(b){
+document.querySelectorAll('.bankBtn').forEach(x=>x.classList.remove('active'));
+b.classList.add('active');
+selectedBank=b.dataset.bank;
+const d=paymentDetails[selectedBank];
+document.getElementById('accountLabel').textContent=d.label;
+document.getElementById('accountNumber').textContent=d.account;
+document.getElementById('accountHolder').textContent=d.holder;
+document.getElementById('paymentHint').textContent=d.hint;
+document.getElementById('copyAccountBtn').style.display=selectedBank==='Efectivo'?'none':'inline-block';
+}
 
-function getPendingNumbers(id){const a=[];getRequests().forEach(q=>{if(String(q.raffleId)===String(id)&&q.status==='pending'&&Array.isArray(q.numbers))a.push(...q.numbers.map(Number))});return a}
-function getAvailableNumbers(r){const total=Number(r.totalNumbers)||10000,sold=Array.isArray(r.soldNumbers)?r.soldNumbers.map(Number):[],pending=getPendingNumbers(r.id),blocked=new Set([...sold,...pending]),a=[];for(let i=1;i<=total;i++)if(!blocked.has(i))a.push(i);return a}
-function randomNumbers(count){const a=getAvailableNumbers(currentRaffle);if(a.length<count)throw Error('No hay suficientes números disponibles.');for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a.slice(0,count).sort((x,y)=>x-y)}
-function formatTicket(n,r=currentRaffle){return String(n).padStart(Math.max(3,String(Number(r?.totalNumbers||10000)).length),'0')}
+function copyAccount(){
+const t=document.getElementById('accountNumber').textContent;
+if(!t||t.includes('CONFIGURAR')){
+alert('La cuenta todavía no ha sido configurada.');
+return;
+}
+navigator.clipboard?.writeText(t).then(()=>alert('Número de cuenta copiado.')).catch(()=>alert(t));
+}
+
+function showFile(i){
+const f=i.files?.[0],target=document.getElementById('fileName');
+if(!f){
+target.textContent='Ningún archivo seleccionado';
+return;
+}
+if(f.size>10*1024*1024||!(/^(image\/(jpeg|png)|application\/pdf)$/.test(f.type))){
+alert('Selecciona JPG, PNG o PDF de máximo 10 MB.');
+i.value='';
+target.textContent='Ningún archivo seleccionado';
+return;
+}
+target.textContent=f.name;
+}
+
+function getPendingNumbers(id){
+const a=[];
+getRequests().forEach(q=>{
+if(String(q.raffleId)===String(id)&&q.status==='pending'&&Array.isArray(q.numbers)){
+a.push(...q.numbers.map(Number));
+}
+});
+return a;
+}
+
+function getAvailableNumbers(r){
+const total=Number(r.totalNumbers)||10000;
+const sold=Array.isArray(r.soldNumbers)?r.soldNumbers.map(Number):[];
+const pending=getPendingNumbers(r.id);
+const blocked=new Set([...sold,...pending]);
+const a=[];
+for(let i=1;i<=total;i++)if(!blocked.has(i))a.push(i);
+return a;
+}
+
+function randomNumbers(count){
+const a=getAvailableNumbers(currentRaffle);
+if(a.length<count)throw Error('No hay suficientes números disponibles.');
+for(let i=a.length-1;i>0;i--){
+const j=Math.floor(Math.random()*(i+1));
+[a[i],a[j]]=[a[j],a[i]];
+}
+return a.slice(0,count).sort((x,y)=>x-y);
+}
+
+function formatTicket(n,r=currentRaffle){
+return String(n).padStart(Math.max(3,String(Number(r?.totalNumbers||10000)).length),'0');
+}
 
 function submitPurchase(){
 if(!currentRaffle)return alert('Selecciona una rifa.');
-const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim(),email=document.getElementById('email').value.trim(),receipt=document.getElementById('receipt').files?.[0],consent=document.getElementById('consent').checked;
+
+const name=document.getElementById('name').value.trim();
+const phone=document.getElementById('phone').value.trim();
+const email=document.getElementById('email').value.trim();
+const receipt=document.getElementById('receipt').files?.[0];
+const consent=document.getElementById('consent').checked;
+
 if(!name)return alert('Escribe tu nombre completo.');
 if(!phone)return alert('Escribe tu número de WhatsApp.');
 if(!receipt)return alert('Debes cargar el comprobante de pago.');
 if(!consent)return alert('Debes aceptar la confirmación de tus datos.');
+
 let numbers;
-try{numbers=randomNumbers(selectedCount)}catch(e){return alert(e.message)}
-const reader=new FileReader();
-reader.onload=()=>{
-const specialSet=new Set((currentRaffle.specialNumbers||[]).map(String)),specialHits=numbers.map(String).filter(n=>specialSet.has(n)),req={id:'REQ-'+Date.now(),raffleId:currentRaffle.id,raffleName:currentRaffle.name,name,phone,email,bank:selectedBank,amount:selectedPrice,quantity:selectedCount,numbers,specialHits,receiptName:receipt.name,receiptType:receipt.type,receiptData:String(reader.result||''),status:'pending',createdAt:new Date().toLocaleString('es-DO')};
-const requests=getRequests();requests.push(req);
-try{put(Q,requests);showConfirmation(req);renderAllRaffles()}
-catch(e){alert('No se pudo guardar la solicitud. El comprobante puede ser demasiado grande para el almacenamiento del navegador.')}
-};
-reader.onerror=()=>alert('No se pudo leer el comprobante.');
-reader.readAsDataURL(receipt)
+try{
+numbers=randomNumbers(selectedCount);
+}catch(e){
+return alert(e.message);
 }
 
-function showConfirmation(req){['checkoutView','homeView','verifyView'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById('confirmationView').classList.add('active');document.getElementById('confirmationNumbers').innerHTML=req.numbers.map(n=>`<span class="confirmNumber">#${formatTicket(n)}</span>`).join('');window.scrollTo({top:0,behavior:'smooth'})}
-function openVerify(){['homeView','checkoutView','confirmationView'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById('verifyView').classList.add('active');updateVerifyRaffles();window.scrollTo({top:0,behavior:'smooth'})}
-function closeVerify(){document.getElementById('verifyView').classList.remove('active');document.getElementById('homeView').classList.add('active');window.scrollTo({top:0,behavior:'smooth'})}
-function updateVerifyRaffles(){const s=document.getElementById('verifyRaffle'),old=s.value,rs=getActiveRaffles();s.innerHTML=rs.map(r=>`<option value="${escapeHtml(r.id)}">${escapeHtml(r.name)}</option>`).join('');if(rs.some(r=>String(r.id)===String(old)))s.value=old;const r=rs.find(r=>String(r.id)===String(s.value));document.getElementById('verifyRaffleName').textContent=r?.name||'Rifa seleccionada'}
-function maskPhone(v){const d=String(v||'').replace(/\D/g,'');return d.length>4?'*'.repeat(d.length-4)+d.slice(-4):d}
+const reader=new FileReader();
+
+reader.onload=()=>{
+const specialSet=new Set((currentRaffle.specialNumbers||[]).map(String));
+const specialHits=numbers.map(String).filter(n=>specialSet.has(n));
+
+const req={
+id:'REQ-'+Date.now(),
+raffleId:currentRaffle.id,
+raffleName:currentRaffle.name,
+name,
+phone,
+email,
+bank:selectedBank,
+amount:selectedPrice,
+quantity:selectedCount,
+numbers,
+specialHits,
+receiptName:receipt.name,
+receiptType:receipt.type,
+receiptData:String(reader.result||''),
+status:'pending',
+createdAt:new Date().toLocaleString('es-DO')
+};
+
+const requests=getRequests();
+requests.push(req);
+
+try{
+put(Q,requests);
+showConfirmation(req);
+renderAllRaffles();
+}catch(e){
+alert('No se pudo guardar la solicitud. El comprobante puede ser demasiado grande para el almacenamiento del navegador.');
+}
+};
+
+reader.onerror=()=>alert('No se pudo leer el comprobante.');
+reader.readAsDataURL(receipt);
+}
+
+function showConfirmation(req){
+['checkoutView','homeView','verifyView'].forEach(id=>document.getElementById(id).classList.remove('active'));
+document.getElementById('confirmationView').classList.add('active');
+document.getElementById('confirmationNumbers').innerHTML=req.numbers.map(n=>`<span class="confirmNumber">#${formatTicket(n)}</span>`).join('');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function openVerify(){
+['homeView','checkoutView','confirmationView'].forEach(id=>document.getElementById(id).classList.remove('active'));
+document.getElementById('verifyView').classList.add('active');
+updateVerifyRaffles();
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function closeVerify(){
+document.getElementById('verifyView').classList.remove('active');
+document.getElementById('homeView').classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function updateVerifyRaffles(){
+const s=document.getElementById('verifyRaffle');
+const old=s.value;
+const rs=getActiveRaffles();
+
+s.innerHTML=rs.map(r=>`<option value="${escapeHtml(r.id)}">${escapeHtml(r.name)}</option>`).join('');
+
+if(rs.some(r=>String(r.id)===String(old)))s.value=old;
+
+const r=rs.find(r=>String(r.id)===String(s.value));
+document.getElementById('verifyRaffleName').textContent=r?.name||'Rifa seleccionada';
+}
+
+function maskPhone(v){
+const d=String(v||'').replace(/\D/g,'');
+return d.length>4?'*'.repeat(d.length-4)+d.slice(-4):d;
+}
 
 function verifyNumbers(){
-const id=document.getElementById('verifyRaffle').value,q=document.getElementById('verifyQuery').value.trim(),out=document.getElementById('verifyResults'),r=getActiveRaffles().find(x=>String(x.id)===String(id));
+const id=document.getElementById('verifyRaffle').value;
+const q=document.getElementById('verifyQuery').value.trim();
+const out=document.getElementById('verifyResults');
+const r=getActiveRaffles().find(x=>String(x.id)===String(id));
+
 document.getElementById('verifyRaffleName').textContent=r?.name||'Rifa seleccionada';
-if(!q){out.className='verifyEmpty';out.textContent='Introduce tu teléfono o número de boleto para consultar.';return}
-if(!r){out.className='verifyEmpty';out.textContent='No se encontró la rifa.';return}
-const clean=q.replace(/\D/g,''),requests=getRequests().filter(x=>String(x.raffleId)===String(r.id)&&((clean.length>=7&&String(x.phone||'').replace(/\D/g,'')===clean)||(Array.isArray(x.numbers)&&x.numbers.some(n=>formatTicket(n,r)===q||String(n)===clean))));
-if(!requests.length){out.className='verifyEmpty';out.textContent='No encontramos solicitudes asociadas a ese teléfono o número de boleto.';return}
-out.className='';
-out.innerHTML=requests.map(req=>{
-const approved=['approved','validated','validado'].includes(req.status),status=approved?'APROBADA':'PENDIENTE DE VALIDACIÓN',review=approved?'':'<div class="reviewTime">Tiempo de revisión: <strong>de 12 a 24 horas</strong></div>',order=req.orderNumber||req.orderId||String(req.id||'').replace(/^REQ-/,'').slice(-5),tickets=(req.numbers||[]).map(n=>{const special=(req.specialHits||[]).map(String).includes(String(n));return `<div class="numberItem"><span>${formatTicket(n,r)}</span><span class="ticketStatus ${approved?'approved':''}">${approved?(special?'✓ PREMIADO':'✓ APROBADO'):'PENDIENTE DE VALIDACIÓN'}</span></div>`}).join('');
-return `<article class="buyerBox"><div class="orderTop"><span class="orderId">Orden #${escapeHtml(order||'—')}</span><span class="statusText ${approved?'approved':''}">${status}</span></div><div class="detailRow"><span class="detailLabel">Participante</span><span>${escapeHtml(req.name||'—')}</span></div><div class="detailRow"><span class="detailLabel">Teléfono</span><span>${escapeHtml(maskPhone(req.phone))}</span></div><div class="detailRow"><span class="detailLabel">Correo</span><span>${escapeHtml(req.email||'—')}</span></div><div class="detailRow"><span class="detailLabel">Registro</span><span>${escapeHtml(req.createdAt||'—')}</span></div>${review}<div class="ticketsLabel">BOLETOS</div><div class="numberGrid">${tickets}</div></article>`
-}).join('')
+
+if(!q){
+out.className='verifyEmpty';
+out.textContent='Introduce tu teléfono o número de boleto para consultar.';
+return;
 }
 
-function toggleMenu(){document.getElementById('menu').classList.toggle('active')}
-function scrollToCatalog(){document.getElementById('menu').classList.remove('active');goHome();setTimeout(()=>document.getElementById('catalog').scrollIntoView({behavior:'smooth'}),50)}
-function goHome(){['checkoutView','verifyView','confirmationView'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById('homeView').classList.add('active');document.getElementById('menu').classList.remove('active');renderAllRaffles();window.scrollTo({top:0,behavior:'smooth'})}
-document.addEventListener('click',e=>{const m=document.getElementById('menu'),b=document.querySelector('.header .menuBtn');if(m.classList.contains('active')&&!m.contains(e.target)&&!b.contains(e.target))m.classList.remove('active')});
-document.getElementById('verifyQuery').addEventListener('keydown',e=>{if(e.key==='Enter')verifyNumbers()});
-document.getElementById('verifyRaffle').addEventListener('change',()=>{const r=getActiveRaffles().find(x=>String(x.id)===String(document.getElementById('verifyRaffle').value));document.getElementById('verifyRaffleName').textContent=r?.name||'Rifa seleccionada';document.getElementById('verifyResults').className='verifyEmpty';document.getElementById('verifyResults').textContent='Introduce tu teléfono o número de boleto para consultar.'});
-window.addEventListener('storage',()=>{renderAllRaffles();if(document.getElementById('verifyView').classList.contains('active'))updateVerifyRaffles()});
-(function createLotteryBalls(){const bg=document.getElementById('lotteryBackground');[7,12,23,35,42,56,68,79,88,99,15,27,36,48].forEach(n=>{const b=document.createElement('div');b.className='lottery-ball';b.textContent=n;b.style.setProperty('--left',Math.random()*94+'%');b.style.setProperty('--size',38+Math.random()*30+'px');b.style.setProperty('--duration',22+Math.random()*22+'s');b.style.setProperty('--delay',-Math.random()*40+'s');bg.appendChild(b)})})();
+if(!r){
+out.className='verifyEmpty';
+out.textContent='No se encontró la rifa.';
+return;
+}
+
+const clean=q.replace(/\D/g,'');
+
+const requests=getRequests().filter(x=>
+String(x.raffleId)===String(r.id)&&
+(
+(clean.length>=7&&String(x.phone||'').replace(/\D/g,'')===clean)||
+(Array.isArray(x.numbers)&&x.numbers.some(n=>formatTicket(n,r)===q||String(n)===clean))
+)
+);
+
+if(!requests.length){
+out.className='verifyEmpty';
+out.textContent='No encontramos solicitudes asociadas a ese teléfono o número de boleto.';
+return;
+}
+
+out.className='';
+
+out.innerHTML=requests.map(req=>{
+const approved=['approved','validated','validado'].includes(req.status);
+const status=approved?'APROBADA':'PENDIENTE DE VALIDACIÓN';
+const review=approved?'':'<div class="reviewTime">Tiempo de revisión: <strong>de 12 a 24 horas</strong></div>';
+const order=req.orderNumber||req.orderId||String(req.id||'').replace(/^REQ-/,'').slice(-5);
+
+const tickets=(req.numbers||[]).map(n=>{
+const special=(req.specialHits||[]).map(String).includes(String(n));
+return `<div class="numberItem"><span>${formatTicket(n,r)}</span><span class="ticketStatus ${approved?'approved':''}">${approved?(special?'✓ PREMIADO':'✓ APROBADO'):'PENDIENTE DE VALIDACIÓN'}</span></div>`;
+}).join('');
+
+return `
+<article class="buyerBox">
+<div class="orderTop">
+<span class="orderId">Orden #${escapeHtml(order||'—')}</span>
+<span class="statusText ${approved?'approved':''}">${status}</span>
+</div>
+<div class="detailRow"><span class="detailLabel">Participante</span><span>${escapeHtml(req.name||'—')}</span></div>
+<div class="detailRow"><span class="detailLabel">Teléfono</span><span>${escapeHtml(maskPhone(req.phone))}</span></div>
+<div class="detailRow"><span class="detailLabel">Correo</span><span>${escapeHtml(req.email||'—')}</span></div>
+<div class="detailRow"><span class="detailLabel">Registro</span><span>${escapeHtml(req.createdAt||'—')}</span></div>
+${review}
+<div class="ticketsLabel">BOLETOS</div>
+<div class="numberGrid">${tickets}</div>
+</article>`;
+}).join('');
+}
+
+function toggleMenu(){
+document.getElementById('menu').classList.toggle('active');
+}
+
+function scrollToCatalog(){
+document.getElementById('menu').classList.remove('active');
+goHome();
+setTimeout(()=>document.getElementById('catalog').scrollIntoView({behavior:'smooth'}),50);
+}
+
+function goHome(){
+['checkoutView','verifyView','confirmationView'].forEach(id=>document.getElementById(id).classList.remove('active'));
+document.getElementById('homeView').classList.add('active');
+document.getElementById('menu').classList.remove('active');
+renderAllRaffles();
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
+document.addEventListener('click',e=>{
+const m=document.getElementById('menu');
+const b=document.querySelector('.header .menuBtn');
+if(m.classList.contains('active')&&!m.contains(e.target)&&!b.contains(e.target)){
+m.classList.remove('active');
+}
+});
+
+document.getElementById('verifyQuery').addEventListener('keydown',e=>{
+if(e.key==='Enter')verifyNumbers();
+});
+
+document.getElementById('verifyRaffle').addEventListener('change',()=>{
+const r=getActiveRaffles().find(x=>String(x.id)===String(document.getElementById('verifyRaffle').value));
+document.getElementById('verifyRaffleName').textContent=r?.name||'Rifa seleccionada';
+document.getElementById('verifyResults').className='verifyEmpty';
+document.getElementById('verifyResults').textContent='Introduce tu teléfono o número de boleto para consultar.';
+});
+
+window.addEventListener('storage',()=>{
+renderAllRaffles();
+if(document.getElementById('verifyView').classList.contains('active'))updateVerifyRaffles();
+});
+
+(function createLotteryBalls(){
+const bg=document.getElementById('lotteryBackground');
+[7,12,23,35,42,56,68,79,88,99,15,27,36,48].forEach(n=>{
+const b=document.createElement('div');
+b.className='lottery-ball';
+b.textContent=n;
+b.style.setProperty('--left',Math.random()*94+'%');
+b.style.setProperty('--size',38+Math.random()*30+'px');
+b.style.setProperty('--duration',22+Math.random()*22+'s');
+b.style.setProperty('--delay',-Math.random()*40+'s');
+bg.appendChild(b);
+});
+})();
+
 renderAllRaffles();
 selectBank(document.querySelector('.bankBtn.active'));
 </script>
